@@ -8,6 +8,7 @@ A curated collection of tips, guides, and resources for getting the most out of 
 |---|----------|------|
 | 1 | Claude Code Tips from Creator Boris Cherny (X/Twitter) | [x.com](https://x.com/bcherny/status/2007179832300581177) |
 | 2 | Claude Code Team Tips from Boris Cherny (X/Twitter) | [x.com](https://x.com/bcherny/status/2017742741636321619) |
+| 3 | Claude Code Tips from Boris Cherny (X/Twitter) | [x.com](https://x.com/bcherny/status/2021699851499798911) |
 
 ## Recommended Settings
 
