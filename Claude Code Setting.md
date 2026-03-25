@@ -85,6 +85,9 @@ This triggers a system bell whenever Claude is waiting for input, which works wi
 
 10. **Use Claude for learning** -- Enable the "Explanatory" or "Learning" output style in `/config` to have Claude explain the *why* behind its changes. Have Claude generate a visual HTML presentation explaining unfamiliar code. Ask Claude to draw ASCII diagrams of new protocols and codebases. Build a spaced-repetition learning skill where you explain your understanding, Claude asks follow-ups to fill gaps, and stores the result.
 
+11. # In your ~/.bashrc or ~/.zshrc to skip typing out the full skip dangerous permission flag
+alias clauded="claude --dangerously-skip-permissions"
+
 ## Reference Repositories
 
 | # | Resource | Link |
