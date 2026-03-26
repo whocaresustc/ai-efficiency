@@ -94,3 +94,4 @@ alias clauded="claude --dangerously-skip-permissions"
 |---|----------|------|
 | 1 | Everything Claude Code -- comprehensive community resource | [github.com/affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) |
 | 2 | Code Simplifier Plugin (Official Anthropic) | [github.com/anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/code-simplifier/agents/code-simplifier.md) |
+| 3 | Claude Code Best Practice | [github.com/shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) |
