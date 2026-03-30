@@ -22,6 +22,34 @@ Get notified when Claude Code needs your input or confirmation, so you can multi
 
 This triggers a system bell whenever Claude is waiting for input, which works with macOS terminal notification settings (e.g., iTerm2 can show system alerts or bounce the dock icon on bell).
 
+### Insights (`/insights`)
+
+A built-in command that generates a usage report analyzing your Claude Code sessions. It provides:
+
+- **At a Glance** -- Summary of what's working, what's hindering you, quick wins, and ambitious workflows
+- **Project Areas** -- Clusters your sessions by topic (e.g., data pipelines, environment config, domain research)
+- **Interaction Style** -- Characterizes how you use Claude Code (iterative vs. upfront specs, interrupt-driven, etc.)
+- **Impressive Workflows** -- Highlights your best uses of Claude Code
+- **Friction Analysis** -- Categorizes recurring problems (wrong initial approaches, unwanted edits, session management failures) with concrete examples
+- **Suggestions** -- Actionable CLAUDE.md additions, features to try (Custom Skills, Hooks, MCP Servers), and usage pattern improvements
+- **On the Horizon** -- Advanced workflows to try as capabilities improve (test-driven debugging loops, parallel sub-agents, verification gates)
+
+The report is saved as an HTML file at `~/.claude/usage-data/report.html` and can be shared.
+
+### Auto Memory
+
+Claude Code has a persistent memory system that stores information across conversations at `~/.claude/projects/<project-path>/memory/`.
+
+- **MEMORY.md** is automatically loaded into every conversation context (first 200 lines)
+- Additional topic files (e.g., `debugging.md`, `patterns.md`) can be created and linked from MEMORY.md
+- Memories persist across sessions and are organized semantically by topic
+
+**What to Store:** Stable patterns, architectural decisions, file paths, user preferences, solutions to recurring problems.
+
+**What NOT to Store:** Session-specific context, unverified conclusions, anything already in CLAUDE.md.
+
+**Manual Memory:** Use `/remember` (or say "remember this") to explicitly save something for future sessions. You can also ask Claude to forget or update stored memories.
+
 ## Boris Cherny's Tips for Claude Code
 
 *From the creator of Claude Code -- 13 tips from his [X/Twitter thread](https://x.com/bcherny/status/2007179832300581177) ([ThreadReader](https://threadreaderapp.com/thread/2007179832300581177.html))*
@@ -95,44 +123,3 @@ alias clauded="claude --dangerously-skip-permissions"
 | 1 | Everything Claude Code -- comprehensive community resource | [github.com/affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) |
 | 2 | Code Simplifier Plugin (Official Anthropic) | [github.com/anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/code-simplifier/agents/code-simplifier.md) |
 | 3 | Claude Code Best Practice | [github.com/shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) |
-
-## Insights (`/insights`)
-
-A built-in command that generates a usage report analyzing your Claude Code sessions. It provides:
-
-- **At a Glance** -- Summary of what's working, what's hindering you, quick wins, and ambitious workflows
-- **Project Areas** -- Clusters your sessions by topic (e.g., data pipelines, environment config, domain research)
-- **Interaction Style** -- Characterizes how you use Claude Code (iterative vs. upfront specs, interrupt-driven, etc.)
-- **Impressive Workflows** -- Highlights your best uses of Claude Code
-- **Friction Analysis** -- Categorizes recurring problems (wrong initial approaches, unwanted edits, session management failures) with concrete examples
-- **Suggestions** -- Actionable CLAUDE.md additions, features to try (Custom Skills, Hooks, MCP Servers), and usage pattern improvements
-- **On the Horizon** -- Advanced workflows to try as capabilities improve (test-driven debugging loops, parallel sub-agents, verification gates)
-
-The report is saved as an HTML file at `~/.claude/usage-data/report.html` and can be shared.
-
-## Auto Memory
-
-Claude Code has a persistent memory system that stores information across conversations at `~/.claude/projects/<project-path>/memory/`.
-
-### How It Works
-
-- **MEMORY.md** is automatically loaded into every conversation context (first 200 lines)
-- Additional topic files (e.g., `debugging.md`, `patterns.md`) can be created and linked from MEMORY.md
-- Memories persist across sessions and are organized semantically by topic
-
-### What to Store
-
-- Stable patterns and conventions confirmed across multiple interactions
-- Key architectural decisions, important file paths, and project structure
-- User preferences for workflow, tools, and communication style
-- Solutions to recurring problems and debugging insights
-
-### What NOT to Store
-
-- Session-specific context (current task details, in-progress work)
-- Unverified or speculative conclusions from reading a single file
-- Anything that duplicates existing CLAUDE.md instructions
-
-### Manual Memory
-
-Use `/remember` (or say "remember this") to explicitly save something for future sessions. You can also ask Claude to forget or update stored memories.
