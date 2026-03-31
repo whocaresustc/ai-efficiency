@@ -116,6 +116,18 @@ Claude Code has a persistent memory system that stores information across conver
 11. # In your ~/.bashrc or ~/.zshrc to skip typing out the full skip dangerous permission flag
 alias clauded="claude --dangerously-skip-permissions"
 
+## Keyboard Shortcuts (Terminal / Claude Code CLI)
+
+| Shortcut | Action |
+|----------|--------|
+| `Ctrl+A` | Move cursor to beginning of line |
+| `Ctrl+E` | Move cursor to end of line |
+| `Ctrl+U` | Delete everything before cursor |
+| `Ctrl+K` | Delete everything after cursor |
+| `Ctrl+W` | Delete word before cursor |
+| `Option+←` | Move cursor one word left |
+| `Option+→` | Move cursor one word right |
+
 ## Reference Repositories
 
 | # | Resource | Link |
