@@ -36,6 +36,17 @@ A built-in command that generates a usage report analyzing your Claude Code sess
 
 The report is saved as an HTML file at `~/.claude/usage-data/report.html` and can be shared.
 
+### Fullscreen Rendering
+
+A rendering mode that takes over the full terminal screen (similar to `vim` or `htop`) for a smoother, flicker-free experience with stable memory usage in long conversations. It also adds mouse support for clicking, selecting text, and scrolling.
+
+- **Enable:** Set `CLAUDE_CODE_NO_FLICKER=1` before launching Claude Code, or add `export CLAUDE_CODE_NO_FLICKER=1` to your `~/.zshrc` / `~/.bashrc`
+- **Scroll:** `PgUp`/`PgDn` (half screen), `Ctrl+Home`/`Ctrl+End` (jump to start/end), mouse wheel
+- **Transcript mode:** Press `Ctrl+o` to enter a `less`-like viewer where you can search (`/`), jump between matches (`n`/`N`), and scroll freely. Press `Ctrl+o` again for focus view (last prompt + tool summary + response)
+- **Mouse:** Click URLs directly, select text to auto-copy on mouse release
+
+> Docs: [code.claude.com/docs/en/fullscreen](https://code.claude.com/docs/en/fullscreen)
+
 ### Auto Memory
 
 Claude Code has a persistent memory system that stores information across conversations at `~/.claude/projects/<project-path>/memory/`.
