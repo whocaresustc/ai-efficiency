@@ -1,5 +1,9 @@
 # Terminal Tools
 
+> **Document type:** Personal setup record. This page records the tools and
+> versions installed on one machine. For the reusable end-to-end terminal guide,
+> see [Terminal Setup](terminal-setup.md).
+
 WezTerm
 vim
 tmux

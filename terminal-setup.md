@@ -1,5 +1,8 @@
 # Terminal Setup: Ghostty + Yazi + Lazygit + zoxide + fzf
 
+> **Document type:** Living guide. For the machine-specific Neovim and LazyVim
+> installation record, see [Terminal Tools](Terminal%20tools.md).
+
 A minimal, composable terminal workflow built on purpose-driven tools. Each handles one concern — terminal rendering, file navigation, git operations, directory jumping, and fuzzy search — with no overlap and no wasted abstraction.
 
 ## Philosophy
@@ -632,4 +635,4 @@ function yy() {
 | **cmux**   | Agent-aware terminal with notification rings      | If you run 3+ Claude Code agents in parallel |
 | **Starship** | Cross-shell prompt with git status, runtime info | If you want richer prompt context           |
 | **Zellij** | Modern tmux alternative with Rust, better defaults | If you want multiplexing without tmux's config overhead |
-| **Neovim** | Terminal-native editor with Lua plugin ecosystem  | If you want to stay fully in the terminal    |
+| **Neovim** | Terminal-native editor with Lua plugin ecosystem  | If you want to stay fully in the terminal; see the separate [personal setup record](Terminal%20tools.md) |
