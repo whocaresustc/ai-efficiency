@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weekly AI Report — May 30 – Jun 8, 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --bg:#fafafa; --fg:#1a1a1a; --muted:#666; --card:#fff; --border:#e5e5e5; --tier1:#2563eb; --tier1-bg:#dbeafe; --tier4:#16a34a; --tier4-bg:#dcfce7; --score5:#dc2626; --score4:#ea580c; --score3:#ca8a04; --accent:#1a1a1a; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f0f10; --fg:#e8e8e8; --muted:#9a9a9a; --card:#18181b; --border:#27272a; --tier1:#60a5fa; --tier1-bg:#1e3a8a; --tier4:#4ade80; --tier4-bg:#14532d; --score5:#f87171; --score4:#fb923c; --score3:#facc15; --accent:#fafafa; } }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--fg); margin: 0; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 32px 20px 80px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 28px; }
+  h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .meta { color: var(--muted); font-size: 14px; }
+  h2 { font-size: 20px; margin: 36px 0 14px; letter-spacing: -0.01em; }
+  h2 .count { color: var(--muted); font-weight: 400; font-size: 14px; margin-left: 8px; }
+  h3 { font-size: 15px; margin: 20px 0 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+  .item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; }
+  .item.highlight { border-left: 3px solid var(--score5); }
+  .item-title { font-weight: 600; font-size: 16px; margin: 0 0 6px; }
+  .item-title a { color: var(--accent); text-decoration: none; }
+  .item-title a:hover { text-decoration: underline; }
+  .item-meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0.02em; }
+  .badge.tier1 { background: var(--tier1-bg); color: var(--tier1); }
+  .badge.tier4 { background: var(--tier4-bg); color: var(--tier4); }
+  .score { display: inline-block; width: 22px; height: 22px; border-radius: 50%; font-size: 12px; font-weight: 700; text-align: center; line-height: 22px; color: white; }
+  .score.s5 { background: var(--score5); }
+  .score.s4 { background: var(--score4); }
+  .score.s3 { background: var(--score3); }
+  .summary { font-size: 14px; }
+  .source-group { margin-bottom: 18px; }
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+  footer p { margin: 6px 0; }
+  .nav { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; margin-bottom: 24px; font-size: 13px; }
+  .nav a { color: var(--tier1); text-decoration: none; margin-right: 12px; }
+  .nav a:hover { text-decoration: underline; }
+  .nav strong { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Weekly AI Report — May 30 – Jun 8, 2026</h1>
+  <p class="meta">Week 4 of 4 (covers 10 days, includes partial current week) · One-month retrospective · Generated Jun 8, 2026</p>
+</header>
+
+<nav class="nav">
+  <a href="2026-week-2026-W20.html">Week 1: May 9–15</a> ·
+  <a href="2026-week-2026-W21.html">Week 2: May 16–22</a> ·
+  <a href="2026-week-2026-W22.html">Week 3: May 23–29</a> ·
+  <strong>Week 4: May 30–Jun 8</strong>
+</nav>
+
+<section id="highlights">
+  <h2>Top Highlights</h2>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://aws.amazon.com/blogs/machine-learning/openai-models-and-codex-on-amazon-bedrock-are-now-generally-available" target="_blank">OpenAI frontier models and Codex now GA on AWS Bedrock</a></p>
+    <p class="item-meta"><span class="badge tier1">OpenAI / AWS</span><span>Jun 1, 2026</span><span class="score s5">5</span></p>
+    <p class="summary"><strong>Multi-cloud watershed.</strong> GPT-5.5, GPT-5.4, and Codex GA on Amazon Bedrock — frontier OpenAI models reachable without Azure dependency. Bedrock now hosts Anthropic, Amazon, Meta, and OpenAI frontier models, materially changing multi-cloud AI procurement.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://www.anthropic.com/news/confidential-draft-s1-sec" target="_blank">Anthropic confidentially submits draft S-1 to the SEC</a></p>
+    <p class="item-meta"><span class="badge tier1">Anthropic</span><span>Jun 1, 2026</span><span class="score s5">5</span></p>
+    <p class="summary">Anthropic files confidential S-1 — formal step toward IPO. With the May 28 Series H ($65B at $965B post-money), Anthropic is preparing for public-market scrutiny.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://www.anthropic.com/institute/recursive-self-improvement" target="_blank">When AI builds itself (recursive self-improvement)</a></p>
+    <p class="item-meta"><span class="badge tier1">Anthropic Institute</span><span>Jun 5, 2026 · 17.9M views on X</span><span class="score s5">5</span></p>
+    <p class="summary">Anthropic Institute essay on recursive self-improvement signals. Key data points: <strong>Mythos Preview hit ~52× speedup on the training-acceleration eval (vs. ~3× for Opus 4 in May 2025)</strong>; agents recovered 97% of weak-to-strong supervision gap (humans: 23% in a week, $18k compute); Mythos beats human researchers' next-step calls 64% (up from 22% in 2024). Largest Anthropic communication moment of the month.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code" target="_blank">A harness for every task: dynamic workflows in Claude Code</a></p>
+    <p class="item-meta"><span class="badge tier1">Claude Blog</span><span>Jun 2, 2026</span><span class="score s5">5</span></p>
+    <p class="summary">Follow-up to the May 28 launch. Explains how to think about, build, and trigger dynamic workflows. Introduces the <code>ultracode</code> trigger word and the deep-research/deep-verification example skills built on the primitive.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills" target="_blank">Lessons from building Claude Code: How we use skills</a></p>
+    <p class="item-meta"><span class="badge tier1">Claude Blog</span><span>Jun 3, 2026</span><span class="score s5">5</span></p>
+    <p class="summary">Anthropic Claude Code team's internal taxonomy and best practices for skills. Categorizes skills (data-query, business-process, code-scaffolding, etc.); clarifies skills are folders with scripts/assets/data/dynamic hooks, not just markdown. Author: Thariq Shihipar (@trq212).</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://developers.openai.com/codex/changelog" target="_blank">Codex Sites: build and deploy websites from Codex</a></p>
+    <p class="item-meta"><span class="badge tier4">Codex</span><span>Jun 2, 2026</span><span class="score s5">5</span></p>
+    <p class="summary">Codex now ships a Sites plugin that creates, saves, deploys, and inspects websites/dashboards/internal tools/web apps/games hosted by OpenAI. Direct overlap with Vercel v0, Replit, Bolt — OpenAI pulling "from prompt to deployed site" into its walled garden.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://github.blog/changelog/label/copilot/" target="_blank">Schedule and automate tasks with Copilot cloud agent</a></p>
+    <p class="item-meta"><span class="badge tier4">GitHub Copilot</span><span>Jun 2, 2026</span><span class="score s4">4</span></p>
+    <p class="summary">GitHub Copilot now offers scheduled, autonomous cloud agents. Direct head-to-head with Claude Code background agents and Mistral Vibe remote agents — the cron-style agent pattern is becoming table stakes.</p>
+  </div>
+</section>
+
+<section id="claude">
+  <h2>Anthropic / Claude</h2>
+
+  <div class="source-group">
+    <h3>News</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://www.anthropic.com/news/services-track-partner-hub" target="_blank">Services Track and Partner Hub of the Claude Partner Network</a></p>
+      <p class="item-meta"><span class="badge tier1">Anthropic</span><span>Jun 3, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Formalized services partner channel + partner hub. Enterprise distribution muscle building.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack" target="_blank">What we learned mapping a year's worth of AI-enabled cyber threats</a></p>
+      <p class="item-meta"><span class="badge tier1">Anthropic Policy</span><span>Jun 3, 2026</span><span class="score s4">4</span></p>
+      <p class="summary">Findings from a year of tracking AI-enabled cyber threats — 832 malicious accounts mapped onto MITRE ATT&CK-style threat-actor tactics. Concrete data on how attackers use frontier models. Useful for security tooling design.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://www.anthropic.com/news/expanding-project-glasswing" target="_blank">Expanding Project Glasswing</a></p>
+      <p class="item-meta"><span class="badge tier1">Anthropic</span><span>Jun 2, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Glasswing extended to ~150 new orgs in 15+ countries. Builds on the Week 2 update (10K+ critical vulns found).</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://www.anthropic.com/research/making-claude-a-chemist" target="_blank">Making Claude a chemist (NMR spectroscopy)</a></p>
+      <p class="item-meta"><span class="badge tier1">Anthropic Science</span><span>Jun 5, 2026 · 405K views on X</span><span class="score s4">4</span></p>
+      <p class="summary">Opus 4.7 matches and on some tasks beats dedicated NMR spectroscopy software. Domain-specific frontier-model wins continue to chip away at specialized scientific software.</p>
+    </div>
+  </div>
+
+  <div class="source-group">
+    <h3>Claude Blog</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://claude.com/blog/running-an-ai-native-engineering-org" target="_blank">Running an AI-native engineering org</a></p>
+      <p class="item-meta"><span class="badge tier1">Claude Blog</span><span>Jun 3, 2026</span><span class="score s4">4</span></p>
+      <p class="summary">Fiona Fung (Director of Engineering, Claude Code & Cowork) on rebuilding eng processes for agentic coding. JIT planning replaces 6-month roadmaps; bottleneck moves from coding → verification/review/security.</p>
+    </div>
+  </div>
+</section>
+
+<section id="openai">
+  <h2>OpenAI</h2>
+
+  <div class="item">
+    <p class="item-title"><a href="https://openai.com/news/" target="_blank">Better memory for a more helpful ChatGPT</a></p>
+    <p class="item-meta"><span class="badge tier1">OpenAI Research</span><span>Jun 4, 2026</span><span class="score s4">4</span></p>
+    <p class="summary">Upgraded memory for ChatGPT, durability + cross-session helpfulness. Memory architecture is a live frontier across all vendors right now.</p>
+  </div>
+
+  <div class="item">
+    <p class="item-title"><a href="https://openai.com/news/" target="_blank">Introducing new capabilities to GPT-Rosalind</a></p>
+    <p class="item-meta"><span class="badge tier1">OpenAI Product</span><span>Jun 3, 2026</span><span class="score s4">4</span></p>
+    <p class="summary">New capabilities for GPT-Rosalind specialized model line. Specialized-model strategy continues; check if your domain overlaps before build-vs-buy decisions.</p>
+  </div>
+
+  <div class="item">
+    <p class="item-title"><a href="https://openai.com/news/" target="_blank">Codex for every role, tool, and workflow</a></p>
+    <p class="item-meta"><span class="badge tier1">OpenAI Product</span><span>Jun 2, 2026</span><span class="score s4">4</span></p>
+    <p class="summary">Codex broadening from developer tool to workflow-level coding agent across non-engineering roles. Direct competitive pressure on Claude Code, Cursor.</p>
+  </div>
+
+  <div class="item">
+    <p class="item-title"><a href="https://platform.openai.com/docs/changelog" target="_blank">OpenAI deprecates reusable prompt objects, Evals platform, Agent Builder</a></p>
+    <p class="item-meta"><span class="badge tier4">OpenAI API</span><span>Jun 2026</span><span class="score s4">4</span></p>
+    <p class="summary">Significant API cleanup. Migration guidance on the deprecations page; check shutdown dates before relying on these in new projects.</p>
+  </div>
+</section>
+
+<section id="other-vendors">
+  <h2>Other Vendors / Dev Tools</h2>
+
+  <div class="source-group">
+    <h3>Google</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://research.google/blog/" target="_blank">Unlocking dependable responses with Gemini Enterprise Agent Platform's Agentic RAG</a></p>
+      <p class="item-meta"><span class="badge tier1">Google Research</span><span>Jun 5, 2026</span><span class="score s4">4</span></p>
+      <p class="summary">Hybrid agentic-loop + RAG methodology for higher-reliability answers on Gemini Enterprise Agent Platform. Practical reference for production hybrid retrieval+reasoning architectures.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://research.google/blog/" target="_blank">Open sourcing Google's hydrology framework</a></p>
+      <p class="item-meta"><span class="badge tier1">Google Research</span><span>Jun 3, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Flood-forecasting / hydrology ML framework released. Niche but a clean reference for applied scientific ML pipelines.</p>
+    </div>
+  </div>
+
+  <div class="source-group">
+    <h3>xAI</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://x.ai/news" target="_blank">Composer 2.5</a></p>
+      <p class="item-meta"><span class="badge tier1">xAI</span><span>Jun 1, 2026</span><span class="score s4">4</span></p>
+      <p class="summary">Iteration on Grok's agent/orchestration layer (Composer is xAI's closest analog to Codex / Claude Code).</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://x.ai/news" target="_blank">Grok Build 0.1 on API + Grok Imagine 1.5 Preview</a></p>
+      <p class="item-meta"><span class="badge tier1">xAI</span><span>May 29 / Jun 3</span><span class="score s3">3</span></p>
+      <p class="summary">Grok Build now exposed via API at v0.1 (May 29). Grok Imagine 1.5 Preview (Jun 3) brings new image-generation quality.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://x.ai/news" target="_blank">Grok Becomes the Voice of Vapi</a></p>
+      <p class="item-meta"><span class="badge tier1">xAI</span><span>Jun 3, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Grok voice models powering Vapi's voice-agent platform. Distribution play.</p>
+    </div>
+  </div>
+
+  <div class="source-group">
+    <h3>AWS</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-ultra-now-available-on-amazon-sagemaker-jumpstart" target="_blank">NVIDIA Nemotron 3 Ultra on Amazon SageMaker JumpStart</a></p>
+      <p class="item-meta"><span class="badge tier1">AWS</span><span>Recent (week)</span><span class="score s4">4</span></p>
+      <p class="summary">NVIDIA's Nemotron 3 Ultra — hybrid Transformer-Mamba MoE, optimized for NVFP4, claims 5× faster inference and ~30% lower cost for agentic workloads. One-click deployable on SageMaker JumpStart.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://aws.amazon.com/blogs/aws/category/news" target="_blank">New Bedrock console for Anthropic and OpenAI APIs</a></p>
+      <p class="item-meta"><span class="badge tier1">AWS</span><span>Recent (week)</span><span class="score s3">3</span></p>
+      <p class="summary">Side-by-side model comparison, projects with evaluation workflows, project-aware live docs with auto-prefilled snippets. Quality-of-life for active Bedrock users.</p>
+    </div>
+  </div>
+
+  <div class="source-group">
+    <h3>Dev Tools — Claude Code, Copilot, Cursor</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md" target="_blank">Claude Code 2.1.166 — fallbackModel, hardened cross-session messaging, glob deny rules</a></p>
+      <p class="item-meta"><span class="badge tier4">Claude Code</span><span>Recent</span><span class="score s5">5</span></p>
+      <p class="summary"><code>fallbackModel</code> setting (up to three fallbacks tried in order), glob support in deny rules, hardened <code>SendMessage</code> so cross-session relays no longer carry user authority. Fallback chain alone is a meaningful reliability improvement.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md" target="_blank">Claude Code 2.1.161 — parallel tool failure isolation, OTEL resource attrs as labels</a></p>
+      <p class="item-meta"><span class="badge tier4">Claude Code</span><span>Recent</span><span class="score s4">4</span></p>
+      <p class="summary">A failed Bash in a parallel tool batch no longer cancels sibling calls — directly addresses the cancellation issue that affects fan-out workflows. <code>OTEL_RESOURCE_ATTRIBUTES</code> values now flow as labels on metric datapoints (team/repo slicing).</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md" target="_blank">Claude Code 2.1.163 — managed-version pinning, /plugin list, hook additionalContext</a></p>
+      <p class="item-meta"><span class="badge tier4">Claude Code</span><span>Recent</span><span class="score s4">4</span></p>
+      <p class="summary"><code>requiredMinimumVersion</code>/<code>requiredMaximumVersion</code> managed settings (orgs can pin Claude Code versions). <code>/plugin list</code>. Stop/SubagentStop hooks can return <code>additionalContext</code> to keep a turn going without an error.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://github.blog/changelog/label/copilot/" target="_blank">Gain insights with /chronicle + MAI-Code-1-Flash + Copilot Memory for Business/Enterprise</a></p>
+      <p class="item-meta"><span class="badge tier4">GitHub Copilot</span><span>Jun 2, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Big Copilot update day: <code>/chronicle</code> for cross-session insights, MAI-Code-1-Flash model added, Memory user preferences for Business/Enterprise plans, BYOK + skills + chat in Eclipse, GPT-5.2/5.2-Codex deprecated (Jun 5).</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://www.cursor.com/changelog" target="_blank">Cursor 3.6 — Auto-review Run Mode</a></p>
+      <p class="item-meta"><span class="badge tier4">Cursor</span><span class="uncertain">date uncertain</span><span class="score s4">4</span></p>
+      <p class="summary">Allowlisted Shell/MCP/Fetch calls run immediately, sandboxable calls run in sandbox, classifier subagent decides on the rest. Convergence with Claude Code's permission model.</p>
+    </div>
+  </div>
+</section>
+
+<section id="social">
+  <h2>Social (X via Playwright)</h2>
+
+  <div class="source-group">
+    <h3>@AnthropicAI</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://x.com/AnthropicAI/status/2062568869240476050" target="_blank">Mythos Preview hits ~52× speedup on training-acceleration benchmark</a></p>
+      <p class="item-meta"><span class="badge tier1">X · @AnthropicAI</span><span>Jun 5, 2026 · 951K views</span><span class="score s5">5</span></p>
+      <p class="summary">Standing eval data point: skilled humans need 4–8 hours to reach 4× speedup on training-acceleration. Opus 4 May 2025 averaged ~3×. Mythos Preview hit ~52× this April. Hard concrete number for the recursive-self-improvement debate.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://x.com/AnthropicAI/status/2062568870872003021" target="_blank">Mythos beats human researchers' next-step calls 64% (up from 22% in 2024)</a></p>
+      <p class="item-meta"><span class="badge tier1">X · @AnthropicAI</span><span>Jun 5, 2026 · 367K views</span><span class="score s4">4</span></p>
+      <p class="summary">Take real research sessions where a human took a wrong turn, show Claude up to that point, ask what to do next. A separate Claude (with hindsight) judges. Mythos wins 64% of head-to-heads vs. researchers — up from 22% with 2024-era models.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Week 4 (May 30–Jun 8) summary:</strong> <strong>OpenAI's most active week of the month</strong> — Codex on AWS Bedrock GA, Codex Sites for web deployment, Codex for every role, ChatGPT memory upgrade, GPT-Rosalind capabilities, plus API cleanup (Evals/prompt-objects/Agent-Builder deprecations). Anthropic kept compounding: S-1 filing (Jun 1), recursive-self-improvement essay (Jun 5, 17.9M views), three Claude Code blog posts (dynamic workflows follow-up, skills lessons, AI-native eng org), cyber threats research, NMR chemist post. Claude Code shipped major reliability work in 2.1.161/.163/.166 (parallel-tool failure isolation, fallbackModel chain, version pinning). Copilot had its biggest day on Jun 2 (5+ launches in one day). xAI shipped Composer 2.5, Grok Build API, Voice-of-Vapi.</p>
+  <p><strong>One-month arc summary:</strong> The story of May 9 → Jun 8 is <strong>"agents went mainstream and the frontier ran 10× faster"</strong>. Three threads define it: (1) <em>Recursive self-improvement signals</em> — Mythos 52× speedup, 64% next-step wins, $65B raise, S-1 filed. (2) <em>Background/scheduled agents become table stakes</em> — Claude Code dynamic workflows, Copilot cloud agents, Mistral Vibe remote, OpenAI Codex Sites, Cursor Auto-review. (3) <em>Multi-cloud reset</em> — OpenAI on Bedrock GA, SpaceXAI/Anthropic Colossus deal, Bedrock as the cross-vendor frontier-model hub.</p>
+  <p><strong>Sources scanned:</strong> Same as Week 1.</p>
+  <p><strong>Caveats:</strong> AWS items dated approximately ("Recent (week)") because the AWS what's-new feed surfaced them via search rather than chronological extraction.</p>
+</footer>
+
+</div>
+</body>
+</html>

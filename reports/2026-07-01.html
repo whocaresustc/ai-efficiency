@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Daily AI Report — 2026-07-01 (Backfilled)</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #0f172a; --muted: #64748b;
+    --card: #f8fafc; --border: #e2e8f0; --link: #0369a1;
+    --warn-bg: #fef3c7; --warn-fg: #92400e; --warn-border: #f59e0b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0b1220; --fg: #e2e8f0; --muted: #94a3b8;
+      --card: #111827; --border: #1f2937; --link: #7dd3fc;
+      --warn-bg: #78350f; --warn-fg: #fde68a; --warn-border: #fbbf24; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--fg); background: var(--bg); padding: 32px 20px 80px; }
+  main { max-width: 800px; margin: 0 auto; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 24px; }
+  header h1 { margin: 0 0 6px 0; font-size: 26px; }
+  header .meta { color: var(--muted); font-size: 14px; }
+  .backfill-notice {
+    background: var(--warn-bg); color: var(--warn-fg);
+    border-left: 4px solid var(--warn-border);
+    padding: 16px 20px; border-radius: 4px;
+    font-size: 14.5px; margin: 20px 0 32px;
+  }
+  .backfill-notice strong { display: block; margin-bottom: 6px; font-size: 15px; }
+  h2 { font-size: 18px; margin-top: 32px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  a { color: var(--link); }
+  ul { padding-left: 22px; }
+  li { margin: 6px 0; }
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>Daily AI Report — 2026-07-01</h1>
+  <div class="meta">⚠ Backfilled report — generated on 2026-07-02 from current-state source snapshots</div>
+</header>
+
+<div class="backfill-notice">
+  <strong>⚠ This report was backfilled on 2026-07-02.</strong>
+  The daily-report cron did not run between 2026-06-12 and 2026-07-01. The sources this pipeline consumes (vendor news pages, changelogs, X.com timelines) reflect the state of the web at fetch time — they do not preserve per-day snapshots — so this file cannot faithfully reconstruct what was newly published on <strong>2026-07-01</strong> specifically. To keep the reports directory contiguous without fabricating dated attributions, this placeholder points readers to the consolidated Jul 2 report and lists the notable items that landed in the overall backfill window.
+</div>
+
+<h2>What was covered in the backfill window (2026-06-12 → 2026-07-01)</h2>
+<p>Highlights extracted from Anthropic, OpenAI, Google DeepMind, GitHub Copilot, Cursor, and Claude Code release channels — chronologically approximate rather than day-precise:</p>
+<ul>
+  <li><strong>Jul 1</strong> — Anthropic Fable 5 redeployed globally after US export-control suspension lifted; jailbreak-severity framework proposed with Glasswing partners</li>
+  <li><strong>Jul 1</strong> — Kimi K2.7 Code GA in GitHub Copilot (first open-weight model in the picker)</li>
+  <li><strong>Jun 30</strong> — Claude Sonnet 5 launch (1M-token context; default in Claude Code v2.1.197)</li>
+  <li><strong>Jun 30</strong> — Google Nano Banana 2 Lite + Gemini Omni Flash paired via Interactions API</li>
+  <li><strong>Jun 30</strong> — OpenAI GeneBench-Pro benchmark for biological-data agents</li>
+  <li><strong>Jun 30</strong> — Claude Sonnet 5 GA on GitHub Copilot</li>
+  <li><strong>Jun 29</strong> — Claude Opus 4.8 fast mode in preview on GitHub Copilot at reduced cost</li>
+  <li><strong>Jun 26</strong> — Anthropic Economic Index "Cadences" report (first hourly sampling); Claude Tag for Slack team workflows; OpenAI GPT-5.6 Sol/Terra/Luna preview + safety system card</li>
+  <li><strong>Jun 25</strong> — Trusted Devices for Claude Code Remote Control (Team/Enterprise)</li>
+  <li><strong>Jun 23</strong> — Mistral OCR 4 released</li>
+  <li><strong>Jun 24</strong> — Mistral connector-control update</li>
+  <li><strong>Jun 18</strong> — Anthropic Project Fetch: Phase 2 (robodog programming, Opus 4.7 ~20x faster than best human team)</li>
+  <li><strong>Jun 16</strong> — Original Project Fetch experiments</li>
+</ul>
+
+<h2>For the full narrative</h2>
+<p>See the <a href="./2026-07-02.html">consolidated 2026-07-02 daily report</a>, which contains the actual scored/summarized items from the current source snapshot.</p>
+
+<footer>
+  <strong>Why this file exists:</strong> to keep <code>reports/</code> contiguous between the last successful run (2026-06-11) and 2026-07-02, and to be honest about what could and could not be reconstructed after a 20-day gap.
+</footer>
+
+</main>
+</body>
+</html>

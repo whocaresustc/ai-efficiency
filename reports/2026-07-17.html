@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily AI Report — 2026-07-17</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --card: #f7f7f8;
+    --border: #e2e2e5;
+    --accent: #5b5bd6;
+    --tier1: #2563eb;
+    --tier1-bg: #e8f0fe;
+    --tier4: #059669;
+    --tier4-bg: #e6f6ef;
+    --tier2: #b45309;
+    --tier2-bg: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16171a;
+      --fg: #e8e8ea;
+      --muted: #9a9aa2;
+      --card: #202126;
+      --border: #303138;
+      --accent: #8b8bf0;
+      --tier1: #6ea0ff;
+      --tier1-bg: #1a2740;
+      --tier4: #4ade9c;
+      --tier4-bg: #14331f;
+      --tier2: #f0b366;
+      --tier2-bg: #3a2c14;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    margin: 0;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 32px 20px 64px; }
+  header.top { border-bottom: 2px solid var(--border); padding-bottom: 18px; margin-bottom: 28px; }
+  header.top h1 { font-size: 1.6rem; margin: 0 0 6px; letter-spacing: -0.02em; }
+  header.top .meta { color: var(--muted); font-size: 0.86rem; }
+  .backfill-note {
+    background: var(--tier2-bg); color: var(--tier2);
+    border: 1px solid var(--tier2); border-radius: 8px;
+    padding: 8px 12px; font-size: 0.82rem; margin-top: 12px; font-weight: 600;
+  }
+  section { margin-bottom: 34px; }
+  section h2 {
+    font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--muted); border-bottom: 1px solid var(--border);
+    padding-bottom: 6px; margin-bottom: 16px;
+  }
+  .item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 16px; margin-bottom: 14px;
+  }
+  .item .title { font-size: 1.02rem; font-weight: 650; margin: 0 0 8px; }
+  .item .title a { color: var(--fg); text-decoration: none; }
+  .item .title a:hover { color: var(--accent); text-decoration: underline; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; }
+  .badge {
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.04em; padding: 2px 8px; border-radius: 20px;
+  }
+  .badge.t1 { background: var(--tier1-bg); color: var(--tier1); }
+  .badge.t4 { background: var(--tier4-bg); color: var(--tier4); }
+  .badge.t2 { background: var(--tier2-bg); color: var(--tier2); }
+  .badge.src { background: transparent; border: 1px solid var(--border); color: var(--muted); }
+  .score { font-size: 0.78rem; color: var(--muted); font-weight: 600; }
+  .summary { font-size: 0.92rem; margin: 0; color: var(--fg); }
+  .quiet {
+    background: var(--card); border: 1px dashed var(--border);
+    border-radius: 10px; padding: 22px; text-align: center; color: var(--muted);
+  }
+  .quiet strong { color: var(--fg); font-size: 1.05rem; }
+  footer.bot {
+    border-top: 1px solid var(--border); margin-top: 40px; padding-top: 18px;
+    font-size: 0.8rem; color: var(--muted);
+  }
+  footer.bot p { margin: 6px 0; }
+  footer.bot .label { font-weight: 700; color: var(--fg); }
+  code { background: var(--card); padding: 1px 5px; border-radius: 4px; font-size: 0.85em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <h1>Daily AI Report — 2026-07-17</h1>
+    <div class="meta">Generated 2026-07-17 · 1 item from 38 sources scanned · 24-hour lookback window</div>
+  </header>
+
+  <section id="highlights">
+    <h2>Top Highlights</h2>
+    <div class="item">
+      <div class="title"><a href="https://x.com/SpaceXAI/status/2077541915227222100" target="_blank" rel="noopener">Grok 4.5 lands #2 on Proximal's FrontierSWE coding benchmark, #1 on research</a></div>
+      <div class="row">
+        <span class="badge t1">Tier 1 · Vendor</span>
+        <span class="badge src">X: @SpaceXAI (xAI)</span>
+        <span class="score">Relevance 3/5 · ~23h ago</span>
+      </div>
+      <p class="summary">xAI (now posting as @SpaceXAI) amplified Proximal's FrontierSWE leaderboard placing Grok 4.5 second on combined implementation and performance and first on research ability, trailing only Claude Fable 5 and ranking above Opus 4.8, GPT-5.5, and GLM-5.2. For engineers choosing a coding-agent model, third-party SWE benchmarks like FrontierSWE are a useful cross-check on vendor claims, though this is a promotional quote of a third-party post rather than a new capability release.</p>
+    </div>
+  </section>
+
+  <section id="vendor">
+    <h2>Vendor Announcements (Tier 1)</h2>
+    <div class="quiet">
+      No standalone vendor announcements cleared the relevance bar in the last 24h beyond the highlight above. Vendor blogs (Anthropic, Claude, OpenAI, Google DeepMind, AWS, Mistral) had no new posts inside the window — their newest items date to Jul&nbsp;6–15. Social activity was light: @OpenAI posted podcast/marketing clips (racing collaboration) and @GoogleDeepMind posted a bioresilience partnership note — both below the Tier&nbsp;1 relevance threshold (score&nbsp;2).
+    </div>
+  </section>
+
+  <section id="devtools">
+    <h2>Dev Tools (Tier 4)</h2>
+    <div class="quiet">
+      No AI-relevant dev-tool releases in the last 24h. Claude Code, Cursor, OpenAI Codex, and the Gemini API changelogs showed no new entries in the window. GitHub's changelog had a Jul&nbsp;16 item ("Repository admins can archive pull requests") but it's a generic platform feature, not an AI/agent capability — below threshold.
+    </div>
+  </section>
+
+  <footer class="bot">
+    <p><span class="label">Sources scanned (38):</span> Anthropic News, Claude Blog, Claude Release Notes, Anthropic Engineering, Anthropic Research, Anthropic Institute, Anthropic Frontier Red Team, OpenAI News, OpenAI Research, OpenAI API Changelog, OpenAI Codex Changelog, Google DeepMind Blog, Google AI Blog, Gemini API Changelog, Google Research Blog, Meta AI Blog, Microsoft AI Blog, AWS What's New (AI/ML), Mistral News, xAI News, Claude Code Changelog, Cursor Changelog, Aider Releases, GitHub Copilot Changelog, Continue.dev Releases, GitHub Trending (AI/ML), Hugging Face Daily Papers, Simon Willison's Blog, and X.com accounts (@AnthropicAI, @OpenAI, @GoogleDeepMind, @MistralAI, @SpaceXAI/xai, @sama, @karpathy, @simonw, @trq212, @swyx).</p>
+    <p><span class="label">Quiet sources (no in-window items):</span> All vendor blogs and dev-tool changelogs (newest content Jul&nbsp;6–15). X accounts @AnthropicAI (newest Jul&nbsp;15), @karpathy, @simonw, @MistralAI (logged-out view served older top-tweets, no fresh 24h posts). Below-threshold in-window activity: @OpenAI (podcast/racing marketing, score&nbsp;2), @GoogleDeepMind (bioresilience partnership, score&nbsp;2).</p>
+    <p><span class="label">Failed sources:</span> X: @sama — profile returned a 404 in the logged-out view ("account may be private, deleted, or only available on the app").</p>
+    <p><span class="label">Notes:</span> Logged-out X timelines for individual curators (@simonw, @karpathy) and @MistralAI serve "top" rather than chronological tweets, limiting fresh-item detection. xAI's <code>/xai</code> handle now redirects to <code>@SpaceXAI</code>.</p>
+    <p style="margin-top:14px; opacity:0.7;">Generated from repo <code>ai-efficiency</code>, branch <code>main</code>, via <code>scripts/daily-ai-report</code>.</p>
+  </footer>
+
+</div>
+</body>
+</html>

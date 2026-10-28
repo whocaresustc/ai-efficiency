@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Daily AI Report — 2026-06-10</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --bg:#fafafa; --fg:#1a1a1a; --muted:#666; --card:#fff; --border:#e5e5e5; --tier1:#2563eb; --tier1-bg:#dbeafe; --tier4:#16a34a; --tier4-bg:#dcfce7; --score5:#dc2626; --score4:#ea580c; --score3:#ca8a04; --accent:#1a1a1a; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f0f10; --fg:#e8e8e8; --muted:#9a9a9a; --card:#18181b; --border:#27272a; --tier1:#60a5fa; --tier1-bg:#1e3a8a; --tier4:#4ade80; --tier4-bg:#14532d; --score5:#f87171; --score4:#fb923c; --score3:#facc15; --accent:#fafafa; } }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--fg); margin: 0; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 32px 20px 80px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 28px; }
+  h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .meta { color: var(--muted); font-size: 14px; }
+  h2 { font-size: 20px; margin: 36px 0 14px; letter-spacing: -0.01em; }
+  h2 .count { color: var(--muted); font-weight: 400; font-size: 14px; margin-left: 8px; }
+  h3 { font-size: 15px; margin: 20px 0 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+  .item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; }
+  .item.highlight { border-left: 3px solid var(--score5); }
+  .item-title { font-weight: 600; font-size: 16px; margin: 0 0 6px; }
+  .item-title a { color: var(--accent); text-decoration: none; }
+  .item-title a:hover { text-decoration: underline; }
+  .item-meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0.02em; }
+  .badge.tier1 { background: var(--tier1-bg); color: var(--tier1); }
+  .badge.tier4 { background: var(--tier4-bg); color: var(--tier4); }
+  .score { display: inline-block; width: 22px; height: 22px; border-radius: 50%; font-size: 12px; font-weight: 700; text-align: center; line-height: 22px; color: white; }
+  .score.s5 { background: var(--score5); }
+  .score.s4 { background: var(--score4); }
+  .score.s3 { background: var(--score3); }
+  .summary { font-size: 14px; color: var(--fg); }
+  .source-group { margin-bottom: 18px; }
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+  footer p { margin: 6px 0; }
+  .late { background: #fef3c7; color: #92400e; padding: 8px 12px; border-radius: 6px; font-size: 13px; margin-bottom: 16px; }
+  @media (prefers-color-scheme: dark) { .late { background: #422006; color: #fbbf24; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily AI Report — June 10, 2026</h1>
+  <p class="meta">Generated 2026-06-11 (one day late) · 24h lookback (Jun 9–10)</p>
+  <p class="late">⚠️ <strong>Backfilled report:</strong> Jun 10's cron run fetched the data but didn't write the HTML before the day rolled over. Content here is reconstructed from the same fetch round, dated for the Jun 9–10 window.</p>
+</header>
+
+<section id="highlights">
+  <h2>Top Highlights</h2>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank">Claude Fable 5 and Claude Mythos 5</a></p>
+    <p class="item-meta">
+      <span class="badge tier1">Anthropic</span>
+      <span>Jun 9, 2026</span>
+      <span class="score s5">5</span>
+    </p>
+    <p class="summary"><strong>Major model release.</strong> Claude Fable 5 — a Mythos-class model made safe for general use — is GA today, with capabilities exceeding any Anthropic model previously made generally available; state-of-the-art on nearly all tested benchmarks. Mythos 5 (same underlying model, safeguards lifted in some areas) is restricted to Project Glasswing partners and select biology researchers. Pricing $10/$50 per Mtok in/out — less than half the price of Mythos Preview.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank">Fable 5: software engineering and long-horizon benchmarks</a></p>
+    <p class="item-meta">
+      <span class="badge tier1">Anthropic</span>
+      <span>Jun 9, 2026</span>
+      <span class="score s5">5</span>
+    </p>
+    <p class="summary">Concrete numbers from early customer testing: Stripe reports a 50M-line Ruby codebase-wide migration done in a day vs. a team-months estimate; highest score on Cognition's FrontierCode eval even at medium effort. Hebbia Finance Benchmark: top score on senior-level reasoning. Cursor: "highest model on CursorBench, opens up long-horizon problems out of reach for earlier models." Worth re-evaluating any agent harness for token-efficiency improvements.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank">Fable 5: vision, memory, and long-context capabilities</a></p>
+    <p class="item-meta">
+      <span class="badge tier1">Anthropic</span>
+      <span>Jun 9, 2026</span>
+      <span class="score s4">4</span>
+    </p>
+    <p class="summary">New SOTA on vision tasks — rebuilds web-app source code from screenshots alone; beat Pokémon FireRed with vision-only harness (earlier Claudes needed scaffolding). Stays focused across millions of tokens; with persistent file-based memory, Fable's <em>Slay the Spire</em> performance improved 3× more than Opus 4.8's. Practical implication: vision-driven agent loops just got materially less brittle.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank">Mythos 5: drug design + autonomous genomics research</a></p>
+    <p class="item-meta">
+      <span class="badge tier1">Anthropic</span>
+      <span>Jun 9, 2026</span>
+      <span class="score s5">5</span>
+    </p>
+    <p class="summary">Anthropic's internal protein-design experts report Mythos 5 ~10× accelerates parts of drug design; matches or beats skilled human operators end-to-end on 9 of 14 protein targets. Mythos 5 produced a novel <em>E. coli</em> protein-mechanism hypothesis that was independently corroborated by another lab; in blind head-to-head, scientists prefer Mythos's molecular biology hypotheses ~80% of the time vs. Opus-class models. Over a week of largely autonomous work, Mythos assembled single-cell data for millions of cells across 138 species and trained a custom ML model that beat a recent <em>Science</em> publication while being 100× smaller.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md" target="_blank">Claude Code 2.1.170 — Fable 5 access</a></p>
+    <p class="item-meta">
+      <span class="badge tier4">Claude Code</span>
+      <span>Jun 9–10, 2026</span>
+      <span class="score s5">5</span>
+    </p>
+    <p class="summary">Claude Code release notes for 2.1.170: "Introducing Claude Fable 5: a Mythos-class model that we've made safe for general use. Fable's capabilities exceed those of any model we've ever made generally available. Update to version 2.1.170 for access." Also: fixed a session-transcript-not-saving bug for sessions launched from VS Code integrated terminal.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://openai.com/news/" target="_blank">OpenAI: Built to benefit everyone — OpenAI's plan</a></p>
+    <p class="item-meta">
+      <span class="badge tier1">OpenAI</span>
+      <span>Jun 8, 2026 (within 24h window)</span>
+      <span class="score s4">4</span>
+    </p>
+    <p class="summary">OpenAI's strategic mission post, shared on X by Chief Scientist Jakub Pachocki: framing "north stars" around AGI benefiting humanity and expanding human agency. The simultaneous Anthropic Fable 5 launch + OpenAI mission-restatement on the same news listing is the most prominent positioning contrast of the month.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://openai.com/news/" target="_blank">OpenAI: Confidential submission of draft S-1 to the SEC</a></p>
+    <p class="item-meta">
+      <span class="badge tier1">OpenAI</span>
+      <span>Jun 8, 2026 (within 24h window)</span>
+      <span class="score s5">5</span>
+    </p>
+    <p class="summary">OpenAI has confidentially filed a draft S-1 with the SEC. Combined with Anthropic's confidential S-1 filing on Jun 1, both frontier labs are now formally preparing for public listings within a week of each other. Significant signal for the AI capital cycle and frontier-compute funding model.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://openai.com/news/" target="_blank">OpenAI Economic Research Exchange</a></p>
+    <p class="item-meta">
+      <span class="badge tier1">OpenAI</span>
+      <span>Jun 8, 2026 (within 24h window)</span>
+      <span class="score s3">3</span>
+    </p>
+    <p class="summary">New OpenAI economic-research forum, mirroring Anthropic's Economic Futures / Anthropic Institute. Cross-lab convergence on labor-economics and AI-impact research as a policy positioning surface.</p>
+  </div>
+</section>
+
+<section id="vendor">
+  <h2>Safety &amp; Safeguards — Fable 5 / Mythos 5 details</h2>
+
+  <div class="item">
+    <p class="item-title"><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank">Fable 5 safety classifiers + fallback to Opus 4.8</a></p>
+    <p class="item-meta">
+      <span class="badge tier1">Anthropic Safety</span>
+      <span>Jun 9, 2026</span>
+      <span class="score s4">4</span>
+    </p>
+    <p class="summary">Fable 5 ships with classifiers covering cybersecurity, biology/chemistry, and distillation; flagged queries fall back to Opus 4.8 (not refused outright). Anthropic claims &lt;5% of sessions trigger a fallback; &gt;95% see no fallback at all. External red-teaming + bug bounty (&gt;1000 hours) found no universal jailbreaks on long-form agentic tasks. New 30-day retention policy for Mythos-class traffic (not used for training; safety/false-positive analysis only).</p>
+  </div>
+
+  <div class="item">
+    <p class="item-title"><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank">Fable 5 rollout: free on subscription plans through Jun 22, then credit-based</a></p>
+    <p class="item-meta">
+      <span class="badge tier1">Anthropic</span>
+      <span>Jun 9, 2026</span>
+      <span class="score s3">3</span>
+    </p>
+    <p class="summary">Pro/Max/Team/Enterprise seat-based plans include Fable 5 at no extra cost through Jun 22; after that, usage credits required until capacity allows it to return as a standard plan inclusion. API and consumption-based Enterprise are fully available from launch. Plan accordingly if you rely on subscription access.</p>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Sources scanned (31):</strong> Anthropic News, Claude Blog, Claude Release Notes, Anthropic Engineering, Anthropic Research, Anthropic Institute, Anthropic Frontier Red Team, OpenAI News, OpenAI Research, OpenAI API Changelog, OpenAI Codex Changelog, Google DeepMind, Google Research, Google AI Blog, Gemini API Changelog, Meta AI, Microsoft AI, AWS, Mistral, xAI, Claude Code Changelog, Cursor, Aider, GitHub Copilot Changelog, Continue.dev, GitHub Trending, Hugging Face Papers, Simon Willison.</p>
+  <p><strong>Failed sources:</strong> X via Playwright (60s timeout on @AnthropicAI navigation). Other sources all succeeded.</p>
+  <p><strong>Quiet sources:</strong> Most non-Anthropic/OpenAI sources had nothing new in the 24h window. Claude Blog last post May 28; DeepMind/Google Research last post Jun 5; Mistral last post May 28; Meta AI last post Apr 8.</p>
+  <p><strong>Note on the day:</strong> The most significant single day for frontier model launches since the Anthropic Opus 4.8 / dynamic workflows / Series H day (May 28). Fable 5 is the first publicly-available Mythos-class model from Anthropic and arrives with concrete drug-design and autonomous-genomics results. OpenAI matched with their own S-1 filing — both frontier labs now confidentially registered for public listing.</p>
+  <p>Backfilled by the daily AI report cron · scripts/daily-ai-report/PROMPT.md</p>
+</footer>
+
+</div>
+</body>
+</html>

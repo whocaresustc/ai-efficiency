@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weekly AI Report — May 9–15, 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --bg:#fafafa; --fg:#1a1a1a; --muted:#666; --card:#fff; --border:#e5e5e5; --tier1:#2563eb; --tier1-bg:#dbeafe; --tier4:#16a34a; --tier4-bg:#dcfce7; --score5:#dc2626; --score4:#ea580c; --score3:#ca8a04; --accent:#1a1a1a; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f0f10; --fg:#e8e8e8; --muted:#9a9a9a; --card:#18181b; --border:#27272a; --tier1:#60a5fa; --tier1-bg:#1e3a8a; --tier4:#4ade80; --tier4-bg:#14532d; --score5:#f87171; --score4:#fb923c; --score3:#facc15; --accent:#fafafa; } }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--fg); margin: 0; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 32px 20px 80px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 28px; }
+  h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .meta { color: var(--muted); font-size: 14px; }
+  h2 { font-size: 20px; margin: 36px 0 14px; letter-spacing: -0.01em; }
+  h2 .count { color: var(--muted); font-weight: 400; font-size: 14px; margin-left: 8px; }
+  h3 { font-size: 15px; margin: 20px 0 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+  .item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; }
+  .item.highlight { border-left: 3px solid var(--score5); }
+  .item-title { font-weight: 600; font-size: 16px; margin: 0 0 6px; }
+  .item-title a { color: var(--accent); text-decoration: none; }
+  .item-title a:hover { text-decoration: underline; }
+  .item-meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0.02em; }
+  .badge.tier1 { background: var(--tier1-bg); color: var(--tier1); }
+  .badge.tier4 { background: var(--tier4-bg); color: var(--tier4); }
+  .score { display: inline-block; width: 22px; height: 22px; border-radius: 50%; font-size: 12px; font-weight: 700; text-align: center; line-height: 22px; color: white; }
+  .score.s5 { background: var(--score5); }
+  .score.s4 { background: var(--score4); }
+  .score.s3 { background: var(--score3); }
+  .summary { font-size: 14px; }
+  .source-group { margin-bottom: 18px; }
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+  footer p { margin: 6px 0; }
+  .nav { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; margin-bottom: 24px; font-size: 13px; }
+  .nav a { color: var(--tier1); text-decoration: none; margin-right: 12px; }
+  .nav a:hover { text-decoration: underline; }
+  .nav strong { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Weekly AI Report — May 9–15, 2026</h1>
+  <p class="meta">Week 1 of 4 · One-month retrospective · Generated Jun 8, 2026</p>
+</header>
+
+<nav class="nav">
+  <strong>Week 1: May 9–15</strong> ·
+  <a href="2026-week-2026-W21.html">Week 2: May 16–22</a> ·
+  <a href="2026-week-2026-W22.html">Week 3: May 23–29</a> ·
+  <a href="2026-week-2026-W23.html">Week 4: May 30–Jun 8</a>
+</nav>
+
+<section id="highlights">
+  <h2>Top Highlights</h2>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://www.anthropic.com/research/two-scenarios-for-global-ai-leadership" target="_blank">2028: Two scenarios for global AI leadership</a></p>
+    <p class="item-meta"><span class="badge tier1">Anthropic Policy</span><span>May 14, 2026</span><span class="score s4">4</span></p>
+    <p class="summary">Anthropic Policy team publishes a scenario-planning piece on what global AI leadership could look like in 2028. Important framing for any team thinking 2-3 years out — particularly relevant for anyone navigating compute partnerships or sovereign-AI policy questions.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://www.anthropic.com/research/natural-language-autoencoders" target="_blank">Natural Language Autoencoders: Turning Claude's thoughts into text</a></p>
+    <p class="item-meta"><span class="badge tier1">Anthropic Interpretability</span><span>May 7, 2026</span><span class="score s4">4</span></p>
+    <p class="summary">Note: this slipped into Week 1's window from the Thu prior. Anthropic Interpretability team trains Claude to translate its own internal numerical representations into human-readable text — significant interpretability primitive that could feed into safety research and debugging tools. ("AI models like Claude talk in words but think in numbers.")</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://research.google/blog/empirical-research-assistance" target="_blank">Empirical Research Assistance (ERA): From Nature publication to catalyzing Computational Discovery</a></p>
+    <p class="item-meta"><span class="badge tier1">Google Research</span><span>May 19, 2026 (note: just outside Week 1 — included for context)</span><span class="score s3">3</span></p>
+    <p class="summary">Google Research follow-up to their Nature paper on AI-driven scientific discovery. Demonstrates how the ERA framework is being applied across multiple research areas. Edge of Week 1 — anchor item, full coverage in Week 2.</p>
+  </div>
+</section>
+
+<section id="vendor">
+  <h2>Vendor Announcements</h2>
+
+  <div class="source-group">
+    <h3>Anthropic</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://www.anthropic.com/research/teaching-claude-why" target="_blank">Teaching Claude why</a></p>
+      <p class="item-meta"><span class="badge tier1">Anthropic Alignment</span><span>May 8, 2026</span><span class="score s4">4</span></p>
+      <p class="summary">New alignment research on how Anthropic has reduced agentic misalignment. The "why" framing — explaining intent rather than just behavior — is methodologically interesting for anyone building agent training pipelines.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://www.anthropic.com/research/natural-language-autoencoders" target="_blank">Natural Language Autoencoders: Turning Claude's thoughts into text</a></p>
+      <p class="item-meta"><span class="badge tier1">Anthropic Interpretability</span><span>May 7, 2026</span><span class="score s4">4</span></p>
+      <p class="summary">Trains Claude to translate its internal numerical thoughts into human-readable text — a step toward making chain-of-thought transparency more reliable than current natural-language reasoning traces.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://www.anthropic.com/research/donating-open-source-alignment-tool" target="_blank">Donating our open-source alignment tool</a></p>
+      <p class="item-meta"><span class="badge tier1">Anthropic Alignment</span><span>May 7, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Anthropic releases an internal alignment tool to the open-source community. Practical contribution to the safety ecosystem — worth investigating if you're doing alignment evals.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://www.anthropic.com/research/anthropic-institute-focus-areas" target="_blank">Focus areas for The Anthropic Institute</a></p>
+      <p class="item-meta"><span class="badge tier1">Anthropic Policy</span><span>May 7, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Anthropic Institute publishes its research agenda: AI/jobs/economy, threats and resilience, AI behavior in the wild, AI R&D governance. Useful map of Anthropic's policy/social-impact work.</p>
+    </div>
+  </div>
+
+  <div class="source-group">
+    <h3>Claude Blog</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://claude.com/blog/claude-managed-agents-dreaming" target="_blank">New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration</a></p>
+      <p class="item-meta"><span class="badge tier1">Claude Blog</span><span>May 6, 2026 (early Week 1)</span><span class="score s4">4</span></p>
+      <p class="summary">Claude Managed Agents adds "dreaming" (offline planning/simulation), explicit outcome tracking, and multiagent orchestration. Relevant for anyone evaluating managed-agent platforms vs. self-hosted (Claude Code, Codex, etc.).</p>
+    </div>
+  </div>
+
+  <div class="source-group">
+    <h3>xAI</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://x.ai/news" target="_blank">Skills in web, iOS, and Android — persistent expertise for Grok</a></p>
+      <p class="item-meta"><span class="badge tier1">xAI</span><span>May 18, 2026 (just outside Week 1)</span><span class="score s3">3</span></p>
+      <p class="summary">xAI rolls out Skills (similar pattern to Anthropic skills) for Grok across web, iOS, Android. Convergence signal: skill-as-folder-with-instructions is becoming a cross-vendor pattern.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://x.ai/news" target="_blank">Connect Grok to Hermes Agent</a></p>
+      <p class="item-meta"><span class="badge tier1">xAI</span><span>May 15, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Grok subscriptions can now be used inside Nous Research's open-source Hermes agent. Notable as a partnership between proprietary frontier-vendor and open-source agent ecosystem — counterpoint to walled-garden trend.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://x.ai/news" target="_blank">New Compute Partnership: SpaceX/xAI signs agreement with Anthropic for Colossus 1 access</a></p>
+      <p class="item-meta"><span class="badge tier1">xAI</span><span>May 6, 2026 (early Week 1)</span><span class="score s5">5</span></p>
+      <p class="summary"><strong>Major.</strong> SpaceXAI signed an agreement with Anthropic providing Anthropic access to Colossus 1 (xAI's training cluster). Cross-frontier-lab compute deal — Anthropic gets compute, xAI gets revenue. Directly relevant context for the May 28 Anthropic Series H ($65B at $965B post-money) since it suggests a multi-vendor compute strategy.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://x.ai/news" target="_blank">Connectors in web, iOS, Android</a></p>
+      <p class="item-meta"><span class="badge tier1">xAI</span><span>May 6, 2026 (early Week 1)</span><span class="score s3">3</span></p>
+      <p class="summary">Grok adds deep integrations with everyday apps. Mirrors Anthropic's connectors push earlier in 2026.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://x.ai/news" target="_blank">Grok Imagine Quality Mode API</a></p>
+      <p class="item-meta"><span class="badge tier1">xAI</span><span>May 6, 2026 (early Week 1)</span><span class="score s3">3</span></p>
+      <p class="summary">Higher-realism image generation via API: better text rendering, more creative control. Relevant for content/creative pipelines comparing across vendors.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Week 1 (May 9–15) summary:</strong> Quieter week. Anthropic published several research/policy items (Teaching Claude why, Natural Language Autoencoders) clustered around May 7–14 — many landed just before or in the early window. Biggest news item: <strong>SpaceXAI–Anthropic compute partnership (May 6)</strong> — xAI providing Colossus 1 access to Anthropic. xAI itself shipped 4 product items. OpenAI, Meta, Microsoft, Mistral were quiet this week. Google was building toward I/O 2026 (next week).</p>
+  <p><strong>Sources scanned:</strong> Anthropic News/Blog/Research/Engineering, Claude Blog, OpenAI News/Research, Google DeepMind/Research/AI Blog, Meta AI, Microsoft AI, Mistral, xAI, Claude Code CHANGELOG, Cursor, Aider, Continue, Copilot, X via Playwright (limited to last week of timeline).</p>
+  <p><strong>Caveats for retrospective:</strong> X coverage for May 9–15 is incomplete — Playwright only fetches ~7 days of timeline; this week is older than the available window. Cursor/Aider/Continue/Microsoft AI dates not always machine-readable from listing pages. Some items dated May 7 or May 19 are included as edge anchors when they bracket Week 1's quieter content.</p>
+</footer>
+
+</div>
+</body>
+</html>

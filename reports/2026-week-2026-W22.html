@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weekly AI Report — May 23–29, 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --bg:#fafafa; --fg:#1a1a1a; --muted:#666; --card:#fff; --border:#e5e5e5; --tier1:#2563eb; --tier1-bg:#dbeafe; --tier4:#16a34a; --tier4-bg:#dcfce7; --score5:#dc2626; --score4:#ea580c; --score3:#ca8a04; --accent:#1a1a1a; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f0f10; --fg:#e8e8e8; --muted:#9a9a9a; --card:#18181b; --border:#27272a; --tier1:#60a5fa; --tier1-bg:#1e3a8a; --tier4:#4ade80; --tier4-bg:#14532d; --score5:#f87171; --score4:#fb923c; --score3:#facc15; --accent:#fafafa; } }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--fg); margin: 0; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 32px 20px 80px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 28px; }
+  h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .meta { color: var(--muted); font-size: 14px; }
+  h2 { font-size: 20px; margin: 36px 0 14px; letter-spacing: -0.01em; }
+  h2 .count { color: var(--muted); font-weight: 400; font-size: 14px; margin-left: 8px; }
+  h3 { font-size: 15px; margin: 20px 0 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+  .item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; }
+  .item.highlight { border-left: 3px solid var(--score5); }
+  .item-title { font-weight: 600; font-size: 16px; margin: 0 0 6px; }
+  .item-title a { color: var(--accent); text-decoration: none; }
+  .item-title a:hover { text-decoration: underline; }
+  .item-meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0.02em; }
+  .badge.tier1 { background: var(--tier1-bg); color: var(--tier1); }
+  .badge.tier4 { background: var(--tier4-bg); color: var(--tier4); }
+  .score { display: inline-block; width: 22px; height: 22px; border-radius: 50%; font-size: 12px; font-weight: 700; text-align: center; line-height: 22px; color: white; }
+  .score.s5 { background: var(--score5); }
+  .score.s4 { background: var(--score4); }
+  .score.s3 { background: var(--score3); }
+  .summary { font-size: 14px; }
+  .source-group { margin-bottom: 18px; }
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+  footer p { margin: 6px 0; }
+  .nav { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; margin-bottom: 24px; font-size: 13px; }
+  .nav a { color: var(--tier1); text-decoration: none; margin-right: 12px; }
+  .nav a:hover { text-decoration: underline; }
+  .nav strong { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Weekly AI Report — May 23–29, 2026</h1>
+  <p class="meta">Week 3 of 4 · One-month retrospective · Generated Jun 8, 2026</p>
+</header>
+
+<nav class="nav">
+  <a href="2026-week-2026-W20.html">Week 1: May 9–15</a> ·
+  <a href="2026-week-2026-W21.html">Week 2: May 16–22</a> ·
+  <strong>Week 3: May 23–29</strong> ·
+  <a href="2026-week-2026-W23.html">Week 4: May 30–Jun 8</a>
+</nav>
+
+<section id="highlights">
+  <h2>Top Highlights</h2>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://www.anthropic.com/news/claude-opus-4-8" target="_blank">Introducing Claude Opus 4.8</a></p>
+    <p class="item-meta"><span class="badge tier1">Anthropic</span><span>May 28, 2026</span><span class="score s5">5</span></p>
+    <p class="summary"><strong>Major model release.</strong> Opus 4.8 launched with default high effort and <code>/effort xhigh</code> for the hardest tasks (per Claude Code 2.1.154 changelog). Fast mode on Opus 4.8 at 2× standard rate for 2.5× speed. The current default for serious agentic work in Claude Code.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://www.anthropic.com/news/series-h" target="_blank">Anthropic raises $65B Series H at $965B post-money valuation</a></p>
+    <p class="item-meta"><span class="badge tier1">Anthropic</span><span>May 28, 2026</span><span class="score s5">5</span></p>
+    <p class="summary"><strong>Funding event of the year.</strong> Anthropic at near-trillion-dollar valuation, $65B raised. Combined with the Jun 1 confidential S-1 filing, signals preparation for IPO and multi-year frontier-compute buildout. Context: SpaceXAI/Anthropic Colossus 1 deal earlier in May (Week 1).</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://claude.com/blog/dynamic-workflows-claude-code" target="_blank">Introducing dynamic workflows in Claude Code</a></p>
+    <p class="item-meta"><span class="badge tier1">Claude Blog</span><span>May 28, 2026</span><span class="score s5">5</span></p>
+    <p class="summary"><strong>Foundational primitive launch.</strong> Claude Code can now write its own JavaScript orchestration harness on the fly per task, fanning out subagents. Released alongside Opus 4.8. The Jun 2 follow-up post ("A harness for every task") elaborates the patterns; the <code>ultracode</code> trigger word forces a workflow.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://mistral.ai/news/vibe-agent" target="_blank">Mistral Vibe gets to work — unified agent for long-horizon productivity and coding</a></p>
+    <p class="item-meta"><span class="badge tier1">Mistral</span><span>May 28, 2026</span><span class="score s4">4</span></p>
+    <p class="summary">Mistral's Vibe launches Work and Code modes plus a new VS Code extension. Same day as Opus 4.8 — direct competitive answer in the agent platform space. Worth comparing the Work mode framing to Claude Cowork.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://mistral.ai/news/introducing-physics-ai-at-mistral" target="_blank">Mistral introduces Physics AI</a></p>
+    <p class="item-meta"><span class="badge tier1">Mistral</span><span>May 27, 2026</span><span class="score s4">4</span></p>
+    <p class="summary">New class of AI models that predict the behavior of physical systems — engineering acceleration play. Distinctive product positioning vs. the LLM-everything-everywhere strategies of OpenAI/Anthropic/Google. Pairs with a research blog (May 27) on physics AI breakthroughs.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://openai.com/news" target="_blank">OpenAI's Frontier Governance Framework + shared playbook for trustworthy 3rd-party evals</a></p>
+    <p class="item-meta"><span class="badge tier1">OpenAI Safety</span><span>May 28–29, 2026</span><span class="score s4">4</span></p>
+    <p class="summary">Two safety/governance posts back-to-back: Frontier Governance Framework (May 28) + a shared playbook for trustworthy third-party evaluations (May 29). Pre-emptive positioning ahead of OpenAI's June product wave; useful for anyone building eval pipelines.</p>
+  </div>
+</section>
+
+<section id="vendor">
+  <h2>Vendor Announcements</h2>
+
+  <div class="source-group">
+    <h3>Anthropic / Claude</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://www.anthropic.com/news/milan-office" target="_blank">Anthropic opens Milan office</a></p>
+      <p class="item-meta"><span class="badge tier1">Anthropic</span><span>May 27, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Italian enterprise/research/developer support. EU expansion continuing.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://www.anthropic.com/news/korea-representative-director" target="_blank">Anthropic appoints KiYoung Choi as Representative Director of Korea</a></p>
+      <p class="item-meta"><span class="badge tier1">Anthropic</span><span>May 26, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Pre-launch hire ahead of Seoul office opening. APAC expansion.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://www.anthropic.com/news/chris-olah-pope-leo-encyclical" target="_blank">Chris Olah remarks on Pope Leo XIV's encyclical "Magnifica humanitas"</a></p>
+      <p class="item-meta"><span class="badge tier1">Anthropic</span><span>May 25, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Anthropic co-founder responding to the Pope's AI encyclical. Cultural/policy positioning piece. (Aside: this is the post Simon Willison's blog flagged at the time.)</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://www.anthropic.com/research/coding-agents-social-sciences" target="_blank">Coding agents in the social sciences</a></p>
+      <p class="item-meta"><span class="badge tier1">Anthropic Economic Research</span><span>May 27, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Economic research piece on how coding agents are being adopted in social-science research workflows. Empirical companion to broader "AI builds itself" theme.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://claude.com/blog/coderabbit-agent-orchestration" target="_blank">How CodeRabbit used Claude to build an agent orchestration system</a></p>
+      <p class="item-meta"><span class="badge tier1">Claude Blog</span><span>May 27, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Customer case study — CodeRabbit's agent orchestration. Useful reference if you're designing similar architectures.</p>
+    </div>
+  </div>
+
+  <div class="source-group">
+    <h3>OpenAI</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://openai.com/news/" target="_blank">Strengthening societal resilience with Rosalind Biodefense</a></p>
+      <p class="item-meta"><span class="badge tier1">OpenAI Product</span><span>May 29, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Specialized GPT-Rosalind model applied to biodefense. OpenAI's domain-specialized model strategy continuing.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://openai.com/news/" target="_blank">Building self-improving tax agents with Codex</a></p>
+      <p class="item-meta"><span class="badge tier1">OpenAI Engineering</span><span>May 27, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Practical agent-engineering writeup on using Codex to build tax agents that improve over time. Useful pattern reference for self-improving production agents.</p>
+    </div>
+  </div>
+
+  <div class="source-group">
+    <h3>Mistral (busy week — 4 launches)</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://mistral.ai/news/ai-now-summit-2026" target="_blank">AI Now Summit 2026</a></p>
+      <p class="item-meta"><span class="badge tier1">Mistral</span><span>May 28, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Mistral's enterprise summit — innovations for global enterprises.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://mistral.ai/news/search-toolkit" target="_blank">Introducing Search Toolkit</a></p>
+      <p class="item-meta"><span class="badge tier1">Mistral</span><span>May 28, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Production search pipelines anywhere. Mistral filling out the agent stack with retrieval primitives.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://mistral.ai/news/accelerate-ai-native-industry" target="_blank">Emmi joins Mistral to accelerate the AI-native industry</a></p>
+      <p class="item-meta"><span class="badge tier1">Mistral</span><span>May 23, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Acquihire/leadership announcement — Emmi (an AI-native industry figure) joins Mistral.</p>
+    </div>
+  </div>
+
+  <div class="source-group">
+    <h3>Google</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://research.google/blog/io-2026" target="_blank">A New Era of Discovery: Google Research at I/O 2026</a></p>
+      <p class="item-meta"><span class="badge tier1">Google Research</span><span>May 28, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Roundup of Google Research presentations at I/O — quantum computing, generative AI in science, computational discovery.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://research.google/blog/zero-trust-aggregation" target="_blank">Private analytics via zero-trust aggregation</a></p>
+      <p class="item-meta"><span class="badge tier1">Google Research</span><span>May 27, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Privacy-preserving analytics technique — relevant if you're building user-data-touching agents that need privacy guarantees.</p>
+    </div>
+  </div>
+
+  <div class="source-group">
+    <h3>xAI</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://x.ai/news" target="_blank">Grok Build — coding agent runs from your terminal (early beta)</a></p>
+      <p class="item-meta"><span class="badge tier1">xAI</span><span>May 25, 2026</span><span class="score s4">4</span></p>
+      <p class="summary">xAI ships its terminal coding agent (early beta for SuperGrok and X Premium Plus subscribers). Direct competitor to Claude Code, Codex CLI, Aider, Mistral Vibe Code. The "Grok Build 0.1 on API" post on May 29 followed up with API access.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://x.ai/news" target="_blank">Use Grok in Kilo Code</a></p>
+      <p class="item-meta"><span class="badge tier1">xAI</span><span>May 27, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Another open-source-agent integration — Grok in Kilo Code. xAI's distribution-via-OS-agents strategy continuing.</p>
+    </div>
+  </div>
+</section>
+
+<section id="devtools">
+  <h2>Dev Tools</h2>
+
+  <div class="source-group">
+    <h3>Claude Code 2.1.154 (associated with Opus 4.8 launch)</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md" target="_blank">Claude Code 2.1.154 — Opus 4.8, dynamic workflows, fast mode at 2× cost / 2.5× speed</a></p>
+      <p class="item-meta"><span class="badge tier4">Claude Code</span><span>~May 28, 2026 (Opus 4.8 launch)</span><span class="score s5">5</span></p>
+      <p class="summary">Major release. Opus 4.8 default with high effort. Dynamic workflows — orchestrate work across tens to hundreds of agents in the background. Fast mode on Opus 4.8 at 2× standard rate for 2.5× speed. Lean system prompt as default. <code>workflow</code> trigger renamed to <code>ultracode</code>. <code>!&nbsp;&lt;command&gt;</code> in claude agents to run shell as a background session. Auto-mode classifier improvements for data exfiltration detection.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Week 3 (May 23–29) summary:</strong> <strong>The biggest week of the month.</strong> Anthropic dropped a stack of major news on May 28 — Opus 4.8, $65B Series H at $965B valuation, and dynamic workflows in Claude Code (the foundational primitive driving everything since). Mistral matched the day with Vibe Work + Code modes. xAI shipped Grok Build (terminal coding agent). OpenAI used the week for governance/safety positioning ahead of June product launches. Claude Code 2.1.154 ties Opus 4.8 + dynamic workflows into the CLI.</p>
+  <p><strong>Sources scanned:</strong> Same as Week 1.</p>
+  <p><strong>Caveats:</strong> Many May 28 announcements happened on the same day — date precision is reliable but exact ordering between Anthropic's three launches is approximate.</p>
+</footer>
+
+</div>
+</body>
+</html>

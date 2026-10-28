@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Daily AI Report — 2026-07-13 (backfilled)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --border: #e5e5e5;
+    --card: #fafafa;
+    --tier1: #2563eb;
+    --tier1-bg: #dbeafe;
+    --tier4: #059669;
+    --tier4-bg: #d1fae5;
+    --score: #b45309;
+    --score-bg: #fef3c7;
+    --link: #1d4ed8;
+    --warn: #b45309;
+    --warn-bg: #fef3c7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0f10;
+      --fg: #e7e7e7;
+      --muted: #9a9a9a;
+      --border: #2a2a2c;
+      --card: #17171a;
+      --tier1: #60a5fa;
+      --tier1-bg: #1e3a8a44;
+      --tier4: #34d399;
+      --tier4-bg: #064e3b44;
+      --score: #fbbf24;
+      --score-bg: #78350f44;
+      --link: #93c5fd;
+      --warn: #fbbf24;
+      --warn-bg: #78350f44;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 780px; margin: 0 auto; padding: 24px 20px 64px;
+    line-height: 1.55;
+  }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { margin: 0 0 6px; font-size: 22px; }
+  header .meta { color: var(--muted); font-size: 13px; }
+  .backfill-banner {
+    background: var(--warn-bg); color: var(--warn); border: 1px solid var(--warn);
+    border-radius: 6px; padding: 10px 14px; margin-bottom: 22px; font-size: 13px; font-weight: 600;
+  }
+  .backfill-banner span { font-weight: 400; display: block; margin-top: 4px; color: var(--fg); }
+  h2 { font-size: 17px; margin: 28px 0 12px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 14px; margin: 18px 0 8px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+  .item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 12px 14px; margin-bottom: 10px;
+  }
+  .item .title { font-weight: 600; font-size: 15px; margin-bottom: 6px; }
+  .item .title a { color: var(--link); text-decoration: none; }
+  .item .title a:hover { text-decoration: underline; }
+  .item .row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; align-items: center; }
+  .badge {
+    font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px;
+    letter-spacing: 0.02em;
+  }
+  .badge.tier1 { background: var(--tier1-bg); color: var(--tier1); }
+  .badge.tier4 { background: var(--tier4-bg); color: var(--tier4); }
+  .badge.score { background: var(--score-bg); color: var(--score); }
+  .badge.src { background: var(--card); color: var(--muted); border: 1px solid var(--border); }
+  .item .summary { font-size: 14px; color: var(--fg); }
+  footer {
+    margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+    font-size: 12px; color: var(--muted); line-height: 1.7;
+  }
+  footer strong { color: var(--fg); }
+  code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px; background: var(--card); padding: 1px 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Daily AI Report — 2026-07-13 <span style="font-weight:400;color:var(--muted);">(backfilled)</span></h1>
+  <div class="meta">Backfilled 2026-07-15 · 3 items · window 2026-07-12 → 2026-07-13</div>
+</header>
+
+<div class="backfill-banner">
+  ⚠ Backfilled report — reconstructed on 2026-07-15.
+  <span>This day's digest was not generated live. It was rebuilt from source data available on 2026-07-15 (vendor blogs, X.com timelines, and press coverage), so dates and details reflect what could be recovered retroactively rather than a same-day snapshot.</span>
+</div>
+
+<section id="vendor">
+  <h2>Vendor Announcements (Tier 1)</h2>
+
+  <div class="item">
+    <div class="title"><a href="https://x.com/AnthropicAI">Anthropic quantifies how Claude's expressed values shift across models and languages</a></div>
+    <div class="row">
+      <span class="badge tier1">Tier 1</span>
+      <span class="badge src">@AnthropicAI / Anthropic Research</span>
+      <span class="badge score">Score 4</span>
+    </div>
+    <div class="summary">Building on earlier work finding Claude expresses 3,000+ values, Anthropic analyzed 300K+ anonymized conversations across three models and 20 languages to measure how value expression varies — most notably along a warmth-vs-rigor axis (Claude leans warm in Hindi and Arabic, and toward rigor in Russian, often asking users for supporting evidence). It's a measurement study, not a product, but it gives builders a concrete handle on model-and-locale variance in tone/behavior that until now was anecdotal — relevant for anyone deploying Claude across languages.</div>
+  </div>
+
+  <div class="item">
+    <div class="title"><a href="https://x.com/OpenAI">OpenAI: GPT-Live fully rolled out to all ChatGPT users globally</a></div>
+    <div class="row">
+      <span class="badge tier1">Tier 1</span>
+      <span class="badge src">@OpenAI</span>
+      <span class="badge score">Score 3</span>
+    </div>
+    <div class="summary">OpenAI announced that GPT-Live (its real-time voice experience, first introduced Jul 8) completed global rollout to all ChatGPT users, and temporarily doubled everyone's voice usage limit for the weekend. Broad availability of a low-latency voice mode is an incremental but meaningful step for consumer voice agents; the doubled limits were a short-term promo rather than a lasting change.</div>
+  </div>
+
+  <div class="item">
+    <div class="title"><a href="https://deepmind.google/discover/blog/">Google DeepMind ships "Predicting the Past," an Antigravity skill for reading ancient inscriptions</a></div>
+    <div class="row">
+      <span class="badge tier1">Tier 1</span>
+      <span class="badge src">@GoogleDeepMind</span>
+      <span class="badge score">Score 3</span>
+    </div>
+    <div class="summary">DeepMind released "Predicting the Past," a Google Antigravity skill that grounds Gemini in its specialist epigraphy models (Aeneas and Ithaca) so historians can query ancient Greek and Latin inscriptions in plain English — demonstrated across case studies like mapping visitors to the Oracle of Dodona. It's a domain application rather than a core model release, but it's a clean example of the "skill = frontier model + specialist tools, no coding required" packaging pattern the major labs are converging on.</div>
+  </div>
+</section>
+
+<section id="devtools">
+  <h2>Dev Tools (Tier 4)</h2>
+  <p class="meta" style="margin-top:-4px;">No Tier 4 dev-tool release could be pinned to 2026-07-13 during reconstruction.</p>
+</section>
+
+<footer>
+  <p><strong>Reconstruction note:</strong> Rebuilt on 2026-07-15 from vendor blogs, the @AnthropicAI/@OpenAI/@GoogleDeepMind X timelines, and press coverage. Also live during this window: the cross-lab economic-transformation warning statement (issued Mon Jul 13; carried into 2026-07-14's report where Nobel-laureate framing dominated coverage), and OpenAI's ChatGPT Work / GPT-5.6 family (announced Jul 9–11, out of this window). Exact publish times could not be verified to the hour retroactively.</p>
+  <p><strong>Quiet sources:</strong> Mistral (last post Robostral Navigate, Jul 8), Meta (Muse, Jul 7), Simon Willison (sqlite-utils, Jul 11), Hugging Face Daily Papers (nothing scoring ≥ 4 for a production-agent audience).</p>
+</footer>
+
+</body>
+</html>

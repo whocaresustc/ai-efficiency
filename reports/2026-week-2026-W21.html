@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weekly AI Report — May 16–22, 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --bg:#fafafa; --fg:#1a1a1a; --muted:#666; --card:#fff; --border:#e5e5e5; --tier1:#2563eb; --tier1-bg:#dbeafe; --tier4:#16a34a; --tier4-bg:#dcfce7; --score5:#dc2626; --score4:#ea580c; --score3:#ca8a04; --accent:#1a1a1a; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f0f10; --fg:#e8e8e8; --muted:#9a9a9a; --card:#18181b; --border:#27272a; --tier1:#60a5fa; --tier1-bg:#1e3a8a; --tier4:#4ade80; --tier4-bg:#14532d; --score5:#f87171; --score4:#fb923c; --score3:#facc15; --accent:#fafafa; } }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--fg); margin: 0; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 32px 20px 80px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 28px; }
+  h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .meta { color: var(--muted); font-size: 14px; }
+  h2 { font-size: 20px; margin: 36px 0 14px; letter-spacing: -0.01em; }
+  h2 .count { color: var(--muted); font-weight: 400; font-size: 14px; margin-left: 8px; }
+  h3 { font-size: 15px; margin: 20px 0 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+  .item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; }
+  .item.highlight { border-left: 3px solid var(--score5); }
+  .item-title { font-weight: 600; font-size: 16px; margin: 0 0 6px; }
+  .item-title a { color: var(--accent); text-decoration: none; }
+  .item-title a:hover { text-decoration: underline; }
+  .item-meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0.02em; }
+  .badge.tier1 { background: var(--tier1-bg); color: var(--tier1); }
+  .badge.tier4 { background: var(--tier4-bg); color: var(--tier4); }
+  .score { display: inline-block; width: 22px; height: 22px; border-radius: 50%; font-size: 12px; font-weight: 700; text-align: center; line-height: 22px; color: white; }
+  .score.s5 { background: var(--score5); }
+  .score.s4 { background: var(--score4); }
+  .score.s3 { background: var(--score3); }
+  .summary { font-size: 14px; }
+  .source-group { margin-bottom: 18px; }
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+  footer p { margin: 6px 0; }
+  .nav { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; margin-bottom: 24px; font-size: 13px; }
+  .nav a { color: var(--tier1); text-decoration: none; margin-right: 12px; }
+  .nav a:hover { text-decoration: underline; }
+  .nav strong { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Weekly AI Report — May 16–22, 2026</h1>
+  <p class="meta">Week 2 of 4 · One-month retrospective · Generated Jun 8, 2026</p>
+</header>
+
+<nav class="nav">
+  <a href="2026-week-2026-W20.html">Week 1: May 9–15</a> ·
+  <strong>Week 2: May 16–22</strong> ·
+  <a href="2026-week-2026-W22.html">Week 3: May 23–29</a> ·
+  <a href="2026-week-2026-W23.html">Week 4: May 30–Jun 8</a>
+</nav>
+
+<section id="highlights">
+  <h2>Top Highlights</h2>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://blog.google/innovation-and-ai/sundar-pichai-io-2026/" target="_blank">Google I/O 2026: Welcome to the agentic Gemini era</a></p>
+    <p class="item-meta"><span class="badge tier1">Google AI Blog</span><span>~May 19–20, 2026 (I/O week)</span><span class="score s5">5</span></p>
+    <p class="summary"><strong>Major event of the week.</strong> Google I/O 2026 keynote framing Gemini as fully agentic. Companion launches: Gemini 3.5 with action-taking, proactive Gemini app, Gemma 4 12B encoder-free multimodal, Gemma 4 QAT for mobile/laptop, Co-Scientist multiagent research partner, Gemini for Science. Single biggest week for Google AI in months — sets the agenda for the rest of May/June.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://deepmind.google/discover/blog/" target="_blank">Gemini 3.5: frontier intelligence with action</a></p>
+    <p class="item-meta"><span class="badge tier1">DeepMind</span><span>I/O week</span><span class="score s5">5</span></p>
+    <p class="summary">Frontier model release alongside I/O. Emphasis on "action" puts Gemini directly on the Claude/GPT agentic-loop battlefield rather than competing on pure reasoning benchmarks. If you're benchmarking, this is the new top of the Gemini line.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://deepmind.google/discover/blog/" target="_blank">Co-Scientist: A multi-agent AI partner to accelerate research</a></p>
+    <p class="item-meta"><span class="badge tier1">DeepMind</span><span>I/O week</span><span class="score s4">4</span></p>
+    <p class="summary">Multi-agent research partner from DeepMind. Direct comparable to Anthropic's "AI builds itself" research and OpenAI's deep-research agents — research-acceleration is the cross-vendor frontier this month.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://claude.com/blog/managed-agents-self-hosted-sandboxes-mcp-tunnels" target="_blank">New in Claude Managed Agents: self-hosted sandboxes and MCP tunnels</a></p>
+    <p class="item-meta"><span class="badge tier1">Claude Blog</span><span>May 19, 2026</span><span class="score s4">4</span></p>
+    <p class="summary">Claude Managed Agents now supports self-hosted sandboxes (run agents in your own infra) and MCP tunnels (connect agents to private MCP servers behind your firewall). Significant for enterprise adoption — addresses the "we can't send our code to the cloud" objection.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5" target="_blank">Mistral Medium 3.5 + Remote agents in Vibe</a></p>
+    <p class="item-meta"><span class="badge tier1">Mistral</span><span>May 22, 2026</span><span class="score s4">4</span></p>
+    <p class="summary">Mistral ships a new mid-tier model (Medium 3.5) plus remote coding agents in Vibe (their agent platform), and a new Work mode in Le Chat for complex tasks. The "remote agents" framing follows the cron-style/background-agents pattern that Claude Code and Copilot also adopted this month.</p>
+  </div>
+</section>
+
+<section id="vendor">
+  <h2>Vendor Announcements</h2>
+
+  <div class="source-group">
+    <h3>Anthropic</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://www.anthropic.com/news/widening-conversation-frontier-ai" target="_blank">Widening the conversation on frontier AI</a></p>
+      <p class="item-meta"><span class="badge tier1">Anthropic</span><span>May 19, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Anthropic publishes notes on dialogues organized with groups whose work and traditions bear on AI questions. Soft-power/policy positioning piece.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://www.anthropic.com/research/glasswing-initial-update" target="_blank">Project Glasswing: An initial update</a></p>
+      <p class="item-meta"><span class="badge tier1">Anthropic Research</span><span>May 22, 2026</span><span class="score s4">4</span></p>
+      <p class="summary">First public results from Project Glasswing — Anthropic's collaborative software-security project. Partners had found <strong>more than 10,000 high- or critical-severity security flaws</strong> using Claude Mythos Preview. Concrete data point on AI-assisted vulnerability discovery at scale.</p>
+    </div>
+  </div>
+
+  <div class="source-group">
+    <h3>Google (DeepMind, Research, AI Blog)</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://deepmind.google/discover/blog/" target="_blank">Strengthening Singapore's AI Future: A New National Partnership</a></p>
+      <p class="item-meta"><span class="badge tier1">DeepMind</span><span>I/O week</span><span class="score s3">3</span></p>
+      <p class="summary">DeepMind partnership with Singapore — geopolitical/sovereign-AI signal alongside the I/O announcements.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://deepmind.google/discover/blog/" target="_blank">Gemini for Science: AI experiments and tools for a new era of discovery</a></p>
+      <p class="item-meta"><span class="badge tier1">DeepMind</span><span>I/O week</span><span class="score s4">4</span></p>
+      <p class="summary">Suite of Gemini-powered scientific research tools. Companion to the Co-Scientist announcement — Google making a heavy push into AI-for-science.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/" target="_blank">The Gemini app becomes more agentic, delivering proactive 24/7 help</a></p>
+      <p class="item-meta"><span class="badge tier1">Google AI Blog</span><span>I/O week</span><span class="score s4">4</span></p>
+      <p class="summary">Gemini app pivots to proactive agentic help (initiates tasks rather than just responding). Direct user-facing analog of the agent loop work in coding tools.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://research.google/blog/empirical-research-assistance" target="_blank">Empirical Research Assistance (ERA): From Nature publication to catalyzing Computational Discovery</a></p>
+      <p class="item-meta"><span class="badge tier1">Google Research</span><span>May 19, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Follow-up to Google Research's Nature paper on ERA — practical application stories. Worth tracking if you're working at the AI/scientific-research interface.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/" target="_blank">Introducing Gemma 4 12B: a unified, encoder-free multimodal model</a></p>
+      <p class="item-meta"><span class="badge tier1">Google AI</span><span>I/O week</span><span class="score s4">4</span></p>
+      <p class="summary">Open-weights Gemma 4 at 12B params with unified encoder-free multimodal architecture. Same architectural direction as GPT-4o/Omni, now in an open release.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/" target="_blank">Gemma 4 QAT models: Optimizing for mobile and laptop efficiency</a></p>
+      <p class="item-meta"><span class="badge tier1">Google AI</span><span>I/O week</span><span class="score s3">3</span></p>
+      <p class="summary">Quantization-aware-trained Gemma 4 variants for on-device inference. Relevant if you're shipping local-first AI features.</p>
+    </div>
+  </div>
+
+  <div class="source-group">
+    <h3>Mistral</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://mistral.ai/news/connectors" target="_blank">Connect the dots: Build with built-in and custom MCPs in Studio</a></p>
+      <p class="item-meta"><span class="badge tier1">Mistral</span><span>May 22, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Mistral Studio adds reusable MCP connectors with direct tool calling and human-in-the-loop approval. MCP becoming the cross-vendor standard for tool-calling continues.</p>
+    </div>
+  </div>
+
+  <div class="source-group">
+    <h3>xAI</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://x.ai/news" target="_blank">Skills in web, iOS, and Android — persistent expertise for Grok</a></p>
+      <p class="item-meta"><span class="badge tier1">xAI</span><span>May 18, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Grok adopts the skills pattern (folders of instructions/scripts/resources) that Anthropic pioneered. Cross-vendor convergence on agent capability primitives.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://x.ai/news" target="_blank">Use Grok in OpenCode</a></p>
+      <p class="item-meta"><span class="badge tier1">xAI</span><span>May 21, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Grok subscriptions usable in OpenCode. xAI continuing to push distribution into open-source agent ecosystems.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://x.ai/news" target="_blank">Use Grok in OpenClaw</a></p>
+      <p class="item-meta"><span class="badge tier1">xAI</span><span>May 19, 2026</span><span class="score s3">3</span></p>
+      <p class="summary">Same pattern as OpenCode — Grok in OpenClaw, an open-source local-first agent. Three OS-agent integrations in two weeks.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Week 2 (May 16–22) summary:</strong> <strong>Google I/O 2026 dominated the week</strong> — Gemini 3.5, Co-Scientist, Gemma 4 12B + QAT, Gemini for Science, agentic Gemini app, Singapore partnership all clustered around the keynote. Anthropic continued the Glasswing security work with concrete numbers (10K+ critical vulnerabilities found). Mistral shipped Medium 3.5 + remote agents (matching the cross-vendor "background agent" pattern). xAI pushed three open-source agent integrations. <strong>OpenAI was quiet this week</strong> — saving up for the late-May/early-June Codex/AWS push.</p>
+  <p><strong>Sources scanned:</strong> Same as Week 1.</p>
+  <p><strong>Caveats:</strong> I/O 2026 dates are approximate (the I/O blog posts don't always show exact dates on the listing page; I/O is typically a Tue–Wed event mid-May). X coverage gap remains.</p>
+</footer>
+
+</div>
+</body>
+</html>

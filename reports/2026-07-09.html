@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily AI Report — 2026-07-09 (backfilled)</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --card: #fafafa;
+    --tier1: #2563eb;
+    --tier1-bg: #dbeafe;
+    --tier2: #7c3aed;
+    --tier2-bg: #ede9fe;
+    --tier4: #059669;
+    --tier4-bg: #d1fae5;
+    --score: #dc2626;
+    --warn: #b45309;
+    --warn-bg: #fef3c7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115;
+      --fg: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #2a2f3a;
+      --card: #171a21;
+      --tier1: #60a5fa;
+      --tier1-bg: #1e3a8a;
+      --tier2: #a78bfa;
+      --tier2-bg: #4c1d95;
+      --tier4: #34d399;
+      --tier4-bg: #064e3b;
+      --score: #f87171;
+      --warn: #fbbf24;
+      --warn-bg: #78350f;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.55;
+    max-width: 860px;
+  }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  header h1 { margin: 0 0 0.25rem; font-size: 1.6rem; letter-spacing: -0.01em; }
+  header .meta { color: var(--muted); font-size: 0.9rem; }
+  .backfill-banner {
+    margin: 0.75rem 0 0;
+    padding: 0.6rem 0.85rem;
+    background: var(--warn-bg);
+    color: var(--warn);
+    border: 1px solid var(--warn);
+    border-radius: 6px;
+    font-size: 0.88rem;
+  }
+  section { margin: 2rem 0; }
+  section > h2 { font-size: 1.15rem; margin: 0 0 0.75rem; padding-bottom: 0.35rem; border-bottom: 1px solid var(--border); }
+  section > h3.source { font-size: 0.95rem; color: var(--muted); margin: 1.25rem 0 0.5rem; font-weight: 600; }
+  .item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem 1rem; margin-bottom: 0.6rem; }
+  .item .row { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.3rem; }
+  .item a.title { color: var(--fg); font-weight: 600; text-decoration: none; }
+  .item a.title:hover { text-decoration: underline; }
+  .badge { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 999px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.01em; }
+  .tier-1 { background: var(--tier1-bg); color: var(--tier1); }
+  .tier-2 { background: var(--tier2-bg); color: var(--tier2); }
+  .tier-4 { background: var(--tier4-bg); color: var(--tier4); }
+  .score { color: var(--score); font-weight: 700; font-size: 0.85rem; }
+  .src { color: var(--muted); font-size: 0.8rem; }
+  .summary { font-size: 0.93rem; color: var(--fg); margin: 0.2rem 0 0; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; }
+  footer p { margin: 0.35rem 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Daily AI Report — 2026-07-09</h1>
+  <div class="meta">Generated 2026-07-11 · 24h window covering 2026-07-08→09 · 4 items from 4 sources</div>
+  <div class="backfill-banner"><strong>⚠ Backfilled report.</strong> This day's report was not produced on 2026-07-09. Reconstructed on 2026-07-11 from the current state of vendor blogs, X timelines, and archived posts; item selection reflects what was published on/around 2026-07-08–09 and may miss items that have since been superseded or removed.</div>
+</header>
+
+<section id="highlights">
+  <h2>Top Highlights</h2>
+
+  <div class="item">
+    <div class="row">
+      <a class="title" href="https://openai.com/index/separating-signal-from-noise-in-coding-evaluations/">Separating signal from noise in coding evaluations</a>
+      <span class="badge tier-1">Tier 1</span>
+      <span class="src">OpenAI Research</span>
+      <span class="score">★ 4</span>
+    </div>
+    <p class="summary">OpenAI Research published a methodology piece on how to build coding evals that actually discriminate between models rather than measuring benchmark contamination or prompt sensitivity. Practical read for anyone maintaining internal coding benchmarks — the failure modes they describe (metric drift, benchmark saturation, spurious wins) hit most in-house eval suites.</p>
+  </div>
+
+  <div class="item">
+    <div class="row">
+      <a class="title" href="https://mistral.ai/news/robostral-navigate/">Introducing Robostral Navigate</a>
+      <span class="badge tier-1">Tier 1</span>
+      <span class="src">Mistral</span>
+      <span class="score">★ 4</span>
+    </div>
+    <p class="summary">Mistral launched Robostral Navigate, its first model built for embodied navigation. Signals Mistral's continued push beyond text/code into physical AI (following the Physics AI announcements in May), and puts a European frontier lab in the robot-foundation-model race dominated so far by DeepMind (Gemini Robotics) and Meta (V-JEPA).</p>
+  </div>
+
+  <div class="item">
+    <div class="row">
+      <a class="title" href="https://ai.meta.com/blog/muse-image-muse-video/">Introducing Muse Image and Muse Video</a>
+      <span class="badge tier-1">Tier 1</span>
+      <span class="src">Meta AI</span>
+      <span class="score">★ 4</span>
+    </div>
+    <p class="summary">Meta released Muse Image (instruction-following image generation and editing, composes from multiple references, Instagram-aware for social context) and Muse Video (native-audio video generation). Positions Meta's generative stack directly opposite Google's Nano Banana 2 and OpenAI's Images 2.0 / Sora, with a distribution moat via Instagram.</p>
+  </div>
+</section>
+
+<section id="vendor">
+  <h2>Vendor Announcements (Tier 1)</h2>
+
+  <h3 class="source">OpenAI</h3>
+  <div class="item">
+    <div class="row">
+      <a class="title" href="https://openai.com/index/separating-signal-from-noise-in-coding-evaluations/">Separating signal from noise in coding evaluations</a>
+      <span class="score">★ 4</span>
+    </div>
+    <p class="summary">Research post on eval-design failure modes and how to fix them. Directly applicable if you maintain a coding-benchmark harness.</p>
+  </div>
+
+  <h3 class="source">Mistral</h3>
+  <div class="item">
+    <div class="row">
+      <a class="title" href="https://mistral.ai/news/robostral-navigate/">Robostral Navigate — first Mistral model for embodied navigation</a>
+      <span class="score">★ 4</span>
+    </div>
+    <p class="summary">Mistral's entry into robot foundation models. Follows their earlier "physics AI" push and expands the frontier-lab presence in embodied AI.</p>
+  </div>
+
+  <h3 class="source">Meta AI</h3>
+  <div class="item">
+    <div class="row">
+      <a class="title" href="https://ai.meta.com/blog/muse-image-muse-video/">Muse Image + Muse Video</a>
+      <span class="score">★ 4</span>
+    </div>
+    <p class="summary">New generative image + video family with Instagram-context awareness and native audio. Meta's answer to Nano Banana 2 / Sora 2 / Images 2.0.</p>
+  </div>
+
+  <h3 class="source">Google Research</h3>
+  <div class="item">
+    <div class="row">
+      <a class="title" href="https://research.google/blog/the-power-of-collaboration-how-we-can-reduce-traffic-congestion/">The power of collaboration: reducing traffic congestion</a>
+      <span class="score">★ 3</span>
+    </div>
+    <p class="summary">Research blog on multi-agent optimization applied to urban traffic. Mostly civic-impact framing, but the underlying multi-agent coordination approach is transferable to any system with shared-resource contention.</p>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Sources scanned (retroactively on 2026-07-11):</strong> Anthropic News, Claude Blog, OpenAI News, OpenAI Research, OpenAI API Changelog, OpenAI Codex Changelog, Google DeepMind Blog, Google Research Blog, Meta AI Blog, Mistral News, xAI News, Claude Code Changelog, X: @AnthropicAI, X: @OpenAI, X: @GoogleDeepMind, X: @simonw, X: @sama.</p>
+  <p><strong>Backfill caveat:</strong> Because this day was reconstructed after the fact, item-level publish times are inferred from the source's timestamp on the current listing page. Items that were published on 2026-07-08–09 but no longer appear in vendor listings may be missing.</p>
+</footer>
+</body>
+</html>

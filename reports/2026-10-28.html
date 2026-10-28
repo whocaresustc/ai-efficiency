@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily AI Report — 2026-10-28</title>
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --card:#fafafa; --border:#e3e3e3;
+    --t1:#2563eb; --t1bg:#eff4ff; --t2:#7c3aed; --t2bg:#f5f0ff; --t4:#059669; --t4bg:#ecfdf5;
+    --accent:#1a1a1a; --link:#2563eb;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0f1115; --fg:#e8e8ea; --muted:#9aa0aa; --card:#171a21; --border:#262a33;
+      --t1:#60a5fa; --t1bg:#132033; --t2:#c4b5fd; --t2bg:#201633; --t4:#34d399; --t4bg:#0f2a20;
+      --accent:#e8e8ea; --link:#7cb0ff;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;font-size:16px}
+  .wrap{max-width:860px;margin:0 auto;padding:28px 20px 80px}
+  header.top{border-bottom:2px solid var(--border);padding-bottom:16px;margin-bottom:26px}
+  header.top h1{margin:0 0 6px;font-size:1.7rem;letter-spacing:-.02em}
+  header.top .meta{color:var(--muted);font-size:.9rem}
+  h2.section{font-size:1.15rem;margin:34px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--border);
+    letter-spacing:-.01em}
+  .src-group{margin:0 0 20px}
+  .src-group h3{font-size:.95rem;color:var(--muted);margin:18px 0 10px;font-weight:600}
+  .item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin:10px 0}
+  .item .hd{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+  .item .title{font-weight:650;font-size:1.02rem;letter-spacing:-.01em}
+  .item .title a{color:var(--fg);text-decoration:none}
+  .item .title a:hover{text-decoration:underline}
+  .badge{font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap}
+  .t1{background:var(--t1bg);color:var(--t1)}
+  .t2{background:var(--t2bg);color:var(--t2)}
+  .t4{background:var(--t4bg);color:var(--t4)}
+  .score{font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:999px;background:transparent;border:1px solid var(--border);color:var(--muted)}
+  .score.s5{color:#dc2626;border-color:#dc2626}
+  .score.s4{color:#ea580c;border-color:#ea580c}
+  .src{font-size:.78rem;color:var(--muted)}
+  .sum{font-size:.95rem;color:var(--fg)}
+  .hl{border-left:3px solid var(--t1)}
+  .hl.s5{border-left-color:#dc2626}
+  footer.bot{margin-top:46px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+  footer.bot code{background:var(--card);padding:1px 5px;border-radius:4px;font-size:.9em}
+  footer.bot .fail{color:#dc2626}
+  .note{font-size:.82rem;color:var(--muted);margin:4px 0 0;font-style:italic}
+  a{color:var(--link)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>Daily AI Report — 2026-10-28</h1>
+  <div class="meta">Generated 2026-10-28 07:20 UTC · 8 items from 34 sources · 24h lookback window<br>
+  Repo <code>ai-efficiency</code> · branch <code>main</code></div>
+</header>
+
+<section id="highlights">
+  <h2 class="section">Top Highlights</h2>
+
+  <div class="item hl s5">
+    <div class="hd">
+      <span class="title"><a href="https://openai.com/index/introducing-gpt-6-1-terra/">GPT-6.1 Terra — fast, cheap computer use</a></span>
+      <span class="badge t1">Tier 1 · OpenAI</span><span class="score s5">5</span>
+    </div>
+    <p class="sum">OpenAI released GPT-6.1 Terra, a model tuned for visual reasoning and precise computer use at half the price of GPT-5.6 Terra ($1/$5 per M input/output), available now in ChatGPT Work, Codex, and the API as <code>gpt-6.1-terra</code>. It targets the high-volume, screen-driven automation that fills a workday — forms, invoices, technical drawings — and OpenAI claims ~9× lower cost-per-task than Claude Opus 5.5 on their Agents' Last Exam computer-use benchmark.</p>
+  </div>
+
+  <div class="item hl s5">
+    <div class="hd">
+      <span class="title"><a href="https://x.com/GoogleDeepMind/status/2115114028338962672">Genie 4 — interactive world model</a></span>
+      <span class="badge t1">Tier 1 · Google DeepMind</span><span class="score s5">5</span>
+    </div>
+    <p class="sum">Google DeepMind unveiled Genie 4, its most realistic and interactive world model yet, letting you explore dynamic, real-time environments where scenes respond and the people in them move, react, and speak. World models are a key substrate for embodied agents and simulation-trained policies, so a visible step-up here matters for anyone building agents that act in generated environments rather than static apps.</p>
+  </div>
+
+  <div class="item hl s4">
+    <div class="hd">
+      <span class="title"><a href="https://www.anthropic.com/research/early-progress-drug-development">Early progress accelerating drug development with Claude</a></span>
+      <span class="badge t1">Tier 1 · Anthropic</span><span class="score s4">4</span>
+    </div>
+    <p class="sum">Anthropic shared early results from deep research partnerships with six organizations developing new medicines, and says it has begun drug-discovery efforts of its own. It's a concrete marker of frontier models moving from coding/knowledge-work demos into wet-lab scientific pipelines — the same direction as this cycle's biology-safeguard and Life Sciences Verification Program moves.</p>
+  </div>
+</section>
+
+<section id="vendor">
+  <h2 class="section">Vendor Announcements (Tier 1)</h2>
+
+  <div class="src-group">
+    <h3>OpenAI</h3>
+    <div class="item">
+      <div class="hd">
+        <span class="title"><a href="https://openai.com/index/introducing-gpt-6-1-terra/">GPT-6.1 Terra</a></span>
+        <span class="badge t1">Tier 1</span><span class="score s5">5</span>
+      </div>
+      <p class="src">openai.com/news · X @OpenAI (pinned) · @sama — Oct 27</p>
+      <p class="sum">See highlight above. On internal factuality tests the low-effort error rate dropped ~37 pts vs GPT-5.6 Terra; on Terminal-Bench 4.0 it solves 50.3% at max effort (more than double its predecessor). Positioned as the mid-tier "cheaper than Sol, smarter than Luna" option, strongest on vision and computer use.</p>
+    </div>
+  </div>
+
+  <div class="src-group">
+    <h3>Anthropic</h3>
+    <div class="item">
+      <div class="hd">
+        <span class="title"><a href="https://www.anthropic.com/research/early-progress-drug-development">Early progress on accelerating drug development with Claude</a></span>
+        <span class="badge t1">Tier 1</span><span class="score s4">4</span>
+      </div>
+      <p class="src">anthropic.com/research · X @AnthropicAI (10h) — Oct 27</p>
+      <p class="sum">See highlight above. Six research partnerships plus Anthropic's own drug-discovery work; framed around how Claude supports the many stages of the medicine pipeline.</p>
+    </div>
+    <div class="item">
+      <div class="hd">
+        <span class="title"><a href="https://www.anthropic.com/news/gsa-onegov-expansion">Expanding the GSA partnership to all levels of US government</a></span>
+        <span class="badge t1">Tier 1</span><span class="score">3</span>
+      </div>
+      <p class="src">X @AnthropicAI (8h) — Oct 28</p>
+      <p class="sum">Under a new OneGov agreement with the GSA, Anthropic is bringing Claude to federal, state, local, tribal, and territorial governments at 40% off. Public-sector procurement at this breadth drives enterprise deployment patterns (compliance, data-residency, model-access controls) that ripple into how vendors package agents for regulated buyers.</p>
+    </div>
+  </div>
+
+  <div class="src-group">
+    <h3>Google Research</h3>
+    <div class="item">
+      <div class="hd">
+        <span class="title"><a href="https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/">The sleep framework: LLM knowledge retention in continual learning</a></span>
+        <span class="badge t1">Tier 1</span><span class="score">3</span>
+      </div>
+      <p class="src">research.google/blog — Oct 27</p>
+      <p class="sum">Google Research proposed a "sleep" framework that lets LLMs retain knowledge while learning continually, aimed at the catastrophic-forgetting problem that blocks models from absorbing new information after training. If it generalizes, continual-learning methods like this are a path toward agents that update from their own experience instead of being frozen at a cutoff.</p>
+    </div>
+  </div>
+</section>
+
+<section id="devtools">
+  <h2 class="section">Dev Tools (Tier 4)</h2>
+
+  <div class="src-group">
+    <h3>Amazon Web Services</h3>
+    <div class="item">
+      <div class="hd">
+        <span class="title"><a href="https://aws.amazon.com/about-aws/whats-new/2026/10/mflow-version-3-16/">SageMaker MLflow Apps now support MLflow 3.16</a></span>
+        <span class="badge t1">Tier 1</span><span class="score">3</span>
+      </div>
+      <p class="src">AWS What's New (RSS) — Oct 27</p>
+      <p class="sum">SageMaker's managed MLflow now runs 3.16, with a redesigned default trace explorer (adjustable rows, reorderable/custom columns from trace tags) and faster metric charts for large experiments. For teams instrumenting agent and GenAI runs, better trace tooling is directly useful for debugging multi-step traces; existing apps upgrade automatically.</p>
+    </div>
+  </div>
+
+  <div class="src-group">
+    <h3>Cursor</h3>
+    <div class="item">
+      <div class="hd">
+        <span class="title"><a href="https://www.cursor.com/changelog/agent-sdk">Agent SDK — define, eval, and deploy agents as code</a></span>
+        <span class="badge t4">Tier 4</span><span class="score">3</span>
+      </div>
+      <p class="src">cursor.com/changelog — undated (top of changelog)</p>
+      <p class="sum">Cursor shipped its Agent SDK (GA): an agent is a folder — <code>instructions.md</code> prompt, typed actions in <code>tools/</code>, on-demand <code>skills/</code>, MCP connections, and channels (GitHub/GitLab/Slack/webhooks/cron) — testable with evals and deployable to Cursor or your own infra. It's the "agents-as-code with built-in evals and replayable webhooks" pattern, squarely aimed at the same CI-driven bot workflows as Claude's and OpenAI's agent toolchains.</p>
+      <p class="note">Date not exposed on the changelog page; retained as the top (most recent) entry per the undated-but-top rule. Treat timing as approximate.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="bot">
+  <p><strong>Sources scanned (34):</strong> Anthropic News · Claude Blog · Claude Release Notes · Anthropic Engineering · Anthropic Research · Anthropic Institute · Anthropic Frontier Red Team · OpenAI News · OpenAI Research · OpenAI API Changelog · OpenAI Codex Changelog · Google DeepMind Blog · Google AI Blog · Gemini API Changelog · Google Research Blog · Meta AI Blog · Meta AI Research · Microsoft AI Blog · AWS What's New (RSS) · Mistral News · xAI News · Claude Code Changelog · Cursor Changelog · Aider · GitHub Copilot · Continue.dev · GitHub Trending · Hugging Face Papers · Simon Willison · X: @AnthropicAI, @OpenAI, @GoogleDeepMind, @MistralAI, @xai/@SpaceXSI, @sama, @karpathy, @swyx, @trq212 (via repost).</p>
+
+  <p><strong>X timelines fetched via Playwright (logged-out):</strong>
+  @AnthropicAI (freshest 8h — GSA OneGov, Oct 28) ·
+  @OpenAI (Oct 27 — GPT-6.1 Terra, pinned) ·
+  @GoogleDeepMind (freshest 15h — Genie 4, Oct 27) ·
+  @MistralAI (freshest Oct 21 — NVIDIA industrial AI; nothing in-window) ·
+  @xai/@SpaceXSI (freshest Oct 23 repost; nothing in-window) ·
+  @sama (Oct 27 — "6.1 Terra is here") ·
+  @karpathy (freshest Oct 12; quiet) ·
+  @swyx (Oct 27 — IPO chatter / $ANT poll, below Tier-2 bar) ·
+  @trq212 (Oct 27 — AIE Code keynote chatter, below Tier-2 bar, seen via @swyx repost).
+  @simonw not re-fetched on X — same content covered by his blog source below.</p>
+
+  <p><strong>Quiet / no in-window items:</strong> Claude Blog (freshest Oct 13) · Claude Release Notes (Oct 7) · Anthropic Engineering · Anthropic Research (listing; S-1 + formal-verification items dated Oct 23–26, just outside window) · Anthropic Institute · Frontier Red Team · OpenAI Research · Google DeepMind Blog (Gemini 4 Argon items dated earlier) · Google AI Blog · Meta AI Blog (Jul 2026) · Meta AI Research · Microsoft AI Blog · Mistral News (Mistral Large 4, Oct 6) · xAI News (Grok Voice 3.0, Oct 14) · Claude Code Changelog (2.1.312 — undatable, not treated as in-window) · Aider · GitHub Copilot · Continue.dev · GitHub Trending · Hugging Face Papers (no item cleared Tier-2 score ≥4) · Simon Willison blog (GPT-6.1 Terra note Oct 26, below the in-window line).</p>
+
+  <p><strong>Edge-of-window notes:</strong> Anthropic's S-1 SEC filing (Oct 26) and OpenAI's frontier-training-security / Brotli-RCE post (Oct 24) are high-signal but fall just outside the 24h window and were not counted as today's items. GPT-6.1 Terra is dated Oct 26 on openai.com but was announced/promoted Oct 27 (X, @sama) — kept in-window on the announcement date.</p>
+
+  <p><strong>Failed sources:</strong> none. (First <code>x.com</code> navigation hit a transient <code>ERR_CONNECTION_RESET</code>; retried successfully.)</p>
+</footer>
+
+</div>
+</body>
+</html>
