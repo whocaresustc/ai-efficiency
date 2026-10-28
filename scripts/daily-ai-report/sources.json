@@ -324,6 +324,19 @@
       "url": "https://x.com/swyx",
       "max_items": 5,
       "notes": "Latent Space's swyx — AI engineering ecosystem signal"
+    },
+    {
+      "_section": "Tier 2 — X keyword search (breakout detection, NOT a trending feed). High-bar: items must score >= 4 and count against the Tier-2 cap of 3. Purpose: catch major AI news that breaks on X before/without a vendor-blog post, WITHOUT scraping X's gamed, personalized trending list. Uses engagement + recency filters to surface genuine breakouts, not engagement bait."
+    },
+    {
+      "name": "X search: breakout AI releases",
+      "tier": 2,
+      "type": "playwright-x-search",
+      "search_query": "(\"new model\" OR \"we're releasing\" OR \"introducing\" OR \"now available\" OR benchmark OR SOTA) (AI OR LLM OR agent OR model) min_faves:800 -is:retweet lang:en",
+      "url": "https://x.com/search?q=&f=live",
+      "window_hours": 24,
+      "max_items": 4,
+      "notes": "Live-search the last 24h for high-engagement posts that look like a launch/benchmark. min_faves:800 and the live (recency) sort filter out low-signal noise. ONLY keep items that independently score >= 4 (genuine frontier news); drop crypto/drama/marketing. Verify against a primary source where possible before trusting. If the logged-out search path is rate-limited or empty, log it in 'failed sources' and continue — do NOT treat an empty search as a quiet day."
     }
   ]
 }

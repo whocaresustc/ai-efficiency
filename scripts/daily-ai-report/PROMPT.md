@@ -23,6 +23,12 @@ For each source in `sources.json`, fetch the latest items respecting `max_items`
   4. Parse the tree for `article` entries inside the timeline region. Each article has: tweet text (in a `generic` child), date (in a `time` element under a status link `/handle/status/<id>`), engagement counts (in the `group` aria-label).
   5. After ALL playwright-x sources are fetched, call `mcp__playwright__browser_close` once at the end. Do NOT close between accounts.
   6. If a playwright-x fetch errors or times out, log it in the footer's "failed sources" list and continue with the next account — do not abort the run.
+- `type: playwright-x-search` — breakout detection via X live search (NOT a trending feed). Steps:
+  1. `mcp__playwright__browser_navigate` to `https://x.com/search?q=<url-encoded search_query>&f=live` (f=live sorts by recency, not algorithm).
+  2. `mcp__playwright__browser_wait_for` `time: 3`, then `mcp__playwright__browser_snapshot`.
+  3. Parse `article` entries as for `playwright-x`. Keep only posts within `window_hours` (24h) and, independently, that you'd score ≥ 4 — i.e. a genuine frontier release/benchmark. **Drop** crypto, drama, marketing, and engagement bait regardless of like count.
+  4. Where possible, corroborate a kept item against a primary source (vendor blog / the account's own post) before including it; note that in the summary.
+  5. This source counts against the Tier-2 cap of 3. An empty/rate-limited search is NOT a quiet day — log it under failed sources and continue.
 - `type: url` — fetch raw text via Bash `curl -s` for plain files like CHANGELOG.md.
 - For `filter_keywords`, drop items whose title doesn't match (case-insensitive).
 
