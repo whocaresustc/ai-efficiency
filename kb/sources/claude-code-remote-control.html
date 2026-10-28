@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Code Remote Control — How to Use</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #161a22;
+    --ink: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #f0a06b;
+    --accent-2: #6ec1ff;
+    --border: #242a36;
+    --good: #7ee0a1;
+    --warn: #ffd479;
+    --bad: #ff8a8a;
+  }
+  * { box-sizing: border-box; }
+  html, body { background: var(--bg); color: var(--ink); }
+  body {
+    margin: 0;
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, system-ui, sans-serif;
+    padding: 32px 20px 80px;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  h1 {
+    font-size: 30px; line-height: 1.2; margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .sub { color: var(--muted); margin: 0 0 28px; font-size: 15px; }
+  h2 {
+    font-size: 20px; margin: 36px 0 10px;
+    border-bottom: 1px solid var(--border); padding-bottom: 6px;
+  }
+  h3 { font-size: 16px; margin: 22px 0 8px; color: var(--accent); }
+  p { margin: 8px 0; }
+  ul, ol { margin: 8px 0 8px 22px; padding: 0; }
+  li { margin: 4px 0; }
+  code, kbd {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 13.5px;
+    background: #1d2230;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 6px;
+    color: #ffd9b8;
+  }
+  kbd { color: #cfe7ff; }
+  pre {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    overflow-x: auto;
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+  pre code { background: transparent; border: 0; padding: 0; color: #d7e3f3; }
+  .grid { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .card h3 { margin-top: 0; }
+  .badge {
+    display: inline-block;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #2a2014;
+    color: var(--accent);
+    border: 1px solid #3a2a1a;
+    margin-right: 6px;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  .note { border-left: 3px solid var(--accent-2); background: #15202b; padding: 10px 14px; border-radius: 6px; color: #cfe3f3; }
+  .warn { border-left: 3px solid var(--warn); background: #1f1c12; padding: 10px 14px; border-radius: 6px; color: #f3e3c4; }
+  .ok   { border-left: 3px solid var(--good); background: #142319; padding: 10px 14px; border-radius: 6px; color: #d4f3df; }
+  a { color: var(--accent-2); }
+  footer { color: var(--muted); font-size: 12px; margin-top: 40px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Claude Code Remote Control</h1>
+<p class="sub">Continue a local Claude Code session from your phone, tablet, or any browser. Your code stays on your machine; only chat messages and tool I/O cross the encrypted bridge.</p>
+
+<h2>What it is</h2>
+<p>Remote Control turns the Claude Code process running on your laptop into something you can drive from <code>claude.ai/code</code> or the Claude mobile app. Unlike Claude Code on the web (which runs in cloud sandboxes), the session here is <em>your local one</em>: same files, same MCP servers, same project context.</p>
+
+<h2>Requirements</h2>
+<ul>
+  <li>A Claude.ai subscription with Code access (e.g. Claude Max). Logged-in via <code>/login</code> in the Claude Code CLI — an <code>ANTHROPIC_API_KEY</code> alone is not enough.</li>
+  <li>A recent Claude Code CLI. Check with <code>claude --version</code> and update if needed:
+    <pre><code>claude update</code></pre>
+  </li>
+  <li>The Claude mobile app (iOS/Android) <em>or</em> any modern browser.</li>
+</ul>
+
+<h2>Start a session</h2>
+
+<div class="grid">
+  <div class="card">
+    <h3>Option A — Start fresh</h3>
+    <p>Run a dedicated Remote Control process from any project directory:</p>
+    <pre><code>claude remote-control</code></pre>
+    <p>Or the shorthand:</p>
+    <pre><code>claude rc</code></pre>
+    <p>The terminal stays in foreground showing a session URL, connection status, and tool activity. Press <kbd>Space</kbd> to display a QR code.</p>
+  </div>
+  <div class="card">
+    <h3>Option B — Convert an active session</h3>
+    <p>Already mid-conversation? From inside Claude Code, run:</p>
+    <pre><code>/remote-control</code></pre>
+    <p>Or:</p>
+    <pre><code>/rc</code></pre>
+    <p>Your full conversation history carries over.</p>
+    <p class="note" style="margin-top:10px">Tip: run <code>/rename my-session</code> first. A session called "sure, go ahead" is impossible to find on a phone later.</p>
+  </div>
+</div>
+
+<h3>Useful flags &amp; variants</h3>
+<table>
+  <tr><th>Flag / form</th><th>Effect</th></tr>
+  <tr><td><code>claude --remote-control "My Project"</code></td><td>Start any normal session with Remote Control already enabled, named "My Project".</td></tr>
+  <tr><td><code>--name "My Project"</code></td><td>Set a friendly name (otherwise auto-named like <code>myhost-graceful-unicorn</code> or from your last message).</td></tr>
+  <tr><td><code>--remote-control-session-name-prefix &lt;prefix&gt;</code> / <code>CLAUDE_REMOTE_CONTROL_SESSION_NAME_PREFIX</code></td><td>Override the default <code>myhost-…</code> prefix.</td></tr>
+  <tr><td><code>--spawn same-dir | worktree | session</code></td><td>How new sessions launched remotely are spawned. <code>worktree</code> uses a git worktree for isolation.</td></tr>
+  <tr><td><code>--capacity &lt;N&gt;</code></td><td>With <code>--spawn=session</code>, max concurrent remote-spawned sessions.</td></tr>
+  <tr><td><code>--verbose</code></td><td>Extra logging.</td></tr>
+  <tr><td><code>--sandbox</code> / <code>--no-sandbox</code></td><td>Force sandboxing on/off.</td></tr>
+</table>
+
+<h2>Connect from another device</h2>
+<ol>
+  <li><strong>Mobile app (fastest):</strong> press <kbd>Space</kbd> in the running terminal to show a QR code, then scan it with the Claude app. The session opens in the <em>Code</em> tab.</li>
+  <li><strong>Browser:</strong> copy the session URL printed in the terminal and open it on any device. Useful when the app isn't installed, or to share view with a colleague.</li>
+  <li><strong>From <code>claude.ai/code</code>:</strong> your active Remote Control session shows up in the session list — just click it.</li>
+</ol>
+<p>Don't have the app yet? Run <code>/mobile</code> inside Claude Code for a download QR code.</p>
+<p class="ok">Conversation stays in sync across terminal, browser, and phone — you can send messages from any of them interchangeably.</p>
+
+<h2>Always-on Remote Control</h2>
+<p>To make every session a Remote Control session automatically:</p>
+<ol>
+  <li>In Claude Code, run <code>/config</code>.</li>
+  <li>Set <strong>Enable Remote Control for all sessions</strong> to <code>true</code>.</li>
+</ol>
+
+<h2>Mobile push notifications</h2>
+<p>You can ask things like <em>"notify me when the tests finish"</em> and get a push on your phone. To enable:</p>
+<ol>
+  <li>Install the Claude mobile app and sign in with the same account.</li>
+  <li>Allow notifications when prompted by the OS.</li>
+  <li>In Claude Code, run <code>/config</code> and turn on push notifications.</li>
+</ol>
+
+<h2>Security model</h2>
+<ul>
+  <li>The local CLI makes <strong>outbound HTTPS only</strong>. No inbound ports are opened on your machine.</li>
+  <li>The CLI registers with the Anthropic API and polls for work; messages are routed over a streaming TLS connection.</li>
+  <li>Multiple short-lived, purpose-scoped credentials are used and expire independently.</li>
+  <li>Files and MCP servers <strong>never leave your machine</strong>. Only chat messages and tool results cross the bridge.</li>
+</ul>
+
+<h2>Limitations</h2>
+<ul>
+  <li>One Remote Control session per Claude Code instance. Run a second instance (separate terminal/dir) for a second session.</li>
+  <li>Several slash commands are not available remotely / behave differently — notably: <code>/mcp</code>, <code>/plugin</code>, <code>/resume</code>, <code>/compact</code>, <code>/clear</code>, <code>/context</code>, <code>/usage</code>, <code>/usage-credits</code>, <code>/recap</code>, <code>/reload-plugins</code>, <code>/exit</code>.</li>
+  <li>Auto-reconnect tolerates short network drops (~10 minutes); after that you'll need to reconnect.</li>
+  <li>Permission prompts still appear — you approve each action from whichever device is connected. <code>--dangerously-skip-permissions</code> is reportedly not honored here.</li>
+</ul>
+
+<h2>Troubleshooting</h2>
+
+<h3>"Remote Control requires a claude.ai subscription"</h3>
+<p>You're authenticated with an API key, not a claude.ai login. Log out and re-login:</p>
+<pre><code>claude auth login</code></pre>
+<p>Make sure no <code>ANTHROPIC_API_KEY</code> is set in your shell — it can shadow the subscription auth.</p>
+
+<h3>"Remote Control requires a full-scope login token"</h3>
+<p>Your token doesn't have the right scope. <code>claude auth login</code> again to refresh.</p>
+
+<h3>"Remote Control is not enabled for your account"</h3>
+<p>Reported workaround: <code>/logout</code> in the CLI, then log back in. Restart the process.</p>
+
+<h3>API 500s after restart / phantom sessions</h3>
+<p>If a previous <code>claude remote-control</code> died ungracefully, existing remote clients can return mysterious errors instead of "session ended." Fully quit the mobile app / close the browser tab, restart the CLI, and reconnect.</p>
+
+<h2>TL;DR</h2>
+<pre><code># one-time
+claude update
+claude /login          # must be a claude.ai login, not API key
+
+# start it
+claude rc              # or: claude remote-control
+# press Space → scan QR with Claude app
+# …or open the printed URL on any device</code></pre>
+
+<footer>
+  Sources: <a href="https://code.claude.com/docs/en/remote-control">code.claude.com/docs/en/remote-control</a> ·
+  Anthropic announcement (Feb 25, 2026) ·
+  Simon Willison's notes ·
+  community write-ups (DataCamp, claudefa.st, NxCode, Builder.io).
+</footer>
+
+</div>
+</body>
+</html>

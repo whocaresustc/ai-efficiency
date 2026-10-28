@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Knowledge Base — Tools</title>
+<style>
+  :root{color-scheme:light dark;--bg:#fff;--fg:#1a1a1a;--muted:#666;--card:#f6f7f9;--border:#e2e5ea;--accent:#4f46e5;--fresh:#16a34a}
+  @media(prefers-color-scheme:dark){:root{--bg:#0e1116;--fg:#e6e8eb;--muted:#9aa4b2;--card:#161b22;--border:#2a3038;--accent:#818cf8}}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--fg);margin:0;line-height:1.6}
+  .wrap{max-width:820px;margin:0 auto;padding:36px 22px 80px}
+  a.back{color:var(--accent);text-decoration:none;font-size:.9rem}
+  h1{font-size:1.8rem;margin:10px 0 2px}
+  h2{font-size:1.25rem;margin:32px 0 8px;border-bottom:1px solid var(--border);padding-bottom:6px}
+  h3{font-size:1.02rem;margin:18px 0 4px}
+  .meta{color:var(--muted);font-size:.85rem;margin:0 0 20px}
+  .changed{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--fresh);border-radius:8px;padding:12px 16px;margin:14px 0 24px;font-size:.92rem}
+  .changed strong{color:var(--fresh)}
+  p{margin:8px 0}ul{padding-left:20px}li{margin:5px 0}
+  .srcnote{color:var(--muted);font-size:.84rem}
+  a{color:var(--accent)}
+  code{background:var(--card);padding:1px 5px;border-radius:5px;font-size:.85em}
+  footer{margin-top:44px;color:var(--muted);font-size:.82rem;border-top:1px solid var(--border);padding-top:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← Knowledge Base</a>
+  <h1>Tools</h1>
+  <p class="meta">Agent/coding tools — Claude Code, other CLIs/IDEs, MCP, terminal. <strong>Last refreshed 2026-10-28.</strong></p>
+
+  <div class="changed">
+    <strong>What changed recently</strong> — Claude Code shipped a desktop "v2" built around running many sessions side-by-side with a live per-session activity view and faster startup (see <a href="agents.html">Agents</a>). The durable practitioner knowledge below is distilled from hands-on notes; full source notes live in <code>kb/sources/</code>.
+  </div>
+
+  <h2>Claude Code</h2>
+
+  <h3>Parallel workflow (the core idea)</h3>
+  <p>The highest-leverage habit, per creator Boris Cherny: <strong>run multiple Claudes in parallel</strong> (5+ terminal tabs, numbered), use notifications to know when one needs input, and run sessions on claude.ai/code alongside local ones — handing off with <code>&amp;</code>, moving between them with <code>--teleport</code>.</p>
+
+  <h3>Settings worth turning on</h3>
+  <ul>
+    <li><strong>Notifications</strong> — <code>/config</code> → Notifications → <code>terminal_bell</code>, so you can multitask and get pinged when Claude needs you.</li>
+    <li><strong>Fullscreen rendering</strong> — <code>export CLAUDE_CODE_NO_FLICKER=1</code> for a flicker-free full-screen UI with mouse support; <code>Ctrl+o</code> opens a <code>less</code>-like transcript viewer.</li>
+    <li><strong><code>/insights</code></strong> — generates an HTML usage report (what's working, friction analysis, suggested CLAUDE.md additions, workflows to try). Saved to <code>~/.claude/usage-data/report.html</code>.</li>
+    <li><strong>Auto memory</strong> — persistent per-project memory at <code>~/.claude/projects/&lt;path&gt;/memory/</code>; <code>MEMORY.md</code> loads into every session. Store stable patterns/paths/preferences, not session context. Use <code>/remember</code> to save explicitly.</li>
+  </ul>
+
+  <h3>Git worktrees</h3>
+  <p>Run parallel Claude sessions on isolated checkouts instead of switching branches in one working copy — avoids clobbering in-flight edits. Full comparison in the source note.</p>
+  <p class="srcnote">Full notes: <a href="sources/Claude%20Code%20Setting.md">Claude Code Setting.md</a> · <a href="sources/Git%20Worktree%20with%20Claude%20Code.md">Git Worktree with Claude Code.md</a> · <a href="sources/claude-code-remote-control.html">remote control</a> · <a href="sources/claude-code-video-knowledge-points.md">video knowledge points</a></p>
+
+  <h2>Other agentic CLIs &amp; IDEs</h2>
+  <p>Tracked via the daily reports' Tier-4 dev-tool sources — changelog-driven, folded in as notable features ship.</p>
+  <ul>
+    <li><strong>Cursor</strong> · <strong>OpenAI Codex</strong> · <strong>Aider</strong> · <strong>Continue.dev</strong> · <strong>GitHub Copilot</strong> — the field beyond Claude Code.</li>
+    <li><strong>Agent SDKs</strong> — e.g. Cursor Agent SDK (surfaced Oct 28), for embedding agent loops in your own apps.</li>
+  </ul>
+
+  <h2>MCP (Model Context Protocol)</h2>
+  <p>The standard for giving agents tools/resources. Accumulates here as servers and patterns surface in the reports.</p>
+
+  <h2>Terminal &amp; environment</h2>
+  <p>Setup that makes AI-assisted dev faster — shell tooling, shortcuts, mouse control.</p>
+  <p class="srcnote">Full notes: <a href="sources/Terminal%20tools.md">Terminal tools.md</a> · <a href="sources/terminal-setup.md">terminal-setup.md</a></p>
+
+  <footer>
+    Distilled from hand-authored notes now preserved in <code>kb/sources/</code>; the daily synthesis folds Tier-4 dev-tool items into this page over time.<br>
+    Generated from the <code>ai-efficiency</code> repo, <code>main</code> branch.
+  </footer>
+</div>
+</body>
+</html>
