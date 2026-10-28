@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Knowledge Base — Agents</title>
+<style>
+  :root{color-scheme:light dark;--bg:#fff;--fg:#1a1a1a;--muted:#666;--card:#f6f7f9;--border:#e2e5ea;--accent:#4f46e5;--fresh:#16a34a}
+  @media(prefers-color-scheme:dark){:root{--bg:#0e1116;--fg:#e6e8eb;--muted:#9aa4b2;--card:#161b22;--border:#2a3038;--accent:#818cf8}}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--fg);margin:0;line-height:1.6}
+  .wrap{max-width:820px;margin:0 auto;padding:36px 22px 80px}
+  a.back{color:var(--accent);text-decoration:none;font-size:.9rem}
+  h1{font-size:1.8rem;margin:10px 0 2px}
+  h2{font-size:1.25rem;margin:34px 0 8px;border-bottom:1px solid var(--border);padding-bottom:6px}
+  h3{font-size:1.05rem;margin:20px 0 4px}
+  .changed{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--fresh);border-radius:8px;padding:12px 16px;margin:14px 0 24px;font-size:.92rem}
+  .changed strong{color:var(--fresh)}
+  .meta{color:var(--muted);font-size:.85rem;margin:0 0 20px}
+  p{margin:8px 0}
+  ul{margin:8px 0 8px 2px;padding-left:20px}
+  li{margin:5px 0}
+  .src{color:var(--muted);font-size:.82rem}
+  a{color:var(--accent)}
+  footer{margin-top:44px;color:var(--muted);font-size:.82rem;border-top:1px solid var(--border);padding-top:16px}
+  code{background:var(--card);padding:1px 5px;border-radius:5px;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← Knowledge Base</a>
+  <h1>Agents</h1>
+  <p class="meta">Architectures, patterns, and the shift to agent-scale engineering. <strong>Last refreshed 2026-10-28.</strong></p>
+
+  <div class="changed">
+    <strong>What changed recently</strong> — Agent output is now outpacing the tooling built for humans: Anthropic reports internal code-merge volume went from ~2,500/day (May) to <strong>30,000+/day (Sept)</strong>, forcing a rebuild of core dev infra for agent scale. Claude Code shipped a "v2" built around running <strong>many agent sessions side-by-side</strong> with agents aware enough to spin off their own sub-sessions. Embodied agents crossed a threshold: Gemini 4 Argon taught a humanoid robot a physical task by <strong>writing its own physics simulation from a video</strong>.
+  </div>
+
+  <h2>Why agents are the center of gravity</h2>
+  <p>Across the daily reports, "agent" is the single most recurring theme — ahead of any individual model. The field has moved from "LLM that answers" to "agent that does work over many steps," and the hard problems have shifted accordingly: orchestration, memory, self-awareness, and the infrastructure to absorb agent-scale output.</p>
+
+  <h2>Multi-agent &amp; sub-agents</h2>
+  <p>The dominant 2026 pattern is <strong>one main loop that delegates to sub-agents</strong> rather than a single monolithic agent.</p>
+  <ul>
+    <li><strong>Side-by-side sessions.</strong> Claude Code's desktop "v2" is built around running many agent sessions in parallel, with a live view of what each is doing and faster startup — tooling catching up to how people actually drive agents. <span class="src">(Claude Code, Oct 15)</span></li>
+    <li><strong>Self-spawning.</strong> Agents are becoming "aware of their own capabilities" — e.g. spinning off sub-sessions when a task fans out. <span class="src">(Thariq Shihipar / @trq212)</span></li>
+    <li><strong>When to fold vs. split.</strong> An open design question the field is actively writing about: when a sub-agent earns its keep vs. when it should be folded back into the main loop. <span class="src">(flagged as a gap — article at claude.com/resources/articles not yet captured; source added 2026-10-28)</span></li>
+  </ul>
+
+  <h2>Agent-scale engineering</h2>
+  <p>The clearest structural signal of the year: <strong>once most commits are agent-generated, human-scale infrastructure breaks.</strong></p>
+  <ul>
+    <li>Anthropic rebuilt its own source control after merge volume hit 30k+/day — dev infra designed for humans bottlenecked on agent throughput. A preview of problems any team scaling agentic coding will hit. <span class="src">(Anthropic Engineering, Oct 14)</span></li>
+  </ul>
+
+  <h2>Embodied &amp; tool-using agents</h2>
+  <ul>
+    <li><strong>Code-your-own-simulation.</strong> Gemini 4 Argon watched a cornhole video, mapped the physics, wrote its own simulation, and taught Apptronik's Apollo humanoid to sink throws — video-grounded, self-authored tooling rather than a fixed skill. <span class="src">(DeepMind, Oct 14)</span></li>
+    <li><strong>Voice agents.</strong> Grok Voice 3.0 (sub-1s latency, #1 Speech-to-Speech) is already powering customer-support voice in production, pushing real-time spoken agents mainstream. <span class="src">(xAI, Oct 15)</span></li>
+  </ul>
+
+  <h2>Open questions to watch</h2>
+  <ul>
+    <li>Sub-agent orchestration: fold vs. split, context handoff, cost of parallel sessions.</li>
+    <li>Agent memory across sessions (durable state, not just context window).</li>
+    <li>Infra for agent-scale output: review, merge, CI, and attribution when humans aren't the bottleneck.</li>
+  </ul>
+
+  <footer>
+    Worked-example page, synthesized from reports 2026-10-14/15/28. The daily synthesis step keeps this current — promoting new advancements and superseding what changed.<br>
+    Generated from the <code>ai-efficiency</code> repo, <code>main</code> branch.
+  </footer>
+</div>
+</body>
+</html>

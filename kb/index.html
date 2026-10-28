@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Knowledge Base — Index</title>
+<style>
+  :root{color-scheme:light dark;--bg:#fff;--fg:#1a1a1a;--muted:#666;--card:#f6f7f9;--border:#e2e5ea;--accent:#4f46e5;--fresh:#16a34a;--stale:#d97706;--old:#dc2626}
+  @media(prefers-color-scheme:dark){:root{--bg:#0e1116;--fg:#e6e8eb;--muted:#9aa4b2;--card:#161b22;--border:#2a3038;--accent:#818cf8}}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--fg);margin:0;line-height:1.55}
+  .wrap{max-width:860px;margin:0 auto;padding:40px 22px 80px}
+  h1{font-size:1.9rem;margin:0 0 4px}
+  .tag{color:var(--muted);font-size:.95rem;margin:0 0 28px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+  a.card{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;transition:border-color .15s}
+  a.card:hover{border-color:var(--accent)}
+  .card h2{font-size:1.1rem;margin:0 0 6px}
+  .card p{color:var(--muted);font-size:.9rem;margin:0 0 10px}
+  .fresh,.stale,.old{font-size:.78rem;font-weight:600;padding:2px 8px;border-radius:20px}
+  .fresh{color:var(--fresh);background:color-mix(in srgb,var(--fresh) 14%,transparent)}
+  .stale{color:var(--stale);background:color-mix(in srgb,var(--stale) 14%,transparent)}
+  .old{color:var(--old);background:color-mix(in srgb,var(--old) 14%,transparent)}
+  footer{margin-top:40px;color:var(--muted);font-size:.82rem;border-top:1px solid var(--border);padding-top:16px}
+  code{background:var(--card);padding:1px 5px;border-radius:5px;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>AI Knowledge Base</h1>
+  <p class="tag">What we currently know about the AI / agent field — living topic pages, refreshed from the daily reports. Topic-first, not date-first.</p>
+
+  <div class="grid">
+    <a class="card" href="models.html"><h2>Models</h2><p>Frontier model landscape — who leads at what.</p><span class="fresh">refreshed 2026-10-28</span></a>
+    <a class="card" href="agents.html"><h2>Agents</h2><p>Architectures, patterns, multi-agent, subagents, memory.</p><span class="fresh">refreshed 2026-10-28</span></a>
+    <a class="card" href="tools.html"><h2>Tools</h2><p>Claude Code, Cursor, Codex, MCP, CLIs.</p><span class="fresh">refreshed 2026-10-28</span></a>
+    <a class="card" href="techniques.html"><h2>Techniques</h2><p>Prompting, context mgmt, evals, RAG, reasoning.</p><span class="fresh">refreshed 2026-10-28</span></a>
+    <a class="card" href="reading.html"><h2>Reading</h2><p>Curated blogs &amp; papers worth keeping.</p><span class="fresh">refreshed 2026-10-28</span></a>
+    <a class="card" href="people.html"><h2>People</h2><p>Who to follow across AI.</p><span class="stale">seed content</span></a>
+  </div>
+
+  <footer>
+    <strong>How this stays current:</strong> the daily report pipeline (<code>scripts/daily-ai-report/</code>) captures the last 24h across ~41 sources; a synthesis step folds genuinely new advancements into these topic pages and supersedes what changed. Freshness badges: <span class="fresh">fresh</span> updated recently · <span class="stale">stale / seed</span> needs a refresh · <span class="old">old</span> likely outdated.<br>
+    Generated from the <code>ai-efficiency</code> repo, <code>main</code> branch.
+  </footer>
+</div>
+</body>
+</html>
