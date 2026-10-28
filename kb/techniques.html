@@ -28,8 +28,18 @@
   <p class="meta">How to build with AI — prompting, context management, evals, RAG, reasoning. <strong>Last refreshed 2026-10-28.</strong></p>
 
   <div class="changed">
-    <strong>What changed recently</strong> — Continual learning is drawing fresh research attention: Google Research proposed a <strong>"sleep" framework</strong> that lets an LLM absorb new knowledge after training without catastrophic forgetting — a step toward agents that update from their own experience rather than staying frozen at a cutoff. The subtopics below fill in as the daily reports surface durable methods.
+    <strong>What changed recently</strong> — A practitioner framework for "being more ambitious" with models, from an Anthropic eng lead: push on <strong>Speed, Altitude, Depth, and Range</strong> rather than just doing the same task faster (see below). Separately, continual learning is drawing research attention — Google Research's <strong>"sleep" framework</strong> lets an LLM absorb new knowledge after training without catastrophic forgetting.
   </div>
+
+  <h2>Getting more out of models: the four ambitions</h2>
+  <p>Felix Rieseberg (Anthropic — led eng for Claude.ai, Cowork, Claude Code Desktop) frames ambition with AI as four distinct moves. Model-agnostic. <span class="src">(felixrieseberg.com, Oct 13)</span></p>
+  <ul>
+    <li><strong>Speed</strong> — the same task, faster. The economic baseline; needs little creativity.</li>
+    <li><strong>Altitude</strong> — go up in abstraction: ask for the <em>outcome</em>, not the task. "Keep our apps crash-free," not "fix this crash." Best when you'd otherwise hold meetings about the work; this is where durable, human-out-of-the-loop workflows live (but you must first give the model the access/tools to act).</li>
+    <li><strong>Depth</strong> — do the task as a field-leading expert would. Insist on real instruments (databases/stats models, not markdown tables), set "unreasonable" goals and call them reasonable, adversarially challenge assumptions against raw data, and <strong>use an outside judge — never let the model grade itself</strong>.</li>
+    <li><strong>Range</strong> — draw on multiple fields. "Replace nouns with verbs" (a QBR deck is "getting busy people to decide under uncertainty in 30 min"), then <em>assemble a crew</em> of disciplines — and ask the model to <em>do</em> what each expert does, not role-play writing like them. Shines with multi-agent/subagent setups (see <a href="agents.html">Agents</a>).</li>
+  </ul>
+  <p>A reusable depth prompt he offers: <em>"I want a deeper version of this task, not a bigger one. Before rewriting it: (1) what a top professional would do that I'm not asking for; (2) the rawest material they'd start from; (3) the specific methods/tools they'd use; (4) what, other than you or me, would show the result is right. Then rewrite my prompt to ask for exactly that."</em> Full writeup in <a href="reading.html">Reading</a>.</p>
 
   <h2>Reasoning &amp; continual learning</h2>
   <ul>
@@ -40,7 +50,7 @@
   <ul>
     <li><strong>Context management</strong> — windows, compaction, memory, retrieval</li>
     <li><strong>Prompting &amp; agent design</strong> — structured prompts, tool definitions, skills</li>
-    <li><strong>Evals</strong> — measuring agent/model quality, LLM-as-judge</li>
+    <li><strong>Evals</strong> — measuring agent/model quality, LLM-as-judge (note: outside-judge principle above)</li>
     <li><strong>RAG &amp; retrieval</strong> — grounding, embeddings</li>
   </ul>
 
