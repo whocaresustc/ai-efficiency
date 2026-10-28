@@ -1,0 +1,114 @@
+{
+  "_comment": "Durable memory for the self-improving daily-AI-report loop. Written by meta.sh (the daily meta-agent) and read by run.sh (the report run). Delete this file to reset all learnings. Hand-edits are fine; the meta-agent merges, it does not clobber.",
+  "schema_version": 1,
+  "updated_at": "2026-10-28",
+  "sources": {
+    "_comment": "keyed by source name from sources.json. seen=runs where scanned, produced=runs where it contributed a kept item, failed=fetch errors, stale=returned data older than window, empty=scanned-but-nothing. status: active|degraded|disabled. The meta-agent flags degraded after a streak and may disable (never delete) with a reason.",
+    "AWS What's New (AI/ML)": {
+      "status": "active",
+      "note": "2026-10-28: contributed again (SageMaker MLflow 3.16 trace explorer, score 3) via the dated RSS feed. Third in-window item on the RSS source across the reviewed runs; the undated-tavily problem stays resolved. Fully healthy.",
+      "seen": 5, "produced": 2, "failed": 0, "stale": 3, "empty": 2,
+      "last_contributed": "2026-10-28"
+    },
+    "Google DeepMind Blog": {
+      "status": "active",
+      "note": "2026-10-28: blog quiet; the day's Genie 4 top item (score 5) came via the @GoogleDeepMind X timeline, not the blog. Same pattern as 10-15 (Argon) — DeepMind's big launches surface on X before/instead of the blog listing. Not degraded (X path covers it), but noting the recurring blog-lag.",
+      "seen": 4, "produced": 1, "failed": 0, "stale": 0, "empty": 3,
+      "last_contributed": "2026-10-14"
+    },
+    "Anthropic Engineering": {
+      "status": "active",
+      "note": "2026-10-28: quiet, nothing in-window. Prior thin-extract watch (10-15) is stale — no new failures observed.",
+      "seen": 4, "produced": 2, "failed": 0, "stale": 0, "empty": 2,
+      "last_contributed": "2026-10-15"
+    },
+    "X: @GoogleDeepMind": {
+      "status": "active",
+      "note": "2026-10-28: contributed the Genie 4 world-model launch (score 5, day's co-top item). Consistently the real delivery path for DeepMind launches. Reliable Tier-1 social source.",
+      "seen": 4, "produced": 3, "failed": 0, "stale": 0, "empty": 1,
+      "last_contributed": "2026-10-28"
+    },
+    "xAI News": {
+      "status": "active",
+      "note": "2026-10-28: quiet (freshest is Grok Voice 3.0, Oct 14, out of window).",
+      "seen": 2, "produced": 1, "failed": 0, "stale": 1, "empty": 0,
+      "last_contributed": "2026-10-15"
+    },
+    "Anthropic News": {
+      "status": "active",
+      "note": "2026-10-28: contributed the GSA OneGov expansion (score 3, corporate/policy), via @AnthropicAI. Also surfaced the drug-development research post indirectly (primary item from Anthropic Research).",
+      "seen": 3, "produced": 2, "failed": 0, "stale": 0, "empty": 1,
+      "last_contributed": "2026-10-28"
+    },
+    "Anthropic Research": {
+      "status": "active",
+      "note": "2026-10-28: contributed the day's #3 highlight (early progress accelerating drug development, score 4) via anthropic.com/research + @AnthropicAI. First tracked contribution; healthy.",
+      "seen": 2, "produced": 1, "failed": 0, "stale": 0, "empty": 1,
+      "last_contributed": "2026-10-28"
+    },
+    "Google Research Blog": {
+      "status": "active",
+      "note": "2026-10-28: contributed the 'sleep framework' continual-learning post (score 3). Note the 10-19 Harness² miss was NOT this blog's fault — that work was never posted here (verified absent); it came via arXiv/GitHub. Blog itself is healthy when Google Research does post.",
+      "seen": 2, "produced": 1, "failed": 0, "stale": 0, "empty": 1,
+      "last_contributed": "2026-10-28"
+    },
+    "Cursor Changelog": {
+      "status": "active",
+      "note": "2026-10-28: contributed the Agent SDK GA item (score 3) but the changelog page exposes NO per-item date — kept under the 'undated-but-top entry' rule, timing approximate. Recurring: this source is consistently undatable, so window-filtering relies on the top-entry heuristic. Acceptable for now; watch it doesn't let stale items through.",
+      "seen": 2, "produced": 1, "failed": 0, "stale": 0, "empty": 1,
+      "last_contributed": "2026-10-28"
+    },
+    "X: @GoogleResearch": {
+      "status": "active",
+      "note": "2026-10-28: ADDED today to close the Harness² gap (see judgment notes + sources.json). Not yet scanned — counters start at 0. Evaluate over the next ~7 runs whether it posts frequently enough to justify the fetch.",
+      "seen": 0, "produced": 0, "failed": 0, "stale": 0, "empty": 0,
+      "last_contributed": null
+    },
+    "Hugging Face Daily Papers": {
+      "status": "active",
+      "note": "2026-10-28: scanned, no item cleared the Tier-2 score>=4 bar (normal). 2026-10-19 post-mortem: this was one of two popularity-gated paths that could have caught Harness² but didn't (upvotes hadn't built by the 10-15 window). Working as designed.",
+      "seen": 2, "produced": 0, "failed": 0, "stale": 0, "empty": 2,
+      "last_contributed": null
+    },
+    "GitHub Trending (AI/ML)": {
+      "status": "active",
+      "note": "2026-10-28: scanned, nothing kept. 2026-10-19 post-mortem: google-research/harness2 only started trending ~Oct 18, after the 10-15 window — the trending path is inherently lagging. Working as designed.",
+      "seen": 2, "produced": 0, "failed": 0, "stale": 0, "empty": 2,
+      "last_contributed": null
+    }
+  },
+  "judgment": {
+    "_comment": "calibration signals for the ranking/quiet-day logic",
+    "quiet_days_total": 15,
+    "suspect_quiet_days": [
+      {
+        "date": "2026-10-13",
+        "reason": "Quiet day (0 items) declared, but the run explicitly did NOT fire Playwright for any of the 10 X.com timelines. Dated vendor/research sources were outside the 24h window, but the Tier-1/Tier-2 social tier was unverified, so the quiet verdict is unconfirmed. Guard added to PROMPT.md step 5 as a result; has held on every subsequent reviewed run (10-14, 10-15, 10-28 all scanned the full X tier)."
+      }
+    ],
+    "notes": [
+      "A 'quiet day' declared without scanning the playwright-x timelines is SUSPECT, not confirmed quiet. PROMPT.md step 5 carries an explicit guard forbidding a quiet declaration until all tiers incl. playwright-x are fetched. Guard has held on every reviewed run since 10-13 (10-14, 10-15, 10-28). Keep the guard.",
+      "SOURCE-COVERAGE GAP — research launched via arXiv+GitHub, not a first-party blog, can slip entirely. Harness² (Google Cloud AI Research, arXiv 2610.14224) was missed on 10-15 and only caught by a manual backfill (reports/2026-10-19.html): it never hit research.google/blog, the DeepMind blog, or @GoogleDeepMind, and the only catch-paths (HF Papers, GitHub Trending) are popularity-gated and lagged by days. Fix applied 10-28: added @GoogleResearch to the playwright-x list. Still-open idea (recorded, not yet implemented — would be a new source TYPE/behavior, bigger than a 2-change budget allows): an arXiv cs.AI 'agent/harness' watch with a 72h lookback for papers, since papers surface days after submission.",
+      "DeepMind's major launches surface on the @GoogleDeepMind X timeline before (or instead of) the blog listing — Argon GA (10-14/15) and Genie 4 (10-28) both arrived via X while the blog was quiet. Prefer the X timeline as the primary DeepMind signal; the blog lags.",
+      "Edge-of-window discipline is holding: on 10-28 the run correctly EXCLUDED Anthropic's S-1 (Oct 26) and OpenAI's frontier-training-security post (Oct 24) as just-outside-window, while keeping GPT-6.1 Terra on its Oct 27 announcement/promotion date (openai.com dated it Oct 26). Good calibration — don't let adjacent-day items double-count.",
+      "Undatable changelog pages (Cursor on 10-28; Claude Code CHANGELOG) are retained via the 'undated-but-top-entry' rule with an explicit note. Acceptable, but each such item is a small risk of importing a stale entry as 'today's' — keep flagging the approximate timing in the HTML."
+    ]
+  },
+  "reliability": {
+    "_comment": "run-health history; one entry per report run appended by run.sh, graded by meta.sh. NOTE: no runs fired 10-16..10-18 or 10-20..10-27 (machine asleep/off; cron backfills only on wake). Absence of a run is not a failure — only graded days that actually fired appear here.",
+    "last_fired": "2026-10-28",
+    "last_success": "2026-10-28",
+    "consecutive_failures": 0,
+    "history": [
+      { "date": "2026-10-13", "fired": true, "produced": true, "completed": true, "outcome": "success" },
+      { "date": "2026-10-14", "fired": true, "produced": true, "completed": true, "outcome": "success" },
+      { "date": "2026-10-15", "fired": true, "produced": true, "completed": true, "outcome": "success" },
+      { "date": "2026-10-19", "fired": true, "produced": true, "completed": true, "outcome": "success", "note": "Manual backfill compiled 2026-10-21 (Harness² post-mortem), not a cron run; graded from the report file." },
+      { "date": "2026-10-28", "fired": true, "produced": true, "completed": true, "outcome": "success", "note": "run.sh stdout log is sparse (only the started line + an unrecognized_model warning), but the report HTML is 13KB with 8 items from 34 sources and a complete footer — graded success from the report file." }
+    ]
+  },
+  "meta": {
+    "last_scorecard": "2026-10-28",
+    "runs_reviewed": 5
+  }
+}

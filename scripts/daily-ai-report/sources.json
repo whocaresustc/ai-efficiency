@@ -1,0 +1,329 @@
+{
+  "_comment": "Source list for daily AI report. type: rss | tavily | url. tier: 1=vendor, 4=devtool. max_items caps per-source noise. NOTE: gh-releases removed — local gh CLI is bound to SAP enterprise GitHub and cannot read public repos; use Tavily on GitHub release pages instead.",
+  "sources": [
+    {
+      "name": "Anthropic News",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://www.anthropic.com/news",
+      "max_items": 5
+    },
+    {
+      "name": "Claude Blog (claude.com/blog)",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://claude.com/blog",
+      "max_items": 6,
+      "notes": "Primary venue for Claude Code, Claude Cowork, Claude product announcements. Distinct from anthropic.com/news (corporate/policy) — must scan both."
+    },
+    {
+      "name": "Claude Resources / Articles",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://claude.com/resources/articles",
+      "max_items": 4,
+      "notes": "Agent-building / applied-engineering articles (e.g. 'when to fold subagents into your main agent loop') that live under /resources/articles, NOT on /blog. Added 2026-10-28 after such an article was missed. For a listing page, Tavily extract may be stale — use tavily_search on claude.com/resources if needed."
+    },
+    {
+      "name": "Claude Release Notes",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "max_items": 4
+    },
+    {
+      "name": "Anthropic Engineering",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://www.anthropic.com/engineering",
+      "max_items": 3
+    },
+    {
+      "name": "Anthropic Research",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://www.anthropic.com/research",
+      "max_items": 3
+    },
+    {
+      "name": "Anthropic Institute",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://www.anthropic.com/institute",
+      "max_items": 2,
+      "notes": "Anthropic Institute publishes broad think-pieces on AI/economy/governance — distinct from /news and /research"
+    },
+    {
+      "name": "Anthropic Frontier Red Team",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://red.anthropic.com",
+      "max_items": 2,
+      "notes": "Anthropic security research blog — referenced by Glasswing/security posts"
+    },
+    {
+      "name": "OpenAI News",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://openai.com/news/",
+      "max_items": 5
+    },
+    {
+      "name": "OpenAI Research",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://openai.com/research/",
+      "max_items": 3
+    },
+    {
+      "name": "OpenAI API Changelog",
+      "tier": 4,
+      "type": "tavily",
+      "url": "https://platform.openai.com/docs/changelog",
+      "max_items": 4
+    },
+    {
+      "name": "OpenAI Codex Changelog",
+      "tier": 4,
+      "type": "tavily",
+      "url": "https://developers.openai.com/codex/changelog",
+      "max_items": 4
+    },
+    {
+      "name": "Google DeepMind Blog",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://deepmind.google/discover/blog/",
+      "max_items": 4
+    },
+    {
+      "name": "Google AI Blog (blog.google)",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://blog.google/technology/ai/",
+      "max_items": 4
+    },
+    {
+      "name": "Gemini API Changelog",
+      "tier": 4,
+      "type": "tavily",
+      "url": "https://ai.google.dev/gemini-api/docs/changelog",
+      "max_items": 3
+    },
+    {
+      "name": "Google Research Blog",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://research.google/blog/",
+      "max_items": 3
+    },
+    {
+      "name": "Meta AI Blog",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://ai.meta.com/blog/",
+      "max_items": 3
+    },
+    {
+      "name": "Meta AI Research Blog",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://research.meta.ai/blog/",
+      "max_items": 3,
+      "notes": "Distinct Meta property from ai.meta.com/blog — hosts FAIR/research posts (e.g. muse-wonder) that never appear on the product blog. Added 2026-10-13 after a research.meta.ai post was missed."
+    },
+    {
+      "name": "Microsoft AI Blog",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://blogs.microsoft.com/ai/",
+      "max_items": 3
+    },
+    {
+      "name": "AWS What's New (AI/ML)",
+      "tier": 1,
+      "type": "url",
+      "url": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
+      "status": "active",
+      "max_items": 4,
+      "filter_keywords": ["bedrock", "sagemaker", "amazon q", "nova", "ai", "ml", "machine learning", "model", "llm", "agent", "anthropic", "claude", "titan", "generative"],
+      "notes": "2026-10-14: switched from tavily-search to the dated AWS What's New RSS feed. The search variant kept returning undated results that could not be window-filtered (flagged degraded 10-13). This feed carries per-item postDateTime, so the 24h window filter now works. Filter to AI/ML keywords since the feed is all-categories."
+    },
+    {
+      "name": "Mistral News",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://mistral.ai/news/",
+      "max_items": 2
+    },
+    {
+      "name": "xAI News",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://x.ai/news",
+      "max_items": 2
+    },
+    {
+      "name": "Claude Code Changelog",
+      "tier": 4,
+      "type": "url",
+      "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+      "max_items": 8
+    },
+    {
+      "name": "Cursor Changelog",
+      "tier": 4,
+      "type": "tavily",
+      "url": "https://www.cursor.com/changelog",
+      "max_items": 3
+    },
+    {
+      "name": "Aider Releases",
+      "tier": 4,
+      "type": "tavily",
+      "url": "https://github.com/Aider-AI/aider/releases",
+      "max_items": 2
+    },
+    {
+      "name": "GitHub Copilot Changelog",
+      "tier": 4,
+      "type": "tavily",
+      "url": "https://github.blog/changelog/label/copilot/",
+      "max_items": 3
+    },
+    {
+      "name": "Continue.dev Releases",
+      "tier": 4,
+      "type": "tavily",
+      "url": "https://github.com/continuedev/continue/releases",
+      "max_items": 2
+    },
+    {
+      "name": "GitHub Trending (AI/ML)",
+      "tier": 4,
+      "type": "tavily",
+      "url": "https://github.com/trending?since=daily&spoken_language_code=en",
+      "filter_keywords": ["llm", "agent", "ai", "ml", "model", "rag", "prompt", "openai", "anthropic", "gemini", "claude", "gpt", "transformer", "embedding", "mcp"],
+      "max_items": 5,
+      "notes": "Daily GitHub trending list — filter to AI/ML keywords. Skip generic devops/security repos."
+    },
+    {
+      "_section": "Tier 2 — Research / community (high-bar: items must score >= 4 to be included; cap 3 total across all Tier 2)"
+    },
+    {
+      "name": "Hugging Face Daily Papers",
+      "tier": 2,
+      "type": "tavily",
+      "url": "https://huggingface.co/papers",
+      "max_items": 8,
+      "min_upvotes": 50,
+      "notes": "Pre-ranked by community votes. Pull top items, but ONLY include if score >= 4 in ranking step. Most days yield 0-2 items."
+    },
+    {
+      "name": "Simon Willison's Blog",
+      "tier": 2,
+      "type": "tavily",
+      "url": "https://simonwillison.net/",
+      "max_items": 4,
+      "notes": "High-trust single-curator AI commentary. Doesn't post daily — quiet days are normal."
+    },
+    {
+      "_section": "Tier 1 — Social: X.com via Playwright MCP (logged-out fetch, no auth required, ~5 sec/account). If Playwright fails for any account, log it in 'failed sources' and continue."
+    },
+    {
+      "name": "X: @AnthropicAI",
+      "tier": 1,
+      "type": "playwright-x",
+      "handle": "AnthropicAI",
+      "url": "https://x.com/AnthropicAI",
+      "max_items": 5
+    },
+    {
+      "name": "X: @OpenAI",
+      "tier": 1,
+      "type": "playwright-x",
+      "handle": "OpenAI",
+      "url": "https://x.com/OpenAI",
+      "max_items": 5
+    },
+    {
+      "name": "X: @GoogleDeepMind",
+      "tier": 1,
+      "type": "playwright-x",
+      "handle": "GoogleDeepMind",
+      "url": "https://x.com/GoogleDeepMind",
+      "max_items": 5
+    },
+    {
+      "name": "X: @GoogleResearch",
+      "tier": 1,
+      "type": "playwright-x",
+      "handle": "GoogleResearch",
+      "url": "https://x.com/GoogleResearch",
+      "max_items": 3,
+      "status": "active",
+      "notes": "Added 2026-10-28 after the Harness² miss (reports/2026-10-19.html post-mortem): Google Cloud AI Research work (e.g. google-research/harness2) never appears on research.google/blog or the DeepMind handle and slipped the pipeline entirely. This handle is the direct first-party path for arXiv/GitHub-launched Google Research artifacts. Watch whether it posts frequently enough to be worth the fetch."
+    },
+    {
+      "name": "X: @MistralAI",
+      "tier": 1,
+      "type": "playwright-x",
+      "handle": "MistralAI",
+      "url": "https://x.com/MistralAI",
+      "max_items": 3
+    },
+    {
+      "name": "X: @xai",
+      "tier": 1,
+      "type": "playwright-x",
+      "handle": "xai",
+      "url": "https://x.com/xai",
+      "max_items": 3
+    },
+    {
+      "name": "X: @sama",
+      "tier": 2,
+      "type": "playwright-x",
+      "handle": "sama",
+      "url": "https://x.com/sama",
+      "max_items": 5,
+      "notes": "Sam Altman — high signal-to-noise ratio for OpenAI direction"
+    },
+    {
+      "name": "X: @karpathy",
+      "tier": 2,
+      "type": "playwright-x",
+      "handle": "karpathy",
+      "url": "https://x.com/karpathy",
+      "max_items": 5,
+      "notes": "Andrej Karpathy — substantive when he posts, doesn't post daily"
+    },
+    {
+      "name": "X: @simonw",
+      "tier": 2,
+      "type": "playwright-x",
+      "handle": "simonw",
+      "url": "https://x.com/simonw",
+      "max_items": 5,
+      "notes": "Simon Willison — daily AI commentary; complements his blog source"
+    },
+    {
+      "name": "X: @trq212",
+      "tier": 2,
+      "type": "playwright-x",
+      "handle": "trq212",
+      "url": "https://x.com/trq212",
+      "max_items": 5,
+      "notes": "Thariq Shihipar — Anthropic Claude Code engineer, author of 'Lessons from building Claude Code: How we use skills'. Posts infrequently (weeks/months between posts) but high signal — worth checking even if often quiet."
+    },
+    {
+      "name": "X: @swyx",
+      "tier": 2,
+      "type": "playwright-x",
+      "handle": "swyx",
+      "url": "https://x.com/swyx",
+      "max_items": 5,
+      "notes": "Latent Space's swyx — AI engineering ecosystem signal"
+    }
+  ]
+}
