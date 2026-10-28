@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily AI Report — 2026-10-19 (backfill)</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1a1a1a; --muted: #666; --card: #fafafa;
+    --border: #e2e2e2; --tier1: #2563eb; --tier1bg: #eff6ff;
+    --tier4: #16a34a; --tier4bg: #f0fdf4; --tier2: #9333ea; --tier2bg: #faf5ff;
+    --accent: #0f172a; --link: #2563eb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1117; --fg: #e6edf3; --muted: #8b949e; --card: #161b22;
+      --border: #30363d; --tier1: #58a6ff; --tier1bg: #0d2847;
+      --tier4: #3fb950; --tier4bg: #0f2a16; --tier2: #c084fc; --tier2bg: #2a1a3a;
+      --accent: #e6edf3; --link: #58a6ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg); margin: 0; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+  header.top { border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.75rem; }
+  header.top h1 { font-size: 1.65rem; margin: 0 0 .35rem; letter-spacing: -.02em; }
+  header.top .meta { color: var(--muted); font-size: .85rem; }
+  h2.section { font-size: 1.15rem; margin: 2.2rem 0 .9rem; letter-spacing: -.01em;
+    border-left: 3px solid var(--accent); padding-left: .6rem; }
+  .item {
+    background: var(--card); border: 1px solid var(--border); border-radius: 9px;
+    padding: .95rem 1.1rem; margin-bottom: .85rem;
+  }
+  .item h3 { margin: 0 0 .4rem; font-size: 1.02rem; line-height: 1.35; }
+  .item h3 a { color: var(--link); text-decoration: none; }
+  .item h3 a:hover { text-decoration: underline; }
+  .badges { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin-bottom: .5rem; }
+  .badge { font-size: .68rem; font-weight: 600; padding: .14rem .5rem; border-radius: 20px;
+    text-transform: uppercase; letter-spacing: .03em; }
+  .b-t1 { background: var(--tier1bg); color: var(--tier1); }
+  .b-t4 { background: var(--tier4bg); color: var(--tier4); }
+  .b-t2 { background: var(--tier2bg); color: var(--tier2); }
+  .b-src { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+  .score { font-size: .68rem; font-weight: 700; color: var(--muted); margin-left: auto; }
+  .summary { font-size: .92rem; color: var(--fg); margin: 0; }
+  .summary .why { color: var(--muted); }
+  .group-label { font-size: .78rem; font-weight: 600; color: var(--muted);
+    text-transform: uppercase; letter-spacing: .05em; margin: 1.1rem 0 .5rem; }
+  .note { background: var(--tier2bg); border: 1px solid var(--border); border-radius: 9px;
+    padding: .8rem 1rem; margin-bottom: 1.5rem; font-size: .85rem; color: var(--fg); }
+  footer.bot { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--border);
+    font-size: .78rem; color: var(--muted); }
+  footer.bot p { margin: .4rem 0; }
+  footer.bot code { background: var(--card); padding: .1rem .3rem; border-radius: 4px;
+    border: 1px solid var(--border); font-size: .9em; }
+  .hl { border-color: var(--tier1); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>Daily AI Report — 2026-10-19 <span style="font-weight:400;color:var(--muted)">(backfill)</span></h1>
+    <div class="meta">
+      Generated 2026-10-21 (manual backfill) • 1 headline item • covers the Harness² coverage wave of 2026-10-18 → 2026-10-19
+      <br>Backfilled because the 2026-10-15 run's 24h window closed before this story broke. See footer for root-cause analysis.
+    </div>
+  </header>
+
+  <div class="note">
+    <strong>Why this report exists.</strong> Google Research's Harness² was submitted to arXiv on <strong>Oct 9</strong>
+    but did not enter the mainstream coverage cycle until <strong>Oct 18–19</strong> (GitHub open-source + secondary media).
+    The regular 2026-10-15 digest ran on a 24h window (Oct 14→15) and so could not have seen it. This page backfills the item
+    and documents the pipeline gap that would have let it slip even if it had been in-window.
+  </div>
+
+  <h2 class="section" id="highlights">Top Highlights</h2>
+
+  <div class="item hl">
+    <div class="badges">
+      <span class="badge b-t1">Tier 1 · Research</span>
+      <span class="badge b-src">Google Cloud AI Research</span>
+      <span class="score">Score 4</span>
+    </div>
+    <h3><a href="https://arxiv.org/abs/2610.14224">Google open-sources Harness² — recursive agent harnessing that improves agents without touching model weights</a></h3>
+    <p class="summary">
+      Google Cloud AI Research (with Northwestern) released Harness² (arXiv 2610.14224, code at <code>google-research/harness2</code>, Apache 2.0),
+      a plug-and-play framework that keeps the base model frozen and recursively edits the scaffold around it — system prompt, guardrails, memory,
+      tool guidance, subagents, skills, scripts, and plugins — via a contrastive <em>Propose–Probe–Compose</em> loop that needs no ground-truth verifier.
+      <span class="why">Why it matters: a single refinement step lifted GLM-5 and Gemini 3.5 Flash across WorkBuddy-Bench (+11.5pt), JobBench (+4.5pt),
+      and Harvey's Legal bench (+11.8pt Partial) — in several cases a weaker model with a better harness beat a stronger model with its stock harness,
+      reframing the harness as a first-class, versionable engineering surface rather than the model being the only upgrade lever.</span>
+    </p>
+  </div>
+
+  <h2 class="section" id="research">Research / Community (Tier 2)</h2>
+  <div class="group-label">Google Cloud AI Research</div>
+
+  <div class="item">
+    <div class="badges">
+      <span class="badge b-t2">Tier 2</span>
+      <span class="badge b-src">arXiv 2610.14224 · github.com/google-research/harness2</span>
+      <span class="score">Score 4</span>
+    </div>
+    <h3><a href="https://github.com/google-research/harness2">Harness²: Recursive Agent Harnessing for an Open World</a></h3>
+    <p class="summary">
+      Two coupled recursion loops: <strong>task-level</strong> refines the harness for the current task (parallel or sequential, budget <code>--k</code>),
+      and <strong>harnessing-level</strong> accumulates evidence-backed lessons into a persistent improvement harness that transfers across tasks.
+      Ships a credential-free local demo; model-backed runs use Gemini 3.5 Flash / GLM-5 as frozen executors under OpenCode and Codex, with Claude Opus 4.8 as the default harness editor.
+      <span class="why">Why it matters: concrete, file-based, diffable implementation of harness optimization — every scaffold change is a reviewable patch, which is exactly the shape production agent teams can adopt. Note: repo states it is not an officially supported Google product.</span>
+    </p>
+  </div>
+
+  <footer class="bot">
+    <p><strong>Root-cause analysis — why the regular pipeline did not capture Harness²:</strong></p>
+    <p><strong>1. Timing vs. the 24h window (primary reason).</strong> The 2026-10-15 run covered Oct 14 16:07 → Oct 15 16:07 CST.
+      The paper was on arXiv since Oct 9 (out of window) but the GitHub open-source + coverage wave (MarkTechPost, n8nLab, CodeBridge, theaifeed, Medium) all landed Oct 18–19 — <em>after</em> the report. On Oct 15 there was genuinely nothing in-window to catch.</p>
+    <p><strong>2. Source-coverage gap (would have slipped even if in-window).</strong> Harness² never appeared on any first-party source in <code>sources.json</code>:
+      it was <em>not</em> posted to <code>research.google/blog/</code> (a listed Tier-1 source — verified absent), not on the DeepMind blog, and not announced by @GoogleDeepMind
+      (it's <em>Google Cloud AI Research</em>, not DeepMind; there is no @GoogleResearch / Google Cloud AI handle or Google Cloud blog source in the list). It propagated through arXiv + GitHub + secondary media only.</p>
+    <p><strong>3. The only two paths that could have caught it are both popularity-gated and high-bar.</strong>
+      (a) <em>Hugging Face Daily Papers</em> (Tier 2) — but it requires ≥50 upvotes AND a rank score ≥4 with a hard cap of 3 Tier-2 items.
+      (b) <em>GitHub Trending (AI/ML)</em> (Tier 4) — but <code>google-research/harness2</code> only started trending around Oct 18.
+      Both depend on community momentum that hadn't built by Oct 15.</p>
+    <p><strong>Recommended fixes:</strong> (i) add a <em>Google Cloud AI Research</em> / Google Cloud blog + an arXiv cs.AI "agent/harness" watch as sources;
+      (ii) add @GoogleResearch (and optionally @_akhaliq / arXiv-surfacing handles) to the playwright-x list;
+      (iii) widen the lookback for research papers to 72h, since papers surface days after submission;
+      (iv) treat a freshly-open-sourced <code>google-research/*</code> repo as a Tier-1 signal regardless of upvote count.</p>
+    <hr>
+    <p>Backfill compiled 2026-10-21. Sources: arXiv 2610.14224, github.com/google-research/harness2, and secondary coverage (MarkTechPost 2026-10-18, n8nLab 2026-10-18, CodeBridge 2026-10-19, theaifeed 2026-10-19). This is a manual patch, not a cron run.</p>
+  </footer>
+</div>
+</body>
+</html>

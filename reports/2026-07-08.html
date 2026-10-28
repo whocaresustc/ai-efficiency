@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily AI Report — 2026-07-08</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --card: #fafafa;
+    --tier1: #2563eb;
+    --tier1-bg: #dbeafe;
+    --tier2: #7c3aed;
+    --tier2-bg: #ede9fe;
+    --tier4: #059669;
+    --tier4-bg: #d1fae5;
+    --score: #dc2626;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115;
+      --fg: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #2a2f3a;
+      --card: #171a21;
+      --tier1: #60a5fa;
+      --tier1-bg: #1e3a8a;
+      --tier2: #a78bfa;
+      --tier2-bg: #4c1d95;
+      --tier4: #34d399;
+      --tier4-bg: #064e3b;
+      --score: #f87171;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.55;
+    max-width: 860px;
+  }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  header h1 {
+    margin: 0 0 0.25rem;
+    font-size: 1.6rem;
+    letter-spacing: -0.01em;
+  }
+  header .meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  section { margin: 2rem 0; }
+  section > h2 {
+    font-size: 1.15rem;
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--border);
+  }
+  section > h3.source {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin: 1.25rem 0 0.5rem;
+    font-weight: 600;
+  }
+  .item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .item .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: baseline;
+    margin-bottom: 0.35rem;
+  }
+  .item a.title {
+    color: var(--fg);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .item a.title:hover { text-decoration: underline; }
+  .badge {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .tier-1 { background: var(--tier1-bg); color: var(--tier1); }
+  .tier-2 { background: var(--tier2-bg); color: var(--tier2); }
+  .tier-4 { background: var(--tier4-bg); color: var(--tier4); }
+  .score {
+    color: var(--score);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  .source-name {
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  .summary { color: var(--fg); font-size: 0.94rem; margin: 0.2rem 0 0; }
+  footer {
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    margin-top: 3rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+  footer p { margin: 0.3rem 0; }
+  .quiet { color: var(--muted); font-style: italic; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Daily AI Report — 2026-07-08</h1>
+    <div class="meta">Generated 2026-07-08 • 2 items from 2 sources • 24h lookback</div>
+  </header>
+
+  <section id="highlights">
+    <h2>Top Highlights</h2>
+    <div class="item">
+      <div class="row">
+        <a class="title" href="https://ai.meta.com/blog/">Introducing Muse Image and Muse Video</a>
+        <span class="badge tier-1">Tier 1</span>
+        <span class="score">Score 4</span>
+        <span class="source-name">Meta AI Blog · Jul 7</span>
+      </div>
+      <p class="summary">Meta introduced Muse Image and Muse Video, a pair of new generative media models — Muse Image emphasizes instruction-following, precise edits, multi-reference composition, and Instagram-informed social context, while Muse Video ships with high visual fidelity and native audio. This is Meta's clearest push against OpenAI's Sora and Google's Veo lines and gives builders another first-party option for image/video generation with the Instagram context angle no other lab has.</p>
+    </div>
+  </section>
+
+  <section id="vendor">
+    <h2>Vendor Announcements (Tier 1)</h2>
+    <h3 class="source">Meta AI</h3>
+    <div class="item">
+      <div class="row">
+        <a class="title" href="https://ai.meta.com/blog/">Introducing Muse Image and Muse Video</a>
+        <span class="badge tier-1">Tier 1</span>
+        <span class="score">Score 4</span>
+        <span class="source-name">Jul 7, 2026</span>
+      </div>
+      <p class="summary">Muse Image "follows instructions faithfully, edits with precision, composes from multiple references, and draws on Instagram for social context." Muse Video "delivers exceptional visual fidelity with native audio support." Notable for being Meta's first named entrant in the image+video generation race with a social-context differentiator.</p>
+    </div>
+  </section>
+
+  <section id="devtools">
+    <h2>Dev Tools (Tier 4)</h2>
+    <h3 class="source">Claude Code Changelog</h3>
+    <div class="item">
+      <div class="row">
+        <a class="title" href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">Claude Code 2.1.203</a>
+        <span class="badge tier-4">Tier 4</span>
+        <span class="score">Score 3</span>
+        <span class="source-name">Anthropic</span>
+      </div>
+      <p class="summary">Point release with a login-expiry warning, a persistent grey ⏸ badge for manual permission mode, roots/list support for additional working directories, and a large batch of background-agent fixes (stale-token recovery, worktree isolation for nested repos, PATH inheritance on Windows, low-memory false-positives, and daemon auto-upgrade). Also loads a bundled dependency lazily to shave ~7 MB off binary size and startup memory. Mostly reliability polish, but the background-agent fixes matter if you're running long-lived agents.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Sources scanned:</strong> Anthropic News, Claude Blog, Claude Release Notes, Anthropic Engineering, Anthropic Research, Anthropic Institute, Anthropic Frontier Red Team, OpenAI News, OpenAI Research, OpenAI API Changelog, OpenAI Codex Changelog, Google DeepMind, Google AI Blog, Gemini API Changelog, Google Research, Meta AI, Microsoft AI, AWS AI/ML, Mistral, xAI, Claude Code Changelog, Cursor Changelog, Aider Releases, GitHub Copilot Changelog, Continue.dev, GitHub Trending, Hugging Face Papers, Simon Willison, X: @AnthropicAI.</p>
+    <p><strong>Quiet sources (no new items in 24h):</strong> Anthropic News (last: Jul 6 Alberta case study — covered yesterday); Claude Blog (no dated entries); Anthropic Research (last: Jul 6 "Global workspace" — covered yesterday); Anthropic Engineering, Anthropic Institute, Anthropic Frontier Red Team (no new); OpenAI News (last: Jun 30); OpenAI Research; OpenAI API Changelog (last: Jan 2026); OpenAI Codex Changelog (last: May 2026); Google DeepMind, Google AI Blog, Google Research, Gemini API Changelog (last dated entry Sep 2025); Microsoft AI, AWS (last relevant: Jul 6 Sonnet 5 — covered yesterday), Mistral (last: Jul 2 Leanstral 1.5), xAI (last: Nov 2025); Cursor, Aider, GitHub Copilot, Continue.dev (no dated fresh entries); GitHub Trending (no strong AI/ML picks today); Hugging Face Papers, Simon Willison (last: Jul 4).</p>
+    <p><strong>Partial sources:</strong> X.com — @AnthropicAI timeline loaded but tweet text bodies did not extract cleanly from the accessibility tree; remaining X accounts skipped to conserve time. No X items included today.</p>
+    <p><strong>Note:</strong> Quiet day. Most vendor blogs show items from Jun 30–Jul 6 that were already covered in prior reports. Only Meta's Muse announcement and the Claude Code 2.1.203 changelog are new within the 24h window.</p>
+  </footer>
+</body>
+</html>

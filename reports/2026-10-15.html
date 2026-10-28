@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily AI Report — 2026-10-15</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1a1a1a; --muted: #666; --card: #fafafa;
+    --border: #e2e2e2; --tier1: #2563eb; --tier1bg: #eff6ff;
+    --tier4: #16a34a; --tier4bg: #f0fdf4; --tier2: #9333ea; --tier2bg: #faf5ff;
+    --accent: #0f172a; --link: #2563eb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1117; --fg: #e6edf3; --muted: #8b949e; --card: #161b22;
+      --border: #30363d; --tier1: #58a6ff; --tier1bg: #0d2847;
+      --tier4: #3fb950; --tier4bg: #0f2a16; --tier2: #c084fc; --tier2bg: #2a1a3a;
+      --accent: #e6edf3; --link: #58a6ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg); margin: 0; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+  header.top { border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.75rem; }
+  header.top h1 { font-size: 1.65rem; margin: 0 0 .35rem; letter-spacing: -.02em; }
+  header.top .meta { color: var(--muted); font-size: .85rem; }
+  h2.section { font-size: 1.15rem; margin: 2.2rem 0 .9rem; letter-spacing: -.01em;
+    border-left: 3px solid var(--accent); padding-left: .6rem; }
+  .item {
+    background: var(--card); border: 1px solid var(--border); border-radius: 9px;
+    padding: .95rem 1.1rem; margin-bottom: .85rem;
+  }
+  .item h3 { margin: 0 0 .4rem; font-size: 1.02rem; line-height: 1.35; }
+  .item h3 a { color: var(--link); text-decoration: none; }
+  .item h3 a:hover { text-decoration: underline; }
+  .badges { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin-bottom: .5rem; }
+  .badge { font-size: .68rem; font-weight: 600; padding: .14rem .5rem; border-radius: 20px;
+    text-transform: uppercase; letter-spacing: .03em; }
+  .b-t1 { background: var(--tier1bg); color: var(--tier1); }
+  .b-t4 { background: var(--tier4bg); color: var(--tier4); }
+  .b-t2 { background: var(--tier2bg); color: var(--tier2); }
+  .b-src { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+  .score { font-size: .68rem; font-weight: 700; color: var(--muted); margin-left: auto; }
+  .summary { font-size: .92rem; color: var(--fg); margin: 0; }
+  .summary .why { color: var(--muted); }
+  .group-label { font-size: .78rem; font-weight: 600; color: var(--muted);
+    text-transform: uppercase; letter-spacing: .05em; margin: 1.1rem 0 .5rem; }
+  footer.bot { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--border);
+    font-size: .78rem; color: var(--muted); }
+  footer.bot p { margin: .4rem 0; }
+  footer.bot code { background: var(--card); padding: .1rem .3rem; border-radius: 4px;
+    border: 1px solid var(--border); font-size: .9em; }
+  .hl { border-color: var(--tier1); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>Daily AI Report — 2026-10-15</h1>
+  <div class="meta">
+    Generated 2026-10-15 16:12 CST • 6 items from 36 sources • 24h lookback window
+    (2026-10-14 16:07 → 2026-10-15 16:07)
+  </div>
+</header>
+
+<section id="highlights">
+  <h2 class="section">Top Highlights</h2>
+
+  <div class="item hl">
+    <div class="badges">
+      <span class="badge b-t1">Tier 1 · Vendor</span>
+      <span class="badge b-src">xAI</span>
+      <span class="score">Score 4</span>
+    </div>
+    <h3><a href="https://x.ai/news/grok-voice-3">xAI releases Grok Voice 3.0, a frontier speech-to-speech model</a></h3>
+    <p class="summary">xAI launched Grok Voice 3.0, which ranks #1 on Artificial Analysis's Speech-to-Speech Index (86.9), delivers under-one-second latency, and is available in the API today at the same price as its predecessor.
+    <span class="why">For anyone building voice agents, this pushes the quality/latency/cost frontier and claims best-in-class turn-taking (97% on Full Duplex Bench), making real-time voice automation more viable in production.</span></p>
+  </div>
+
+  <div class="item hl">
+    <div class="badges">
+      <span class="badge b-t4">Tier 4 · Dev Tools</span>
+      <span class="badge b-src">Claude Code</span>
+      <span class="score">Score 4</span>
+    </div>
+    <h3><a href="https://x.com/ClaudeDevs/status/2110445844675838148">Claude Code Desktop ships a major multi-session update</a></h3>
+    <p class="summary">Anthropic shipped a substantial update to the Claude Code desktop app focused on running many sessions side-by-side — faster session startup, easier splitting of work across sessions, and a live view of what each agent is doing. Claude Code lead Thariq Shihipar framed it as a "v2," with the agent now much more aware of its own capabilities (e.g. spinning off subsessions).
+    <span class="why">Parallel-agent workflows are becoming the default way to drive coding agents; first-class session orchestration in the desktop app lowers the friction of fanning work across multiple concurrent Claude Code instances.</span></p>
+  </div>
+
+  <div class="item hl">
+    <div class="badges">
+      <span class="badge b-t1">Tier 1 · Vendor</span>
+      <span class="badge b-src">Anthropic Engineering</span>
+      <span class="score">Score 4</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/engineering/source-control">Anthropic built in-house source control for agent-scale development</a></h3>
+    <p class="summary">Anthropic's engineering blog describes why it created its own source control: internal merge volume jumped from ~2,500 code changes per day in May to more than 30,000 per day in September, bottlenecking developer infrastructure built for human rather than agent scale.
+    <span class="why">It's a concrete data point on how aggressively agent-written code is scaling inside a frontier lab, and a signal that existing VCS/CI tooling may not survive contact with high-throughput agentic development.</span></p>
+  </div>
+</section>
+
+<section id="vendor">
+  <h2 class="section">Vendor Announcements (Tier 1)</h2>
+
+  <div class="group-label">xAI</div>
+  <div class="item">
+    <div class="badges">
+      <span class="badge b-t1">Tier 1</span>
+      <span class="badge b-src">x.ai / @SpaceXSI</span>
+      <span class="score">Score 4</span>
+    </div>
+    <h3><a href="https://x.ai/news/grok-voice-3">Grok Voice 3.0 — frontier speech-to-speech</a></h3>
+    <p class="summary">See highlights. #1 Speech-to-Speech Index, sub-1s latency, in the API today; already powering customer-support voice at Tesla and SpaceX.</p>
+  </div>
+
+  <div class="group-label">Anthropic</div>
+  <div class="item">
+    <div class="badges">
+      <span class="badge b-t1">Tier 1</span>
+      <span class="badge b-src">Anthropic Engineering</span>
+      <span class="score">Score 4</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/engineering/source-control">Redesigning source control at Anthropic</a></h3>
+    <p class="summary">See highlights. Merge volume went from ~2.5k/day to 30k+/day in four months, driving a rebuild of dev infra for agent scale.</p>
+  </div>
+  <div class="item">
+    <div class="badges">
+      <span class="badge b-t1">Tier 1</span>
+      <span class="badge b-src">anthropic.com / @AnthropicAI</span>
+      <span class="score">Score 3</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/news">Anthropic opens Singapore office and signs MOU with the Government of Singapore</a></h3>
+    <p class="summary">Anthropic opened its fifth Asia-Pacific office (Singapore) and signed an MOU with the Singapore government on AI safety and responsible adoption.
+    <span class="why">Mostly corporate/policy, but it signals continued APAC enterprise and government go-to-market expansion that affects regional availability and compliance posture.</span></p>
+  </div>
+
+  <div class="group-label">Google DeepMind</div>
+  <div class="item">
+    <div class="badges">
+      <span class="badge b-t1">Tier 1</span>
+      <span class="badge b-src">@GoogleDeepMind</span>
+      <span class="score">Score 3</span>
+    </div>
+    <h3><a href="https://x.com/GoogleDeepMind/status/2110421861435879476">Gemini 4 Argon applied to scientific breakthroughs</a></h3>
+    <p class="summary">A follow-up thread to this week's Gemini 4 Argon GA showcases the model driving work in quantum computing, nuclear fusion, and protein design, plus a demo where Argon taught a humanoid robot to play cornhole from video by coding its own physics simulation.
+    <span class="why">The GA itself was covered 2026-10-14; this is the applications narrative, useful mainly as evidence of Argon's from-first-principles reasoning on hard, out-of-distribution tasks.</span></p>
+  </div>
+
+  <div class="group-label">AWS</div>
+  <div class="item">
+    <div class="badges">
+      <span class="badge b-t1">Tier 1</span>
+      <span class="badge b-src">AWS What's New</span>
+      <span class="score">Score 3</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/about-aws/whats-new/recent/">Amazon SageMaker Studio simplifies onboarding for new AI/ML builders</a></h3>
+    <p class="summary">AWS streamlined the SageMaker Studio getting-started experience to reduce setup friction for new AI/ML builders.
+    <span class="why">Incremental onboarding polish rather than a capability change, but it lowers the ramp for teams standing up ML workflows on AWS.</span></p>
+  </div>
+</section>
+
+<section id="devtools">
+  <h2 class="section">Dev Tools (Tier 4)</h2>
+
+  <div class="group-label">Claude Code</div>
+  <div class="item">
+    <div class="badges">
+      <span class="badge b-t4">Tier 4</span>
+      <span class="badge b-src">@ClaudeDevs / @trq212</span>
+      <span class="score">Score 4</span>
+    </div>
+    <h3><a href="https://x.com/ClaudeDevs/status/2110445844675838148">Claude Code Desktop multi-session update ("v2")</a></h3>
+    <p class="summary">See highlights. Faster session startup, side-by-side session management, live per-session activity view, and better agent self-awareness (spinning off subsessions).</p>
+  </div>
+</section>
+
+<footer class="bot">
+  <p><strong>Sources scanned (36):</strong> Anthropic News, Claude Blog, Claude Release Notes, Anthropic Engineering, Anthropic Research, Anthropic Institute, Anthropic Frontier Red Team, OpenAI News, OpenAI Research, OpenAI API Changelog, OpenAI Codex Changelog, Google DeepMind Blog, Google AI Blog, Gemini API Changelog, Google Research Blog, Meta AI Blog, Meta AI Research Blog, Microsoft AI Blog, AWS What's New (AI/ML), Mistral News, xAI News, Claude Code Changelog, Cursor Changelog, Aider Releases, GitHub Copilot Changelog, Continue.dev Releases, GitHub Trending (AI/ML), Hugging Face Daily Papers, Simon Willison's Blog, and X timelines (below).</p>
+
+  <p><strong>X timelines fetched via Playwright (all 11, freshest post date):</strong>
+  @AnthropicAI (23h — Singapore MOU), @OpenAI (13h — EU agents econ report), @GoogleDeepMind (14h — Argon science thread), @MistralAI (17h — New Material acquihire), @SpaceXSI/xai (15h — Grok Voice 3.0), @sama (Oct 8, out of window), @karpathy (Oct 12, out of window), @simonw (Oct 14 — Argon QT), @trq212 (5h — Claude Code Desktop), @swyx (17h — AIE NYC promo). This was <em>not</em> a quiet day; all tiers including playwright-x were fetched before ranking.</p>
+
+  <p><strong>Quiet sources (no in-window items ≥ threshold):</strong> Claude Blog, Claude Release Notes, Anthropic Research/Institute/Red Team, OpenAI News/Research/API Changelog/Codex Changelog, Google AI Blog, Gemini API Changelog, Google Research Blog, Meta AI Blog, Meta AI Research Blog, Microsoft AI Blog, Mistral News, Claude Code Changelog, Cursor, Aider, GitHub Copilot, Continue.dev, GitHub Trending, Hugging Face Daily Papers, Simon Willison's Blog, @sama, @karpathy.</p>
+
+  <p><strong>Dropped below tier threshold:</strong> OpenAI EU AI-agents Economic Research report (score 2), Mistral × New Material acquihire (score 2–3, Tier 1 keep ≥3 marginal), @simonw Argon Fourier-epicycle QT (score 2), @swyx AI Engineer NYC conference promo (score 2). Tier 2 produced no item scoring ≥4.</p>
+
+  <p><strong>Failed sources:</strong> none. (Anthropic Engineering source-control page returned an empty Tavily extract; item sourced from the @AnthropicAI post of 2026-10-14 instead.)</p>
+
+  <p><strong>Note:</strong> The Anthropic source-control post is dated Oct 14 and sits at the edge of the 24h window; retained as a high-signal in-window-adjacent item.</p>
+
+  <p style="margin-top:1rem;">Generated from repo <code>ai-efficiency</code>, branch <code>main</code>, via <code>scripts/daily-ai-report/PROMPT.md</code>.</p>
+</footer>
+
+</div>
+</body>
+</html>

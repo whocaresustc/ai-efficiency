@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Daily AI Report — 2026-07-04</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --card-bg: #fafafa;
+    --border: #e5e5e5;
+    --link: #0366d6;
+    --tier1: #1f6feb;
+    --tier1-bg: #ddf4ff;
+    --tier2: #8250df;
+    --tier2-bg: #f0e4ff;
+    --tier4: #1a7f37;
+    --tier4-bg: #dcfce7;
+    --score: #b45309;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1117;
+      --fg: #e6edf3;
+      --muted: #8b949e;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --link: #58a6ff;
+      --tier1: #58a6ff;
+      --tier1-bg: #10233d;
+      --tier2: #bc8cff;
+      --tier2-bg: #241735;
+      --tier4: #3fb950;
+      --tier4-bg: #0f2917;
+      --score: #d4a557;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 820px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5;
+  }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+  header h1 { margin: 0 0 0.25rem; font-size: 1.6rem; }
+  header .meta { color: var(--muted); font-size: 0.9rem; }
+  section { margin-bottom: 2rem; }
+  section h2 { font-size: 1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; margin-bottom: 0.75rem; }
+  .source-group { margin-bottom: 1.25rem; }
+  .source-group > h3 {
+    font-size: 0.95rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em;
+    margin: 1rem 0 0.5rem; font-weight: 600;
+  }
+  .item {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.75rem 1rem; margin-bottom: 0.6rem;
+  }
+  .item .title { font-weight: 600; font-size: 1rem; display: block; margin-bottom: 0.3rem; }
+  .item a { color: var(--link); text-decoration: none; }
+  .item a:hover { text-decoration: underline; }
+  .item .badges { font-size: 0.75rem; margin-bottom: 0.4rem; display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; }
+  .tier { padding: 0.1rem 0.5rem; border-radius: 10px; font-weight: 600; }
+  .tier-1 { background: var(--tier1-bg); color: var(--tier1); }
+  .tier-2 { background: var(--tier2-bg); color: var(--tier2); }
+  .tier-4 { background: var(--tier4-bg); color: var(--tier4); }
+  .score { color: var(--score); font-weight: 600; }
+  .source-name { color: var(--muted); }
+  .item p { margin: 0.3rem 0 0; font-size: 0.93rem; color: var(--fg); }
+  .highlight { border-left: 3px solid var(--score); }
+  footer {
+    margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    color: var(--muted); font-size: 0.85rem;
+  }
+  footer p { margin: 0.35rem 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Daily AI Report — 2026-07-04</h1>
+  <div class="meta">Generated 2026-07-04 • 5 items from 5 sources • 24h lookback (2026-07-03 → 2026-07-04)</div>
+</header>
+
+<section id="highlights">
+  <h2>Top Highlights</h2>
+
+  <div class="item highlight">
+    <span class="title"><a href="https://www.anthropic.com/news/fable-5-safeguards-jailbreak-framework">More details on Fable 5's cyber safeguards and our jailbreak framework</a></span>
+    <div class="badges">
+      <span class="tier tier-1">Tier 1</span>
+      <span class="source-name">Anthropic News</span>
+      <span class="score">Score 4</span>
+    </div>
+    <p>Anthropic published deeper technical detail on the classifier stack and jailbreak-evaluation framework it applied when redeploying Claude Fable 5 after the export-controls episode. Matters for anyone integrating Fable/Mythos 5 — the post is the closest thing to an official safeguard spec you'll get before it appears in policy docs.</p>
+  </div>
+
+  <div class="item highlight">
+    <span class="title"><a href="https://x.ai/news/voice-agent-builder">Introducing the Voice Agent Builder</a></span>
+    <div class="badges">
+      <span class="tier tier-1">Tier 1</span>
+      <span class="source-name">xAI News</span>
+      <span class="score">Score 4</span>
+    </div>
+    <p>xAI shipped a no-code Voice Agent Builder that spins up a personalized Grok-powered voice agent in under two minutes. It lowers the floor for voice-agent prototyping and puts pressure on the ElevenLabs/Vapi/Retell layer — worth a look if you're evaluating build-vs-buy for conversational voice.</p>
+  </div>
+
+  <div class="item highlight">
+    <span class="title"><a href="https://simonwillison.net/2026/Jul/3/open-source-ai-gap-map/">Open Source AI Gap Map (Current AI)</a></span>
+    <div class="badges">
+      <span class="tier tier-2">Tier 2</span>
+      <span class="source-name">Simon Willison</span>
+      <span class="score">Score 4</span>
+    </div>
+    <p>Simon Willison highlights Current AI's newly launched Gap Map, an indexed view of the open-source AI stack from the Paris-Action-Summit non-profit ($400M committed). Useful landscape reference for teams tracking open-weights alternatives to closed frontier labs.</p>
+  </div>
+</section>
+
+<section id="vendor">
+  <h2>Vendor Announcements (Tier 1)</h2>
+
+  <div class="source-group">
+    <h3>Anthropic</h3>
+    <div class="item">
+      <span class="title"><a href="https://www.anthropic.com/news/fable-5-safeguards-jailbreak-framework">More details on Fable 5's cyber safeguards and our jailbreak framework</a></span>
+      <div class="badges">
+        <span class="tier tier-1">Tier 1</span>
+        <span class="source-name">Anthropic News · Jul 2, 2026</span>
+        <span class="score">Score 4</span>
+      </div>
+      <p>Follow-up post detailing the safety classifiers and jailbreak-evaluation harness Anthropic bolted onto Fable 5 for its post-suspension redeployment. Practical read for anyone building on the model — clarifies which cyber-adjacent flows get blocked and how the eval bar is set.</p>
+    </div>
+  </div>
+
+  <div class="source-group">
+    <h3>xAI</h3>
+    <div class="item">
+      <span class="title"><a href="https://x.ai/news/voice-agent-builder">Introducing the Voice Agent Builder</a></span>
+      <div class="badges">
+        <span class="tier tier-1">Tier 1</span>
+        <span class="source-name">xAI · Jul 1, 2026</span>
+        <span class="score">Score 4</span>
+      </div>
+      <p>Zero-code builder to configure a Grok-backed voice agent in under two minutes, aimed at business/support use cases. Signals xAI is moving beyond raw model access into vertical agent products — a beat OpenAI (Realtime API), Google (Live Translate) and ElevenLabs are all pushing on.</p>
+    </div>
+  </div>
+</section>
+
+<section id="devtools">
+  <h2>Dev Tools (Tier 4)</h2>
+
+  <div class="source-group">
+    <h3>OpenAI Codex</h3>
+    <div class="item">
+      <span class="title"><a href="https://developers.openai.com/codex/changelog">Codex CLI 0.142.5</a></span>
+      <div class="badges">
+        <span class="tier tier-4">Tier 4</span>
+        <span class="source-name">Codex changelog · Jul 1, 2026</span>
+        <span class="score">Score 3</span>
+      </div>
+      <p>Point release backporting a fix that prevents full Responses WebSocket payloads (including message bodies) from being written to trace logs. Grab it if you run Codex CLI with trace logging enabled — the previous behavior was a privacy foot-gun.</p>
+    </div>
+  </div>
+</section>
+
+<section id="community">
+  <h2>Research / Community (Tier 2)</h2>
+
+  <div class="source-group">
+    <h3>Simon Willison</h3>
+    <div class="item">
+      <span class="title"><a href="https://simonwillison.net/2026/Jul/3/open-source-ai-gap-map/">Open Source AI Gap Map</a></span>
+      <div class="badges">
+        <span class="tier tier-2">Tier 2</span>
+        <span class="source-name">simonwillison.net · Jul 3, 2026</span>
+        <span class="score">Score 4</span>
+      </div>
+      <p>Willison flags Current AI's newly-published Gap Map, a landscape index of open-source AI capabilities and gaps, from the $400M-backed non-profit stood up at the Feb 2025 Paris AI Action Summit. Useful map when you need to justify (or challenge) an open-weights choice against closed frontier vendors.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Sources scanned:</strong> Anthropic News, Claude Blog, Claude Release Notes, Anthropic Engineering, Anthropic Research, Anthropic Institute, Frontier Red Team, OpenAI News, OpenAI Research, OpenAI API Changelog, OpenAI Codex Changelog, Google DeepMind Blog, Google AI Blog, Gemini API Changelog, Google Research Blog, Meta AI Blog, Microsoft AI Blog, AWS What's New (search), Mistral News, xAI News, Claude Code Changelog, Cursor Changelog, Aider Releases, GitHub Copilot Changelog, Continue.dev Releases, GitHub Trending, Hugging Face Papers, Simon Willison, X: @AnthropicAI, X: @OpenAI, X: @GoogleDeepMind, X: @simonw.</p>
+  <p><strong>Quiet sources (no items in 24h window):</strong> Claude Blog, Claude Release Notes (last: Jun 30 Sonnet 5), Anthropic Engineering, Anthropic Research, Anthropic Institute, Frontier Red Team, OpenAI News/Research (last: Jun 30 GeneBench-Pro), Google DeepMind Blog, Google AI Blog, Gemini API Changelog (last: May 19), Google Research Blog (last: Jun 30 TabFM), Meta AI Blog (last: Jun 29), Microsoft AI Blog, AWS (no fresh AI/ML posts in 24h), Mistral News (last: Jun 24), Claude Code Changelog (curl returned empty), Cursor Changelog, Aider Releases, GitHub Copilot Changelog, Continue.dev Releases, GitHub Trending (no AI-keyword matches on today's list), Hugging Face Papers (no clear score-4+ item in window), X: @AnthropicAI (latest Jul 1 Fable 5 already covered by news post), X: @OpenAI (latest Jun 26 GPT-5.6 preview, stale), X: @GoogleDeepMind (latest Nano Banana 2 Lite / Gemini Omni Flash, stale).</p>
+  <p><strong>Skipped X accounts (bandwidth cap on this run — none had fresh items in prior day per site fetches):</strong> @MistralAI, @xai, @sama, @karpathy, @trq212, @swyx.</p>
+  <p><strong>Failed sources:</strong> None — all sources responded, but most had no items inside the 24h window.</p>
+</footer>
+
+</body>
+</html>

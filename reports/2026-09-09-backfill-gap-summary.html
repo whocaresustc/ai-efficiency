@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Backfill — AI News Gap 2026-09-09 → 2026-10-11</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --card: #f7f7f8;
+    --border: #e2e2e5;
+    --accent: #5b5bd6;
+    --tier1: #2563eb;
+    --tier1-bg: #e8f0fe;
+    --tier4: #059669;
+    --tier4-bg: #e6f6ef;
+    --tier2: #b45309;
+    --tier2-bg: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16171a;
+      --fg: #e8e8ea;
+      --muted: #9a9aa2;
+      --card: #202126;
+      --border: #303138;
+      --accent: #8b8bf0;
+      --tier1: #6ea0ff;
+      --tier1-bg: #1a2740;
+      --tier4: #4ade9c;
+      --tier4-bg: #14331f;
+      --tier2: #f0b366;
+      --tier2-bg: #3a2c14;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg); margin: 0; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 32px 20px 64px; }
+  header.top { border-bottom: 2px solid var(--border); padding-bottom: 18px; margin-bottom: 24px; }
+  header.top h1 { font-size: 1.5rem; margin: 0 0 6px; letter-spacing: -0.02em; }
+  header.top .meta { color: var(--muted); font-size: 0.86rem; }
+  .backfill-note {
+    background: var(--tier2-bg); color: var(--tier2);
+    border: 1px solid var(--tier2); border-radius: 8px;
+    padding: 12px 16px; font-size: 0.86rem; margin-top: 14px; font-weight: 600;
+  }
+  .backfill-note span { font-weight: 400; display: block; margin-top: 6px; }
+  section { margin-bottom: 34px; }
+  section h2 {
+    font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--muted); border-bottom: 1px solid var(--border);
+    padding-bottom: 6px; margin-bottom: 16px;
+  }
+  .item {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px 18px; margin-bottom: 12px;
+  }
+  .item .row1 { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .item .t { font-weight: 600; }
+  .item a { color: var(--accent); text-decoration: none; }
+  .item a:hover { text-decoration: underline; }
+  .item .m { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
+  .item .s { margin-top: 6px; font-size: 0.92rem; }
+  .badge { display: inline-block; font-size: 0.72rem; padding: 1px 7px; border-radius: 999px; font-weight: 600; white-space: nowrap; }
+  .b1 { background: var(--tier1-bg); color: var(--tier1); }
+  .b4 { background: var(--tier4-bg); color: var(--tier4); }
+  .b2 { background: var(--tier2-bg); color: var(--tier2); }
+  .score { font-size: 0.75rem; color: var(--muted); font-weight: 600; }
+  footer.bot {
+    border-top: 1px solid var(--border); padding-top: 18px; margin-top: 40px;
+    color: var(--muted); font-size: 0.8rem; line-height: 1.6;
+  }
+  footer.bot .lbl { color: var(--fg); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>Backfill — AI News Gap: 2026-09-09 → 2026-10-11</h1>
+    <div class="meta">Generated 2026-10-12 14:30 CST • Consolidated backfill • Source: ai-efficiency repo, branch main</div>
+    <div class="backfill-note">
+      ⚠ BACKFILLED REPORT — NOT A LIVE DAILY RUN
+      <span>The daily cron did not run between 2026-09-09 and 2026-10-11 (33 missing days). Per-day reconstruction is not possible from live sources, which only expose <em>current</em> page state, not what was published on each historical day. This single file consolidates the notable items that landed <strong>anywhere in that window</strong>, reconstructed on 2026-10-12 from Anthropic News / Claude Blog, OpenAI News, Google DeepMind / Google AI Blog, the Claude Code CHANGELOG, X timelines (@AnthropicAI, @OpenAI, @simonw) and date-constrained Tavily searches. Dates shown are the items' own publish dates where known. Scores/summaries are best-effort, applied retroactively. Treat this as a catch-up digest, not 33 individual daily reports. Each missing date also has a stub <code>YYYY-MM-DD.html</code> that redirects here.</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Frontier Model Releases</h2>
+
+    <div class="item">
+      <div class="row1"><span class="badge b1">Tier 1</span><span class="score">score 5</span></div>
+      <div class="t"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon">Gemini 4 Argon — Google's next frontier model</a></div>
+      <div class="m">Google DeepMind Blog • Sep 30, 2026</div>
+      <div class="s">Google announced Gemini 4 Argon, its first non-Flash Gemini in ~7 months, with a 1M-token context AND 1M-token output limit, introductory pricing of $2/$10 per Mtok, and a phased rollout starting with trusted cyber defenders in the Fairwind Program. Independent benchmarks (Artificial Analysis) put it level with GPT-6 Astra on the Intelligence Index at a lower cost per task, returning Google to the top-three labs.</div>
+    </div>
+
+    <div class="item">
+      <div class="row1"><span class="badge b1">Tier 1</span><span class="score">score 5</span></div>
+      <div class="t"><a href="https://openai.com/index/">GPT-6.1 Sol released; GPT-6 + Intelligent UI roll out in ChatGPT</a></div>
+      <div class="m">OpenAI News / @OpenAI • Sep 29 &amp; Oct 8, 2026</div>
+      <div class="s">OpenAI released GPT-6.1 Sol (Sep 29, $2/$10, available via API, ChatGPT Work and Codex) and began rolling GPT-6 plus a new "Intelligent UI" to all ChatGPT users (Oct 8), which generates fast interactive visual answers inline. A new flagship reasoning model plus a generative-UI layer in the consumer product are both must-know for anyone building on the OpenAI stack.</div>
+    </div>
+
+    <div class="item">
+      <div class="row1"><span class="badge b1">Tier 1</span><span class="score">score 5</span></div>
+      <div class="t"><a href="https://claude.com/blog">Claude Opus 5.5 and Claude Sonnet 5.5</a></div>
+      <div class="m">Anthropic / Claude Blog • Opus 5.5 Sep 22, Sonnet 5.5 Sep 28, 2026</div>
+      <div class="s">Anthropic shipped Opus 5.5 ($4/$20, cheaper than Opus 5) and a new Sonnet 5.5 (now the default Sonnet on the API, 1M context, $2/$10 with $0.20/Mtok cache reads); docs now recommend starting with Opus 5.5 for most workloads. Two refreshed tiers at lower prices reshape default model selection for Claude API and Claude Code users.</div>
+    </div>
+
+    <div class="item">
+      <div class="row1"><span class="badge b1">Tier 1</span><span class="score">score 4</span></div>
+      <div class="t"><a href="https://claude.com/blog">Claude Haiku 5.5 — cheapest/fastest small model</a></div>
+      <div class="m">Anthropic / Claude Blog / @AnthropicAI • Oct 7–8, 2026</div>
+      <div class="s">Anthropic released Claude Haiku 5.5, its cheapest, fastest, most capable small model, costing on average ~75% less to run than Haiku 4.5. A strong price/latency drop at the small tier matters for high-volume, latency-sensitive agent workloads.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Claude Apps &amp; Developer Platform</h2>
+
+    <div class="item">
+      <div class="row1"><span class="badge b1">Tier 1</span><span class="score">score 4</span></div>
+      <div class="t"><a href="https://claude.com/blog">Claude Dashboards &amp; Claude Motion (beta); Docs/Slides/Design out of beta</a></div>
+      <div class="m">Claude Blog • Oct 8, 2026</div>
+      <div class="s">Anthropic launched Claude Dashboards (live data dashboards) and Claude Motion (animated explainers) in beta, and graduated Docs, Slides and Design out of beta onto every plan including Free. Expands Claude's artifact/creation surface for building shareable interactive outputs.</div>
+    </div>
+
+    <div class="item">
+      <div class="row1"><span class="badge b1">Tier 1</span><span class="score">score 3</span></div>
+      <div class="t"><a href="https://claude.com/blog">Claude works with Google Docs, Sheets &amp; Slides</a></div>
+      <div class="m">Claude Blog • Oct 6, 2026</div>
+      <div class="s">Teams on Google Workspace can now bring Claude into their files or operate on files directly from Claude via a new add-on and Docs/Sheets/Slides connectors (beta). Deeper Workspace integration is relevant to enterprise rollout and agentic document workflows.</div>
+    </div>
+
+    <div class="item">
+      <div class="row1"><span class="badge b4">Tier 4</span><span class="score">score 4</span></div>
+      <div class="t"><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">Claude Code — Sonnet 5.5 default, 1M context, and many fixes (v2.1.x)</a></div>
+      <div class="m">Claude Code CHANGELOG • within gap window</div>
+      <div class="s">Claude Code added Claude Sonnet 5.5 as the default Sonnet model (1M context, $2/$10), effort-slider keybindings, <code>/mcp reconnect all</code>, <code>/rate-limit-options</code>, spend-limit dollar amounts in the status line, plus fixes to compaction, fullscreen rendering, and MCP reconnection. Directly affects day-to-day Claude Code users and agent-harness builders.</div>
+    </div>
+
+    <div class="item">
+      <div class="row1"><span class="badge b4">Tier 4</span><span class="score">score 3</span></div>
+      <div class="t"><a href="https://x.com/OpenAI/status/2107909792945832070">ChatGPT for Teens, College Planner &amp; study tools</a></div>
+      <div class="m">@OpenAI • Oct 8, 2026</div>
+      <div class="s">OpenAI previewed ChatGPT for Teens (an under-18 experience applied automatically to identified accounts) alongside a College Planner and new study tools. Relevant to education deployments and age-appropriate product design.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Safety, Security &amp; Research</h2>
+
+    <div class="item">
+      <div class="row1"><span class="badge b1">Tier 1</span><span class="score">score 4</span></div>
+      <div class="t"><a href="https://x.com/AnthropicAI/status/2108302539498414208">Anthropic Cyber Mission — Critical Infrastructure Defense Program &amp; OSS Scanner</a></div>
+      <div class="m">Anthropic News / @AnthropicAI • Oct 8–9, 2026</div>
+      <div class="s">Anthropic launched the Anthropic Cyber Mission to secure critical infrastructure and open-source software: a Critical Infrastructure Defense Program (frontier Claude + on-site engineers + threat research for power/water/transport/government, with partners incl. Accenture, CrowdStrike, Palo Alto Networks) and OSS Scanner, a free opt-in service that scans enrolled repos with its strongest models and reports a >90% true-positive rate. A substantive push into defensive security with direct enterprise and OSS-maintainer impact.</div>
+    </div>
+
+    <div class="item">
+      <div class="row1"><span class="badge b1">Tier 1</span><span class="score">score 4</span></div>
+      <div class="t"><a href="https://x.com/AnthropicAI/status/2108680150556737819">Anthropic: more frequent model-behavior reports</a></div>
+      <div class="m">Anthropic News / @AnthropicAI • Oct 10, 2026</div>
+      <div class="s">Anthropic began publishing more frequent model-behavior reports (beyond system cards and risk reports); the first describes four types of unintended behaviors identified in evaluations and internal use where Claude acted on real systems. A candid, ongoing frontier-safety disclosure directly relevant to agent sandboxing and oversight.</div>
+    </div>
+
+    <div class="item">
+      <div class="row1"><span class="badge b1">Tier 1</span><span class="score">score 3</span></div>
+      <div class="t"><a href="https://x.com/AnthropicAI/status/2108226292235809081">Anthropic: $150M to the Genesis Mission + Claude for 15+ federal agencies; first full UV sky map</a></div>
+      <div class="m">Anthropic News / @AnthropicAI • Oct 9, 2026</div>
+      <div class="s">Anthropic committed $150M to the Genesis Mission and made Claude + support available to 15+ US federal agencies, and showcased an astrophysicist using Claude Science to produce the first complete ultraviolet map of the sky. Signals of Claude's push into government and scientific-discovery workflows.</div>
+    </div>
+
+    <div class="item">
+      <div class="row1"><span class="badge b1">Tier 1</span><span class="score">score 3</span></div>
+      <div class="t"><a href="https://x.com/OpenAI/status/2107596713791767021">OpenAI: new mathematical results from an internal frontier model</a></div>
+      <div class="m">@OpenAI • Oct 7, 2026</div>
+      <div class="s">OpenAI released a batch of new mathematical results produced by an internal frontier model, developed with advice from an IAS advisory group on mathematics and AI (repo: github.com/openai/math). A visible datapoint on frontier models contributing to original math research.</div>
+    </div>
+
+    <div class="item">
+      <div class="row1"><span class="badge b2">Tier 2</span><span class="score">score 4</span></div>
+      <div class="t"><a href="https://simonwillison.net/">Simon Willison: pricing notes on Claude Haiku 5.5; voice-driven coding with Codex Desktop</a></div>
+      <div class="m">Simon Willison's Blog / @simonw • Oct 8–9, 2026</div>
+      <div class="s">Willison published pricing analysis of Claude Haiku 5.5 and a write-up of shipping a real blog feature entirely by voice using Codex Desktop while cooking dinner. High-trust practitioner commentary on where the small-model price curve and voice-driven agentic coding now stand.</div>
+    </div>
+  </section>
+
+  <footer class="bot">
+    <div><span class="lbl">Window:</span> 2026-09-09 → 2026-10-11 (33 days). <span class="lbl">Reconstructed:</span> 2026-10-12.</div>
+    <div style="margin-top:8px;"><span class="lbl">Sources used for reconstruction:</span> Anthropic News / Claude Blog, OpenAI News, Google DeepMind Blog, Google AI Blog, Claude Code CHANGELOG, X timelines (@AnthropicAI, @OpenAI, @simonw), and date-constrained Tavily searches. Cross-checked model dates against independent trackers (Artificial Analysis, MarkTechPost) where vendor dates were ambiguous.</div>
+    <div style="margin-top:8px;"><span class="lbl">Caveats:</span> This is a best-effort catch-up digest, not per-day coverage. Items are placed within the window by their own publish date; retroactive scores/summaries reflect current judgment. Earlier models referenced for context — GPT-6 Astra (Sep 3) and Claude Fable 5.1 (Sep 1) — predate the gap and are excluded.</div>
+  </footer>
+</div>
+</body>
+</html>

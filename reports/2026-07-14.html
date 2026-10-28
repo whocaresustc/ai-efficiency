@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Daily AI Report — 2026-07-14 (backfilled)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --border: #e5e5e5;
+    --card: #fafafa;
+    --tier1: #2563eb;
+    --tier1-bg: #dbeafe;
+    --tier4: #059669;
+    --tier4-bg: #d1fae5;
+    --score: #b45309;
+    --score-bg: #fef3c7;
+    --link: #1d4ed8;
+    --warn: #b45309;
+    --warn-bg: #fef3c7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0f10;
+      --fg: #e7e7e7;
+      --muted: #9a9a9a;
+      --border: #2a2a2c;
+      --card: #17171a;
+      --tier1: #60a5fa;
+      --tier1-bg: #1e3a8a44;
+      --tier4: #34d399;
+      --tier4-bg: #064e3b44;
+      --score: #fbbf24;
+      --score-bg: #78350f44;
+      --link: #93c5fd;
+      --warn: #fbbf24;
+      --warn-bg: #78350f44;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 780px; margin: 0 auto; padding: 24px 20px 64px;
+    line-height: 1.55;
+  }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { margin: 0 0 6px; font-size: 22px; }
+  header .meta { color: var(--muted); font-size: 13px; }
+  .backfill-banner {
+    background: var(--warn-bg); color: var(--warn); border: 1px solid var(--warn);
+    border-radius: 6px; padding: 10px 14px; margin-bottom: 22px; font-size: 13px; font-weight: 600;
+  }
+  .backfill-banner span { font-weight: 400; display: block; margin-top: 4px; color: var(--fg); }
+  h2 { font-size: 17px; margin: 28px 0 12px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 14px; margin: 18px 0 8px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+  .item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 12px 14px; margin-bottom: 10px;
+  }
+  .item .title { font-weight: 600; font-size: 15px; margin-bottom: 6px; }
+  .item .title a { color: var(--link); text-decoration: none; }
+  .item .title a:hover { text-decoration: underline; }
+  .item .row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; align-items: center; }
+  .badge {
+    font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px;
+    letter-spacing: 0.02em;
+  }
+  .badge.tier1 { background: var(--tier1-bg); color: var(--tier1); }
+  .badge.tier4 { background: var(--tier4-bg); color: var(--tier4); }
+  .badge.score { background: var(--score-bg); color: var(--score); }
+  .badge.src { background: var(--card); color: var(--muted); border: 1px solid var(--border); }
+  .item .summary { font-size: 14px; color: var(--fg); }
+  footer {
+    margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+    font-size: 12px; color: var(--muted); line-height: 1.7;
+  }
+  footer strong { color: var(--fg); }
+  code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px; background: var(--card); padding: 1px 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Daily AI Report — 2026-07-14 <span style="font-weight:400;color:var(--muted);">(backfilled)</span></h1>
+  <div class="meta">Backfilled 2026-07-15 · 2 items · window 2026-07-13 → 2026-07-14</div>
+</header>
+
+<div class="backfill-banner">
+  ⚠ Backfilled report — reconstructed on 2026-07-15.
+  <span>This day's digest was not generated live. It was rebuilt from source data available on 2026-07-15 (press coverage and X.com timelines), so dates and details reflect what could be recovered retroactively rather than a same-day snapshot.</span>
+</div>
+
+<section id="highlights">
+  <h2>Top Highlights</h2>
+
+  <div class="item">
+    <div class="title"><a href="https://www.axios.com/2026/07/14/demis-hassabis-ai-regulation-google-deepmind">Demis Hassabis publishes "A Framework for Frontier AI," proposing a FINRA-style U.S. standards body</a></div>
+    <div class="row">
+      <span class="badge tier1">Tier 1</span>
+      <span class="badge src">Google DeepMind / @GoogleDeepMind</span>
+      <span class="badge score">Score 4</span>
+    </div>
+    <div class="summary">On Tuesday Jul 14, Google DeepMind CEO Demis Hassabis published a personal manifesto, "A Framework for Frontier AI and the Dawning of a New Age," calling for a U.S.-led, industry-funded, federally-overseen watchdog — modeled on Wall Street's FINRA — to screen every frontier-class model before U.S. deployment (voluntarily at first, ≤30-day window) and to coordinate an industry-wide slowdown if risks mount, arguing AGI is "probably only a few short years away." He wants it operational before year-end with compliance as a release prerequisite, signaling the leading labs are now actively drafting the pre-deployment gating regime that will shape when and how models ship. <em>(Note: this item leads the live 2026-07-15 report as well, since coverage peaked into that day.)</em></div>
+  </div>
+
+  <div class="item">
+    <div class="title"><a href="https://www.technology.org/2026/07/14/nobel-laureates-experts-ai-economic-impact">200+ researchers and 16 Nobel laureates warn AI could out-pace the Industrial Revolution</a></div>
+    <div class="row">
+      <span class="badge tier1">Tier 1</span>
+      <span class="badge src">Cross-lab statement</span>
+      <span class="badge score">Score 3</span>
+    </div>
+    <div class="summary">A jointly-signed statement from 200+ economists and AI researchers — including sixteen Nobel laureates and staff at OpenAI, Anthropic, and Google — warned that AI may become radically more powerful within a decade and drive an economic transformation "larger than the Industrial Revolution" on a far shorter timeline, urging urgent research and policy on risks like large-scale job displacement (first issued Mon Jul 13; Nobel-laureate framing dominated Jul 14 coverage). It's a statement of concern rather than a model, but the signatory list — people close to the leading labs warning about their own field — is what gives it weight.</div>
+  </div>
+</section>
+
+<section id="devtools">
+  <h2>Dev Tools (Tier 4)</h2>
+  <p class="meta" style="margin-top:-4px;">No Tier 4 dev-tool release could be pinned to 2026-07-14 during reconstruction. Claude Code's changelog around this period sits at 2.1.208–2.1.209 (memory-leak and rendering fixes; not clearly dated to the window).</p>
+</section>
+
+<footer>
+  <p><strong>Reconstruction note:</strong> Rebuilt on 2026-07-15 from press coverage (Axios, Qz, Yahoo, technology.org) and X timelines. The Hassabis framework and the economic-warning statement were the two clearly datable Jul 13–14 events with production-relevant weight; both carry into the live 2026-07-15 report. Exact publish times could not be verified to the hour retroactively.</p>
+  <p><strong>Quiet sources:</strong> Vendor product blogs (Anthropic, OpenAI, Google DeepMind, Meta, Mistral) had no new product/model posts pinned to this specific day; the nearest were Jul 13 (Anthropic values research, OpenAI GPT-Live rollout, DeepMind "Predicting the Past" skill — see 2026-07-13 report). Hugging Face Daily Papers: nothing scoring ≥ 4 for a production-agent audience.</p>
+</footer>
+
+</body>
+</html>

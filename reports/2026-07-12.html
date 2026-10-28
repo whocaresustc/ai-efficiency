@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Daily AI Report — 2026-07-12</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --border: #e5e5e5;
+    --card: #fafafa;
+    --tier1: #2563eb;
+    --tier1-bg: #dbeafe;
+    --tier4: #059669;
+    --tier4-bg: #d1fae5;
+    --score: #b45309;
+    --score-bg: #fef3c7;
+    --link: #1d4ed8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0f10;
+      --fg: #e7e7e7;
+      --muted: #9a9a9a;
+      --border: #2a2a2c;
+      --card: #17171a;
+      --tier1: #60a5fa;
+      --tier1-bg: #1e3a8a44;
+      --tier4: #34d399;
+      --tier4-bg: #064e3b44;
+      --score: #fbbf24;
+      --score-bg: #78350f44;
+      --link: #93c5fd;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 780px; margin: 0 auto; padding: 24px 20px 64px;
+    line-height: 1.55;
+  }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { margin: 0 0 6px; font-size: 22px; }
+  header .meta { color: var(--muted); font-size: 13px; }
+  h2 { font-size: 17px; margin: 28px 0 12px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 14px; margin: 18px 0 8px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+  .item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 12px 14px; margin-bottom: 10px;
+  }
+  .item .title { font-weight: 600; font-size: 15px; margin-bottom: 6px; }
+  .item .title a { color: var(--link); text-decoration: none; }
+  .item .title a:hover { text-decoration: underline; }
+  .item .row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; align-items: center; }
+  .badge {
+    font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px;
+    letter-spacing: 0.02em;
+  }
+  .badge.tier1 { background: var(--tier1-bg); color: var(--tier1); }
+  .badge.tier4 { background: var(--tier4-bg); color: var(--tier4); }
+  .badge.score { background: var(--score-bg); color: var(--score); }
+  .item .summary { font-size: 14px; color: var(--fg); }
+  .quiet-notice {
+    background: var(--card); border: 1px solid var(--border);
+    border-left: 3px solid var(--tier1); border-radius: 6px;
+    padding: 14px 16px; margin-bottom: 20px;
+  }
+  .quiet-notice p { margin: 0 0 8px; }
+  .quiet-notice p:last-child { margin-bottom: 0; }
+  footer {
+    margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+    font-size: 12px; color: var(--muted); line-height: 1.7;
+  }
+  footer strong { color: var(--fg); }
+  code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px; background: var(--card); padding: 1px 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Daily AI Report — 2026-07-12</h1>
+  <div class="meta">Generated 2026-07-12 · 1 item from 27 sources · 24-hour lookback</div>
+</header>
+
+<div class="quiet-notice">
+  <p><strong>Quiet day.</strong> The last 24-hour window (2026-07-11 → 2026-07-12) surfaced no new tier-1 vendor announcements or tier-2 research posts. Most vendor blogs' latest items date to Jul 8–10 (Grok 4.5 on 7/8, Meta Muse Image/Video on 7/7, Mistral Robostral Navigate on 7/8, OpenAI ChatGPT Work on 7/9). Simon Willison's blog last posted Jul 10 ("Rewriting Bun in Rust"). X.com accounts for @AnthropicAI, @OpenAI, @GoogleDeepMind show latest posts Jul 9–10.</p>
+  <p>The one exception below is a fresh Claude Code CLI release captured today — the changelog is version-numbered, not dated, but 2.1.207 is at the top of <code>main</code>.</p>
+</div>
+
+<section id="devtools">
+  <h2>Dev Tools</h2>
+
+  <h3>Claude Code Changelog</h3>
+
+  <div class="item">
+    <div class="title"><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">Claude Code 2.1.207 — auto mode GA on Bedrock/Vertex/Foundry, agents-view polish, Bedrock defaults to Opus 4.8</a></div>
+    <div class="row">
+      <span class="badge tier4">Tier 4</span>
+      <span class="badge score">Score 4</span>
+    </div>
+    <div class="summary">Claude Code 2.1.207 removes the <code>CLAUDE_CODE_ENABLE_AUTO_MODE</code> opt-in for Bedrock, Vertex AI, and Foundry (disable via new <code>disableAutoMode</code> setting) and switches those gateways' default model to Claude Opus 4.8. Also ships a shell-injection fix for plugin hook <code>${user_config.*}</code> substitution, a 60-second stall guard for stuck AWS credential resolvers on Windows, and quality-of-life fixes across the agents view (deleted background jobs stay deleted, pasting the same text re-expands the collapsed placeholder). Why it matters: auto mode leaving beta on the three enterprise-gateway paths is a real posture change for teams standardized on Bedrock/Vertex, and Opus 4.8 becoming the Bedrock default silently shifts cost/latency for anyone not pinning models.</div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Sources scanned (27):</strong> Anthropic News, Claude Blog, Claude Release Notes, Anthropic Engineering, Anthropic Research, Anthropic Institute, Anthropic Frontier Red Team, OpenAI News, OpenAI Research, OpenAI API Changelog, OpenAI Codex Changelog, Google DeepMind Blog, Google AI Blog, Gemini API Changelog, Google Research Blog, Meta AI Blog, Microsoft AI Blog, AWS What's New (AI/ML), Mistral News, xAI News, Claude Code Changelog, Cursor Changelog, Aider Releases, GitHub Copilot Changelog, Continue.dev Releases, GitHub Trending (AI/ML), Hugging Face Daily Papers, Simon Willison's Blog.</p>
+  <p><strong>Quiet sources (0 items in 24h window):</strong> all sources except Claude Code Changelog. Latest content across the pack sits at Jul 6–10, 2026 — no new posts in the 2026-07-11 → 2026-07-12 window.</p>
+  <p><strong>Failed / partial sources:</strong> X.com timelines fetched via Playwright rendered fully for @AnthropicAI, @OpenAI, @GoogleDeepMind, but the logged-out timeline for @simonw served a stale/pre-2025 feed behind an authwall; skipped remaining accounts (@MistralAI, @xai, @sama, @karpathy, @trq212, @swyx) given the quiet window and Jul 9–10 already covered upstream. Hugging Face Daily Papers returned a large batch, none scored ≥ 4 for a general AI-engineering audience in the 24h window.</p>
+</footer>
+
+</body>
+</html>

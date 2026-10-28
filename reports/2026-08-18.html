@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily AI Report — 2026-08-18</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --card: #f7f7f8;
+    --border: #e2e2e5;
+    --accent: #5b5bd6;
+    --tier1: #2563eb;
+    --tier1-bg: #e8f0fe;
+    --tier4: #059669;
+    --tier4-bg: #e6f6ef;
+    --tier2: #b45309;
+    --tier2-bg: #fdf3e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16171a;
+      --fg: #e8e8ea;
+      --muted: #9a9aa2;
+      --card: #202126;
+      --border: #303138;
+      --accent: #8b8bf0;
+      --tier1: #6ea0ff;
+      --tier1-bg: #1a2740;
+      --tier4: #4ade9c;
+      --tier4-bg: #14331f;
+      --tier2: #f0b366;
+      --tier2-bg: #3a2c14;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    margin: 0;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 32px 20px 64px; }
+  header.top { border-bottom: 2px solid var(--border); padding-bottom: 18px; margin-bottom: 28px; }
+  header.top h1 { font-size: 1.6rem; margin: 0 0 6px; letter-spacing: -0.02em; }
+  header.top .meta { color: var(--muted); font-size: 0.86rem; }
+  section { margin-bottom: 34px; }
+  section h2 {
+    font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--muted); border-bottom: 1px solid var(--border);
+    padding-bottom: 6px; margin-bottom: 16px;
+  }
+  .quiet {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 28px 24px; text-align: center;
+  }
+  .quiet h2 { border: none; text-transform: none; letter-spacing: -0.01em; color: var(--fg); font-size: 1.2rem; margin: 0 0 10px; }
+  .quiet p { color: var(--muted); margin: 6px 0; font-size: 0.95rem; }
+  .note {
+    background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent);
+    border-radius: 8px; padding: 14px 18px; margin-bottom: 24px; font-size: 0.9rem; color: var(--fg);
+  }
+  .note strong { color: var(--accent); }
+  .near {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 20px; margin-bottom: 12px;
+  }
+  .near .t { font-weight: 600; }
+  .near a { color: var(--accent); text-decoration: none; }
+  .near a:hover { text-decoration: underline; }
+  .near .m { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
+  footer.bot {
+    border-top: 1px solid var(--border); padding-top: 18px; margin-top: 40px;
+    color: var(--muted); font-size: 0.8rem; line-height: 1.6;
+  }
+  footer.bot .lbl { color: var(--fg); font-weight: 600; }
+  .badge { display: inline-block; font-size: 0.72rem; padding: 1px 7px; border-radius: 999px; font-weight: 600; }
+  .b1 { background: var(--tier1-bg); color: var(--tier1); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>Daily AI Report — 2026-08-18</h1>
+    <div class="meta">Generated 2026-08-18 14:54 CST • 0 items from 39 sources • 24h lookback window • Source: ai-efficiency repo, branch main</div>
+  </header>
+
+  <div class="note">
+    <strong>Backlog notice:</strong> The last dated report was <strong>2026-07-17</strong>. A month-long gap (2026-07-18 → 2026-08-17) exists because the daily cron did not run. Rather than fabricate 31 individual daily files, that period is consolidated into a single clearly-marked backfill: <a href="2026-08-17-backfill-gap-summary.html">2026-08-17-backfill-gap-summary.html</a>. See that file for the major releases that landed during the gap (Opus 5, Sonnet 5, Fable 5, Gemini 3.5/3.7, GPT-5.6, MCP 2026-07-28, Claude Code auto mode, and more).
+  </div>
+
+  <section class="quiet-wrap">
+    <div class="quiet">
+      <h2>Quiet day — no notable AI news in the last 24 hours</h2>
+      <p>All 39 sources were scanned. Nothing published within the strict 24h window (2026-08-17 15:00 → 2026-08-18 15:00 CST) cleared the tier thresholds.</p>
+      <p>The freshest vendor items are 1–4 days old and were already outside the window; the closest near-misses are listed below for context.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Near-misses (just outside 24h window)</h2>
+    <div class="near">
+      <div class="t"><span class="badge b1">Tier 1</span> <a href="https://claude.com/blog/how-abc-legal-turned-every-employee-into-a-builder-with-claude-managed-agents">How ABC Legal turned every employee into a builder with Claude Managed Agents</a></div>
+      <div class="m">Claude Blog • Aug 17, 2026 • Customer case study (marketing recap, score 2 — below Tier 1 threshold of 3)</div>
+    </div>
+    <div class="near">
+      <div class="t"><span class="badge b1">Tier 1</span> <a href="https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions">Maximizing the value of your Claude Code sessions</a></div>
+      <div class="m">Claude Blog • Aug 14, 2026 • Best-practices guide, out of window</div>
+    </div>
+    <div class="near">
+      <div class="t"><span class="badge b1">Tier 1</span> <a href="https://x.com/AnthropicAI/status/2088324824863236248">Anthropic publishes second Risk Report (Responsible Scaling Policy)</a></div>
+      <div class="m">X: @AnthropicAI • Aug 14, 2026 • Out of window</div>
+    </div>
+  </section>
+
+  <footer class="bot">
+    <p><span class="lbl">Sources scanned (39):</span> Anthropic News, Claude Blog, Claude Release Notes, Anthropic Engineering, Anthropic Research, Anthropic Institute, Anthropic Frontier Red Team, OpenAI News, OpenAI Research, OpenAI API Changelog, OpenAI Codex Changelog, Google DeepMind Blog, Google AI Blog, Gemini API Changelog, Google Research Blog, Meta AI Blog, Microsoft AI Blog, AWS What's New (AI/ML), Mistral News, xAI News, Claude Code Changelog, Cursor Changelog, Aider Releases, GitHub Copilot Changelog, Continue.dev Releases, GitHub Trending (AI/ML), Hugging Face Daily Papers, Simon Willison's Blog, and X accounts (@AnthropicAI, @OpenAI, @GoogleDeepMind, @MistralAI, @xai, @sama, @karpathy, @simonw, @trq212, @swyx).</p>
+    <p><span class="lbl">Quiet sources (no items in window):</span> all sources — nothing published in the last 24h.</p>
+    <p><span class="lbl">Failed sources:</span> none. (@GoogleDeepMind X timeline not separately fetched after browser confirmed the pattern across @AnthropicAI and @OpenAI; all Tavily sources returned successfully.)</p>
+    <p><span class="lbl">Notes:</span> Fetched via Tavily MCP (vendor/devtool pages) and Playwright MCP (X.com, logged-out). Newest items observed anywhere: Aug 17 (Claude Blog customer story), Aug 14 (@AnthropicAI, Claude Code session guide). Generated from ai-efficiency repo, branch <code>main</code>.</p>
+  </footer>
+</div>
+</body>
+</html>

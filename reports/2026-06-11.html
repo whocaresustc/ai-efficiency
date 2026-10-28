@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Daily AI Report — 2026-06-11</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --bg:#fafafa; --fg:#1a1a1a; --muted:#666; --card:#fff; --border:#e5e5e5; --tier1:#2563eb; --tier1-bg:#dbeafe; --tier4:#16a34a; --tier4-bg:#dcfce7; --score5:#dc2626; --score4:#ea580c; --score3:#ca8a04; --accent:#1a1a1a; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f0f10; --fg:#e8e8e8; --muted:#9a9a9a; --card:#18181b; --border:#27272a; --tier1:#60a5fa; --tier1-bg:#1e3a8a; --tier4:#4ade80; --tier4-bg:#14532d; --score5:#f87171; --score4:#fb923c; --score3:#facc15; --accent:#fafafa; } }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--fg); margin: 0; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 32px 20px 80px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 28px; }
+  h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .meta { color: var(--muted); font-size: 14px; }
+  h2 { font-size: 20px; margin: 36px 0 14px; letter-spacing: -0.01em; }
+  h2 .count { color: var(--muted); font-weight: 400; font-size: 14px; margin-left: 8px; }
+  h3 { font-size: 15px; margin: 20px 0 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+  .item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; }
+  .item.highlight { border-left: 3px solid var(--score5); }
+  .item-title { font-weight: 600; font-size: 16px; margin: 0 0 6px; }
+  .item-title a { color: var(--accent); text-decoration: none; }
+  .item-title a:hover { text-decoration: underline; }
+  .item-meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0.02em; }
+  .badge.tier1 { background: var(--tier1-bg); color: var(--tier1); }
+  .badge.tier4 { background: var(--tier4-bg); color: var(--tier4); }
+  .score { display: inline-block; width: 22px; height: 22px; border-radius: 50%; font-size: 12px; font-weight: 700; text-align: center; line-height: 22px; color: white; }
+  .score.s5 { background: var(--score5); }
+  .score.s4 { background: var(--score4); }
+  .score.s3 { background: var(--score3); }
+  .summary { font-size: 14px; color: var(--fg); }
+  .source-group { margin-bottom: 18px; }
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+  footer p { margin: 6px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily AI Report — June 11, 2026</h1>
+  <p class="meta">Generated 2026-06-11 · 24h lookback (Jun 10–11) · 8 items from 31 sources after ranking</p>
+</header>
+
+<section id="highlights">
+  <h2>Top Highlights <span class="count">items scored ≥ 4</span></h2>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md" target="_blank">Claude Code 2.1.172 — nested sub-agents (5 levels deep), Bedrock region auto-detect</a></p>
+    <p class="item-meta">
+      <span class="badge tier4">Claude Code</span>
+      <span>Jun 10–11, 2026</span>
+      <span class="score s5">5</span>
+    </p>
+    <p class="summary">Sub-agents can now spawn their own sub-agents recursively, up to 5 levels deep — meaningful expansion of the dynamic-workflows primitive for deeply hierarchical task decomposition. Also: Bedrock now reads AWS region from <code>~/.aws</code> config when <code>AWS_REGION</code> isn't set (with <code>/status</code> showing the source), plus a plugin marketplace search bar and fixes for 1M-context sessions getting stuck without usage credits (now auto-compact back).</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://github.blog/changelog/label/copilot/" target="_blank">GitHub Copilot CLI: improved UI, rubber duck, prompt scheduling, voice input</a></p>
+    <p class="item-meta">
+      <span class="badge tier4">GitHub Copilot</span>
+      <span>Recent (within 24h)</span>
+      <span class="score s4">4</span>
+    </p>
+    <p class="summary">Copilot CLI gets a substantial update: improved UI, a "rubber duck" mode for talking through problems, prompt scheduling (cron-style agents continuing the trend from Jun 2's cloud-agent launch), and voice input. The voice + scheduling combo pushes Copilot CLI closer to Claude Code's agents+background-tasks surface.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://github.blog/changelog/label/copilot/" target="_blank">GitHub Copilot: Cloud and local sandboxes now in public preview</a></p>
+    <p class="item-meta">
+      <span class="badge tier4">GitHub Copilot</span>
+      <span>Recent (within 24h)</span>
+      <span class="score s4">4</span>
+    </p>
+    <p class="summary">Copilot now offers both cloud and local sandboxes (with application-security + platform-governance tags) in public preview. Direct response to Claude Managed Agents' self-hosted sandboxes (May 19) — enterprise sandbox isolation is becoming a cross-vendor baseline.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://github.blog/changelog/label/copilot/" target="_blank">GitHub Copilot: Gemini models in Copilot CLI, cloud agent, and Copilot app</a></p>
+    <p class="item-meta">
+      <span class="badge tier4">GitHub Copilot</span>
+      <span>Recent (within 24h)</span>
+      <span class="score s4">4</span>
+    </p>
+    <p class="summary">Gemini joins the Copilot model picker across CLI, cloud agent, and the Copilot app. With GPT-5.2/5.2-Codex deprecated Jun 5 and MAI-Code-1-Flash added Jun 2, Copilot's multi-vendor model strategy is now Gemini + GPT + Anthropic + Microsoft — broadest of any major coding assistant.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://github.blog/changelog/label/copilot/" target="_blank">GitHub Copilot: Extend GitHub with agent apps</a></p>
+    <p class="item-meta">
+      <span class="badge tier4">GitHub Copilot</span>
+      <span>Recent (within 24h)</span>
+      <span class="score s4">4</span>
+    </p>
+    <p class="summary">New "agent apps" extensibility surface for GitHub itself — third parties can publish agent-shaped integrations alongside the existing GitHub App / Action ecosystem. Worth tracking as a competitor to Anthropic's connectors and Mistral's MCPs-in-Studio.</p>
+  </div>
+</section>
+
+<section id="vendor">
+  <h2>Vendor Announcements <span class="count">Tier 1</span></h2>
+
+  <div class="source-group">
+    <h3>DeepMind</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://deepmind.google/discover/blog/" target="_blank">Fluid, natural voice translation with Gemini 3.5 Live Translate</a></p>
+      <p class="item-meta">
+        <span class="badge tier1">DeepMind</span>
+        <span>Recent (within 24h)</span>
+        <span class="score s3">3</span>
+      </p>
+      <p class="summary">New voice-translation surface on Gemini 3.5 Live framed as "fluid, natural" — pitched at consumer Gemini app use rather than developer API. Realtime voice translation is now a cross-vendor feature (OpenAI Realtime Translate shipped earlier this year).</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://deepmind.google/discover/blog/" target="_blank">Measuring the impact of learning with AI in Sierra Leone and beyond</a></p>
+      <p class="item-meta">
+        <span class="badge tier1">DeepMind</span>
+        <span>Recent (within 24h)</span>
+        <span class="score s3">3</span>
+      </p>
+      <p class="summary">DeepMind publishes results from an AI-in-education program in Sierra Leone with global comparisons. Soft-power/social-good positioning, but the dataset itself may be useful for anyone building education-vertical agents.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://deepmind.google/discover/blog/" target="_blank">Powering the future of robotics in Europe</a></p>
+      <p class="item-meta">
+        <span class="badge tier1">DeepMind</span>
+        <span>Recent (within 24h)</span>
+        <span class="score s3">3</span>
+      </p>
+      <p class="summary">DeepMind announces a Europe-focused robotics initiative, complementing the Gemini Robotics-ER 1.6 work earlier in 2026. Mostly partnership/regulatory framing rather than new technical capabilities.</p>
+    </div>
+  </div>
+
+  <div class="source-group">
+    <h3>xAI</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://x.ai/news" target="_blank">Bringing real-time market sentiment to Tori, from eToro</a></p>
+      <p class="item-meta">
+        <span class="badge tier1">xAI</span>
+        <span>Jun 10, 2026</span>
+        <span class="score s3">3</span>
+      </p>
+      <p class="summary">Tori (eToro's investing AI agent) is now powered by SpaceXAI models, embedding real-time market sentiment directly into the investing workflow. Vertical fintech deployment for Grok — distribution play similar to Vapi voice integration earlier this month.</p>
+    </div>
+
+    <div class="item">
+      <p class="item-title"><a href="https://x.ai/news" target="_blank">Powering Gopuff's Go agent</a></p>
+      <p class="item-meta">
+        <span class="badge tier1">xAI</span>
+        <span>Jun 9, 2026 (edge of window)</span>
+        <span class="score s3">3</span>
+      </p>
+      <p class="summary">Gopuff's "Go agent" runs on SpaceXAI models. Another vertical distribution win for xAI, this time in last-mile retail/delivery. xAI is steadily building a "powered by SpaceXAI" ecosystem of branded customer agents (Tori, Go, Vapi voice).</p>
+    </div>
+  </div>
+</section>
+
+<section id="devtools">
+  <h2>Dev Tools <span class="count">Tier 4</span></h2>
+
+  <div class="source-group">
+    <h3>OpenAI Codex</h3>
+
+    <div class="item">
+      <p class="item-title"><a href="https://developers.openai.com/codex/changelog" target="_blank">Codex for iOS 1.2026.153 — adds <code>/goal</code></a></p>
+      <p class="item-meta">
+        <span class="badge tier4">Codex</span>
+        <span>Recent (within 24h)</span>
+        <span class="score s3">3</span>
+      </p>
+      <p class="summary">New iOS Codex release adds a <code>/goal</code> command (analogous to Codex's existing goal-mode, now exposed via slash command on mobile) plus assorted improvements and bug fixes. Useful only if you use Codex from your phone, but signals continued investment in mobile-as-a-first-class surface for coding agents.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Sources scanned (31):</strong> Anthropic News, Claude Blog, Claude Release Notes, Anthropic Engineering, Anthropic Research, Anthropic Institute, Anthropic Frontier Red Team, OpenAI News, OpenAI Research, OpenAI API Changelog, OpenAI Codex Changelog, Google DeepMind, Google Research, Google AI Blog, Gemini API Changelog, Meta AI, Microsoft AI, AWS, Mistral, xAI, Claude Code Changelog, Cursor, Aider, GitHub Copilot Changelog, Continue.dev, GitHub Trending, Hugging Face Papers, Simon Willison, X via Playwright (9 accounts).</p>
+  <p><strong>Quiet sources (no items in 24h window):</strong> Anthropic News (most recent Jun 9 — Fable 5/Mythos 5, ~36h old), Claude Blog (May 28), OpenAI News (Jun 8), Anthropic Engineering / Research / Institute (Jun 8 biology post, ~48h), Google Research (Jun 5), Google AI Blog (Jun 5), Mistral (May 28), Meta AI (Apr 8), Microsoft AI (undated), Cursor (undated), Aider/Continue (undated), Hugging Face Papers (no fresh ≥4 items).</p>
+  <p><strong>Failed sources:</strong> X via Playwright — MCP server disconnected mid-run, fell back to non-X sources only. Will retry on next run.</p>
+  <p><strong>Anchor context (just outside 24h):</strong> Claude <a href="https://www.anthropic.com/news/claude-fable-5-mythos-5">Fable 5 / Mythos 5</a> launched Jun 9 — Mythos-class model made safe for general use, $10/$50 per Mtok, state-of-the-art on benchmarks. See yesterday's report (2026-06-10.html) for the full writeup.</p>
+  <p><strong>Note on the day:</strong> Big day for GitHub Copilot — at least 4 distinct launches (CLI improvements, sandboxes, Gemini models, agent apps). Claude Code shipped 2.1.172 with nested sub-agents — the most substantive Claude Code release this week. xAI continued its vertical-distribution push with two customer agent launches. OpenAI and Anthropic were quieter, in the trough after their respective big Jun 8-9 announcement waves.</p>
+  <p>Generated by the daily AI report cron · scripts/daily-ai-report/PROMPT.md</p>
+</footer>
+
+</div>
+</body>
+</html>

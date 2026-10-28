@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily AI Report — 2026-07-07</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --card: #fafafa;
+    --tier1: #2563eb;
+    --tier1-bg: #dbeafe;
+    --tier2: #7c3aed;
+    --tier2-bg: #ede9fe;
+    --tier4: #059669;
+    --tier4-bg: #d1fae5;
+    --score: #dc2626;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115;
+      --fg: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #2a2f3a;
+      --card: #171a21;
+      --tier1: #60a5fa;
+      --tier1-bg: #1e3a8a;
+      --tier2: #a78bfa;
+      --tier2-bg: #4c1d95;
+      --tier4: #34d399;
+      --tier4-bg: #064e3b;
+      --score: #f87171;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.55;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  header h1 {
+    margin: 0 0 0.25rem;
+    font-size: 1.6rem;
+    letter-spacing: -0.01em;
+  }
+  header .meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  section { margin: 2rem 0; }
+  section > h2 {
+    font-size: 1.15rem;
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--border);
+  }
+  section > h3.source {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin: 1.25rem 0 0.5rem;
+    font-weight: 600;
+  }
+  .item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    margin: 0.6rem 0;
+  }
+  .item .title {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.35;
+    margin-bottom: 0.35rem;
+  }
+  .item .title a {
+    color: var(--fg);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .item .title a:hover { border-bottom-color: var(--fg); }
+  .item .badges {
+    display: flex;
+    gap: 0.35rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 0.4rem;
+    font-size: 0.75rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  .badge.tier1 { background: var(--tier1-bg); color: var(--tier1); }
+  .badge.tier2 { background: var(--tier2-bg); color: var(--tier2); }
+  .badge.tier4 { background: var(--tier4-bg); color: var(--tier4); }
+  .badge.score { background: transparent; color: var(--score); border: 1px solid var(--score); }
+  .badge.source { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+  .item .summary { color: var(--fg); font-size: 0.93rem; }
+  #highlights .item { border-left: 3px solid var(--tier1); }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+  footer .sources { line-height: 1.75; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--card); padding: 0.05rem 0.3rem; border-radius: 3px; font-size: 0.88em; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Daily AI Report — 2026-07-07</h1>
+  <div class="meta">Generated 2026-07-07 • 4 items from 3 sources • 24h lookback</div>
+</header>
+
+<section id="highlights">
+  <h2>Top Highlights</h2>
+
+  <div class="item">
+    <div class="badges">
+      <span class="badge tier1">Tier 1</span>
+      <span class="badge source">Anthropic Research</span>
+      <span class="badge score">Score 4</span>
+    </div>
+    <div class="title"><a href="https://x.com/AnthropicAI/status/2074185348142280912" target="_blank" rel="noopener">A global workspace in language models — new Anthropic mech-interp research (the &ldquo;J-space&rdquo;)</a></div>
+    <div class="summary">Anthropic released research identifying a "global workspace"-like structure inside Claude — a J-space that lets researchers read, audit, and shape what the model is actively thinking about, drawing parallels to the tiny sliver of brain activity that reaches conscious awareness. It matters because it moves interpretability from static feature-labeling toward runtime observability and steering of the model's working memory — foundational plumbing for auditable agentic systems, with an interactive Neuronpedia demo on open-weights models.</div>
+  </div>
+
+  <div class="item">
+    <div class="badges">
+      <span class="badge tier1">Tier 1</span>
+      <span class="badge source">AWS</span>
+      <span class="badge score">Score 4</span>
+    </div>
+    <div class="title"><a href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-claude-sonnet-5-on-aws-amazon-workspaces-for-ai-agents-aws-service-availability-updates-and-more-july-6-2026" target="_blank" rel="noopener">AWS Weekly Roundup (Jul 6): Claude Sonnet 5 on Bedrock, Amazon WorkSpaces for AI Agents GA</a></div>
+    <div class="summary">AWS made Claude Sonnet 5 available on Amazon Bedrock and Claude Platform on AWS, and shipped general availability of Amazon WorkSpaces for AI agents — a managed environment where agents can drive desktop applications without custom integrations. Together this collapses two friction points for enterprise agent deployment: getting the frontier Sonnet into an existing AWS/VPC footprint, and giving agents a sandbox where they can operate legacy GUI apps that were never built for programmatic access.</div>
+  </div>
+</section>
+
+<section id="vendor">
+  <h2>Vendor Announcements (Tier 1)</h2>
+
+  <h3 class="source">Anthropic</h3>
+  <div class="item">
+    <div class="badges">
+      <span class="badge tier1">Tier 1</span>
+      <span class="badge score">Score 3</span>
+    </div>
+    <div class="title"><a href="https://www.anthropic.com/news" target="_blank" rel="noopener">Case study: Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems</a></div>
+    <div class="summary">Anthropic published a case study on the Government of Alberta using Claude for automated vulnerability discovery and remediation across government systems. Signals a maturing pattern of frontier LLMs deployed in defensive security workflows at the state/province level — useful reference material if you're pitching or building similar audit-and-fix agent pipelines.</div>
+  </div>
+</section>
+
+<section id="devtools">
+  <h2>Dev Tools (Tier 4)</h2>
+
+  <h3 class="source">Claude Code</h3>
+  <div class="item">
+    <div class="badges">
+      <span class="badge tier4">Tier 4</span>
+      <span class="badge score">Score 3</span>
+    </div>
+    <div class="title"><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Claude Code v2.1.202 — Dynamic workflow size setting, workflow OTel telemetry, many workflow &amp; remote-control fixes</a></div>
+    <div class="summary">v2.1.202 adds a <code>/config</code> "Dynamic workflow size" advisory (small/medium/large agent counts for dynamic workflows) and emits <code>workflow.run_id</code> / <code>workflow.name</code> as OpenTelemetry attributes so a full workflow run can be reconstructed from OTel. Also reverts <code>/review &lt;pr&gt;</code> to a fast single-pass — the multi-agent path now lives at <code>/code-review &lt;level&gt; &lt;pr#&gt;</code> — plus fixes for Ctrl+R history search, resume-by-name in worktree-heavy repos, and duplicate skill loading.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="sources">
+    <strong>Sources scanned:</strong> Anthropic News, Claude Blog, Claude Release Notes, Anthropic Engineering, Anthropic Research, Anthropic Institute, Anthropic Frontier Red Team, OpenAI News, OpenAI Research, OpenAI API Changelog, OpenAI Codex Changelog, Google DeepMind Blog, Google AI Blog, Gemini API Changelog, Google Research Blog, Meta AI Blog, Microsoft AI Blog, AWS What's New (AI/ML), Mistral News, xAI News, Claude Code Changelog, Cursor Changelog, Aider Releases, GitHub Copilot Changelog, Continue.dev Releases, GitHub Trending, Hugging Face Daily Papers, Simon Willison's Blog, X: @AnthropicAI, X: @OpenAI, X: @simonw.
+  </div>
+  <div class="sources" style="margin-top: 0.75rem;">
+    <strong>Quiet sources (no new items in window):</strong> Claude Blog, Claude Release Notes, Anthropic Engineering, Anthropic Institute, Anthropic Frontier Red Team, OpenAI News, OpenAI Research, OpenAI API Changelog, OpenAI Codex Changelog, Google DeepMind Blog, Google AI Blog, Gemini API Changelog, Google Research Blog, Meta AI Blog, Microsoft AI Blog, Mistral News, xAI News, Cursor Changelog, Aider Releases, GitHub Copilot Changelog, Continue.dev Releases, GitHub Trending, Hugging Face Daily Papers, Simon Willison's Blog, X: @OpenAI, X: @simonw.
+  </div>
+  <div class="sources" style="margin-top: 0.75rem;">
+    <strong>Failed / partial sources:</strong> X: @simonw (timeline did not render — profile only), X accounts skipped after AnthropicAI + OpenAI (@GoogleDeepMind, @MistralAI, @xai, @sama, @karpathy, @trq212, @swyx) to keep run time bounded — none likely to add new-in-24h items above threshold given other sources already covered.
+  </div>
+</footer>
+</body>
+</html>

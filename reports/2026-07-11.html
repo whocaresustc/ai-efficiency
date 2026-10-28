@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily AI Report — 2026-07-11</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --card: #fafafa;
+    --tier1: #2563eb;
+    --tier1-bg: #dbeafe;
+    --tier2: #7c3aed;
+    --tier2-bg: #ede9fe;
+    --tier4: #059669;
+    --tier4-bg: #d1fae5;
+    --score: #dc2626;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115;
+      --fg: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #2a2f3a;
+      --card: #171a21;
+      --tier1: #60a5fa;
+      --tier1-bg: #1e3a8a;
+      --tier2: #a78bfa;
+      --tier2-bg: #4c1d95;
+      --tier4: #34d399;
+      --tier4-bg: #064e3b;
+      --score: #f87171;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.55;
+    max-width: 860px;
+  }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  header h1 {
+    margin: 0 0 0.25rem;
+    font-size: 1.6rem;
+    letter-spacing: -0.01em;
+  }
+  header .meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  section { margin: 2rem 0; }
+  section > h2 {
+    font-size: 1.15rem;
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--border);
+  }
+  section > h3.source {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin: 1.25rem 0 0.5rem;
+    font-weight: 600;
+  }
+  .item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 0.6rem;
+  }
+  .item .row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.3rem;
+  }
+  .item a.title {
+    color: var(--fg);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .item a.title:hover { text-decoration: underline; }
+  .badge {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  .tier-1 { background: var(--tier1-bg); color: var(--tier1); }
+  .tier-2 { background: var(--tier2-bg); color: var(--tier2); }
+  .tier-4 { background: var(--tier4-bg); color: var(--tier4); }
+  .score {
+    color: var(--score);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  .src {
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+  .summary {
+    font-size: 0.93rem;
+    color: var(--fg);
+    margin: 0.2rem 0 0;
+  }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+  footer p { margin: 0.35rem 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Daily AI Report — 2026-07-11</h1>
+  <div class="meta">Generated 2026-07-11 · 24h lookback · 9 items from 6 sources</div>
+</header>
+
+<section id="highlights">
+  <h2>Top Highlights</h2>
+
+  <div class="item">
+    <div class="row">
+      <a class="title" href="https://openai.com/index/introducing-chatgpt-work/">Introducing ChatGPT Work</a>
+      <span class="badge tier-1">Tier 1</span>
+      <span class="src">OpenAI</span>
+      <span class="score">★ 5</span>
+    </div>
+    <p class="summary">OpenAI launched ChatGPT Work, a new agent powered by Codex and the just-shipped GPT-5.6, that operates across apps and files and can stay on a project for hours to turn a goal into finished work. This is a direct shot at long-horizon agentic workflows and moves ChatGPT from a chat surface into a persistent worker — a category shift for anyone building agents on OpenAI's stack.</p>
+  </div>
+
+  <div class="item">
+    <div class="row">
+      <a class="title" href="https://openai.com/index/introducing-gpt-live/">Introducing GPT-Live and GPT-5.6</a>
+      <span class="badge tier-1">Tier 1</span>
+      <span class="src">OpenAI</span>
+      <span class="score">★ 5</span>
+    </div>
+    <p class="summary">OpenAI rolled out GPT-5.6 (with GPT-Live) across the lineup, positioning "Luna" as a health-intelligence variant that outperforms GPT-5.5 at max reasoning while costing 25× less. Same-day, a researcher reported that GPT-5.6 Sol Ultra produced a full proof of the 50-year-old Cycle Double Cover Conjecture using 64 subagents in under an hour — an eye-catching multi-agent reasoning demonstration.</p>
+  </div>
+
+  <div class="item">
+    <div class="row">
+      <a class="title" href="https://cloud.google.com/blog/products/ai-machine-learning/alphaevolve-now-ga-google-cloud">AlphaEvolve now GA on Google Cloud</a>
+      <span class="badge tier-1">Tier 1</span>
+      <span class="src">Google DeepMind / Google Cloud</span>
+      <span class="score">★ 4</span>
+    </div>
+    <p class="summary">DeepMind's Gemini-powered evolutionary agent AlphaEvolve is now generally available on Google Cloud, letting teams point it at algorithmic bottlenecks and have it autonomously discover optimized code. It's a rare production-grade "code-search" agent from a frontier lab — worth evaluating for anyone with high-value performance-critical kernels.</p>
+  </div>
+
+  <div class="item">
+    <div class="row">
+      <a class="title" href="https://openai.com/index/openai-bio-bug-bounty/">OpenAI Bio Bug Bounty (ongoing program, $50K)</a>
+      <span class="badge tier-1">Tier 1</span>
+      <span class="src">OpenAI</span>
+      <span class="score">★ 3</span>
+    </div>
+    <p class="summary">OpenAI converted its Bio Bug Bounty into an ongoing private program and doubled top rewards to $50K, aimed at researchers who can surface bio-capability jailbreaks. Signals that dual-use bio safeguards are becoming a permanent, funded workstream at frontier labs — relevant for anyone shipping capability-restricted APIs.</p>
+  </div>
+</section>
+
+<section id="vendor">
+  <h2>Vendor Announcements (Tier 1)</h2>
+
+  <h3 class="source">OpenAI</h3>
+  <div class="item">
+    <div class="row">
+      <a class="title" href="https://openai.com/index/introducing-chatgpt-work/">Introducing ChatGPT Work</a>
+      <span class="score">★ 5</span>
+    </div>
+    <p class="summary">A new persistent-worker agent in ChatGPT powered by Codex + GPT-5.6 that can operate across apps and files over multi-hour horizons. Substantially raises the bar for "assistant-as-employee" product patterns.</p>
+  </div>
+  <div class="item">
+    <div class="row">
+      <a class="title" href="https://openai.com/index/introducing-gpt-live/">GPT-5.6 (with Luna, Sol variants) and GPT-Live</a>
+      <span class="score">★ 5</span>
+    </div>
+    <p class="summary">Full rollout of GPT-5.6 lineup with major cost/quality gains — Luna beats GPT-5.5-max at 25× lower cost; Sol Ultra reportedly proved a 50-year-old graph-theory conjecture via 64 subagents. Real capability jump plus meaningful price/perf pressure on Anthropic and Google.</p>
+  </div>
+  <div class="item">
+    <div class="row">
+      <a class="title" href="https://openai.com/index/openai-bio-bug-bounty/">Bio Bug Bounty made permanent, rewards doubled to $50K</a>
+      <span class="score">★ 3</span>
+    </div>
+    <p class="summary">Institutionalizes dual-use bio red-teaming via a standing private program. Useful precedent as regulators start expecting sustained (not one-shot) capability testing.</p>
+  </div>
+
+  <h3 class="source">Google DeepMind</h3>
+  <div class="item">
+    <div class="row">
+      <a class="title" href="https://cloud.google.com/blog/products/ai-machine-learning/alphaevolve-now-ga-google-cloud">AlphaEvolve now generally available on Google Cloud</a>
+      <span class="score">★ 4</span>
+    </div>
+    <p class="summary">Gemini-powered evolutionary agent that autonomously designs optimized code for algorithmic bottlenecks; now GA on GCP. First production offering in the "AI-writes-your-hot-path" category from a major cloud.</p>
+  </div>
+
+  <h3 class="source">Anthropic</h3>
+  <div class="item">
+    <div class="row">
+      <a class="title" href="https://www.anthropic.com/news/ben-bernanke-long-term-benefit-trust">Ben Bernanke joins Long-Term Benefit Trust</a>
+      <span class="score">★ 3</span>
+    </div>
+    <p class="summary">Former Fed chair Ben Bernanke appointed to Anthropic's Long-Term Benefit Trust — the body that can appoint/replace board members. Governance-side news, but relevant signal for how Anthropic is staffing macro/economic oversight of its trajectory.</p>
+  </div>
+</section>
+
+<section id="devtools">
+  <h2>Dev Tools (Tier 4)</h2>
+
+  <h3 class="source">Claude Code Changelog</h3>
+  <div class="item">
+    <div class="row">
+      <a class="title" href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">Claude Code 2.1.206</a>
+      <span class="score">★ 3</span>
+    </div>
+    <p class="summary">Adds a <code>/doctor</code> check that proposes trimming checked-in <code>CLAUDE.md</code> content Claude could derive from the codebase, plus <code>/cd</code> path suggestions and <code>/commit-push-pr</code> auto-allow for the configured push remote. Also improves <code>/code-review</code> findings on Opus 4.8 across effort levels and fixes multiple Bedrock/MCP/agent-view regressions.</p>
+  </div>
+
+  <h3 class="source">Codex</h3>
+  <div class="item">
+    <div class="row">
+      <a class="title" href="https://developers.openai.com/codex/changelog">Codex + ChatGPT Work usage limits reset (twice), same-day GPT-5.6 rollout</a>
+      <span class="score">★ 3</span>
+    </div>
+    <p class="summary">Following the GPT-5.6 / ChatGPT Work launch, the Codex team reset usage limits twice in 24h to keep paying users unblocked while capacity rebalances. Practical note for teams whose CI runs were rate-limited yesterday: quotas were widened, not narrowed.</p>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Sources scanned:</strong> Anthropic News, Claude Blog, Claude Release Notes, Anthropic Engineering, Anthropic Research, Anthropic Institute, Frontier Red Team, OpenAI News, OpenAI Research, OpenAI API Changelog, OpenAI Codex Changelog, Google DeepMind Blog, Google AI Blog, Gemini API Changelog, Google Research Blog, Meta AI Blog, Microsoft AI Blog, AWS AI/ML, Mistral News, xAI News, Claude Code Changelog, Cursor Changelog, Aider Releases, GitHub Copilot Changelog, Continue.dev Releases, GitHub Trending, Hugging Face Papers, Simon Willison's Blog, X: @AnthropicAI, X: @OpenAI, X: @GoogleDeepMind, X: @MistralAI, X: @xai, X: @sama, X: @karpathy, X: @simonw, X: @trq212, X: @swyx.</p>
+  <p><strong>Quiet sources (no items in last 24h):</strong> Anthropic Engineering, Anthropic Research, Anthropic Institute, Frontier Red Team, OpenAI Research, Google DeepMind Blog (post pages), Google AI Blog, Gemini API Changelog, Google Research Blog, Meta AI Blog, Microsoft AI Blog, AWS AI/ML, Mistral News, xAI News, Cursor Changelog, Aider Releases, GitHub Copilot Changelog, Continue.dev Releases, GitHub Trending (no AI-keyword hits), Hugging Face Papers, Simon Willison's Blog, X: @MistralAI, X: @xai, X: @sama, X: @karpathy, X: @simonw, X: @trq212, X: @swyx.</p>
+  <p><strong>Failed sources:</strong> none.</p>
+</footer>
+</body>
+</html>

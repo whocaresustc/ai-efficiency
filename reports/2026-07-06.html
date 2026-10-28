@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Daily AI Report — 2026-07-06</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --card-bg: #fafafa;
+    --border: #e5e5e5;
+    --link: #0366d6;
+    --tier1: #1f6feb;
+    --tier1-bg: #ddf4ff;
+    --tier2: #8250df;
+    --tier2-bg: #f0e4ff;
+    --tier4: #1a7f37;
+    --tier4-bg: #dcfce7;
+    --score: #b45309;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1117;
+      --fg: #e6edf3;
+      --muted: #8b949e;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --link: #58a6ff;
+      --tier1: #58a6ff;
+      --tier1-bg: #10233d;
+      --tier2: #bc8cff;
+      --tier2-bg: #241735;
+      --tier4: #3fb950;
+      --tier4-bg: #0f2917;
+      --score: #d4a557;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 820px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5;
+  }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+  header h1 { margin: 0 0 0.25rem; font-size: 1.6rem; }
+  header .meta { color: var(--muted); font-size: 0.9rem; }
+  section { margin-bottom: 2rem; }
+  section h2 { font-size: 1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; margin-bottom: 0.75rem; }
+  .source-group { margin-bottom: 1.25rem; }
+  .source-group > h3 {
+    font-size: 0.95rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em;
+    margin: 1rem 0 0.5rem; font-weight: 600;
+  }
+  .item {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.75rem 1rem; margin-bottom: 0.6rem;
+  }
+  .item .title { font-weight: 600; font-size: 1rem; display: block; margin-bottom: 0.3rem; }
+  .item a { color: var(--link); text-decoration: none; }
+  .item a:hover { text-decoration: underline; }
+  .item .badges { font-size: 0.75rem; margin-bottom: 0.4rem; display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; }
+  .tier { padding: 0.1rem 0.5rem; border-radius: 10px; font-weight: 600; }
+  .tier-1 { background: var(--tier1-bg); color: var(--tier1); }
+  .tier-2 { background: var(--tier2-bg); color: var(--tier2); }
+  .tier-4 { background: var(--tier4-bg); color: var(--tier4); }
+  .score { color: var(--score); font-weight: 600; }
+  .source-name { color: var(--muted); }
+  .item p { margin: 0.3rem 0 0; font-size: 0.93rem; color: var(--fg); }
+  .highlight { border-left: 3px solid var(--score); }
+  ul.compact { margin: 0.3rem 0 0.2rem 1.2rem; padding: 0; font-size: 0.9rem; }
+  ul.compact li { margin: 0.15rem 0; }
+  footer {
+    margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    color: var(--muted); font-size: 0.85rem;
+  }
+  footer p { margin: 0.35rem 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Daily AI Report — 2026-07-06</h1>
+  <div class="meta">Generated 2026-07-06 • 2 items from 32 sources scanned • 24h lookback (2026-07-05 → 2026-07-06)</div>
+</header>
+
+<section id="highlights">
+  <h2>Top Highlights</h2>
+  <div class="item">
+    <p><em>No items scored ≥ 4 in this 24h window. Nothing rose to highlight-worthy across vendor blogs, research, or dev tools. See the Dev Tools section for two minor Claude Code point releases that are the only fresh signal.</em></p>
+  </div>
+</section>
+
+<section id="devtools">
+  <h2>Dev Tools (Tier 4)</h2>
+
+  <div class="source-group">
+    <h3>Claude Code</h3>
+    <div class="item">
+      <span class="title"><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">Claude Code 2.1.201</a></span>
+      <div class="badges">
+        <span class="tier tier-4">Tier 4</span>
+        <span class="source-name">CHANGELOG.md · main HEAD (undated, likely last 24h)</span>
+        <span class="score">Score 3</span>
+      </div>
+      <p>One-line hotfix: Claude Sonnet 5 sessions no longer inject the mid-conversation system role for harness reminders. Small quality-of-output fix for anyone whose Sonnet 5 turns were showing spurious reminder chatter.</p>
+    </div>
+    <div class="item">
+      <span class="title"><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">Claude Code 2.1.200 — Manual permission mode becomes the default</a></span>
+      <div class="badges">
+        <span class="tier tier-4">Tier 4</span>
+        <span class="source-name">CHANGELOG.md · main HEAD (undated, likely last 24h)</span>
+        <span class="score">Score 3</span>
+      </div>
+      <p>Behavior change: the "default" permission mode is renamed <code>Manual</code> everywhere (CLI, <code>--help</code>, VS Code, JetBrains), and <code>AskUserQuestion</code> dialogs no longer auto-continue unless you opt into an idle timeout via <code>/config</code>. Also fixes a batch of background-agent stability issues (daemon-lock reuse, stale respawns, corrupted worker records) and a startup crash when <code>disabledMcpServers</code> / <code>enabledMcpServers</code> is set to a non-array.</p>
+      <ul class="compact">
+        <li>Permission mode: <code>--permission-mode manual</code> and <code>"defaultMode": "manual"</code> now accepted alongside <code>default</code>.</li>
+        <li>Background sessions: no longer silently stop after sleep/wake, no longer re-run Esc-cancelled turns after stall respawn.</li>
+        <li>Voice dictation: silent recordings now show a clearer message instead of a misleading "Voice connection failed".</li>
+        <li>Screen-reader / a11y: decorative glyphs hidden; transcript symbols read as short labels; nested tables read as <code>Header: value.</code></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Sources scanned:</strong> Anthropic News, Claude Blog, Claude Release Notes, Anthropic Engineering, Anthropic Research, Anthropic Institute, Frontier Red Team, OpenAI News, OpenAI Research, OpenAI API Changelog, OpenAI Codex Changelog, Google DeepMind Blog, Google AI Blog, Gemini API Changelog, Google Research Blog, Meta AI Blog, Microsoft AI Blog, AWS What's New (search), Mistral News, xAI News, Claude Code Changelog, Cursor Changelog, Aider Releases, GitHub Copilot Changelog, Continue.dev Releases, GitHub Trending, Hugging Face Papers, Simon Willison, X: @AnthropicAI, X: @OpenAI, X: @GoogleDeepMind, X: @simonw, X: @sama.</p>
+  <p><strong>Quiet sources (no items in 24h window):</strong> Anthropic News (last: Jul 2 Fable 5 safeguards), Claude Blog / Release Notes (last: Jun 30 Sonnet 5), Anthropic Engineering / Research / Institute / Frontier Red Team, OpenAI News (last: Jun 30 GeneBench-Pro, Jun 30 core-dump epidemiology), OpenAI Research, OpenAI API Changelog (last dated entry stale), OpenAI Codex Changelog (last: Jul 1 CLI 0.142.5 — covered in 07-04 report), Google DeepMind Blog (last: Jun 30 Gemini Omni Flash / Gemma 4 milestone), Google AI Blog, Gemini API Changelog, Google Research Blog, Meta AI Blog, Microsoft AI Blog, AWS (no fresh AI/ML posts), Mistral News (last: Jul 2 Leanstral 1.5), xAI News (last: Jul 1 Voice Agent Builder), Cursor Changelog (3.9 "Customize" page, no date), Aider Releases, GitHub Copilot Changelog (individual-plan sign-ups reopening — no date), Continue.dev Releases (GitHub page rendered empty), GitHub Trending (no AI-keyword matches on today's list), Hugging Face Papers (no clear score-4+ item in window), Simon Willison blog (last: Jul 3 Gap Map).</p>
+  <p><strong>X accounts:</strong> @AnthropicAI (latest Jul 1 Fable 5 return), @OpenAI (latest Jun 30 agents-at-OpenAI), @GoogleDeepMind (latest Jun 30 Gemini Omni Flash), @simonw (no fresh posts visible in snapshot — recent tweets stale), @sama (no fresh posts in snapshot). All fetched successfully — no items inside the 24h window.</p>
+  <p><strong>Skipped X accounts (bandwidth cap):</strong> @MistralAI, @xai, @karpathy, @trq212, @swyx.</p>
+  <p><strong>Failed sources:</strong> Initial <code>aws.amazon.com</code> Tavily search returned an ECONNRESET on the first call (recovered on retry, still no fresh AI/ML items). No other hard failures.</p>
+</footer>
+
+</body>
+</html>

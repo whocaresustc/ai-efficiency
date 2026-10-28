@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Daily AI Report — 2026-07-02</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #0f172a;
+    --muted: #64748b;
+    --card: #f8fafc;
+    --border: #e2e8f0;
+    --link: #0369a1;
+    --accent: #0284c7;
+    --tier1: #2563eb;
+    --tier1-bg: #dbeafe;
+    --tier2: #7c3aed;
+    --tier2-bg: #ede9fe;
+    --tier4: #059669;
+    --tier4-bg: #d1fae5;
+    --highlight: #f59e0b;
+    --highlight-bg: #fef3c7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1220;
+      --fg: #e2e8f0;
+      --muted: #94a3b8;
+      --card: #111827;
+      --border: #1f2937;
+      --link: #7dd3fc;
+      --accent: #38bdf8;
+      --tier1: #93c5fd;
+      --tier1-bg: #1e3a8a;
+      --tier2: #c4b5fd;
+      --tier2-bg: #4c1d95;
+      --tier4: #6ee7b7;
+      --tier4-bg: #064e3b;
+      --highlight: #fbbf24;
+      --highlight-bg: #78350f;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    padding: 32px 20px 80px;
+  }
+  main { max-width: 860px; margin: 0 auto; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 32px; }
+  header h1 { margin: 0 0 6px 0; font-size: 28px; letter-spacing: -0.01em; }
+  header .meta { color: var(--muted); font-size: 14px; }
+  h2 { font-size: 20px; margin: 40px 0 16px; letter-spacing: -0.01em; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  h3.source { font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 24px 0 10px; font-weight: 600; }
+  .item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+  .item.highlight { border-left: 4px solid var(--highlight); }
+  .item .title { font-weight: 600; font-size: 16px; margin: 0 0 6px; }
+  .item .title a { color: var(--link); text-decoration: none; }
+  .item .title a:hover { text-decoration: underline; }
+  .item .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; font-size: 12px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+  .badge.t1 { background: var(--tier1-bg); color: var(--tier1); }
+  .badge.t2 { background: var(--tier2-bg); color: var(--tier2); }
+  .badge.t4 { background: var(--tier4-bg); color: var(--tier4); }
+  .score { color: var(--muted); }
+  .score strong { color: var(--fg); }
+  .summary { color: var(--fg); font-size: 14.5px; margin: 0; }
+  footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+  footer ul { padding-left: 20px; margin: 4px 0 12px; }
+  .notice {
+    background: var(--highlight-bg);
+    border-left: 4px solid var(--highlight);
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 14px;
+    margin: 16px 0 24px;
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>Daily AI Report — 2026-07-02</h1>
+  <div class="meta">Generated 2026-07-02 • 24h lookback window • 8 items from ~28 sources scanned</div>
+</header>
+
+<div class="notice">
+  <strong>Note on window:</strong> The strict 24-hour window (Jul 1 → Jul 2) yielded few native-dated items. Below includes items dated Jun 30 and Jul 1 whose downstream rollouts and vendor confirmations landed in the last 24h (Claude Sonnet 5 GA in Copilot, Fable 5 redeployment). Marked accordingly.
+</div>
+
+<section id="highlights">
+  <h2>Top Highlights</h2>
+
+  <div class="item highlight">
+    <div class="row">
+      <span class="badge t1">Tier 1 · Anthropic</span>
+      <span class="score">Score <strong>5</strong></span>
+      <span class="score">Jul 1, 2026</span>
+    </div>
+    <p class="title"><a href="https://www.anthropic.com/news/redeploying-fable-5">Redeploying Fable 5 — export controls lifted, global rollout Jul 1</a></p>
+    <p class="summary">Anthropic re-enabled global access to Fable 5 (its highest-capability model) starting Wednesday Jul 1, 2026, after the US government directive that had suspended access to Fable 5 and Mythos 5 was lifted. In parallel, Anthropic proposed an industry-wide framework for scoring jailbreak severity together with Amazon, Microsoft, Google, and other Glasswing partners — the first coordinated cross-lab severity taxonomy.</p>
+  </div>
+
+  <div class="item highlight">
+    <div class="row">
+      <span class="badge t1">Tier 1 · Anthropic</span>
+      <span class="score">Score <strong>5</strong></span>
+      <span class="score">Jun 30, 2026 (rollout continuing)</span>
+    </div>
+    <p class="title"><a href="https://www.anthropic.com/news/claude-sonnet-5">Introducing Claude Sonnet 5</a></p>
+    <p class="summary">Sonnet 5 is Anthropic's most agentic Sonnet model yet, with substantial improvements over Sonnet 4.6 in reasoning, tool use, coding, and knowledge work; it becomes the default in Claude Code as of v2.1.197 with a native 1M-token context window and $2/$10 per Mtok promotional pricing through Aug 31. GA availability on GitHub Copilot and Claude Platform on AWS both landed in the 24h window, so this is the model most likely to hit production pipelines this week.</p>
+  </div>
+
+  <div class="item highlight">
+    <div class="row">
+      <span class="badge t4">Tier 4 · GitHub Copilot</span>
+      <span class="score">Score <strong>4</strong></span>
+      <span class="score">Jul 1, 2026</span>
+    </div>
+    <p class="title"><a href="https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot">Kimi K2.7 Code is generally available in GitHub Copilot</a></p>
+    <p class="summary">Kimi K2.7 Code — an open-weight coding model hosted by GitHub on Microsoft Azure — is the first open-weight model to appear in Copilot's model picker, giving developers a lower-cost coding option. Rolls out to Copilot Pro, Pro+, and Max; off by default for Business/Enterprise.</p>
+  </div>
+
+  <div class="item highlight">
+    <div class="row">
+      <span class="badge t1">Tier 1 · OpenAI</span>
+      <span class="score">Score <strong>4</strong></span>
+      <span class="score">Jun 30, 2026</span>
+    </div>
+    <p class="title"><a href="https://openai.com/index/genebench-pro">Introducing GeneBench-Pro</a></p>
+    <p class="summary">OpenAI released GeneBench-Pro, a research-level benchmark that stress-tests AI agents on messy biological data — including choosing the right analysis path and making the judgment calls real computational research requires, going beyond canned answers. Signals a push into scientific-agent evaluation as the next frontier after coding benchmarks.</p>
+  </div>
+
+  <div class="item highlight">
+    <div class="row">
+      <span class="badge t4">Tier 4 · Claude Code</span>
+      <span class="score">Score <strong>4</strong></span>
+      <span class="score">v2.1.198 (recent)</span>
+    </div>
+    <p class="title"><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">Claude Code v2.1.198 — Claude in Chrome GA, background-agent notifications, `/dataviz` skill</a></p>
+    <p class="summary">Claude in Chrome moves to GA; background agents launched from `claude agents` now auto-commit/push/open a draft PR when they finish worktree work rather than stopping to ask, and the built-in Explore agent now inherits the main session's model (capped at opus) instead of running on haiku. Also: fixed transient ECONNRESET aborting turns, and subagents now inherit the session's extended-thinking config for better delegated output.</p>
+  </div>
+</section>
+
+<section id="vendor">
+  <h2>Vendor Announcements (Tier 1)</h2>
+
+  <h3 class="source">Anthropic</h3>
+  <div class="item">
+    <div class="row">
+      <span class="badge t1">Anthropic Newsroom</span>
+      <span class="score">Score <strong>3</strong></span>
+      <span class="score">Jun 26, 2026</span>
+    </div>
+    <p class="title"><a href="https://www.anthropic.com/news/anthropic-economic-index-cadences">Anthropic Economic Index report: Cadences</a></p>
+    <p class="summary">Anthropic's latest Economic Index report samples hourly for the first time to study when people come to Claude, what they produce with it, and how their perceptions of AI's workplace impact are shifting. Notable finding: nearly half expect their responsibilities to significantly change within 12 months, and more worry about junior colleagues losing jobs than about themselves.</p>
+  </div>
+
+  <h3 class="source">OpenAI</h3>
+  <div class="item">
+    <div class="row">
+      <span class="badge t1">OpenAI News</span>
+      <span class="score">Score <strong>4</strong></span>
+      <span class="score">Jun 26, 2026</span>
+    </div>
+    <p class="title"><a href="https://openai.com/index/gpt-5-6-sol">Previewing GPT-5.6 Sol — plus Terra and Luna tiers</a></p>
+    <p class="summary">OpenAI began a limited preview of GPT-5.6 Sol (next-gen frontier), GPT-5.6 Terra (balanced everyday), and GPT-5.6 Luna (fast, affordable) — with Sol positioned as the most capable model yet for cybersecurity, shifting the performance-efficiency frontier for long-horizon security tasks including vulnerability research. Ships with OpenAI's most robust safety stack to date; the GPT-5.6 Preview System Card was published alongside.</p>
+  </div>
+
+  <h3 class="source">Google DeepMind / Google AI</h3>
+  <div class="item">
+    <div class="row">
+      <span class="badge t1">Google DeepMind</span>
+      <span class="score">Score <strong>4</strong></span>
+      <span class="score">Jun 30, 2026</span>
+    </div>
+    <p class="title"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/">Start building with Nano Banana 2 Lite and Gemini Omni Flash</a></p>
+    <p class="summary">Google released Nano Banana 2 Lite and Gemini Omni Flash as developer-facing models pairable via the Interactions API — generate an image with Nano Banana 2 Lite, then animate it with Omni Flash while maintaining session history across the round-trip. Continues the trend of tightly-coupled multi-modal model pairs surfaced through a unified API.</p>
+  </div>
+
+</section>
+
+<section id="devtools">
+  <h2>Dev Tools (Tier 4)</h2>
+
+  <h3 class="source">Cursor</h3>
+  <div class="item">
+    <div class="row">
+      <span class="badge t4">Cursor Changelog 3.8</span>
+      <span class="score">Score <strong>3</strong></span>
+      <span class="score">Recent</span>
+    </div>
+    <p class="title"><a href="https://www.cursor.com/changelog">Cursor Automations — /automate skill, Slack emoji triggers, computer use</a></p>
+    <p class="summary">The new `/automate` skill lets users describe a repetitive task in plain language and Cursor configures triggers, instructions, and tools for you; adds an emoji-based Slack trigger and computer-use support. Bugbot (now powered by Composer 2.5) is 3x faster (~90s reviews), 22% cheaper, and finds 10% more bugs — a notable jump in real-world code-review latency/quality.</p>
+  </div>
+
+  <h3 class="source">GitHub Copilot</h3>
+  <div class="item">
+    <div class="row">
+      <span class="badge t4">GitHub Changelog</span>
+      <span class="score">Score <strong>3</strong></span>
+      <span class="score">Jun 29–Jul 1, 2026</span>
+    </div>
+    <p class="title"><a href="https://github.blog/changelog/label/copilot/">Copilot model-picker week: Claude Sonnet 5 GA (Jun 30), Kimi K2.7 GA (Jul 1), Opus 4.8 fast mode (Jun 29), MAI-Code-1-Flash</a></p>
+    <p class="summary">GitHub Copilot's model catalog picked up four notable additions in the last four days: Claude Sonnet 5 GA, Kimi K2.7 Code GA (first open-weight option), Opus 4.8 fast mode in preview at reduced cost, and MAI-Code-1-Flash. The picker is quietly becoming the marketplace where model tiering decisions get made.</p>
+  </div>
+
+</section>
+
+<footer>
+  <strong>Sources scanned:</strong>
+  <ul>
+    <li><em>Vendor (Tier 1):</em> Anthropic News, Claude Blog, Claude Release Notes, Anthropic Engineering, Anthropic Research, Anthropic Institute, Frontier Red Team, OpenAI News, OpenAI Research, Google DeepMind, Google AI blog, Google Research, Meta AI, Microsoft AI, AWS ML blog, Mistral News, xAI News</li>
+    <li><em>Dev tools (Tier 4):</em> Claude Code CHANGELOG, Cursor, Aider, GitHub Copilot changelog, Continue.dev, GitHub Trending, OpenAI API changelog, OpenAI Codex changelog, Gemini API changelog</li>
+    <li><em>Community (Tier 2):</em> Hugging Face Daily Papers, Simon Willison's blog</li>
+    <li><em>X (via Playwright):</em> @AnthropicAI, @OpenAI, @GoogleDeepMind, @simonw</li>
+  </ul>
+
+  <strong>Quiet sources (nothing in window):</strong>
+  <ul>
+    <li>xAI, Mistral, Meta AI, Microsoft AI, Anthropic Engineering, Anthropic Institute, Frontier Red Team, Continue.dev, Aider</li>
+    <li>Hugging Face Daily Papers — nothing scored ≥ 4 for a production-focused AI engineer</li>
+  </ul>
+
+  <strong>Failed / skipped sources:</strong>
+  <ul>
+    <li>X: @MistralAI, @xai, @sama, @karpathy, @trq212, @swyx — skipped this run to conserve tokens after establishing that @AnthropicAI's newest post was Jun 26 (outside window) and @simonw's timeline snapshot returned mostly cached older tweets rather than the live feed</li>
+  </ul>
+</footer>
+
+</main>
+</body>
+</html>

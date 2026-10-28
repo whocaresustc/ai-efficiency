@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Daily AI Report — 2026-07-03</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --card: #fafafa;
+    --border: #e5e5e5;
+    --tier1: #2563eb;
+    --tier4: #16a34a;
+    --tier2: #a855f7;
+    --accent: #ea580c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115;
+      --fg: #e8e8e8;
+      --muted: #9ca3af;
+      --card: #1a1d24;
+      --border: #2a2f38;
+      --tier1: #60a5fa;
+      --tier4: #4ade80;
+      --tier2: #c084fc;
+      --accent: #fb923c;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 24px 20px 60px;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+    max-width: 880px;
+    margin-inline: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 24px;
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+  .meta {
+    color: var(--muted);
+    font-size: 13px;
+  }
+  section {
+    margin-top: 32px;
+  }
+  h2 {
+    font-size: 18px;
+    margin: 0 0 12px;
+    letter-spacing: -0.005em;
+  }
+  h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    margin: 20px 0 8px;
+    font-weight: 600;
+  }
+  .item {
+    padding: 12px 14px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  .item .title {
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0 0 6px;
+  }
+  .item .title a {
+    color: var(--fg);
+    text-decoration: none;
+  }
+  .item .title a:hover {
+    text-decoration: underline;
+  }
+  .badges {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    color: white;
+    letter-spacing: 0.02em;
+  }
+  .badge.tier1 { background: var(--tier1); }
+  .badge.tier4 { background: var(--tier4); }
+  .badge.tier2 { background: var(--tier2); }
+  .score {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .source {
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .summary {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: var(--fg);
+  }
+  footer {
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+  footer p { margin: 4px 0; }
+  .note {
+    padding: 10px 14px;
+    background: var(--card);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--fg);
+    margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Daily AI Report — 2026-07-03</h1>
+  <div class="meta">Generated 2026-07-03 • 24-hour lookback window (2026-07-02 → 2026-07-03)</div>
+</header>
+
+<div class="note">
+  <strong>Quiet stretch.</strong> Nothing substantial published in the last strict 24 hours across the tracked vendor and dev-tool feeds. The items below all landed <strong>Jul 1, 2026</strong> (~48h ago) and are included as the freshest signal available — mostly GitHub Copilot GA releases, Cursor's mobile beta, and xAI's Voice Agent Builder. Anthropic, OpenAI, DeepMind, Meta, and Microsoft had no new posts in the window.
+</div>
+
+<section id="highlights">
+  <h2>Top Highlights</h2>
+
+  <div class="item">
+    <div class="title">
+      <a href="https://github.blog/changelog/2026-07-01-copilot-vision-is-generally-available">GitHub Copilot Vision is generally available</a>
+      <span class="badges"><span class="badge tier4">Tier 4 · GitHub Copilot</span><span class="score">score 4</span></span>
+    </div>
+    <p class="summary">Copilot Vision — image-in prompts for GitHub Copilot Chat that let you paste UI screenshots, wireframes, or diagrams and get code / explanations — moves from preview to GA on Jul 1. This closes the multimodal gap with Claude and ChatGPT for the Copilot user base and unlocks common "here's the mock, build it" flows inside VS Code and github.com.</p>
+  </div>
+
+  <div class="item">
+    <div class="title">
+      <a href="https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot">Kimi K2.7 Code is generally available in GitHub Copilot</a>
+      <span class="badges"><span class="badge tier4">Tier 4 · GitHub Copilot</span><span class="score">score 4</span></span>
+    </div>
+    <p class="summary">Moonshot's Kimi K2.7 Code model is now selectable in Copilot alongside GPT-5.x and Claude Sonnet 5, extending the multi-vendor model roster beyond the OpenAI/Anthropic axis. Notable for engineers who want to A/B Chinese-lab coding models against the frontier without leaving their existing Copilot subscription.</p>
+  </div>
+
+  <div class="item">
+    <div class="title">
+      <a href="https://x.ai/news/grok-voice-agent-builder">xAI ships Voice Agent Builder — no-code Grok Voice agents at $0.05/min</a>
+      <span class="badges"><span class="badge tier1">Tier 1 · xAI</span><span class="score">score 4</span></span>
+    </div>
+    <p class="summary">xAI launched a no-code platform to create human-like voice agents built on Grok Voice, launching today in beta with a free phone number per account and $0.05/minute inference. It's a direct shot at OpenAI's Realtime API + Voice Agents, ElevenLabs Conversational AI, and Retell — competing on price and vertical integration with an included phone-number funnel.</p>
+  </div>
+
+  <div class="item">
+    <div class="title">
+      <a href="https://www.cursor.com/changelog/ios-mobile-app">Cursor Mobile App for iOS — public beta, cloud agents from your phone</a>
+      <span class="badges"><span class="badge tier4">Tier 4 · Cursor</span><span class="score">score 4</span></span>
+    </div>
+    <p class="summary">Cursor 3.9 introduces an iOS app (public beta, all paid plans) that lets you launch and manage always-on cloud agents in isolated VMs, plus Remote Control for a running desktop agent, Live Activities, and push notifications. This is the same "async coding agent, drive it from anywhere" pattern Codex Cloud, Devin, and Claude Code background agents are converging on — mobile is now table stakes.</p>
+  </div>
+
+  <div class="item">
+    <div class="title">
+      <a href="https://www.anthropic.com/news/redeploying-fable-5">Anthropic redeploys Claude Fable 5 globally with new cybersecurity classifiers</a>
+      <span class="badges"><span class="badge tier1">Tier 1 · Anthropic</span><span class="score">score 4</span></span>
+    </div>
+    <p class="summary">Following the Jun 12 suspension, Claude Fable 5 came back online globally on Jul 1 with a new set of classifiers that block additional cybersecurity-adjacent tasks, following consultation with the US government. Anthropic also proposed an industry-wide framework for scoring jailbreak severity together with Amazon, Microsoft, Google, and other Glasswing partners.</p>
+  </div>
+</section>
+
+<section id="vendor">
+  <h2>Vendor Announcements <span class="score" style="font-weight:400">(Tier 1)</span></h2>
+
+  <h3>Anthropic</h3>
+  <div class="item">
+    <div class="title">
+      <a href="https://support.claude.com/en/articles/12138966-release-notes">Fable 5 & Mythos 5 access restored; Enterprise model entitlements (beta)</a>
+      <span class="badges"><span class="badge tier1">Tier 1</span><span class="score">score 3</span></span>
+    </div>
+    <p class="summary">Alongside the Fable 5 redeployment, Anthropic's Jul 1 release notes add a beta "model entitlements" feature letting Enterprise admins control which Claude models and effort levels their users can access. Useful for larger orgs standardizing on a subset of models for cost or compliance reasons.</p>
+  </div>
+
+  <h3>xAI</h3>
+  <div class="item">
+    <div class="title">
+      <a href="https://x.ai/news/grok-voice-agent-builder">Voice Agent Builder for Grok Voice</a>
+      <span class="badges"><span class="badge tier1">Tier 1</span><span class="score">score 4</span></span>
+    </div>
+    <p class="summary">See highlights above. No-code voice-agent creation at $0.05/min with a free phone number per account, targeting the same segment as OpenAI Realtime, ElevenLabs, and Retell.</p>
+  </div>
+</section>
+
+<section id="devtools">
+  <h2>Dev Tools <span class="score" style="font-weight:400">(Tier 4)</span></h2>
+
+  <h3>GitHub Copilot Changelog</h3>
+  <div class="item">
+    <div class="title">
+      <a href="https://github.blog/changelog/2026-07-01-copilot-vision-is-generally-available">Copilot Vision is generally available</a>
+      <span class="badges"><span class="badge tier4">Tier 4</span><span class="score">score 4</span></span>
+    </div>
+    <p class="summary">See highlights above. Image inputs move from preview to GA in Copilot Chat.</p>
+  </div>
+  <div class="item">
+    <div class="title">
+      <a href="https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot">Kimi K2.7 Code is generally available in GitHub Copilot</a>
+      <span class="badges"><span class="badge tier4">Tier 4</span><span class="score">score 4</span></span>
+    </div>
+    <p class="summary">See highlights above. Third-vendor coding model added to Copilot's selector.</p>
+  </div>
+  <div class="item">
+    <div class="title">
+      <a href="https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available">Browser tools for GitHub Copilot in VS Code are generally available</a>
+      <span class="badges"><span class="badge tier4">Tier 4</span><span class="score">score 4</span></span>
+    </div>
+    <p class="summary">Copilot in VS Code can now drive a browser tool — click, type, screenshot, read DOM — as part of an agentic loop, hitting GA on Jul 1. This is the same capability class as Claude's computer use and OpenAI's browser tool, now packaged for the mainstream VS Code + Copilot install base.</p>
+  </div>
+  <div class="item">
+    <div class="title">
+      <a href="https://github.blog/changelog/2026-07-01-copilot-cli-auto-model-selection-routes-based-on-task">Copilot CLI auto model selection routes based on task</a>
+      <span class="badges"><span class="badge tier4">Tier 4</span><span class="score">score 3</span></span>
+    </div>
+    <p class="summary">Copilot CLI can now auto-pick a model based on the task shape (short reply vs. long-horizon plan vs. code edit), and enterprises can now default their users to auto-selection. Removes one more decision point for teams that don't want to standardize on a single model.</p>
+  </div>
+  <div class="item">
+    <div class="title">
+      <a href="https://github.blog/changelog/2026-07-01-enterprise-managed-settings-json-is-generally-available">Enterprise managed-settings.json is generally available</a>
+      <span class="badges"><span class="badge tier4">Tier 4</span><span class="score">score 3</span></span>
+    </div>
+    <p class="summary">Enterprises can now push a managed-settings.json to lock down Copilot behavior across the org (allowed tools, models, endpoints) — the GitHub-side equivalent of Anthropic's new model-entitlements feature. Governance/compliance play.</p>
+  </div>
+  <div class="item">
+    <div class="title">
+      <a href="https://github.blog/changelog/2026-07-01-set-ai-credit-session-limits-in-copilot-cli-and-sdk">Set AI credit session limits in Copilot CLI and SDK</a>
+      <span class="badges"><span class="badge tier4">Tier 4</span><span class="score">score 3</span></span>
+    </div>
+    <p class="summary">Copilot CLI and SDK get per-session credit caps, so a runaway agent loop can't burn through a monthly budget in one turn. Cost-safety guardrail matching what Cursor and Claude Code already ship.</p>
+  </div>
+  <div class="item">
+    <div class="title">
+      <a href="https://github.blog/changelog/2026-07-01-new-c-language-server-config-skill-for-copilot-cli">New C++ language server config skill for Copilot CLI</a>
+      <span class="badges"><span class="badge tier4">Tier 4</span><span class="score">score 3</span></span>
+    </div>
+    <p class="summary">Copilot CLI ships a new "skill" that configures a C++ language server (clangd) on demand, so C++ codebases get proper symbol resolution and completion inside CLI agent sessions. Incremental, but useful if you're on C++ and have been living with degraded completions.</p>
+  </div>
+
+  <h3>Cursor</h3>
+  <div class="item">
+    <div class="title">
+      <a href="https://www.cursor.com/changelog/ios-mobile-app">Cursor Mobile App for iOS (3.9)</a>
+      <span class="badges"><span class="badge tier4">Tier 4</span><span class="score">score 4</span></span>
+    </div>
+    <p class="summary">See highlights above. iOS beta, cloud agents in VMs, Remote Control from phone, Live Activities/push, PR review-and-merge from mobile.</p>
+  </div>
+
+  <h3>OpenAI Codex</h3>
+  <div class="item">
+    <div class="title">
+      <a href="https://developers.openai.com/codex/changelog">Codex CLI 0.142.5</a>
+      <span class="badges"><span class="badge tier4">Tier 4</span><span class="score">score 3</span></span>
+    </div>
+    <p class="summary">Point-release on Jul 1 with one notable fix: full Responses WebSocket request payloads are no longer written to trace logs, closing a mild data-leak risk in debug output. `npm install -g @openai/codex@0.142.5`.</p>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Sources scanned:</strong> Anthropic News, Claude Blog, Claude Release Notes, Anthropic Engineering, Anthropic Research, Anthropic Institute, Anthropic Frontier Red Team, OpenAI News, OpenAI Research, OpenAI API Changelog, OpenAI Codex Changelog, Google DeepMind Blog, Google AI Blog, Gemini API Changelog, Google Research Blog, Meta AI Blog, Microsoft AI Blog, AWS What's New (AI/ML), Mistral News, xAI News, Claude Code Changelog, Cursor Changelog, Aider Releases, GitHub Copilot Changelog, Continue.dev Releases, GitHub Trending, Hugging Face Daily Papers, Simon Willison's Blog, and X.com timelines for @AnthropicAI, @OpenAI, @GoogleDeepMind, @xai, @simonw.</p>
+  <p><strong>Quiet sources (no items in window):</strong> Claude Blog, Anthropic Engineering, Anthropic Research, Anthropic Institute, Frontier Red Team, OpenAI News, OpenAI Research, OpenAI API Changelog, Google DeepMind, Google AI Blog, Gemini API Changelog, Google Research, Meta AI, Microsoft AI, AWS ML, Mistral News, Claude Code Changelog (2.1.198 was previous run), Aider, Continue.dev, GitHub Trending (no AI/ML repos in top slots today — top spots held by VeraCrypt, black, YOLOv5, SiYuan), Hugging Face Daily Papers (no score ≥ 4 items), Simon Willison's Blog, @OpenAI, @GoogleDeepMind (last posts Jun 30), @simonw (timeline showed pinned/highlights only).</p>
+  <p><strong>Failed sources:</strong> None — all fetches returned, though several yielded no in-window items.</p>
+</footer>
+
+</body>
+</html>

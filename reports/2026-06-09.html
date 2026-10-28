@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Daily AI Report — 2026-06-09</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #fafafa;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --card: #fff;
+    --border: #e5e5e5;
+    --tier1: #2563eb;
+    --tier1-bg: #dbeafe;
+    --tier4: #16a34a;
+    --tier4-bg: #dcfce7;
+    --score5: #dc2626;
+    --score4: #ea580c;
+    --score3: #ca8a04;
+    --accent: #1a1a1a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0f10; --fg: #e8e8e8; --muted: #9a9a9a;
+      --card: #18181b; --border: #27272a;
+      --tier1: #60a5fa; --tier1-bg: #1e3a8a;
+      --tier4: #4ade80; --tier4-bg: #14532d;
+      --score5: #f87171; --score4: #fb923c; --score3: #facc15;
+      --accent: #fafafa;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--fg); margin: 0; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 32px 20px 80px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 28px; }
+  h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .meta { color: var(--muted); font-size: 14px; }
+  h2 { font-size: 20px; margin: 36px 0 14px; letter-spacing: -0.01em; }
+  h2 .count { color: var(--muted); font-weight: 400; font-size: 14px; margin-left: 8px; }
+  h3 { font-size: 15px; margin: 20px 0 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+  .item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; }
+  .item.highlight { border-left: 3px solid var(--score5); }
+  .item-title { font-weight: 600; font-size: 16px; margin: 0 0 6px; }
+  .item-title a { color: var(--accent); text-decoration: none; }
+  .item-title a:hover { text-decoration: underline; }
+  .item-meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0.02em; }
+  .badge.tier1 { background: var(--tier1-bg); color: var(--tier1); }
+  .badge.tier4 { background: var(--tier4-bg); color: var(--tier4); }
+  .score { display: inline-block; width: 22px; height: 22px; border-radius: 50%; font-size: 12px; font-weight: 700; text-align: center; line-height: 22px; color: white; }
+  .score.s5 { background: var(--score5); }
+  .score.s4 { background: var(--score4); }
+  .score.s3 { background: var(--score3); }
+  .summary { font-size: 14px; color: var(--fg); }
+  .source-group { margin-bottom: 18px; }
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+  footer p { margin: 6px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily AI Report — June 9, 2026</h1>
+  <p class="meta">Generated 2026-06-09 · 24h lookback · 3 items from 31 sources after ranking</p>
+</header>
+
+<section id="highlights">
+  <h2>Top Highlights <span class="count">3 items scored ≥ 4</span></h2>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://www.anthropic.com/news/paving-the-way-for-agents-in-biology" target="_blank">Paving the way for agents in biology</a></p>
+    <p class="item-meta">
+      <span class="badge tier1">Anthropic Science</span>
+      <span>Jun 9, 2026 · ~5h ago · 144K views on X</span>
+      <span class="score s4">4</span>
+    </p>
+    <p class="summary">New Anthropic Science blog asking why AI has advanced faster in coding than in biology, and arguing the answer is infrastructure: bio databases were built for humans, not agents — like cities built before cars. The post lays out what bio infrastructure would need to look like to be agent-native. Significant for anyone working on AI-for-science pipelines, and a follow-up to the recent "Making Claude a chemist" post (Jun 5).</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://openai.com/index/built-to-benefit-everyone-our-plan" target="_blank">Built to benefit everyone: OpenAI's plan</a></p>
+    <p class="item-meta">
+      <span class="badge tier1">OpenAI</span>
+      <span>Jun 9, 2026 · shared by Jakub Pachocki ~2h ago</span>
+      <span class="score s4">4</span>
+    </p>
+    <p class="summary">OpenAI Chief Scientist Jakub Pachocki shared a new strategic post laying out OpenAI's "north stars" — framed as ensuring AGI benefits all of humanity, expanding human agency rather than displacing it. Worth reading for OpenAI's own framing of its mission as it heads toward more capable models; lands the same week as the Anthropic recursive-self-improvement essay, which sets up an interesting contrast in how the two labs are positioning the next phase.</p>
+  </div>
+
+  <div class="item highlight">
+    <p class="item-title"><a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md" target="_blank">Claude Code 2.1.169 — <code>--safe-mode</code>, <code>/cd</code>, MCP enterprise-policy fixes</a></p>
+    <p class="item-meta">
+      <span class="badge tier4">Claude Code</span>
+      <span>Jun 8–9, 2026 (latest version)</span>
+      <span class="score s4">4</span>
+    </p>
+    <p class="summary">New Claude Code release adds <code>--safe-mode</code> (and <code>CLAUDE_CODE_SAFE_MODE</code>) to start with all customizations disabled for troubleshooting, plus a <code>/cd</code> command to switch working directory mid-session without breaking the prompt cache. Notable fixes: enterprise-managed MCP policies (<code>allowedMcpServers</code>/<code>deniedMcpServers</code>) now enforced on reconnect / IDE-typed configs / first session after install / pre-remote-settings load; macOS ~30-50ms per-turn UI stall fixed for claude.ai-credential users; Vertex/Foundry stalled streams now hit a 5-min idle timeout instead of hanging. The MCP enterprise-policy fix alone is meaningful for any org running Claude Code under managed settings.</p>
+  </div>
+</section>
+
+<section id="vendor">
+  <h2>Vendor Announcements <span class="count">Tier 1</span></h2>
+
+  <p style="font-size:13px;color:var(--muted);margin-top:0">All vendor blog/research items besides @AnthropicAI's biology post are older than the 24h window — see "Quiet sources" in the footer.</p>
+</section>
+
+<section id="devtools">
+  <h2>Dev Tools <span class="count">Tier 4</span></h2>
+
+  <p style="font-size:13px;color:var(--muted);margin-top:0">Aside from Claude Code 2.1.169 above, no new releases from Codex / OpenAI API / Cursor / Aider / Continue / Copilot / Gemini API in the last 24h.</p>
+</section>
+
+<footer>
+  <p><strong>Sources scanned (31):</strong> Anthropic News, Claude Blog, Claude Release Notes, Anthropic Engineering, Anthropic Research, Anthropic Institute, Anthropic Frontier Red Team, OpenAI News, OpenAI Research, OpenAI API Changelog, OpenAI Codex Changelog, Google DeepMind, Google Research, Google AI Blog, Gemini API Changelog, Meta AI, Microsoft AI, AWS, Mistral, xAI, Claude Code Changelog, Cursor, Aider, GitHub Copilot Changelog, Continue.dev, GitHub Trending, Hugging Face Papers, Simon Willison, X via Playwright (@AnthropicAI fetched, @OpenAI fetched).</p>
+  <p><strong>Quiet sources (no items in 24h window):</strong> Anthropic News (most recent Jun 5), Claude Blog (most recent Jun 3), Anthropic Engineering (Apr 8), OpenAI News (Jun 4), Google DeepMind / Research / AI Blog (Jun 5), Mistral (May 28), Meta AI (Apr 8), Microsoft AI (undated), xAI (Jun 3), Codex Changelog (Jun 4), OpenAI API Changelog (Jun 2), Copilot Changelog (Jun 5), Cursor (undated), Hugging Face Papers (no fresh ≥4 items).</p>
+  <p><strong>X accounts not fetched this run:</strong> @GoogleDeepMind, @MistralAI, @xai, @sama, @karpathy, @simonw, @trq212, @swyx — fetched only @AnthropicAI and @OpenAI to keep the run efficient given the quiet day. Per the prompt, partial X coverage is acceptable; cron will sweep the full set on busier days.</p>
+  <p><strong>Failed sources:</strong> none.</p>
+  <p><strong>Note on the day:</strong> Quiet news day overall — major Anthropic / OpenAI / Google posts from earlier in the week (recursive self-improvement, Codex Sites, Google Agentic RAG) all fell outside the 24h window. The two genuine new items (biology post, OpenAI mission post) plus the Claude Code release are the substantive content.</p>
+  <p>Generated by the daily AI report cron · scripts/daily-ai-report/PROMPT.md</p>
+</footer>
+
+</div>
+</body>
+</html>

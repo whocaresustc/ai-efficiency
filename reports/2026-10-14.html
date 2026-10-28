@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily AI Report — 2026-10-14</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1a1a1a; --muted: #666; --card: #fafafa;
+    --border: #e2e2e2; --accent: #2b6cb0; --tier1: #2b6cb0; --tier4: #2f855a;
+    --tier2: #805ad5; --badge-fg: #fff; --link: #2b6cb0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16181c; --fg: #e7e9ea; --muted: #8b98a5; --card: #1e2126;
+      --border: #2f3336; --accent: #4a9eea; --tier1: #4a9eea; --tier4: #48bb78;
+      --tier2: #b794f4; --link: #6cb4ee;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg); margin: 0; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 32px 20px 64px; }
+  header.top { border-bottom: 2px solid var(--border); padding-bottom: 18px; margin-bottom: 28px; }
+  header.top h1 { font-size: 1.75rem; margin: 0 0 6px; letter-spacing: -0.02em; }
+  header.top .meta { color: var(--muted); font-size: 0.9rem; }
+  h2.section { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--muted); margin: 40px 0 16px; font-weight: 600; }
+  .item {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 18px; margin-bottom: 14px;
+  }
+  .item h3 { margin: 0 0 8px; font-size: 1.08rem; line-height: 1.35; }
+  .item h3 a { color: var(--link); text-decoration: none; }
+  .item h3 a:hover { text-decoration: underline; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
+  .badge { font-size: 0.72rem; font-weight: 700; padding: 2px 9px; border-radius: 999px;
+    color: var(--badge-fg); letter-spacing: 0.03em; }
+  .b-t1 { background: var(--tier1); }
+  .b-t4 { background: var(--tier4); }
+  .b-t2 { background: var(--tier2); }
+  .src { font-size: 0.8rem; color: var(--muted); }
+  .score { font-size: 0.76rem; font-weight: 700; color: var(--fg); background: transparent;
+    border: 1px solid var(--border); padding: 2px 8px; border-radius: 999px; }
+  .summary { font-size: 0.95rem; margin: 0; }
+  .highlight { border-left: 4px solid var(--accent); }
+  footer.bottom { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border);
+    font-size: 0.82rem; color: var(--muted); }
+  footer.bottom p { margin: 6px 0; }
+  code { background: var(--card); padding: 1px 5px; border-radius: 4px; font-size: 0.85em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>Daily AI Report — 2026-10-14</h1>
+  <div class="meta">
+    Generated 2026-10-14 11:12 CST • 4 items from 38 sources • 24h lookback window
+    (2026-10-13 11:05 → 2026-10-14 11:05 CST)
+  </div>
+</header>
+
+<section id="highlights">
+  <h2 class="section">Top Highlights</h2>
+
+  <div class="item highlight">
+    <h3><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon">Gemini 4 Argon is now globally available</a></h3>
+    <div class="row">
+      <span class="badge b-t1">Tier 1 · Vendor</span>
+      <span class="src">Google DeepMind / blog.google</span>
+      <span class="score">Score 5</span>
+    </div>
+    <p class="summary">Google launched Gemini 4 Argon, its new frontier model built for long-horizon, high-stakes professional work (coding, finance, legal, cybersecurity, science), to developers and enterprises via the Gemini API/AI Studio and to Google AI subscribers in Antigravity, the Gemini app, and AI Mode in Search — it ranks #1 on the Vals Index across economic sectors. This is the headline model release of the day and a direct frontier competitor to Opus 5.5 and GPT-6, so anyone building agentic systems should benchmark Argon on multi-step and migration workloads.</p>
+  </div>
+
+  <div class="item highlight">
+    <h3><a href="https://x.com/AnthropicAI/status/2110047081414987957">Redesigning source control at Anthropic</a></h3>
+    <div class="row">
+      <span class="badge b-t1">Tier 1 · Vendor</span>
+      <span class="src">Anthropic Engineering</span>
+      <span class="score">Score 4</span>
+    </div>
+    <p class="summary">Anthropic published a new engineering post on building in-house source control after merge volume exploded from ~2,500 code changes/day in May to more than 30,000/day in September, leaving them bottlenecked by developer infrastructure designed for human- rather than agent-scale throughput. It's a concrete, numbers-backed look at how a frontier lab is re-architecting core dev tooling once most commits are agent-generated — a preview of problems any team scaling agentic coding will hit.</p>
+  </div>
+</section>
+
+<section id="vendor">
+  <h2 class="section">Vendor Announcements (Tier 1)</h2>
+
+  <div class="item">
+    <h3><a href="https://x.com/GoogleDeepMind/status/2110078384617464201">Gemini 4 Argon teaches a robot to play cornhole from a video</a></h3>
+    <div class="row">
+      <span class="badge b-t1">Tier 1 · Vendor</span>
+      <span class="src">Google DeepMind (X)</span>
+      <span class="score">Score 3</span>
+    </div>
+    <p class="summary">DeepMind demoed Gemini 4 Argon watching a video of cornhole, mapping the physics, writing its own simulation, and teaching Apptronik's Apollo humanoid to sink seven throws in a row. It's a capability showcase for Argon's embodied/physical-reasoning transfer rather than a shipping product, but it signals where video-grounded robotics instruction is heading.</p>
+  </div>
+
+  <div class="item">
+    <h3><a href="https://x.com/GoogleDeepMind/status/2110190101707858039">On-device fraud detection with Gemma and GovTech Singapore</a></h3>
+    <div class="row">
+      <span class="badge b-t1">Tier 1 · Vendor</span>
+      <span class="src">Google DeepMind (X)</span>
+      <span class="score">Score 3</span>
+    </div>
+    <p class="summary">DeepMind and GovTech Singapore fine-tuned the open Gemma model on local scam tactics to run real-time, on-device fraud detection without sending personal data off the phone. It's a useful, concrete reference pattern for privacy-preserving edge deployment of a small open model against a live threat (over half of reported crimes in Singapore involve social engineering).</p>
+  </div>
+</section>
+
+<footer class="bottom">
+  <p><strong>Sources scanned (38):</strong> Anthropic News, Claude Blog, Claude Release Notes, Anthropic Engineering, Anthropic Research, Anthropic Institute, Anthropic Frontier Red Team, OpenAI News, OpenAI Research, OpenAI API Changelog, OpenAI Codex Changelog, Google DeepMind Blog, Google AI Blog, Gemini API Changelog, Google Research Blog, Meta AI Blog, Meta AI Research Blog, Microsoft AI Blog, AWS What's New (AI/ML), Mistral News, xAI News, Claude Code Changelog, Cursor Changelog, Aider Releases, GitHub Copilot Changelog, Continue.dev Releases, GitHub Trending, Hugging Face Daily Papers, Simon Willison's Blog, and the X timelines below.</p>
+
+  <p><strong>X / social timelines fetched (Playwright, logged-out):</strong>
+  @AnthropicAI (freshest 10h — in-house source control post, kept),
+  @OpenAI (freshest Oct 8 — out of window),
+  @GoogleDeepMind (freshest 1h — Gemini 4 Argon / Gemma, kept),
+  @MistralAI (freshest 13h — "models in orbit" satellite PR, dropped as score 2),
+  @SpaceXSI/@xai (freshest Oct 13 — "The X Subscription" bundle, at window edge),
+  @sama (freshest Oct 8), @karpathy (freshest Oct 12 — out of window),
+  @simonw (freshest 3h — Argon demo QT & Python 3.15 blog, both below Tier-2 ≥4 bar),
+  @swyx (freshest 46m — AIE NYC conference promotion, Tier-2 noise), @trq212 (quiet, no recent posts).</p>
+
+  <p><strong>Quiet sources (no new in-window items):</strong> OpenAI (all properties — freshest Oct 8), Anthropic News/Research/Institute (freshest Oct 8), Claude Blog (freshest Oct 13 Uber CISO, at edge), Meta AI blogs (freshest July), Microsoft AI, Mistral News, xAI News, all dev-tool changelogs (Claude Code / Cursor / OpenAI / Gemini / Copilot / Aider / Continue — no clearly dated in-window entries), Hugging Face Daily Papers, Simon Willison's blog (Python 3.15, out of scope).</p>
+
+  <p><strong>Degraded / watch sources:</strong> AWS What's New (AI/ML) — Tavily search returned undated results (incl. Claude Haiku 5.5 on Bedrock, Grok 4.7 on Bedrock); none confirmable as within 24h, so excluded. Anthropic "source control" post has no Tavily-resolvable canonical URL yet (~10h old); linked to the @AnthropicAI status announcing it.</p>
+
+  <p><strong>Failed sources:</strong> none — all 38 sources (incl. all 11 Playwright-X timelines) fetched successfully.</p>
+
+  <p style="margin-top:14px; color:var(--muted);">Generated from repo <code>ai-efficiency</code>, branch <code>main</code>, by the daily-ai-report cron prompt.</p>
+</footer>
+
+</div>
+</body>
+</html>
