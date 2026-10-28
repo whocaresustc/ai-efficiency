@@ -1,50 +1,63 @@
-# AI Efficiency
+# ai-efficiency
 
-A personal knowledge base for practical AI-assisted development, Claude Code
-workflows, terminal tooling, and learning resources.
+A **living knowledge base for the fast-moving AI / agent field** — kept continuously refreshed so the knowledge improves as the field evolves.
 
 ## Start here
 
-### AI-assisted development
+| Page | What it covers |
+| --- | --- |
+| [Knowledge base index](kb/index.html) | Entry point — all topics + their freshness |
+| [Models](kb/models.html) · [Agents](kb/agents.html) · [Tools](kb/tools.html) | Frontier models, agent patterns, Claude Code / CLIs / MCP |
+| [Techniques](kb/techniques.html) · [Reading](kb/reading.html) · [People](kb/people.html) | How to build, curated reading, who to follow |
+| [Latest daily report](reports/latest.html) | Most recent raw intake |
 
-| Document | Type | What it covers |
-| --- | --- | --- |
-| [Claude Code Settings & Resources](Claude%20Code%20Setting.md) | Living guide | Recommended settings, workflows, shortcuts, and reference material |
-| [Git Worktree with Claude Code](Git%20Worktree%20with%20Claude%20Code.md) | Focused guide | Isolated parallel work with Claude Code and Git worktrees |
-| [Claude Code video knowledge points](claude-code-video-knowledge-points.md) | Dated source notes | Chinese-language notes from a specific video, captured on 2026-03-01 |
+## Goal
 
-### Terminal workflow
+Capture important AI and agent news, advancements, blogs, and tips — **not limited to Claude Code or any single vendor** — and accumulate them into a knowledge base that keeps improving and refreshing itself. The AI field moves fast; the point of this repo is to turn that constant stream of news into durable, organized understanding that stays current.
 
-| Document | Type | What it covers |
-| --- | --- | --- |
-| [Terminal setup](terminal-setup.md) | Living guide | A complete Ghostty, Yazi, Lazygit, zoxide, and fzf workflow |
-| [Terminal tools](Terminal%20tools.md) | Personal setup record | The locally installed Neovim and LazyVim configuration |
+The daily news reports are **raw intake**, not the product. The product is the distilled, living knowledge.
 
-### Learning resources
+## How it works: Capture → Synthesize → Curate
 
-| Document | Type | What it covers |
-| --- | --- | --- |
-| [AI Influencers](AI%20Influencers.md) | Curated list | AI educators and creators organized by focus area |
-| [Blogs](Blogs.md) | Curated list | Notable AI articles and posts |
+```
+   CAPTURE (flow)          SYNTHESIZE (leverage)               CURATE (stock)
+   daily reports     →     fold new findings into topics  →    knowledge base
+   reports/*.html          each run updates kb/ topics          kb/ living HTML docs
+```
 
-## Content conventions
+- **Capture** — a daily pipeline scans ~41 primary sources (vendor blogs, research, dev-tool changelogs, X timelines) across the AI field and writes a dated report of what's new in the last 24h.
+- **Synthesize** — each run folds its findings into the knowledge base: promotes genuinely new advancements into living topic pages, refreshes what changed, and supersedes what's outdated. This is what makes the knowledge *compound* instead of pile up.
+- **Curate** — the knowledge base is organized by **topic** (not by date), as living documents that get rewritten over time, each showing when it was last refreshed and what changed.
 
-- Use English for repository navigation and general-purpose guides. Source notes
-  may use the language of the source.
-- Use kebab-case filenames for new documents. Existing filenames are retained to
-  avoid unnecessary link churn.
-- Identify each document as a living guide, focused guide, personal setup record,
-  dated source note, or curated list.
-- Add `Last reviewed: YYYY-MM-DD` near the top of pages containing versions,
-  installation commands, shortcuts, or other time-sensitive details.
-- Prefer primary documentation links for commands and configuration options.
-- Keep personal machine state separate from reusable setup instructions.
+## Structure
 
-## Maintenance checklist
+```
+kb/                  Knowledge base — living topic pages (the product)
+  index.html           entry point: what we currently know + topic freshness
+  models.html          frontier model landscape
+  agents.html          agent architectures, patterns, multi-agent, memory
+  tools.html           Claude Code, Cursor, Codex, MCP, CLIs
+  techniques.html      prompting, context mgmt, evals, RAG, reasoning
+  reading.html         curated blogs / papers worth keeping
+  people.html          who to follow
+  sources/             original hand-authored notes (raw material, preserved)
+reports/             Raw daily intake — dated HTML reports (feeds synthesis)
+scripts/             The pipeline
+  daily-ai-report/     report generator, sources, prompt, self-improvement meta-agent, KB synthesis
+MEMORY.md            (private, not in repo) auto-memory index
+```
 
-When updating the knowledge base:
+> The knowledge base is seeded and live: the original hand-authored notes (`Claude Code Setting.md`, `Blogs.md`, `AI Influencers.md`, Git Worktree / Terminal setup) now live under `kb/sources/` as preserved raw material, distilled into the topic pages. The daily synthesis pass keeps the topic pages refreshed from each report.
 
-1. Check that commands and external links still work.
-2. Update the page's `Last reviewed` date after verifying time-sensitive claims.
-3. Remove duplicated guidance or link to the canonical page.
-4. Confirm that temporary Claude Code worktrees remain ignored by Git.
+## The daily pipeline
+
+- **Schedule:** macOS `launchd`, fixed times **10:00 and 14:00** (Asia/Shanghai, when the gateway proxy is reliably up). Meta/synthesis passes follow at 10:30 / 14:30.
+- **Self-improving:** a meta-agent critiques each run (source health, coverage, judgment) and records learnings in `scripts/daily-ai-report/state.json`, which the next run reads.
+- **Robust:** proxy-readiness guard (skips cleanly when the gateway is down), catch-up guard (produces the day's report on the first run after the proxy is up), and gap backfill.
+- **Output:** reports are reviewed and committed manually (not auto-committed).
+
+## Principles
+
+- **Primary sources over aggregators** — vendor/research blogs beat press recaps.
+- **Breadth over vendor loyalty** — all of AI/agents, organized topic-first.
+- **Refresh, don't just append** — knowledge is rewritten as it changes, with staleness made visible.
