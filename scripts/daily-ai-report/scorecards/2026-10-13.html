@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meta Scorecard — 2026-10-13</title>
+<style>
+  :root {
+    --bg:#fff; --fg:#1a1a1a; --muted:#666; --card:#fafafa; --border:#e2e2e2;
+    --ok:#16a34a; --ok-bg:#f0fdf4; --warn:#d97706; --warn-bg:#fffbeb; --bad:#dc2626; --bad-bg:#fef2f2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#0f1115; --fg:#e6e6e6; --muted:#9aa0a6; --card:#171a21; --border:#2a2f3a;
+      --ok:#4ade80; --ok-bg:#14281c; --warn:#fbbf24; --warn-bg:#2a2410; --bad:#f87171; --bad-bg:#2a1414;
+    }
+  }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--fg); line-height:1.55; margin:0; padding:0 16px 64px; }
+  .wrap { max-width:820px; margin:0 auto; }
+  header { padding:32px 0 20px; border-bottom:1px solid var(--border); margin-bottom:24px; }
+  h1 { font-size:1.5rem; margin:0 0 6px; }
+  .sub { color:var(--muted); font-size:0.9rem; }
+  h2 { font-size:1.05rem; margin:26px 0 10px; }
+  .grade { display:inline-block; padding:3px 12px; border-radius:20px; font-weight:600; font-size:0.9rem; }
+  .grade.ok { background:var(--ok-bg); color:var(--ok); }
+  .pill { display:inline-block; padding:2px 9px; border-radius:12px; font-size:0.78rem; font-weight:600; }
+  .pill.ok { background:var(--ok-bg); color:var(--ok); }
+  .pill.warn { background:var(--warn-bg); color:var(--warn); }
+  .pill.bad { background:var(--bad-bg); color:var(--bad); }
+  table { width:100%; border-collapse:collapse; font-size:0.88rem; margin:6px 0; }
+  th,td { text-align:left; padding:7px 9px; border-bottom:1px solid var(--border); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  .num { text-align:center; font-variant-numeric:tabular-nums; }
+  ul { margin:6px 0; padding-left:20px; }
+  li { margin:5px 0; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:14px 18px; margin:12px 0; }
+  footer { margin-top:34px; padding-top:16px; border-top:1px solid var(--border); color:var(--muted); font-size:0.82rem; }
+  code { background:var(--card); border:1px solid var(--border); border-radius:4px; padding:1px 5px; font-size:0.85em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Daily AI Report — Meta Scorecard</h1>
+    <div class="sub">2026-10-13 • self-improvement pass #1 • reviewing the 2026-10-13 report run</div>
+  </header>
+
+  <h2>Run reliability</h2>
+  <p>Grade: <span class="grade ok">SUCCESS</span></p>
+  <table>
+    <tr><th>Signal</th><th>Result</th></tr>
+    <tr><td>fired</td><td><span class="pill ok">yes</span> — <code>run.sh started</code> at 10:04 (and again 10:09; latest run wins)</td></tr>
+    <tr><td>produced</td><td><span class="pill ok">yes</span> — <code>reports/2026-10-13.html</code> exists, 4.3&nbsp;KB (&gt; 1&nbsp;KB)</td></tr>
+    <tr><td>completed</td><td><span class="pill ok">yes</span> — log contains <code>Done.</code></td></tr>
+    <tr><td>outcome</td><td><span class="pill ok">success</span> — quiet day (0 items), but a valid, complete run</td></tr>
+  </table>
+  <p class="sub">consecutive_failures = 0 · last_fired = last_success = 2026-10-13</p>
+
+  <h2>Source health</h2>
+  <table>
+    <tr><th>Source</th><th>Status</th><th class="num">seen</th><th class="num">prod</th><th class="num">fail</th><th class="num">stale</th><th class="num">empty</th></tr>
+    <tr>
+      <td>AWS What's New (AI/ML)</td>
+      <td><span class="pill warn">degraded</span></td>
+      <td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">1</td>
+    </tr>
+  </table>
+  <p class="sub">No new source flags this run. AWS stays <b>degraded</b> — Tavily keeps returning stale 2024/2025 results; scanned again today on a quiet day with no in-window item. All other sources are implicitly healthy; nothing cleared the degraded bar (≥3 fails / ≥3 stale / seen-every-day-but-0-produced-while-peers-produce) on a day where <em>every</em> source was quiet, so no new flags.</p>
+
+  <h2>Judgment quality</h2>
+  <div class="card">
+    <p><b>⚠ Suspect quiet day recorded (2026-10-13).</b> The run declared 0 items but <b>explicitly did not fire Playwright</b> for any of the 10 X.com timelines — it reasoned that since dated vendor/research sources were outside the 24h window, the day was quiet "regardless." That skips the entire Tier-1/Tier-2 <em>social</em> tier, which is exactly where fast-moving news breaks first. This repeats a prior observation, so the quiet verdict is logged as unconfirmed.</p>
+    <p>The earlier 10:04 run of the same day <em>did</em> surface a borderline Anthropic Research item (distillation-defenses, score 4) before the 10:09 run superseded it as below-window. The supersede looks defensible on the window math, but the X-skip is the real gap.</p>
+  </div>
+  <p>Active judgment notes (kept to the most useful, current lessons):</p>
+  <ul>
+    <li>A quiet day declared without scanning the <code>playwright-x</code> timelines is <b>SUSPECT</b>, not confirmed. Reconfirmed today — PROMPT.md now carries an explicit guard against it.</li>
+    <li>Multiple runs can land on the same date; the latest run overwrites the dated file + <code>latest.html</code>. Grade the final state, not intermediate runs.</li>
+  </ul>
+
+  <h2>Changes made today</h2>
+  <ul>
+    <li><b>PROMPT.md</b> (1 of max 2 config changes) — added an explicit quiet-day guard to step&nbsp;5: a quiet day may not be declared until <em>every</em> tier, including the <code>playwright-x</code> timelines, has actually been fetched; a genuine Playwright failure must be logged under "failed sources," but silently skipping it is not allowed; the footer must state which X accounts were fetched and their freshest post dates. Backed up to <code>PROMPT.md.bak-2026-10-13</code> first.</li>
+    <li><b>state.json</b> — recorded the suspect quiet day, bumped <code>quiet_days_total</code> 14→15, appended today's reliability history (success), updated AWS counters, set scorecard/meta fields. (Durable-memory update, not counted against the config-change budget.)</li>
+  </ul>
+  <p class="sub">1 of 2 permitted config changes used. No source retired/added. Nothing committed.</p>
+
+  <footer>
+    <p>Generated by the daily meta-agent from repo <code>ai-efficiency</code>, branch <code>main</code> @ <code>da141f2</code>. Not committed — the user reviews and commits.</p>
+  </footer>
+</div>
+</body>
+</html>

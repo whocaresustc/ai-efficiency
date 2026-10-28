@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meta Scorecard — 2026-10-15</title>
+<style>
+  :root { --bg:#fff; --fg:#1a1a1a; --muted:#666; --card:#fafafa; --border:#e2e2e2;
+    --ok:#16a34a; --okbg:#f0fdf4; --warn:#d97706; --warnbg:#fffbeb; --accent:#0f172a; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --card:#161b22; --border:#30363d;
+      --ok:#3fb950; --okbg:#0f2a16; --warn:#d29922; --warnbg:#2a2213; --accent:#e6edf3; } }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--fg); margin:0; line-height:1.55; }
+  .wrap { max-width:820px; margin:0 auto; padding:2rem 1.25rem 4rem; }
+  header.top { border-bottom:2px solid var(--border); padding-bottom:1rem; margin-bottom:1.5rem; }
+  header.top h1 { font-size:1.5rem; margin:0 0 .35rem; letter-spacing:-.02em; }
+  header.top .meta { color:var(--muted); font-size:.85rem; }
+  h2 { font-size:1.1rem; margin:1.8rem 0 .7rem; border-left:3px solid var(--accent); padding-left:.6rem; }
+  .grade { display:inline-block; font-size:.8rem; font-weight:700; padding:.2rem .7rem; border-radius:20px;
+    text-transform:uppercase; letter-spacing:.03em; background:var(--okbg); color:var(--ok); }
+  table { border-collapse:collapse; width:100%; font-size:.85rem; margin-top:.5rem; }
+  th,td { text-align:left; padding:.45rem .6rem; border-bottom:1px solid var(--border); vertical-align:top; }
+  th { font-size:.72rem; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); }
+  td.n { text-align:center; font-variant-numeric:tabular-nums; }
+  .pill { font-size:.68rem; font-weight:600; padding:.1rem .45rem; border-radius:12px; }
+  .p-active { background:var(--okbg); color:var(--ok); }
+  .p-recover { background:var(--okbg); color:var(--ok); }
+  ul { margin:.4rem 0; padding-left:1.2rem; } li { margin:.3rem 0; }
+  .nochange { background:var(--okbg); color:var(--ok); padding:.6rem .9rem; border-radius:8px;
+    font-weight:600; font-size:.9rem; }
+  .note { color:var(--muted); font-size:.82rem; }
+  footer { margin-top:2.5rem; padding-top:1rem; border-top:1px solid var(--border);
+    font-size:.78rem; color:var(--muted); }
+  code { background:var(--card); padding:.1rem .3rem; border-radius:4px; border:1px solid var(--border); font-size:.9em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>Daily AI Report — Meta Scorecard</h1>
+  <div class="meta">2026-10-15 • run reviewed #3 • self-improvement pass</div>
+</header>
+
+<h2>Run reliability</h2>
+<p><span class="grade">Success</span></p>
+<table>
+  <tr><th>fired</th><th>produced</th><th>completed</th><th>outcome</th><th>items</th></tr>
+  <tr><td class="n">✓</td><td class="n">✓ (12.5 KB)</td><td class="n">✓ Done.</td><td class="n">success</td><td class="n">6 (top 4)</td></tr>
+</table>
+<p class="note">Ran 16:07→16:12 CST. All 36 sources scanned incl. all 11 X timelines via Playwright; no gap to backfill (10-14→10-15 consecutive). No failed sources. <code>consecutive_failures = 0</code>; 3-run success streak.</p>
+
+<h2>Source health</h2>
+<table>
+  <tr><th>Source</th><th>Status</th><th class="n">seen</th><th class="n">prod</th><th class="n">fail</th><th class="n">stale</th><th class="n">empty</th><th>Note</th></tr>
+  <tr><td>AWS What's New (AI/ML)</td><td><span class="pill p-recover">recovered</span></td><td class="n">3</td><td class="n">1</td><td class="n">0</td><td class="n">3</td><td class="n">1</td><td>First kept item on the dated RSS feed (SageMaker Studio onboarding, s3). Degraded flag cleared — undated-tavily problem resolved.</td></tr>
+  <tr><td>xAI News</td><td><span class="pill p-active">active</span></td><td class="n">1</td><td class="n">1</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>Co-top item: Grok Voice 3.0 (s4).</td></tr>
+  <tr><td>Anthropic Engineering</td><td><span class="pill p-active">active</span></td><td class="n">2</td><td class="n">2</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>Source-control post (s4). Direct page gave empty Tavily extract; sourced via @AnthropicAI X post — watch the thin extract.</td></tr>
+  <tr><td>Anthropic News</td><td><span class="pill p-active">active</span></td><td class="n">1</td><td class="n">1</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>Singapore office + govt MOU (s3).</td></tr>
+  <tr><td>X: @GoogleDeepMind</td><td><span class="pill p-active">active</span></td><td class="n">2</td><td class="n">2</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td>Argon-applied-to-science follow-up (s3).</td></tr>
+  <tr><td>Google DeepMind Blog</td><td><span class="pill p-active">active</span></td><td class="n">2</td><td class="n">1</td><td class="n">0</td><td class="n">0</td><td class="n">1</td><td>Blog quiet today; Argon follow-up came via X, not the blog.</td></tr>
+</table>
+<p class="note">No source met the degraded bar (fail ≥3, stale ≥3, or seen-every-day-but-produced-0 vs peers). The one prior degraded source (AWS) recovered on its first full RSS run.</p>
+
+<h2>Judgment</h2>
+<ul>
+  <li><strong>Not a quiet day — guard worked (2nd run running).</strong> The report scanned all 11 X timelines before ranking, confirmed in log + footer. No suspect-quiet entry today.</li>
+  <li><strong>Calibration looks right.</strong> The two genuine frontier items (Grok Voice 3.0, Claude Code Desktop "v2") correctly rose to score 4; corporate/policy (Singapore MOU) and incremental (SageMaker onboarding) correctly sat at score 3. Below-threshold drops (OpenAI EU econ report, Mistral acquihire, swyx conf promo) look reasonable.</li>
+  <li><strong>Edge-of-window retention watch.</strong> The Oct-14-dated source-control post was kept on the 10-15 report as high-signal in-window-adjacent (footnoted). Fine once; flag if cross-day double-counting becomes a pattern. The Argon GA (10-14) vs Argon-applications (10-15) split was handled cleanly as distinct items.</li>
+  <li><strong>Empty-extract fallback accepted.</strong> Sourcing the source-control item from Anthropic's own X post when the canonical page returned an empty extract keeps it a primary source — consistent with the prefer-primary-sources rule.</li>
+</ul>
+
+<h2>Changes made today</h2>
+<p class="nochange">No config changes — pipeline healthy. (0 of 2 allowed used.)</p>
+<p class="note">AWS was already <code>active</code> in both <code>state.json</code> and <code>sources.json</code> after the 10-14 feed switch; today's run only <em>confirmed</em> the recovery, so counters and notes were updated in <code>state.json</code> but no source status flip and no edit to <code>sources.json</code> / <code>PROMPT.md</code> was warranted.</p>
+
+<footer>
+  Generated from repo <code>ai-efficiency</code>, branch <code>main</code>, via <code>scripts/daily-ai-report/meta-prompt.md</code>. Not committed — pending user review.
+</footer>
+
+</div>
+</body>
+</html>

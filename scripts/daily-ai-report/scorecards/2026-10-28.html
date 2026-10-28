@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meta Scorecard — 2026-10-28</title>
+<style>
+  :root{--bg:#fff;--fg:#1a1a1a;--muted:#666;--card:#fafafa;--border:#e3e3e3;--ok:#059669;--warn:#ea580c;--bad:#dc2626;--accent:#2563eb}
+  @media (prefers-color-scheme:dark){:root{--bg:#0f1115;--fg:#e8e8ea;--muted:#9aa0aa;--card:#171a21;--border:#262a33;--ok:#34d399;--warn:#fb923c;--bad:#f87171;--accent:#60a5fa}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;font-size:15px}
+  .wrap{max-width:820px;margin:0 auto;padding:26px 20px 70px}
+  h1{font-size:1.5rem;margin:0 0 4px;letter-spacing:-.02em}
+  .sub{color:var(--muted);font-size:.86rem;margin-bottom:22px}
+  h2{font-size:1.05rem;margin:28px 0 10px;padding-bottom:5px;border-bottom:1px solid var(--border)}
+  .grade{display:inline-block;font-weight:700;padding:3px 12px;border-radius:999px;font-size:.9rem}
+  .grade.ok{background:rgba(5,150,105,.12);color:var(--ok)}
+  table{border-collapse:collapse;width:100%;font-size:.82rem;margin-top:6px}
+  th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--border);vertical-align:top}
+  th{color:var(--muted);font-weight:600}
+  .st{font-weight:700;font-size:.72rem;padding:1px 7px;border-radius:999px}
+  .st.active{background:rgba(5,150,105,.12);color:var(--ok)}
+  .st.new{background:rgba(37,99,235,.12);color:var(--accent)}
+  .num{font-variant-numeric:tabular-nums;color:var(--muted)}
+  ul{margin:8px 0;padding-left:20px}
+  li{margin:5px 0}
+  .chg{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:10px 14px;margin:8px 0}
+  .note{color:var(--muted);font-size:.82rem}
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:.78rem}
+  code{background:var(--card);padding:1px 5px;border-radius:4px;border:1px solid var(--border)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Meta Scorecard — 2026-10-28</h1>
+  <div class="sub">Daily meta-agent self-improvement pass · run #5 reviewed · reconciles the gap since the last scorecard (2026-10-15)</div>
+
+  <h2>Run reliability</h2>
+  <p><span class="grade ok">SUCCESS</span></p>
+  <p>Today's report <code>reports/2026-10-28.html</code> is 13&nbsp;KB, 8 items from 34 sources, 24h window, all tiers scanned incl. the full Playwright-X social tier. Footer is complete (sources scanned / X timelines fetched / quiet / edge-of-window / failed=none).</p>
+  <p class="note"><strong>Log caveat:</strong> <code>logs/2026-10-28.log</code> is sparse — only the <code>run.sh started</code> line, an MCP SEP-2352 OAuth warning, and an <code>unrecognized_model</code> warning for <code>anthropic--claude-4.8-opus</code>. These are harmless; run.sh captures stdout, not the agent transcript. Graded <em>success</em> from the report file, not the log.</p>
+  <p class="note"><strong>Gap reconciliation:</strong> state was last written 2026-10-15. Between then and today only two real report days exist: <strong>2026-10-19</strong> (a manual Harness² backfill compiled 10-21) and <strong>2026-10-28</strong>. No runs fired 10-16→10-18 or 10-20→10-27 (machine asleep/off; cron backfills only on wake). Absence of a run is not a failure, so no failure rows were invented — only the two days that actually fired were appended. <code>consecutive_failures</code> remains 0.</p>
+
+  <h2>Source health</h2>
+  <table>
+    <tr><th>Source</th><th>Status</th><th class="num">seen</th><th class="num">prod</th><th class="num">fail</th><th>Note</th></tr>
+    <tr><td>X: @GoogleDeepMind</td><td><span class="st active">active</span></td><td class="num">4</td><td class="num">3</td><td class="num">0</td><td>Delivered Genie 4 (score 5). The real path for DeepMind launches.</td></tr>
+    <tr><td>Anthropic News</td><td><span class="st active">active</span></td><td class="num">3</td><td class="num">2</td><td class="num">0</td><td>GSA OneGov (score 3).</td></tr>
+    <tr><td>Anthropic Research</td><td><span class="st active">active</span></td><td class="num">2</td><td class="num">1</td><td class="num">0</td><td>Drug-development progress (score 4).</td></tr>
+    <tr><td>Google Research Blog</td><td><span class="st active">active</span></td><td class="num">2</td><td class="num">1</td><td class="num">0</td><td>"Sleep framework" continual-learning (score 3).</td></tr>
+    <tr><td>AWS What's New (RSS)</td><td><span class="st active">active</span></td><td class="num">5</td><td class="num">2</td><td class="num">0</td><td>MLflow 3.16 (score 3). RSS fix stays resolved &amp; healthy.</td></tr>
+    <tr><td>Cursor Changelog</td><td><span class="st active">active</span></td><td class="num">2</td><td class="num">1</td><td class="num">0</td><td>Agent SDK GA (score 3). Recurringly undatable — kept via top-entry rule.</td></tr>
+    <tr><td>Google DeepMind Blog</td><td><span class="st active">active</span></td><td class="num">4</td><td class="num">1</td><td class="num">0</td><td>Quiet; big launches land on X first (recurring lag).</td></tr>
+    <tr><td>HF Daily Papers · GitHub Trending</td><td><span class="st active">active</span></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td>Popularity-gated; both lagged Harness² (by design).</td></tr>
+    <tr><td>X: @GoogleResearch</td><td><span class="st new">new</span></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td>Added today — see change #1. Not yet scanned.</td></tr>
+  </table>
+  <p class="note"><strong>Flags:</strong> none degraded. No source failed ≥3×, returned stale ≥3×, or was seen-every-day-producing-0-while-peers-produced.</p>
+
+  <h2>Judgment</h2>
+  <ul>
+    <li><strong>Harness² miss (10-15 → backfilled 10-19).</strong> A research artifact launched via arXiv+GitHub — not any first-party blog — slipped the pipeline entirely; it was never on <code>research.google/blog</code>, the DeepMind blog, or @GoogleDeepMind, and the only catch-paths (HF Papers, GitHub Trending) are popularity-gated and lagged by days. This is a real source-coverage gap, now recorded in <code>judgment.notes</code>. Partial fix applied today (change #1).</li>
+    <li><strong>Quiet-day guard held.</strong> 10-28 scanned the full Playwright-X tier before any verdict — the guard added after 10-13 has now held on every reviewed run.</li>
+    <li><strong>Edge-of-window discipline is good.</strong> 10-28 correctly excluded Anthropic's S-1 (Oct 26) and OpenAI's frontier-training-security post (Oct 24) as just-outside-window while keeping GPT-6.1 Terra on its Oct 27 promotion date. No double-counting.</li>
+    <li><strong>Pruned</strong> the now-stale AWS undated-tavily lesson (resolved; RSS healthy 3 runs running) and the Anthropic thin-extract watch (no recurrence).</li>
+  </ul>
+
+  <h2>Changes made today</h2>
+  <div class="chg"><strong>1. Added source <code>X: @GoogleResearch</code></strong> (Tier 1, playwright-x) to <code>sources.json</code>, placed with the other Google handles. Rationale: closes the exact handle gap the 10-19 Harness² post-mortem identified — Google Cloud AI Research work has no first-party blog or DeepMind-handle path. Reversible via <code>sources.json.bak-2026-10-28</code>. Will evaluate over ~7 runs whether it posts often enough to justify the fetch.</div>
+  <p class="note"><strong>Considered but NOT done (deferred as too big for the budget):</strong> an arXiv cs.AI "agent/harness" watch with a 72h paper-lookback. That's a new source <em>type/behavior</em>, not a one-line add — recorded as a still-open idea in <code>judgment.notes</code> for a future deliberate change rather than bolted on speculatively.</p>
+  <p class="note"><strong>Concurrent hand-edit (not mine):</strong> while this pass ran, <code>sources.json</code> also gained a <code>Claude Resources / Articles</code> Tier-1 Tavily source (claude.com/resources/articles), added by a separate edit with its own rationale (an applied-engineering article was missed). Taken as deliberate current state and left in place. With my <code>@GoogleResearch</code> add, that makes 2 source additions in the file dated 2026-10-28 — at the ≤2/day ceiling. I spent 1 of my own budget; the second was external.</p>
+
+  <footer>
+    Generated by the daily meta-agent · repo <code>ai-efficiency</code> · branch <code>main</code> · not committed (user reviews &amp; commits).<br>
+    Backups written: <code>sources.json.bak-2026-10-28</code>, <code>PROMPT.md.bak-2026-10-28</code> (PROMPT.md unchanged).
+  </footer>
+</div>
+</body>
+</html>

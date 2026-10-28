@@ -1,1 +1,8 @@
 .DS_Store
+**/.DS_Store
+.claude/
+.playwright-mcp/
+
+# Pipeline runtime debris (not source)
+scripts/daily-ai-report/logs/
+scripts/daily-ai-report/*.bak-*
