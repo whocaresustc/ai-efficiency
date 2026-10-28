@@ -29,7 +29,7 @@ Extract the kept items (title, summary, source, score). Ignore quiet-day pages (
 - Claude Code / Cursor / Codex / MCP / CLIs / dev-tool changelogs → `tools.html`
 - Prompting, context mgmt, evals, RAG, reasoning, research methods → `techniques.html`
 - A notable long-form blog/paper worth keeping → add to `reading.html`
-- A high-signal person who keeps producing → add/update in `people.html`
+- A high-signal person who keeps producing → add/update in `people.html`. Add someone only when they recur as a genuine signal across multiple reports (not a one-off mention): put practitioners/leaders under "Practitioners & leaders", educators under "Educators & explainers", vendor accounts under "Lab accounts". Include their primary link(s) and a one-line focus. Do not duplicate someone already listed.
 An item may touch two pages; put it where it's most durable, cross-reference if useful.
 
 ### 3. Update the topic page(s)
