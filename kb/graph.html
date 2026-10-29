@@ -66,12 +66,24 @@ const N = [
   {id:'3b1b', t:'3Blue1Brown', k:'person', d:'Visual math/NN explanations.', u:'people.html'},
   {id:'starmer', t:'Josh Starmer', k:'person', d:'StatQuest — beginner ML.', u:'people.html'},
   {id:'addy', t:'Addy Osmani', k:'person', d:'Google Chrome eng leader; prolific on AI-assisted dev — subagent fold-vs-split, agent self-verification, Claude Code review at scale.', u:'people.html'},
+  {id:'walden', t:'Walden Yan', k:'person', d:'Cognition — author of the "Don’t Build Multi-Agents" / context-engineering principles.', u:null},
   // works
   {id:'amb_r', t:'How to be more ambitious (tutorial)', k:'work', d:'Rieseberg — Speed/Altitude/Depth/Range framework for getting more out of models.', u:'reading.html'},
   {id:'amb_w', t:'It’s time to be ambitious (talk)', k:'work', d:'Scott Wu, Runtime 2026. "Why now": models have real world-models; agents as virtual employees; 91% of Cognition’s Devin sessions start without a human.', u:null},
   {id:'skills', t:'Lessons from Building Claude Code', k:'work', d:'Thariq Shihipar — seeing like an agent / how we use skills (two pieces).', u:'reading.html'},
   {id:'bigthing', t:'Something Big is Happening', k:'work', d:'Matt Shumer.', u:'reading.html'},
   {id:'drug', t:'Accelerating drug development with Claude', k:'work', d:'Anthropic research — models moving into wet-lab science.', u:'reading.html'},
+  {id:'dontmulti', t:'Don’t Build Multi-Agents', k:'work', d:'Walden Yan / Cognition. The "con" case: share context, actions carry decisions → default single-threaded.', u:'reading.html'},
+  {id:'multiwork', t:'Multi-Agents: What’s Actually Working', k:'work', d:'Walden Yan / Cognition. The narrow class of multi-agent that works; the later refinement of "Don’t Build Multi-Agents".', u:'reading.html'},
+  {id:'antmulti', t:'How we built our multi-agent research system', k:'work', d:'Anthropic. The "pro" case: orchestrator-worker multi-agent in production (15× token cost).', u:'reading.html'},
+  {id:'ctxeng', t:'Effective context engineering for AI agents', k:'work', d:'Anthropic. Context engineering as the successor to prompt engineering.', u:'reading.html'},
+  {id:'autonomy', t:'Agentic Autonomy Levels', k:'work', d:'Addy Osmani. Framework for calibrated agent autonomy; verification by evidence.', u:'reading.html'},
+  {id:'parallel', t:'Parallel coding agent lifestyle', k:'work', d:'Simon Willison. Running many coding agents in parallel; review throughput is the bottleneck.', u:'reading.html'},
+  {id:'trifecta', t:'The lethal trifecta for AI agents', k:'work', d:'Simon Willison. Private data + untrusted content + external comms = the agent-security reference framing.', u:'reading.html'},
+  {id:'frontiercode', t:'Introducing FrontierCode', k:'work', d:'Cognition. Benchmark for code mergeability, not just correctness.', u:'reading.html'},
+  // themes
+  {id:'subagent', t:'THE SUBAGENT QUESTION', k:'theme', d:'Multi-agent vs single-threaded: when do subagents earn their keep? An active debate.', u:'agents.html'},
+  {id:'security', t:'Agent security', k:'theme', d:'Prompt injection, the lethal trifecta, permissions.', u:'agents.html'},
   // themes
   {id:'ambition', t:'AMBITION with AI', k:'theme', d:'Be more ambitious with models — raise altitude, own the outcome, agent-started work.', u:'techniques.html'},
   {id:'agents', t:'Agents', k:'theme', d:'Architectures, multi-agent, agent-scale engineering.', u:'agents.html'},
@@ -93,6 +105,20 @@ const E = [
   {s:'ng', t:'edu'}, {s:'raschka', t:'edu'}, {s:'lex', t:'edu'}, {s:'3b1b', t:'edu'}, {s:'starmer', t:'edu'},
   {s:'raschka', t:'models'},
   {s:'addy', t:'agents'}, {s:'addy', t:'tools'}, {s:'addy', t:'techniques'},
+  // --- backward-scan enrichment: the subagent question cluster ---
+  {s:'walden', t:'dontmulti'}, {s:'walden', t:'multiwork'},    // Walden Yan (Cognition) authored both
+  {s:'dontmulti', t:'subagent'}, {s:'multiwork', t:'subagent'}, {s:'antmulti', t:'subagent'},
+  {s:'dontmulti', t:'agents'}, {s:'antmulti', t:'agents'}, {s:'multiwork', t:'agents'},
+  {s:'dontmulti', t:'multiwork', shared:true, label:'same author, thesis evolved (con → narrow-pro)'},
+  {s:'dontmulti', t:'antmulti', shared:true, label:'the two canonical sides: con vs pro multi-agent'},
+  {s:'addy', t:'subagent'}, {s:'amb_r', t:'subagent'},          // Addy's rule-of-thumb + fold-subagents both touch it
+  // context engineering + verification + security
+  {s:'ctxeng', t:'techniques'}, {s:'ctxeng', t:'agents'}, {s:'ctxeng', t:'dontmulti', shared:true, label:'shared "context engineering" vocabulary'},
+  {s:'autonomy', t:'techniques'}, {s:'addy', t:'autonomy'}, {s:'autonomy', t:'agents'},
+  {s:'parallel', t:'techniques'}, {s:'simonw', t:'parallel'}, {s:'simonw', t:'trifecta'},
+  {s:'parallel', t:'autonomy', shared:true, label:'verification-is-the-bottleneck thesis'},
+  {s:'trifecta', t:'security'}, {s:'security', t:'agents'},
+  {s:'frontiercode', t:'models'}, {s:'walden', t:'frontiercode'},
   // THE shared-thesis link you spotted
   {s:'amb_r', t:'amb_w', shared:true, label:'same thesis, independent, same week (Oct 9 & 13)'},
 ];

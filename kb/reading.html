@@ -23,11 +23,32 @@
 <div class="wrap">
   <a class="back" href="index.html">← Knowledge Base</a>
   <h1>Reading</h1>
-  <p class="meta">Curated blogs &amp; articles worth keeping. Migrated seed from <code>Blogs.md</code>; synthesis adds high-signal pieces from the daily reports. <strong>Last refreshed 2026-10-28.</strong></p>
+  <p class="meta">Curated landmark articles &amp; talks worth keeping, by theme. <strong>Last refreshed 2026-10-29</strong> (backward-scan enrichment).</p>
 
+  <h3 style="margin-top:22px">The subagent question (multi-agent debate)</h3>
   <ul>
-    <li><a href="https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/">How to be more ambitious: A tutorial for humans with models</a> — Felix Rieseberg, Anthropic (Oct 2026). A concrete framework for getting more out of models along four axes — Speed, Altitude, Depth, Range — with reusable prompts. Distilled in <a href="techniques.html">Techniques</a>.</li>
-    <li><a href="https://www.anthropic.com/research/early-progress-drug-development">Early progress accelerating drug development with Claude</a> — Anthropic (Oct 2026). Early results from six deep-research partnerships developing new medicines, plus Anthropic's own drug-discovery work — a concrete marker of frontier models moving from coding/knowledge-work into wet-lab scientific pipelines.</li>
+    <li><a href="https://cognition.ai/blog/dont-build-multi-agents">Don't Build Multi-Agents</a> — Walden Yan, Cognition. The most-cited case <em>against</em> subagent swarms: "share context; actions carry implicit decisions" → default to single-threaded linear agents. The "con" anchor. See <a href="agents.html">Agents</a>.</li>
+    <li><a href="https://cognition.ai/blog/multi-agents-working">Multi-Agents: What's Actually Working</a> — Walden Yan, Cognition. The author's own later refinement — the narrow class of multi-agent that works (subagents contribute intelligence, writes stay single-threaded). The "then vs. now" bookend.</li>
+    <li><a href="https://www.anthropic.com/research/multi-agent-research-system">How we built our multi-agent research system</a> — Anthropic. The canonical "pro" case for orchestrator-worker multi-agent, with real production lessons (and the 15× token cost). The direct counterpart to Cognition's skepticism.</li>
+  </ul>
+
+  <h3>Agent engineering &amp; technique</h3>
+  <ul>
+    <li><a href="https://www.anthropic.com/research/effective-context-engineering-for-ai-agents">Effective context engineering for AI agents</a> — Anthropic. Popularized "context engineering as the successor to prompt engineering" — just-in-time / compaction / note-taking. Distilled in <a href="techniques.html">Techniques</a>.</li>
+    <li><a href="https://addyosmani.com/blog/agentic-autonomy-levels">Agentic Autonomy Levels</a> — Addy Osmani. A reusable framework for calibrated agent autonomy and the shift from "verification by you" to "verification by evidence the agent produces."</li>
+    <li><a href="https://simonwillison.net/2025/Oct/5/parallel-coding-agents/">Embracing the parallel coding agent lifestyle</a> — Simon Willison. Crystallized running multiple coding agents in parallel (worktrees) — and named review throughput as the real bottleneck.</li>
+    <li><a href="https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/">How to be more ambitious: A tutorial for humans with models</a> — Felix Rieseberg, Anthropic. Speed/Altitude/Depth/Range framework with reusable prompts. Distilled in <a href="techniques.html">Techniques</a>.</li>
+  </ul>
+
+  <h3>Agent security &amp; evals</h3>
+  <ul>
+    <li><a href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/">The lethal trifecta for AI agents</a> — Simon Willison. Coined the reference framing for agent/prompt-injection risk: private data + untrusted content + external communication.</li>
+    <li><a href="https://cognition.ai/blog/frontier-code">Introducing FrontierCode</a> — Cognition. First benchmark measuring code <em>mergeability</em> ("would a human maintainer merge this PR?") rather than mere correctness — a shift in how agentic coding is evaluated.</li>
+  </ul>
+
+  <h3>Other</h3>
+  <ul>
+    <li><a href="https://www.anthropic.com/research/early-progress-drug-development">Early progress accelerating drug development with Claude</a> — Anthropic. Frontier models moving into wet-lab science.</li>
     <li><a href="https://shumer.dev/something-big-is-happening">Something Big is Happening</a> — Matt Shumer</li>
     <li><a href="https://x.com/trq212/status/2027463795355095314">Lessons from Building Claude Code: Seeing like an Agent</a> — Thariq Shihipar</li>
     <li><a href="https://x.com/trq212/status/2033949937936085378">Lessons from Building Claude Code: How We Use Skills</a> — Thariq Shihipar</li>

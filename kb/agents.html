@@ -30,7 +30,7 @@
 <div class="wrap">
   <a class="back" href="index.html">← Knowledge Base</a>
   <h1>Agents</h1>
-  <p class="meta">Architectures, patterns, and the shift to agent-scale engineering. <strong>Last refreshed 2026-10-28.</strong></p>
+  <p class="meta">Architectures, patterns, and the shift to agent-scale engineering. <strong>Last refreshed 2026-10-29.</strong></p>
 
   <div class="changed">
     <strong>What changed recently</strong> — Agent output is now outpacing the tooling built for humans: Anthropic reports internal code-merge volume went from ~2,500/day (May) to <strong>30,000+/day (Sept)</strong>, forcing a rebuild of core dev infra for agent scale. Claude Code shipped a "v2" built around running <strong>many agent sessions side-by-side</strong> with agents aware enough to spin off their own sub-sessions. Embodied agents crossed a threshold: Gemini 4 Argon taught a humanoid robot a physical task by <strong>writing its own physics simulation from a video</strong>.
@@ -39,12 +39,18 @@
   <h2>Why agents are the center of gravity</h2>
   <p>Across the daily reports, "agent" is the single most recurring theme — ahead of any individual model. The field has moved from "LLM that answers" to "agent that does work over many steps," and the hard problems have shifted accordingly: orchestration, memory, self-awareness, and the infrastructure to absorb agent-scale output.</p>
 
-  <h2>Multi-agent &amp; sub-agents</h2>
-  <p>The dominant 2026 pattern is <strong>one main loop that delegates to sub-agents</strong> rather than a single monolithic agent.</p>
+  <h2>Multi-agent &amp; sub-agents — <em>the subagent question</em></h2>
+  <p>The dominant 2026 pattern is <strong>one main loop that delegates to sub-agents</strong> — but <em>whether</em> to use subagents at all is an active, well-argued debate. The two canonical poles (see <a href="reading.html">Reading</a> and the <a href="graph.html">graph</a>):</p>
   <ul>
-    <li><strong>Side-by-side sessions.</strong> Claude Code's desktop "v2" is built around running many agent sessions in parallel, with a live view of what each is doing and faster startup — tooling catching up to how people actually drive agents. <span class="src">(Claude Code, Oct 15)</span></li>
-    <li><strong>Self-spawning.</strong> Agents are becoming "aware of their own capabilities" — e.g. spinning off sub-sessions when a task fans out. <span class="src">(Thariq Shihipar / @trq212)</span></li>
-    <li><strong>When to fold vs. split.</strong> An open design question the field is actively writing about: when a sub-agent earns its keep vs. when it should be folded back into the main loop. <span class="src">(flagged as a gap — article at claude.com/resources/articles not yet captured; source added 2026-10-28)</span></li>
+    <li><strong>Con — "Don't Build Multi-Agents"</strong> (Walden Yan, Cognition). Subagents fragment context and make implicit, conflicting decisions; default to <em>single-threaded linear</em> agents. Principles: share context; actions carry implicit decisions. His later <a href="https://cognition.ai/blog/multi-agents-working">refinement</a> admits a narrow class that works (subagents add intelligence, writes stay single-threaded).</li>
+    <li><strong>Pro — "How we built our multi-agent research system"</strong> (Anthropic). Orchestrator-worker multi-agent in production — real gains on parallelizable research, at ~15× the token cost. Best when task value justifies the spend and work is genuinely parallel.</li>
+    <li><strong>The practitioner rule of thumb</strong> (Addy Osmani): "before adding another subagent, ask what problem it's solving — a bloated system prompt is often the real issue; skills + tool search can fix it without splitting context." Keep a subagent only when work is parallel or needs fresh context.</li>
+  </ul>
+  <p>Resolution so far: subagents are a cost/latency/context trade, not a default — reach for them for parallel, context-isolated, high-value work; otherwise fold into the main loop.</p>
+  <h3>Other multi-agent signals</h3>
+  <ul>
+    <li><strong>Side-by-side sessions.</strong> Claude Code's desktop "v2" runs many agent sessions in parallel with a live activity view. <span class="src">(Claude Code, Oct 15)</span></li>
+    <li><strong>Self-spawning.</strong> Agents "aware of their own capabilities" spin off sub-sessions when a task fans out. <span class="src">(Thariq Shihipar / @trq212)</span></li>
   </ul>
 
   <h2>Agent-scale engineering</h2>
