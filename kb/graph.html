@@ -123,7 +123,8 @@ const E = [
   {s:'trifecta', t:'security'}, {s:'security', t:'agents'},
   {s:'frontiercode', t:'models'}, {s:'walden', t:'frontiercode'},
   // --- Loop Engineering + RSI cluster ---
-  {s:'addy', t:'loopeng'}, {s:'loopeng', t:'techniques'}, {s:'loopeng', t:'rsi'},
+  {s:'addy', t:'loopeng'}, {s:'loopeng', t:'techniques'},
+  {s:'loopeng', t:'rsi', shared:true, label:'RSI = loop engineering applied to the system itself'},
   {s:'addy', t:'looppract'}, {s:'looppract', t:'techniques'}, {s:'looppract', t:'rsi'},
   {s:'loopeng', t:'looppract', shared:true, label:'concept ↔ practice (same author)'},
   {s:'autonomy', t:'rsi'}, {s:'rsi', t:'techniques'},

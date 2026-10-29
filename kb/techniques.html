@@ -25,7 +25,7 @@
 <div class="wrap">
   <a class="back" href="index.html">← Knowledge Base</a>
   <h1>Techniques</h1>
-  <p class="meta">How to build with AI — prompting, context management, evals, RAG, reasoning. <strong>Last refreshed 2026-10-29.</strong></p>
+  <p class="meta">How to build with AI — prompting, context management, evals, loops, reasoning. <strong>Last refreshed 2026-10-29.</strong></p>
 
   <div class="changed">
     <strong>What changed recently</strong> — Continual learning is drawing real research momentum: Google Research's <strong>"sleep" framework</strong> (first-party detail landed Oct 28) lets a deployed LLM periodically consolidate short-term context into long-term parameters, then train on self-generated "dream" data — keeping near-zero forgetting across sequential tasks where ICL/SFT baselines collapse. Separately, a practitioner framework for "being more ambitious" with models pushes on <strong>Speed, Altitude, Depth, and Range</strong> rather than just doing the same task faster (see below).
@@ -50,10 +50,18 @@
   <p>"Replace yourself as the person who prompts the agent — design the system that does it instead" (Addy Osmani, <a href="reading.html">Loop Engineering</a>). A loop is a <strong>recursive goal</strong>: define a purpose, the agent iterates until a condition holds. Key primitives, now in both Claude Code and Codex:</p>
   <ul>
     <li><code>/loop</code> — re-run on a cadence; <code>/goal</code> — keep going until a <em>verifiable</em> stopping condition is true.</li>
-    <li><strong>The writer isn't the grader:</strong> after each turn a <em>separate small model</em> checks whether the goal is met — the same verifier-≠-generator discipline behind this repo's own RSI loop (<code>docs/rsi-framework-generic.html</code>) and the <a href="#">verification-as-bottleneck</a> thread. Sits one floor above "harness engineering" (the single-agent environment).</li>
+    <li><strong>The writer isn't the grader:</strong> after each turn a <em>separate small model</em> checks whether the goal is met — the same verifier-≠-generator discipline behind this repo's own RSI loop (<code>docs/rsi-framework-generic.html</code>). Sits one floor above "harness engineering" (the single-agent environment).</li>
     <li><strong>Caveats (stated plainly):</strong> token cost varies wildly; quality/"slop" control still needs an explicit check — which is exactly why the verifiable stopping condition matters.</li>
     <li><strong>In practice</strong> (<a href="reading.html">Practical Loop Engineering</a>): compose <code>/schedule</code> (checks for work on a cadence) + <code>/goal</code> (deterministic done-condition, e.g. "Lighthouse ≥ 90, stop after 5 tries") + skills (how to verify) + dynamic workflows (orchestrate triage→fix→review) + auto mode (runs without asking). Prefer <strong>deterministic stop criteria</strong> (tests passed, score threshold) so the evaluator model isn't guessing "good enough."</li>
   </ul>
+
+  <h3>Loop engineering vs. RSI — the relationship</h3>
+  <p><strong>RSI is loop engineering applied to the system itself.</strong> They share one spine — the Generator–Verifier–Updater loop (act → a <em>separate</em> grader checks a verifiable condition → adjust) — and differ only in <em>what the loop is pointed at</em>:</p>
+  <ul>
+    <li><strong>Loop engineering (task-level):</strong> the loop and its target are different things — the loop improves an <em>output</em> (make the tests pass, hit the Lighthouse score). Linear: you get a better result, once.</li>
+    <li><strong>RSI (recursive):</strong> the loop's target <em>includes the loop</em> — it edits the prompts, sources, configs, even the code that produce the outputs. Self-referential: cycle N's change makes cycle N+1 better. It <em>compounds</em>.</li>
+  </ul>
+  <p>So <strong>RSI ⊂ loop engineering</strong>: every RSI system is loop-engineered, but most loop-engineered systems just improve a task and stop. This repo's pipeline crossed from the first into the second when its daily improve-loop (<code>scripts/daily-ai-report/improve.sh</code>) began proposing changes to its own prompt/sources — its first real proposal was literally "enforce the previous improvement," i.e. the loop improving the loop. The shared failure mode is also the same: a weak verifier lets either one optimize a proxy instead of the goal — which is why "writer ≠ grader" and a deterministic/holdout stop condition matter in both.</p>
 
   <h2>Other subtopics this page will cover</h2>
   <ul>
