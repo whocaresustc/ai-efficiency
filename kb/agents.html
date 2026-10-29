@@ -46,7 +46,9 @@
     <li><strong>Pro — "How we built our multi-agent research system"</strong> (Anthropic). Orchestrator-worker multi-agent in production — real gains on parallelizable research, at ~15× the token cost. Best when task value justifies the spend and work is genuinely parallel.</li>
     <li><strong>The practitioner rule of thumb</strong> (Addy Osmani): "before adding another subagent, ask what problem it's solving — a bloated system prompt is often the real issue; skills + tool search can fix it without splitting context." Keep a subagent only when work is parallel or needs fresh context.</li>
   </ul>
-  <p>Resolution so far: subagents are a cost/latency/context trade, not a default — reach for them for parallel, context-isolated, high-value work; otherwise fold into the main loop.</p>
+    <li><strong>How to fold (first-party guidance):</strong> Anthropic's "<a href="https://claude.com/resources/articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop">When to fold subagents into your main agent loop</a>" (Oct 2026) — across enterprise deployments a single agent with <em>progressively-disclosed skills + tool search</em> often beat both the one-giant-prompt and subagent designs on quality, cost, and latency. Keep subagents for verification, parallel work, and modular permissioning; fold routers/planners/domain-subagents into the main loop. Comes with a migration kit.</li>
+  </ul>
+  <p>Resolution so far: subagents are a cost/latency/context trade, not a default — reach for them for parallel, context-isolated, high-value work; otherwise fold into the main loop (via progressive disclosure of skills/tools).</p>
   <h3>Other multi-agent signals</h3>
   <ul>
     <li><strong>Side-by-side sessions.</strong> Claude Code's desktop "v2" runs many agent sessions in parallel with a live activity view. <span class="src">(Claude Code, Oct 15)</span></li>

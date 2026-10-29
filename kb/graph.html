@@ -83,6 +83,7 @@ const N = [
   {id:'frontiercode', t:'Introducing FrontierCode', k:'work', d:'Cognition. Benchmark for code mergeability, not just correctness.', u:'reading.html'},
   {id:'loopeng', t:'Loop Engineering', k:'work', d:'Addy Osmani. Design the system that prompts the agent; recursive goal + a SEPARATE model grades completion (/loop, /goal in Claude Code & Codex). Independently describes this repo’s own RSI loop.', u:'reading.html'},
   {id:'looppract', t:'Practical Loop Engineering', k:'work', d:'Addy Osmani (Aug 2026). The how-to companion: /schedule + /goal + skills + workflows + auto mode, with deterministic stop criteria.', u:'reading.html'},
+  {id:'foldsub', t:'When to fold subagents into your main loop', k:'work', d:'Diane Sarkis / Anthropic (Oct 2026). Progressive disclosure (skills + tool search) often beats subagents on quality/cost/latency; keep subagents for verification/parallel/permissioning. Ships a migration kit.', u:'reading.html'},
   // themes
   {id:'subagent', t:'THE SUBAGENT QUESTION', k:'theme', d:'Multi-agent vs single-threaded: when do subagents earn their keep? An active debate.', u:'agents.html'},
   {id:'security', t:'Agent security', k:'theme', d:'Prompt injection, the lethal trifecta, permissions.', u:'agents.html'},
@@ -114,6 +115,9 @@ const E = [
   {s:'dontmulti', t:'agents'}, {s:'antmulti', t:'agents'}, {s:'multiwork', t:'agents'},
   {s:'dontmulti', t:'multiwork', shared:true, label:'same author, thesis evolved (con → narrow-pro)'},
   {s:'dontmulti', t:'antmulti', shared:true, label:'the two canonical sides: con vs pro multi-agent'},
+  {s:'foldsub', t:'subagent'}, {s:'foldsub', t:'agents'}, {s:'foldsub', t:'tools'},
+  {s:'foldsub', t:'dontmulti', shared:true, label:'both: prefer folding over subagent sprawl'},
+  {s:'foldsub', t:'antmulti', shared:true, label:'Anthropic’s own when-to-fold counterpoint to its pro-multi-agent post'},
   {s:'addy', t:'subagent'}, {s:'amb_r', t:'subagent'},          // Addy's rule-of-thumb + fold-subagents both touch it
   // context engineering + verification + security
   {s:'ctxeng', t:'techniques'}, {s:'ctxeng', t:'agents'}, {s:'ctxeng', t:'dontmulti', shared:true, label:'shared "context engineering" vocabulary'},
