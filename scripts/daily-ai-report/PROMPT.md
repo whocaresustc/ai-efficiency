@@ -97,6 +97,8 @@ If **zero items survive ranking**, write a minimal "Quiet day — no notable AI 
 - You MUST NOT render a "Quiet day" page if ANY `playwright-x` source has `fetched: false`. If some are unfetched, the correct output is a **degraded-mode** page that names the unfetched sources in a visible banner (not a quiet-day page, and not a footer afterthought).
 - If a `playwright-x-search` source is blocked (e.g. login wall), the page carries a visible "breakout-detection degraded" banner for that day — a blocked search is never silently treated as "nothing found."
 - The manifest is the evidence the self-improvement/meta pass grades coverage against.
+- **This write is mandatory on EVERY run, not just quiet days.** Before emitting the report HTML, write `runs.<date>.fetch_manifest` to state.json (one entry per source actually attempted). If you cannot write it, the run is degraded — say so in the page banner. A run that renders without a manifest is a bug.
+- The footer's "X timelines fetched" prose MUST be derived from this manifest, so the two cannot disagree.
 
 ### 6. Update latest.html
 Copy today's HTML to `reports/latest.html` (overwrite). Use Bash `cp`.
