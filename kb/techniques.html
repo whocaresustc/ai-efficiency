@@ -46,6 +46,14 @@
     <li><strong>The "sleep" framework (continual learning).</strong> Google Research (Behrouz, Mirrokni et al.) proposes a biologically inspired "sleep" phase: a deployed LLM periodically <em>consolidates</em> short-term context into long-term parameters, then trains on self-generated <em>"dream"</em> data — keeping near-zero forgetting across sequential tasks (e.g. learning unseen languages like Manchu and Kalamang back-to-back) where in-context-learning and plain SFT baselines collapse. It attacks the static-knowledge-cutoff problem directly: a path toward agents that update from their own experience post-deployment instead of being frozen at a cutoff — relevant to durable agent memory (see <a href="agents.html">Agents</a>). <span class="src">(Google Research blog Oct 27; @GoogleResearch first-party announcement Oct 28)</span></li>
   </ul>
 
+  <h2>Loop engineering (self-driving agent loops)</h2>
+  <p>"Replace yourself as the person who prompts the agent — design the system that does it instead" (Addy Osmani, <a href="reading.html">Loop Engineering</a>). A loop is a <strong>recursive goal</strong>: define a purpose, the agent iterates until a condition holds. Key primitives, now in both Claude Code and Codex:</p>
+  <ul>
+    <li><code>/loop</code> — re-run on a cadence; <code>/goal</code> — keep going until a <em>verifiable</em> stopping condition is true.</li>
+    <li><strong>The writer isn't the grader:</strong> after each turn a <em>separate small model</em> checks whether the goal is met — the same verifier-≠-generator discipline behind this repo's own RSI loop (<code>docs/rsi-framework-generic.html</code>) and the <a href="#">verification-as-bottleneck</a> thread. Sits one floor above "harness engineering" (the single-agent environment).</li>
+    <li><strong>Caveats (stated plainly):</strong> token cost varies wildly; quality/"slop" control still needs an explicit check — which is exactly why the verifiable stopping condition matters.</li>
+  </ul>
+
   <h2>Other subtopics this page will cover</h2>
   <ul>
     <li><strong>Context management</strong> — windows, compaction, memory, retrieval</li>

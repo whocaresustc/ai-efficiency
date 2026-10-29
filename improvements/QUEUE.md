@@ -36,6 +36,28 @@ Axis A (coverage) +: closes a named miss of a frontier agent lab; catches talk-s
 Approve → I add the verified sources to `sources.json` (backed up first), or reject.
 
 ---
+
+## 2026-10-29 — Source gap: X-native long-form articles not scanned <!-- gap:x-articles -->
+
+**Status:** PENDING (found via a specific user-supplied URL the backward scan missed)
+
+### Defect (concrete)
+`playwright-x` sources scan a person's **timeline** only. X long-form **articles** (URLs of the form `x.com/<handle>/article/<id>`) do not reliably appear in a timeline accessibility snapshot, so they are a blind spot. Confirmed miss: Addy Osmani's **"Loop Engineering"** (`https://x.com/addyosmani/article/2064127981161959567`) — a landmark, on-theme piece — was not captured by either the daily pipeline or the backward scan, which read his timeline + blog but not his X articles. (Now added to the KB manually.)
+
+### Proposed change (ONE area)
+Extend the `playwright-x` fetch step in `PROMPT.md`: after snapshotting a tracked person's timeline, also check for an "Articles" tab / pinned article links and fetch any `x.com/.../article/...` published within the window. Alternatively add a lightweight `playwright-x-article` handling note. Keep it to tracked high-signal people (Addy, Thariq, etc.), not all accounts, to bound cost.
+
+### Predicted delta
+Axis A (coverage) +: closes a structural blind spot for a whole content format from already-tracked authors. Low regression risk (additive, gated by existing window + score thresholds).
+
+### Caveats
+- X articles may need a separate navigate + render; verify the fetch actually returns article body (tavily_extract worked for "Loop Engineering").
+- Bound to tracked people only — don't crawl arbitrary X articles.
+
+### Human action
+Approve → I extend PROMPT.md's playwright-x handling (backed up first), or reject.
+
+---
 **Axis scores this cycle:** A 3/5 · B 3/5 (baseline established; not dormant — real Axis-A defect found)
 
 ### Defect (concrete, fixable)
