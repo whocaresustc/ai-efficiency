@@ -325,6 +325,15 @@
       "notes": "Simon Willison — daily AI commentary; complements his blog source"
     },
     {
+      "name": "X: @addyosmani",
+      "tier": 2,
+      "type": "playwright-x",
+      "handle": "addyosmani",
+      "url": "https://x.com/addyosmani",
+      "max_items": 5,
+      "notes": "Addy Osmani — Google Chrome eng leader; high-signal on AI-assisted dev (subagent fold-vs-split, agent self-verification, Claude Code review at scale). Added 2026-10-29, verified active."
+    },
+    {
       "name": "X: @trq212",
       "tier": 2,
       "type": "playwright-x",
