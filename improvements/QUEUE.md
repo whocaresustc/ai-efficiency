@@ -10,6 +10,32 @@ Status legend: PENDING (awaiting review) · APPLIED · REJECTED · NULL (no chan
 ## 2026-10-29 — Enforce the fetch_manifest quiet-day gate (make the spec real) <!-- cycle:2026-10-29 -->
 
 **Status:** APPLIED 2026-10-29 (human-approved; PROMPT.md manifest-write made mandatory every run). Verify the next real run emits `runs.<date>.fetch_manifest`.
+
+---
+
+## 2026-10-29 — Source gap: Cognition/Devin + YouTube talks untracked <!-- gap:cognition-youtube -->
+
+**Status:** APPLIED 2026-10-29 (human-approved; added Cognition Blog (Tier 1) + @ScottWu46 (playwright-x) to sources.json after verifying both live; backed up first)
+
+### Defect (concrete)
+The pipeline missed Scott Wu's (Cognition CEO) "It's time to be ambitious" talk (Runtime 2026, YouTube, 2026-10-09) — which strongly overlaps a KB article (Rieseberg's "be ambitious" tutorial, `kb/reading.html`). Two causes, both real coverage gaps in `scripts/daily-ai-report/sources.json`:
+1. **Cognition / Devin is not a tracked source** — a major agent lab with no entry (no site feed, no X account like @cognition_labs/@ScottWu46).
+2. **No YouTube/conference-talk path** — high-signal talks (Runtime, etc.) are invisible; the pipeline only scans blogs/changelogs/X.
+
+### Proposed change (ONE area — add source coverage)
+Edit `sources.json`: add (a) Cognition's blog/news URL as a Tier-1 `tavily` source, and (b) `@ScottWu46` / `@cognition_labs` as `playwright-x` sources. Optionally a `tavily-search` for high-view AI conference talks. Keep each `max_items` low.
+
+### Predicted delta
+Axis A (coverage) +: closes a named miss of a frontier agent lab; catches talk-shaped content the pipeline structurally can't see today. No regression (additive sources, gated by the same ranking thresholds).
+
+### Caveats
+- Verify the exact Cognition feed URL + correct X handles before adding (don't add dead/wrong handles).
+- YouTube transcript fetching needs a path (Tavily extract worked for this video's transcript — viable).
+
+### Human action
+Approve → I add the verified sources to `sources.json` (backed up first), or reject.
+
+---
 **Axis scores this cycle:** A 3/5 · B 3/5 (baseline established; not dormant — real Axis-A defect found)
 
 ### Defect (concrete, fixable)

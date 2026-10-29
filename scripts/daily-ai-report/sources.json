@@ -164,6 +164,23 @@
       "max_items": 2
     },
     {
+      "name": "Cognition Blog (Devin)",
+      "tier": 1,
+      "type": "tavily",
+      "url": "https://cognition.ai/blog",
+      "max_items": 3,
+      "notes": "Cognition / Devin — major agent lab. Added 2026-10-29 (RSI source-gap proposal) after missing Scott Wu's Runtime talk. Dated feed; strong agent/agent-scale signal (e.g. Devin schedules/manages Devins)."
+    },
+    {
+      "name": "X: @ScottWu46",
+      "tier": 2,
+      "type": "playwright-x",
+      "handle": "ScottWu46",
+      "url": "https://x.com/ScottWu46",
+      "max_items": 3,
+      "notes": "Scott Wu — Cognition co-founder/CEO. Added 2026-10-29. Agent-lab direction signal; posts infrequently."
+    },
+    {
       "name": "Claude Code Changelog",
       "tier": 4,
       "type": "url",

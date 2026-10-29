@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Knowledge Graph — ai-efficiency</title>
+<style>
+  :root{color-scheme:light dark;--bg:#fff;--fg:#1a1a1a;--muted:#666;--card:#f6f7f9;--border:#e2e5ea;--person:#4f46e5;--work:#0891b2;--theme:#16a34a;--hl:#d97706}
+  @media(prefers-color-scheme:dark){:root{--bg:#0e1116;--fg:#e6e8eb;--muted:#9aa4b2;--card:#161b22;--border:#2a3038;--person:#818cf8;--work:#22d3ee;--theme:#4ade80;--hl:#fbbf24}}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--fg);margin:0;line-height:1.5}
+  .wrap{max-width:1100px;margin:0 auto;padding:28px 20px 70px}
+  a.back{color:var(--person);text-decoration:none;font-size:.9rem}
+  h1{font-size:1.7rem;margin:8px 0 2px}
+  .sub{color:var(--muted);margin:0 0 14px;font-size:.95rem}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;margin:10px 0 6px}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+  .dp{background:var(--person)}.dw{background:var(--work)}.dt{background:var(--theme)}
+  #graph{width:100%;height:600px;border:1px solid var(--border);border-radius:12px;background:var(--card);touch-action:none}
+  .node-label{font-size:11px;fill:var(--fg);pointer-events:none}
+  .edge{stroke:var(--border);stroke-width:1.5}
+  .edge.shared{stroke:var(--hl);stroke-width:2.5;stroke-dasharray:4 3}
+  #info{margin-top:14px;padding:14px 18px;background:var(--card);border:1px solid var(--border);border-radius:10px;min-height:54px;font-size:.92rem}
+  #info a{color:var(--person)}
+  .hint{color:var(--muted);font-size:.84rem}
+  footer{margin-top:26px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border);padding-top:14px}
+  code{background:var(--card);padding:1px 5px;border-radius:5px;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← Knowledge Base</a>
+  <h1>AI Knowledge Graph</h1>
+  <p class="sub">People, their writing/talks, and the themes that connect them. Dashed gold edges = a <strong>shared thesis</strong> between independent sources. Drag nodes; click one for details.</p>
+  <div class="legend">
+    <span><i class="dot dp"></i>Person</span>
+    <span><i class="dot dw"></i>Article / talk</span>
+    <span><i class="dot dt"></i>Theme</span>
+    <span><i class="dot" style="background:var(--hl)"></i>shared-thesis link</span>
+  </div>
+  <svg id="graph"></svg>
+  <div id="info"><span class="hint">Click a node. Example: the "be ambitious" thesis links Felix Rieseberg's tutorial and Scott Wu's talk — two independent sources, same week.</span></div>
+
+  <footer>
+    Seeded from kb/people.html + kb/reading.html + the topic pages, plus the Scott Wu "It's time to be ambitious" talk (Cognition, Runtime 2026). Self-contained — force layout + interactivity are inline, no external libraries.<br>
+    Generated from the <code>ai-efficiency</code> repo, branch <code>main</code>, on 2026-10-29.
+  </footer>
+</div>
+
+<script>
+// ---- graph data (seeded from the KB; nodes are real) ----
+const N = [
+  // people
+  {id:'rieseberg', t:'Felix Rieseberg', k:'person', d:'Anthropic eng lead (Claude.ai, Cowork, Claude Code Desktop).', u:'people.html'},
+  {id:'wu', t:'Scott Wu', k:'person', d:'Co-founder/CEO, Cognition (Devin). Added as a tracked source 2026-10-29.', u:null},
+  {id:'trq', t:'Thariq Shihipar', k:'person', d:'Anthropic, Claude Code engineer.', u:'people.html'},
+  {id:'simonw', t:'Simon Willison', k:'person', d:'Daily AI commentary + blog.', u:'people.html'},
+  {id:'karpathy', t:'Andrej Karpathy', k:'person', d:'Hands-on AI guides; practitioner.', u:'people.html'},
+  {id:'shumer', t:'Matt Shumer', k:'person', d:'Author, "Something Big is Happening".', u:null},
+  {id:'sama', t:'Sam Altman', k:'person', d:'OpenAI — direction signal.', u:'people.html'},
+  {id:'swyx', t:'swyx', k:'person', d:'Latent Space; AI-engineering ecosystem.', u:'people.html'},
+  {id:'ng', t:'Andrew Ng', k:'person', d:'DeepLearning.AI; courses + The Batch.', u:'people.html'},
+  {id:'raschka', t:'Sebastian Raschka', k:'person', d:'LLM research/education; Ahead of AI.', u:'people.html'},
+  {id:'lex', t:'Lex Fridman', k:'person', d:'Long-form AI interviews.', u:'people.html'},
+  {id:'3b1b', t:'3Blue1Brown', k:'person', d:'Visual math/NN explanations.', u:'people.html'},
+  {id:'starmer', t:'Josh Starmer', k:'person', d:'StatQuest — beginner ML.', u:'people.html'},
+  // works
+  {id:'amb_r', t:'How to be more ambitious (tutorial)', k:'work', d:'Rieseberg — Speed/Altitude/Depth/Range framework for getting more out of models.', u:'reading.html'},
+  {id:'amb_w', t:'It’s time to be ambitious (talk)', k:'work', d:'Scott Wu, Runtime 2026. "Why now": models have real world-models; agents as virtual employees; 91% of Cognition’s Devin sessions start without a human.', u:null},
+  {id:'skills', t:'Lessons from Building Claude Code', k:'work', d:'Thariq Shihipar — seeing like an agent / how we use skills (two pieces).', u:'reading.html'},
+  {id:'bigthing', t:'Something Big is Happening', k:'work', d:'Matt Shumer.', u:'reading.html'},
+  {id:'drug', t:'Accelerating drug development with Claude', k:'work', d:'Anthropic research — models moving into wet-lab science.', u:'reading.html'},
+  // themes
+  {id:'ambition', t:'AMBITION with AI', k:'theme', d:'Be more ambitious with models — raise altitude, own the outcome, agent-started work.', u:'techniques.html'},
+  {id:'agents', t:'Agents', k:'theme', d:'Architectures, multi-agent, agent-scale engineering.', u:'agents.html'},
+  {id:'tools', t:'Tools', k:'theme', d:'Claude Code, CLIs, MCP.', u:'tools.html'},
+  {id:'techniques', t:'Techniques', k:'theme', d:'Prompting, context mgmt, evals, reasoning.', u:'techniques.html'},
+  {id:'models', t:'Models', k:'theme', d:'Frontier model landscape.', u:'models.html'},
+  {id:'edu', t:'Education / fundamentals', k:'theme', d:'Learning the underpinnings of AI/ML.', u:'people.html'},
+];
+const E = [
+  // authorship
+  {s:'rieseberg', t:'amb_r'}, {s:'wu', t:'amb_w'}, {s:'trq', t:'skills'}, {s:'shumer', t:'bigthing'},
+  // work -> theme
+  {s:'amb_r', t:'ambition'}, {s:'amb_w', t:'ambition'}, {s:'amb_w', t:'agents'},
+  {s:'skills', t:'tools'}, {s:'skills', t:'agents'}, {s:'amb_r', t:'agents'}, {s:'amb_r', t:'techniques'},
+  {s:'drug', t:'models'},
+  // people -> themes they drive
+  {s:'trq', t:'tools'}, {s:'karpathy', t:'agents'}, {s:'karpathy', t:'edu'}, {s:'simonw', t:'tools'},
+  {s:'sama', t:'models'}, {s:'swyx', t:'agents'}, {s:'wu', t:'agents'},
+  {s:'ng', t:'edu'}, {s:'raschka', t:'edu'}, {s:'lex', t:'edu'}, {s:'3b1b', t:'edu'}, {s:'starmer', t:'edu'},
+  {s:'raschka', t:'models'},
+  // THE shared-thesis link you spotted
+  {s:'amb_r', t:'amb_w', shared:true, label:'same thesis, independent, same week (Oct 9 & 13)'},
+];
+const COL = {person:getCSS('--person'), work:getCSS('--work'), theme:getCSS('--theme')};
+function getCSS(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim()||'#888';}
+
+const svg=document.getElementById('graph'); let W=svg.clientWidth,H=svg.clientHeight;
+N.forEach(n=>{n.x=W/2+(Math.random()-.5)*W*0.6; n.y=H/2+(Math.random()-.5)*H*0.6; n.vx=0; n.vy=0;});
+const byId=Object.fromEntries(N.map(n=>[n.id,n]));
+
+// simple force sim
+function tick(){
+  for(const a of N){ for(const b of N){ if(a===b)continue;
+    let dx=a.x-b.x,dy=a.y-b.y,d2=dx*dx+dy*dy||1,d=Math.sqrt(d2);
+    let f=2600/d2; a.vx+=dx/d*f; a.vy+=dy/d*f; } }
+  for(const e of E){ const a=byId[e.s],b=byId[e.t]; let dx=b.x-a.x,dy=b.y-a.y,d=Math.sqrt(dx*dx+dy*dy)||1;
+    let f=(d-110)*0.015; a.vx+=dx/d*f; a.vy+=dy/d*f; b.vx-=dx/d*f; b.vy-=dy/d*f; }
+  for(const n of N){ n.vx+=(W/2-n.x)*0.0015; n.vy+=(H/2-n.y)*0.0015;
+    if(n===drag)continue; n.x+=n.vx*=0.82; n.y+=n.vy*=0.82;
+    n.x=Math.max(60,Math.min(W-60,n.x)); n.y=Math.max(30,Math.min(H-30,n.y)); }
+  render();
+}
+let drag=null;
+function render(){
+  let s='';
+  for(const e of E){ const a=byId[e.s],b=byId[e.t];
+    s+=`<line class="edge ${e.shared?'shared':''}" x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}"/>`; }
+  for(const n of N){ const r=n.k==='theme'?9:7;
+    s+=`<circle data-id="${n.id}" cx="${n.x}" cy="${n.y}" r="${r}" fill="${COL[n.k]}" stroke="var(--bg)" stroke-width="1.5" style="cursor:pointer"/>`;
+    s+=`<text class="node-label" x="${n.x+10}" y="${n.y+4}">${n.t}</text>`; }
+  svg.innerHTML=s;
+}
+svg.addEventListener('mousedown',e=>{const el=e.target.closest('circle'); if(el){drag=byId[el.dataset.id]; showInfo(drag);}});
+window.addEventListener('mousemove',e=>{ if(!drag)return; const r=svg.getBoundingClientRect(); drag.x=e.clientX-r.left; drag.y=e.clientY-r.top; drag.vx=drag.vy=0; });
+window.addEventListener('mouseup',()=>drag=null);
+svg.addEventListener('click',e=>{const el=e.target.closest('circle'); if(el)showInfo(byId[el.dataset.id]);});
+function showInfo(n){
+  const links=E.filter(e=>e.s===n.id||e.t===n.id).map(e=>{const o=byId[e.s===n.id?e.t:e.s]; return (e.shared?'🔶 ':'')+o.t;}).join(' · ');
+  const go=n.u?` — <a href="${n.u}">open in KB →</a>`:' — <em>not yet in KB</em>';
+  document.getElementById('info').innerHTML=`<strong>${n.t}</strong> <span class="hint">(${n.k})</span>${go}<br>${n.d}<br><span class="hint">connected to: ${links}</span>`;
+}
+window.addEventListener('resize',()=>{W=svg.clientWidth;H=svg.clientHeight;});
+setInterval(tick,33);
+</script>
+</body>
+</html>
