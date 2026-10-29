@@ -93,6 +93,11 @@ Style: clean, readable, system font stack, dark-mode friendly (use `prefers-colo
 
 If **zero items survive ranking**, write a minimal "Quiet day — no notable AI news in the last 24h" page with the source-scan footer. **Do NOT declare a quiet day until you have actually fetched every tier — including the Tier-1/Tier-2 `playwright-x` timelines.** A quiet day where the X timelines were skipped is not a confirmed quiet day; dated vendor sources being outside the window is not sufficient grounds to skip X. If a Playwright fetch genuinely fails, log it under "failed sources" (that is allowed) — but silently not firing Playwright is not. State in the footer which X accounts were fetched and their freshest post dates.
 
+**Fetch manifest (machine-checkable quiet-day gate).** Before rendering, record a `fetch_manifest` for this run in `scripts/daily-ai-report/state.json` under `runs.<date>`: for every source, `{ name, fetched: true|false, method, freshest_date, blocked_reason? }`. Rules enforced from the manifest, not from prose:
+- You MUST NOT render a "Quiet day" page if ANY `playwright-x` source has `fetched: false`. If some are unfetched, the correct output is a **degraded-mode** page that names the unfetched sources in a visible banner (not a quiet-day page, and not a footer afterthought).
+- If a `playwright-x-search` source is blocked (e.g. login wall), the page carries a visible "breakout-detection degraded" banner for that day — a blocked search is never silently treated as "nothing found."
+- The manifest is the evidence the self-improvement/meta pass grades coverage against.
+
 ### 6. Update latest.html
 Copy today's HTML to `reports/latest.html` (overwrite). Use Bash `cp`.
 

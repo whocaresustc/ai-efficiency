@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RSI Framework Proposal — ai-efficiency</title>
+<style>
+  :root{color-scheme:light dark;--bg:#fff;--fg:#1a1a1a;--muted:#666;--card:#f6f7f9;--border:#e2e5ea;--accent:#4f46e5;--ok:#16a34a;--warn:#d97706;--risk:#dc2626}
+  @media(prefers-color-scheme:dark){:root{--bg:#0e1116;--fg:#e6e8eb;--muted:#9aa4b2;--card:#161b22;--border:#2a3038;--accent:#818cf8}}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--fg);margin:0;line-height:1.6}
+  .wrap{max-width:900px;margin:0 auto;padding:40px 24px 90px}
+  h1{font-size:2rem;margin:0 0 4px}
+  h2{font-size:1.35rem;margin:38px 0 10px;border-bottom:1px solid var(--border);padding-bottom:7px}
+  h3{font-size:1.08rem;margin:22px 0 6px}
+  .sub{color:var(--muted);margin:0 0 26px}
+  p{margin:9px 0}ul{padding-left:22px}li{margin:6px 0}
+  code{background:var(--card);padding:1px 6px;border-radius:5px;font-size:.86em}
+  .box{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin:18px 0}
+  .box.key{border-left:3px solid var(--accent)}
+  .box.warn{border-left:3px solid var(--warn)}
+  .loop{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9rem;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 20px;white-space:pre;overflow-x:auto}
+  table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.92rem}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--border);vertical-align:top}
+  th{color:var(--muted)}
+  .tier{display:inline-block;font-size:.76rem;font-weight:700;padding:2px 9px;border-radius:20px;margin-right:8px}
+  .t0{color:var(--ok);background:color-mix(in srgb,var(--ok) 15%,transparent)}
+  .t1{color:var(--accent);background:color-mix(in srgb,var(--accent) 15%,transparent)}
+  .t2{color:var(--warn);background:color-mix(in srgb,var(--warn) 15%,transparent)}
+  .t3{color:var(--risk);background:color-mix(in srgb,var(--risk) 15%,transparent)}
+  .have{color:var(--ok);font-weight:600}.gap{color:var(--risk);font-weight:600}.part{color:var(--warn);font-weight:600}
+  footer{margin-top:46px;color:var(--muted);font-size:.82rem;border-top:1px solid var(--border);padding-top:16px}
+  .src{color:var(--muted);font-size:.84rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>RSI Framework for ai-efficiency</h1>
+  <p class="sub">A recursive self-improvement design for the daily-report + knowledge-base pipeline — grounded in 2026 state-of-the-art, scoped to a single developer on a frozen Claude model. Proposal for review; nothing built yet.</p>
+
+  <div class="box key">
+    <strong>The one principle that matters (Generator–Verifier–Updater).</strong> Every real self-improving system is the same loop: <em>propose a change → evaluate it against a metric → keep it only if it wins → repeat.</em> The hard-won 2026 lesson (the "Variance Inequality"): when the loop goes unstable, <strong>strengthen the verifier, not the generator.</strong> A strong generator with a weak verifier reliably optimizes itself into nonsense. <strong>So the scarce resource here is a trustworthy fitness signal — not cleverer prompts.</strong>
+  </div>
+
+  <h2>Where your pipeline already is</h2>
+  <p>You're not starting from zero. You already have the <em>observe</em> half of an RSI loop; what's missing is <em>act</em> and <em>verify</em>.</p>
+  <div class="loop">   OBSERVE          DIAGNOSE          ACT              VERIFY            (feedback)
+   <span class="have">state.json</span>       <span class="part">meta-agent flags</span>   <span class="gap">— none —</span>         <span class="gap">— none —</span>          loop never closes
+   <span class="have">✅ have</span>          <span class="part">⚠️ logs "watch"</span>    <span class="gap">❌ gap</span>          <span class="gap">❌ gap</span>
+
+   Today: meta-agent SAW the X login-wall ("→ watch") but could not ACT or VERIFY a fix.
+   RSI = closing ACT → VERIFY, with guardrails so it cannot degrade itself.</div>
+  <ul>
+    <li><span class="have">Have:</span> <code>state.json</code> tracks per-source <code>seen/produced/failed/stale/empty</code> — a fitness-signal substrate. A meta-agent that critiques each run. Git + <code>.bak</code> versioning. Daily scorecards.</li>
+    <li><span class="part">Partial:</span> the meta-agent <em>diagnoses</em> (flags degraded sources) but mostly records notes; it doesn't propose and apply concrete changes under a measured gate.</li>
+    <li><span class="gap">Gaps:</span> (1) no <strong>measured acceptance</strong> — changes aren't proven to improve a metric before sticking; (2) <code>state.json</code> only tracks sources the meta-agent happened to review, so hit-rate data is <em>incomplete</em> — you can't yet decide "drop this source" from data; (3) no <strong>holdout/canary</strong> protection against the loop gaming itself.</li>
+  </ul>
+
+  <h2>Your motivating example: the X.com fetch inefficiency</h2>
+  <p>You named this exactly right. Today <code>PROMPT.md</code> fetches <strong>12 X sources serially</strong>: for each, <code>navigate → wait 3s → full-page a11y snapshot → parse</code>. The inefficiencies an RSI loop should detect and fix <em>on its own</em>:</p>
+  <table>
+    <tr><th>Inefficiency (measurable)</th><th>Signal in state.json / logs</th><th>Automatic improvement</th></tr>
+    <tr><td>Low-yield accounts fetched every run</td><td><code>seen</code> high, <code>produced</code> ≈ 0</td><td>Demote to lower cadence or drop; reorder high-hit accounts first</td></tr>
+    <tr><td>Fixed 3s render wait</td><td>empty snapshots (too short) vs. slow runs (too long)</td><td>Tune per-account wait toward the minimum that still renders</td></tr>
+    <tr><td>12 serial fetches = slowest stage</td><td>run latency</td><td>Batch/parallelize; skip accounts quiet for N days</td></tr>
+    <tr><td>Login-wall on X-search (flagged today)</td><td><code>failed</code> count on that source</td><td>Route via alternate path / disable with reason — not just "watch"</td></tr>
+  </table>
+  <div class="box warn"><strong>Measurement gap to fix first.</strong> You can't improve what you don't measure. Before any auto-fix, <code>state.json</code> must log <em>every</em> source's cost (latency) and yield (produced) <em>every</em> run — not only when reviewed. That instrumentation is step one.</div>
+
+  <h2>The framework: four tiers of increasing risk</h2>
+  <p>Adopt in order. Each tier is useful on its own; later tiers need the earlier ones' guardrails.</p>
+
+  <h3><span class="tier t0">TIER 0</span>Grounded self-critique (Reflexion) — do now, no autonomy</h3>
+  <p>Generator writes the digest/KB entry → a <strong>differently-modeled critic</strong> (avoid shared blind spots) scores it against a concrete rubric → revise. Cap at 2 passes (gains plateau fast). Critic grounded in <em>deterministic</em> checks: every claim cites a primary source, no duplicate entries, length bound, schema valid.</p>
+  <p class="src">Real &amp; cheap — Reflexion lifted HumanEval ~80→91% with no fine-tuning. Risk: the "coherence trap" (ungrounded self-praise) — hence deterministic grounding.</p>
+
+  <h3><span class="tier t1">TIER 1</span>Automatic prompt optimization (DSPy + GEPA) — the core self-improvement</h3>
+  <p>Treat <code>PROMPT.md</code> / <code>synth-prompt.md</code> as things you <em>compile</em>, not hand-write. Give the optimizer a metric + a held-out set of past reports; it proposes prompt variants, scores each, keeps winners. Use <strong>GEPA</strong> (ships in DSPy): its <code>metric_with_feedback</code> returns a natural-language <em>reason</em>, not just a number — a "text gradient" the optimizer learns from. ~35× fewer rollouts than RL.</p>
+  <p class="src">DSPy + GEPA are production-ready (MIT, ICLR 2026 Oral). Because a "good digest" has no gold answer, the metric is an LLM-as-judge rubric + deterministic checks, or SPO-style pairwise ("is today's format better than yesterday's?").</p>
+
+  <h3><span class="tier t2">TIER 2</span>Skill/memory accumulation (Voyager-style) — improvements compound</h3>
+  <p>Keep a library of <strong>named, reusable routines</strong> — extraction/dedup/fetch recipes (e.g. "fetch X account with adaptive wait") — that persist and get retrieved on later runs, so wins accumulate instead of being re-derived daily. Your <code>state.json</code> + KB is already a primitive version of this; formalize it into a skill library.</p>
+  <p class="src">Voyager's foundational pattern; maps naturally onto a knowledge base. Base model stays frozen — only the wrapper/skill code grows. Low risk.</p>
+
+  <h3><span class="tier t3">TIER 3</span>Self-editing config/sources (SICA/DGM-style) — highest risk, gated</h3>
+  <p>A meta step proposes edits to your own <code>sources.json</code> / <code>PROMPT.md</code> (e.g. the X-fetch improvements above), adopted <strong>only if</strong> they beat the current champion on a held-out metric <em>and</em> pass tests. Keep a DGM-style archive of versions+scores so a good ancestor is never lost; git is your rollback.</p>
+  <p class="src">Research-grade patterns (SICA 17→53% on SWE-bench subset; DGM 20→50%). Do NOT run DGM as-published (~$22k/run). Copy the <em>design</em> at tiny scale, never the scale.</p>
+
+  <h2>Guardrails (non-negotiable for an unattended loop)</h2>
+  <p>The 2026 literature's failure cases are sobering and directly relevant — an optimizer once "improved the judge by <em>deleting</em> it" (the harness fell back to a default passing score); an agent read cached answer keys to fake 100%. Adopt these:</p>
+  <ul>
+    <li><strong>Strengthen the verifier, not the generator.</strong> Spend the eval budget here first.</li>
+    <li><strong>Holdout evals.</strong> The optimizer never sees the set it's judged on. Measure the proxy-vs-holdout gap to catch reward hacking.</li>
+    <li><strong>Canary cases.</strong> Plant checks no honest run can pass; a perfect score becomes <em>evidence of cheating</em>.</li>
+    <li><strong>Deterministic layer around the judge.</strong> Validate output schema before scoring, so a malformed/gutted candidate can't silently win.</li>
+    <li><strong>Conservative keep-if-better.</strong> Adopt a self-edit only if it beats the champion on holdout + passes tests.</li>
+    <li><strong>Versioning + rollback.</strong> You already commit daily and keep <code>.bak</code>s — formalize an archive with scores.</li>
+    <li><strong>Human gate</strong> on each Tier-3 adopted change (at least until trust is earned).</li>
+    <li><strong>Frozen weights</strong> — editing only prompts/tools/memory sidesteps catastrophic forgetting entirely. Stay in this regime.</li>
+  </ul>
+
+  <h2>Recommended sequencing</h2>
+  <ol>
+    <li><strong>Instrument first</strong> (the measurement gap): make every run log all sources' latency + yield to <code>state.json</code>. Without this, nothing downstream can be data-driven.</li>
+    <li><strong>Build the fitness signal</strong>: a calibrated LLM-as-judge rubric + deterministic checks + a holdout set of past reports + canary cases. <em>This is the scarce resource — build it before any autonomy.</em></li>
+    <li><strong>Tier 0</strong> grounded critic on the digest (free wins, no risk).</li>
+    <li><strong>Tier 3 narrow</strong>, pointed only at the X-fetch problem you named: let the meta-agent propose + apply + verify X-source demotion / wait-tuning under keep-if-better. A contained first real RSI loop.</li>
+    <li><strong>Tier 1</strong> (DSPy/GEPA on prompts) and <strong>Tier 2</strong> (skill library) once the signal is trusted.</li>
+  </ol>
+
+  <div class="box key">
+    <strong>Bottom line.</strong> You have the observe loop. The build is: <em>(1) instrument → (2) a trustworthy, holdout+canary-protected fitness signal → (3) a keep-if-better acceptance gate</em>. Then the meta-agent stops writing "watch" and starts shipping verified fixes — beginning with the X fetch. The single biggest risk is a weak verifier, so the eval is 80% of the work and 100% of the safety.
+  </div>
+
+  <footer>
+    Proposal — synthesized from a 2026 RSI research pass (Reflexion, DSPy/GEPA, TextGrad, SPO, Voyager, SICA, Darwin Gödel Machine; LLM-as-judge + reward-hacking literature) and an inspection of this repo's <code>scripts/daily-ai-report/</code> pipeline. Nothing implemented yet.<br>
+    Generated from the <code>ai-efficiency</code> repo, branch <code>main</code> @ <code>9971039</code>, on 2026-10-29.
+  </footer>
+</div>
+</body>
+</html>

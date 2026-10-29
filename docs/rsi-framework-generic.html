@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Generic RSI Framework for Agentic Projects</title>
+<style>
+  :root{color-scheme:light dark;--bg:#fff;--fg:#1a1a1a;--muted:#666;--card:#f6f7f9;--border:#e2e5ea;--accent:#4f46e5;--ok:#16a34a;--warn:#d97706;--risk:#dc2626}
+  @media(prefers-color-scheme:dark){:root{--bg:#0e1116;--fg:#e6e8eb;--muted:#9aa4b2;--card:#161b22;--border:#2a3038;--accent:#818cf8}}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--fg);margin:0;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:40px 24px 90px}
+  h1{font-size:2rem;margin:0 0 4px}
+  h2{font-size:1.35rem;margin:40px 0 10px;border-bottom:1px solid var(--border);padding-bottom:7px}
+  h3{font-size:1.08rem;margin:22px 0 6px}
+  .sub{color:var(--muted);margin:0 0 26px;font-size:1.02rem}
+  p{margin:9px 0}ul,ol{padding-left:22px}li{margin:6px 0}
+  code{background:var(--card);padding:1px 6px;border-radius:5px;font-size:.86em}
+  .box{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin:18px 0}
+  .box.key{border-left:3px solid var(--accent)}
+  .box.warn{border-left:3px solid var(--warn)}
+  .box.ex{border-left:3px solid var(--ok)}
+  .box.ex strong{color:var(--ok)}
+  .loop{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88rem;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px 20px;white-space:pre;overflow-x:auto}
+  table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.92rem}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--border);vertical-align:top}
+  th{color:var(--muted)}
+  .tier{display:inline-block;font-size:.76rem;font-weight:700;padding:2px 9px;border-radius:20px;margin-right:8px}
+  .t0{color:var(--ok);background:color-mix(in srgb,var(--ok) 15%,transparent)}
+  .t1{color:var(--accent);background:color-mix(in srgb,var(--accent) 15%,transparent)}
+  .t2{color:var(--warn);background:color-mix(in srgb,var(--warn) 15%,transparent)}
+  .t3{color:var(--risk);background:color-mix(in srgb,var(--risk) 15%,transparent)}
+  footer{margin-top:46px;color:var(--muted);font-size:.82rem;border-top:1px solid var(--border);padding-top:16px}
+  .src{color:var(--muted);font-size:.84rem}
+  .pill{font-size:.75rem;border:1px solid var(--border);border-radius:20px;padding:1px 8px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>A Generic RSI Framework for Agentic Projects</h1>
+  <p class="sub">A portable methodology for recursive self-improvement that applies to most agent/LLM projects — plus the contract for a reusable skill that installs the loop into any repo. Grounded in 2026 state-of-the-art. Proposal for review; nothing built yet.</p>
+
+  <div class="box key">
+    <strong>The one invariant (project-independent).</strong> Every self-improving system is the same loop: <em>propose a change → score it against a metric → keep it only if it wins → repeat</em> — the <strong>Generator–Verifier–Updater (GVU)</strong> pattern. The field's hard rule: when the loop stalls or drifts, <strong>strengthen the verifier, not the generator.</strong> A strong generator + weak verifier reliably optimizes itself into nonsense. <strong>Therefore the portable truth is: the fitness signal is the product. Everything else is plumbing.</strong>
+  </div>
+
+  <h2>The generic loop</h2>
+  <div class="loop">   ┌─────────────────────────── per project, configured once ──────────────────────────┐
+   │                                                                                     │
+   OBSERVE ──────▶ DIAGNOSE ──────▶ PROPOSE ──────▶ VERIFY ──────▶ ADOPT / ROLLBACK ──┐
+   (instrument     (find the        (generate a      (score vs      (keep-if-better,    │
+    every run:      biggest          candidate        metric on       else revert;       │
+    cost + yield    measured         change to a      a HELDOUT       archive the        │
+    + outcomes      inefficiency)    tunable)         set; canaries)  version + score)   │
+   └─────────────────────────────────────────────────────────────────────────────◀─────┘
+                                      feedback: the adopted change updates the baseline
+
+   The loop is identical for every project. Only the FOUR PLUG-INS below change per project.</div>
+
+  <h2>The four project plug-ins (the entire portability surface)</h2>
+  <p>To apply this framework to <em>any</em> project you define exactly four things. Everything else is generic.</p>
+  <table>
+    <tr><th>Plug-in</th><th>What it is</th><th>ai-efficiency example</th><th>A web-app example</th></tr>
+    <tr><td><strong>1. Fitness signal</strong></td><td>How "better" is measured. Deterministic checks where possible; LLM-as-judge rubric where quality needs reading; pairwise when there's no gold answer.</td><td>coverage %, per-source yield, run latency, judge-rated digest quality</td><td>test pass-rate, p95 latency, bug-escape rate, eval-set accuracy</td></tr>
+    <tr><td><strong>2. Tunables</strong></td><td>The surface the loop may change — prompts, configs, tool-selection, memory/skills, <em>and source code</em>.</td><td><code>PROMPT.md</code>, <code>sources.json</code>, fetch strategy, <code>run.sh</code></td><td>prompt templates, retry/timeout configs, a module's source</td></tr>
+    <tr><td><strong>3. State / memory</strong></td><td>Durable record of observations + an archive of versions&amp;scores (so good ancestors are never lost).</td><td><code>state.json</code> + git</td><td>a metrics DB + git</td></tr>
+    <tr><td><strong>4. Guardrails config</strong></td><td>Holdout set, canary cases, acceptance threshold, sandbox policy, human-gate list.</td><td>past reports as holdout; "never drop a source silently"</td><td>CI test suite as holdout; "never touch auth code unattended"</td></tr>
+  </table>
+
+  <h2>Four adoption tiers (increasing power &amp; risk)</h2>
+  <p>Generic across projects. A project starts at Tier 0 and climbs only as its verifier earns trust.</p>
+
+  <h3><span class="tier t0">TIER 0</span>Grounded self-critique (Reflexion)</h3>
+  <p>Generator produces output → a <em>differently-modeled</em> critic scores it against a concrete rubric → revise. Cap 2 passes. Critic grounded in deterministic checks (not vibes). <span class="pill">install-ready</span> <span class="pill">no autonomy</span></p>
+
+  <h3><span class="tier t1">TIER 1</span>Automatic prompt/config optimization (DSPy + GEPA)</h3>
+  <p>Treat prompts/configs as <em>compiled</em> artifacts. The optimizer proposes variants, scores each on a holdout set, keeps winners. GEPA's <code>metric_with_feedback</code> returns a reason, not just a number — a "text gradient." <span class="pill">production-ready</span> <span class="pill">frozen weights</span></p>
+
+  <h3><span class="tier t2">TIER 2</span>Skill / memory accumulation (Voyager)</h3>
+  <p>A growing library of named, reusable routines the project retrieves before solving a task — so improvements compound instead of being re-derived. Base model frozen; only the skill wrapper grows. <span class="pill">low risk</span></p>
+
+  <h3><span class="tier t3">TIER 3</span>Self-editing code (SICA / Darwin-Gödel-Machine pattern)</h3>
+  <p>The loop proposes edits to the project's <em>own source</em>, adopted only if they beat the champion on a holdout metric <strong>and pass tests</strong>, run in a <strong>sandbox</strong>, with a DGM-style archive + git rollback and a human gate on each adopted change. <span class="pill">research-grade pattern</span> <span class="pill">sandbox required</span></p>
+  <div class="box warn"><strong>Code self-editing is the sharp tier.</strong> Copy the <em>design</em> (archive + empirical keep-if-better + diversity-preserving selection), never the published <em>scale</em> — a full Darwin-Gödel-Machine run was ~$22k / ~2 weeks. At single-dev scale: one proposed edit per cycle, tests must pass, git is the rollback, human approves adoption until trust is earned.</div>
+
+  <h2>Guardrails (project-independent, non-negotiable)</h2>
+  <p>The 2026 literature's cautionary cases are the reason these aren't optional — an optimizer once "improved" a judge by <em>deleting</em> it (the harness defaulted to a passing score); an agent read cached answer keys to fake 100%.</p>
+  <ul>
+    <li><strong>Verifier &gt; generator.</strong> Spend the eval budget first.</li>
+    <li><strong>Holdout evals.</strong> The optimizer never sees the set it's scored on; watch the proxy-vs-holdout gap to catch reward hacking.</li>
+    <li><strong>Canary cases.</strong> Plant checks no honest run can pass — a perfect score becomes evidence of cheating.</li>
+    <li><strong>Deterministic wrapper around any judge.</strong> Validate schema before scoring, so a malformed/gutted candidate can't silently win.</li>
+    <li><strong>Keep-if-better + archive + rollback.</strong> Conservative acceptance; every version scored and reversible (git).</li>
+    <li><strong>Sandbox</strong> for the code-editing tier; <strong>human gate</strong> on high-blast-radius changes; <strong>frozen weights</strong> to sidestep catastrophic forgetting.</li>
+  </ul>
+
+  <h2>The reusable artifact (the skill contract)</h2>
+  <p>The portable loop ships as an installable Claude Code skill — call it <code>rsi-loop</code> — driven entirely by a per-project config so the same engine runs anywhere:</p>
+  <div class="loop">rsi.config.json        # the four plug-ins for THIS project
+  ├─ fitness: { deterministic_checks[], judge_rubric, holdout_glob, canaries[] }
+  ├─ tunables: [ { path, kind: prompt|config|code, sandbox: bool } ]
+  ├─ state:    { file, archive_dir }
+  └─ guardrails:{ accept_if: "beats_champion_on_holdout AND tests_pass",
+                  human_gate: [ globs that always need approval ],
+                  max_changes_per_cycle: 1 }
+
+rsi-loop skill        # generic engine, project-agnostic
+  observe → diagnose → propose → verify(holdout+canaries) → adopt|rollback → archive</div>
+  <p>Drop <code>rsi.config.json</code> into any repo, point it at that project's metric and tunables, and the loop applies. ai-efficiency becomes the <em>first</em> config, not a special case.</p>
+
+  <div class="box ex"><strong>Worked example — ai-efficiency, the X-fetch inefficiency.</strong> <em>Observe:</em> log each of the 12 X sources' latency + yield every run. <em>Diagnose:</em> N accounts are seen-every-run but produce ≈0; the fixed 3s wait and serial fetch dominate latency; the X-search login-wall keeps failing. <em>Propose:</em> demote zero-yield accounts, tune the wait, reorder by hit-rate, reroute the login-wall. <em>Verify:</em> re-run against the last 7 days (holdout) — coverage must hold while latency drops; canary = a day with a known must-catch item. <em>Adopt</em> only if better; else roll back via git. This is one <code>rsi.config.json</code> — the same engine would tune a web app's retry configs or a data pipeline's batch sizes.</div>
+
+  <h2>Recommended sequencing (any project)</h2>
+  <ol>
+    <li><strong>Instrument</strong> — log cost + yield + outcome every run. You can't improve what you don't measure.</li>
+    <li><strong>Build the fitness signal</strong> — deterministic checks + judge rubric + holdout + canaries. <em>80% of the work, 100% of the safety.</em></li>
+    <li><strong>Tier 0</strong> grounded critic (free wins).</li>
+    <li><strong>One narrow Tier-3 loop</strong> on the project's biggest measured pain, fully gated — the first real closed loop.</li>
+    <li><strong>Tiers 1–2</strong> (prompt optimization, skill library) once the verifier is trusted.</li>
+    <li><strong>Harvest the generic parts</strong> into the <code>rsi-loop</code> skill so the next project starts at step 1 with a config, not a rebuild.</li>
+  </ol>
+
+  <footer>
+    Generic RSI framework — synthesized from a 2026 research pass (GVU/Variance-Inequality, Reflexion, DSPy/GEPA, TextGrad, SPO, Voyager, SICA, Darwin-Gödel-Machine; LLM-as-judge + reward-hacking literature) and this repo's pipeline as the first worked example. Project-agnostic; nothing implemented yet. Companion: <code>docs/rsi-framework-proposal.html</code> (the ai-efficiency-specific version).<br>
+    Generated from the <code>ai-efficiency</code> repo, branch <code>main</code> @ <code>9971039</code>, on 2026-10-29.
+  </footer>
+</div>
+</body>
+</html>
