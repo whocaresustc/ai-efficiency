@@ -28,10 +28,10 @@
 <div class="wrap">
   <a class="back" href="index.html">← Knowledge Base</a>
   <h1>Tools</h1>
-  <p class="meta">Agent/coding tools — Claude Code, other CLIs/IDEs, MCP, terminal. <strong>Last refreshed 2026-10-28.</strong></p>
+  <p class="meta">Agent/coding tools — Claude Code, other CLIs/IDEs, MCP, terminal. <strong>Last refreshed 2026-10-29.</strong></p>
 
   <div class="changed">
-    <strong>What changed recently</strong> — Claude Code shipped a desktop "v2" built around running many sessions side-by-side with a live per-session activity view and faster startup (see <a href="agents.html">Agents</a>). The durable practitioner knowledge below is distilled from hands-on notes; full source notes live in <code>kb/sources/</code>.
+    <strong>What changed recently</strong> — The OpenAI-style <strong>Responses API</strong> is becoming the cross-vendor agent-building primitive: Mistral put its own Responses API into public preview (Oct 28), returning answer, reasoning, and tool calls as separate items — lowering the switching cost of running agentic workloads across providers. Claude Code continues incremental hardening (2.1.312, ~Oct 27–28). Durable practitioner knowledge below is distilled from hands-on notes; full source notes live in <code>kb/sources/</code>.
   </div>
 
   <h2>Claude Code</h2>
@@ -51,11 +51,15 @@
   <p>Run parallel Claude sessions on isolated checkouts instead of switching branches in one working copy — avoids clobbering in-flight edits. Full comparison in the source note.</p>
   <p class="srcnote">Full notes: <a href="sources/Claude%20Code%20Setting.md">Claude Code Setting.md</a> · <a href="sources/Git%20Worktree%20with%20Claude%20Code.md">Git Worktree with Claude Code.md</a> · <a href="sources/claude-code-remote-control.html">remote control</a> · <a href="sources/claude-code-video-knowledge-points.md">video knowledge points</a></p>
 
+  <h3>Recent hardening (2.1.312)</h3>
+  <p>Incremental, no headline features: Write now refuses to overwrite a large <code>CLAUDE.md</code>/rules file it has only partially read; per-directory/<code>paths:</code> skills resolve correctly after a Bash <code>cd</code> deeper into a repo; effort/model indicators reflect the level actually in force; adds an <code>oidc.user_id_claim</code> gateway option and click-to-send for queued messages. The CLAUDE.md-overwrite and skill-resolution fixes remove real foot-guns. <span class="srcnote">(Claude Code CHANGELOG, ~Oct 27–28)</span></p>
+
   <h2>Other agentic CLIs &amp; IDEs</h2>
   <p>Tracked via the daily reports' Tier-4 dev-tool sources — changelog-driven, folded in as notable features ship.</p>
   <ul>
     <li><strong>Cursor</strong> · <strong>OpenAI Codex</strong> · <strong>Aider</strong> · <strong>Continue.dev</strong> · <strong>GitHub Copilot</strong> — the field beyond Claude Code.</li>
     <li><strong>Agent SDKs</strong> — e.g. Cursor Agent SDK (surfaced Oct 28), for embedding agent loops in your own apps.</li>
+    <li><strong>Responses API as a cross-vendor primitive</strong> — the OpenAI-style Responses API (answer, reasoning, and tool calls returned as separate items) is becoming the standard agent frameworks target. Mistral shipped its own Responses API in public preview (Oct 28), aligning its platform with the pattern and lowering the switching cost of moving agentic workloads between providers. <span class="srcnote">(Mistral AI, Oct 28)</span></li>
   </ul>
 
   <h2>MCP (Model Context Protocol)</h2>

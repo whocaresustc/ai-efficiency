@@ -25,10 +25,10 @@
 <div class="wrap">
   <a class="back" href="index.html">← Knowledge Base</a>
   <h1>Techniques</h1>
-  <p class="meta">How to build with AI — prompting, context management, evals, RAG, reasoning. <strong>Last refreshed 2026-10-28.</strong></p>
+  <p class="meta">How to build with AI — prompting, context management, evals, RAG, reasoning. <strong>Last refreshed 2026-10-29.</strong></p>
 
   <div class="changed">
-    <strong>What changed recently</strong> — A practitioner framework for "being more ambitious" with models, from an Anthropic eng lead: push on <strong>Speed, Altitude, Depth, and Range</strong> rather than just doing the same task faster (see below). Separately, continual learning is drawing research attention — Google Research's <strong>"sleep" framework</strong> lets an LLM absorb new knowledge after training without catastrophic forgetting.
+    <strong>What changed recently</strong> — Continual learning is drawing real research momentum: Google Research's <strong>"sleep" framework</strong> (first-party detail landed Oct 28) lets a deployed LLM periodically consolidate short-term context into long-term parameters, then train on self-generated "dream" data — keeping near-zero forgetting across sequential tasks where ICL/SFT baselines collapse. Separately, a practitioner framework for "being more ambitious" with models pushes on <strong>Speed, Altitude, Depth, and Range</strong> rather than just doing the same task faster (see below).
   </div>
 
   <h2>Getting more out of models: the four ambitions</h2>
@@ -43,7 +43,7 @@
 
   <h2>Reasoning &amp; continual learning</h2>
   <ul>
-    <li><strong>The "sleep" framework (continual learning).</strong> Google Research proposed a method that lets LLMs retain prior knowledge while learning continually, targeting the catastrophic-forgetting problem that blocks models from absorbing new information after training. If it generalizes, it's a path toward agents that update from their own experience instead of being frozen at a cutoff — relevant to durable agent memory (see <a href="agents.html">Agents</a>). <span class="src">(Google Research blog, Oct 27)</span></li>
+    <li><strong>The "sleep" framework (continual learning).</strong> Google Research (Behrouz, Mirrokni et al.) proposes a biologically inspired "sleep" phase: a deployed LLM periodically <em>consolidates</em> short-term context into long-term parameters, then trains on self-generated <em>"dream"</em> data — keeping near-zero forgetting across sequential tasks (e.g. learning unseen languages like Manchu and Kalamang back-to-back) where in-context-learning and plain SFT baselines collapse. It attacks the static-knowledge-cutoff problem directly: a path toward agents that update from their own experience post-deployment instead of being frozen at a cutoff — relevant to durable agent memory (see <a href="agents.html">Agents</a>). <span class="src">(Google Research blog Oct 27; @GoogleResearch first-party announcement Oct 28)</span></li>
   </ul>
 
   <h2>Other subtopics this page will cover</h2>
