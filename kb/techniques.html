@@ -52,6 +52,7 @@
     <li><code>/loop</code> — re-run on a cadence; <code>/goal</code> — keep going until a <em>verifiable</em> stopping condition is true.</li>
     <li><strong>The writer isn't the grader:</strong> after each turn a <em>separate small model</em> checks whether the goal is met — the same verifier-≠-generator discipline behind this repo's own RSI loop (<code>docs/rsi-framework-generic.html</code>) and the <a href="#">verification-as-bottleneck</a> thread. Sits one floor above "harness engineering" (the single-agent environment).</li>
     <li><strong>Caveats (stated plainly):</strong> token cost varies wildly; quality/"slop" control still needs an explicit check — which is exactly why the verifiable stopping condition matters.</li>
+    <li><strong>In practice</strong> (<a href="reading.html">Practical Loop Engineering</a>): compose <code>/schedule</code> (checks for work on a cadence) + <code>/goal</code> (deterministic done-condition, e.g. "Lighthouse ≥ 90, stop after 5 tries") + skills (how to verify) + dynamic workflows (orchestrate triage→fix→review) + auto mode (runs without asking). Prefer <strong>deterministic stop criteria</strong> (tests passed, score threshold) so the evaluator model isn't guessing "good enough."</li>
   </ul>
 
   <h2>Other subtopics this page will cover</h2>

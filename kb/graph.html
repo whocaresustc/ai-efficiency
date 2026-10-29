@@ -82,6 +82,7 @@ const N = [
   {id:'trifecta', t:'The lethal trifecta for AI agents', k:'work', d:'Simon Willison. Private data + untrusted content + external comms = the agent-security reference framing.', u:'reading.html'},
   {id:'frontiercode', t:'Introducing FrontierCode', k:'work', d:'Cognition. Benchmark for code mergeability, not just correctness.', u:'reading.html'},
   {id:'loopeng', t:'Loop Engineering', k:'work', d:'Addy Osmani. Design the system that prompts the agent; recursive goal + a SEPARATE model grades completion (/loop, /goal in Claude Code & Codex). Independently describes this repo’s own RSI loop.', u:'reading.html'},
+  {id:'looppract', t:'Practical Loop Engineering', k:'work', d:'Addy Osmani (Aug 2026). The how-to companion: /schedule + /goal + skills + workflows + auto mode, with deterministic stop criteria.', u:'reading.html'},
   // themes
   {id:'subagent', t:'THE SUBAGENT QUESTION', k:'theme', d:'Multi-agent vs single-threaded: when do subagents earn their keep? An active debate.', u:'agents.html'},
   {id:'security', t:'Agent security', k:'theme', d:'Prompt injection, the lethal trifecta, permissions.', u:'agents.html'},
@@ -123,6 +124,8 @@ const E = [
   {s:'frontiercode', t:'models'}, {s:'walden', t:'frontiercode'},
   // --- Loop Engineering + RSI cluster ---
   {s:'addy', t:'loopeng'}, {s:'loopeng', t:'techniques'}, {s:'loopeng', t:'rsi'},
+  {s:'addy', t:'looppract'}, {s:'looppract', t:'techniques'}, {s:'looppract', t:'rsi'},
+  {s:'loopeng', t:'looppract', shared:true, label:'concept ↔ practice (same author)'},
   {s:'autonomy', t:'rsi'}, {s:'rsi', t:'techniques'},
   {s:'loopeng', t:'autonomy', shared:true, label:'writer≠grader / verification-as-bottleneck'},
   // THE shared-thesis link you spotted
