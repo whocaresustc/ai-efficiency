@@ -1,15 +1,49 @@
 {
   "_comment": "Durable memory for the self-improving daily-AI-report loop. Written by meta.sh (the daily meta-agent) and read by run.sh (the report run). Delete this file to reset all learnings. Hand-edits are fine; the meta-agent merges, it does not clobber.",
   "schema_version": 1,
-  "updated_at": "2026-10-29",
+  "updated_at": "2026-11-04 (meta pass)",
+  "runs": {
+    "2026-11-04": {
+      "_comment": "fetch_manifest per PROMPT.md step 5 — the machine-checkable quiet-day gate. First run to write it (closes the 10-29 RSI Axis-A defect). window=24h ending 2026-11-04. NOT a quiet day: FlashProve (@AnthropicAI, in-window) + others kept.",
+      "fetch_manifest": [
+        { "name": "Anthropic News", "fetched": true, "method": "tavily_extract", "freshest_date": "2026-10-28" },
+        { "name": "Claude Blog (claude.com/blog)", "fetched": true, "method": "tavily_extract", "freshest_date": "2026-10-08" },
+        { "name": "Claude Resources / Articles", "fetched": true, "method": "tavily_extract", "freshest_date": "2026-11-02", "note": "message-threads article Nov 2, just outside 24h" },
+        { "name": "Claude Release Notes", "fetched": true, "method": "tavily_extract", "freshest_date": "2026-10-21" },
+        { "name": "Anthropic Engineering", "fetched": true, "method": "tavily_extract", "freshest_date": "undated-listing" },
+        { "name": "Anthropic Research", "fetched": true, "method": "tavily_extract", "freshest_date": "2026-10-27", "note": "covered via Anthropic News extract" },
+        { "name": "OpenAI News", "fetched": true, "method": "tavily_extract", "freshest_date": "2026-10-26" },
+        { "name": "Google DeepMind Blog", "fetched": true, "method": "tavily_extract", "freshest_date": "2026-10-28" },
+        { "name": "Google AI Blog (blog.google)", "fetched": true, "method": "tavily_extract", "freshest_date": "2026-09" },
+        { "name": "Google Research Blog", "fetched": true, "method": "tavily_extract", "freshest_date": "2026-10-27" },
+        { "name": "Mistral News", "fetched": true, "method": "tavily_extract", "freshest_date": "2026-10-29" },
+        { "name": "xAI News", "fetched": true, "method": "tavily_extract", "freshest_date": "2026-10-14" },
+        { "name": "Cognition Blog (Devin)", "fetched": true, "method": "tavily_extract", "freshest_date": "2026-10-16" },
+        { "name": "AWS What's New (AI/ML)", "fetched": true, "method": "curl-rss", "freshest_date": "2026-11-03", "note": "in-window AI items are low-signal (Connect MCP tools, Quick, Textract)" },
+        { "name": "Claude Code Changelog", "fetched": true, "method": "curl", "freshest_date": "2.1.318 (undated)" },
+        { "name": "Cursor Changelog", "fetched": true, "method": "tavily_extract+search", "freshest_date": "Agent SDK (undated, not new in-window)" },
+        { "name": "OpenAI Codex Changelog", "fetched": false, "method": "tavily_extract", "blocked_reason": "not fetched this run; time budget — dev-tool tier, no in-window signal expected" },
+        { "name": "Hugging Face Daily Papers", "fetched": true, "method": "tavily_extract", "freshest_date": "2026-11 (Nov arXiv IDs present; none cleared Tier-2 score>=4 with no upvote data)" },
+        { "name": "Simon Willison's Blog", "fetched": true, "method": "tavily_extract", "freshest_date": "2026-10-31" },
+        { "name": "X: @AnthropicAI", "fetched": true, "method": "playwright-x", "freshest_date": "2026-11-04", "note": "FlashProve 5h in-window — day's #1" },
+        { "name": "X: @OpenAI", "fetched": true, "method": "playwright-x", "freshest_date": "2026-11-04", "note": "physical-world eng 6h; LifeVal Nov 3" },
+        { "name": "X: @GoogleDeepMind", "fetched": true, "method": "playwright-x", "freshest_date": "2026-10-31" },
+        { "name": "X: @GoogleResearch", "fetched": true, "method": "playwright-x", "freshest_date": "2026-10-31" },
+        { "name": "X: @MistralAI", "fetched": true, "method": "playwright-x", "freshest_date": "2026-11-04", "note": "Le Chonk open-weights + demos" },
+        { "name": "X: @xai", "fetched": true, "method": "playwright-x", "freshest_date": "2026-10-23" },
+        { "name": "X: @ScottWu46", "fetched": true, "method": "playwright-x", "freshest_date": "2026-11-04", "note": "QT of security guide, score 2" },
+        { "name": "X: @sama", "fetched": true, "method": "playwright-x", "freshest_date": "2026-10-27" },
+        { "name": "X: @karpathy", "fetched": true, "method": "playwright-x", "freshest_date": "2026-11-02", "note": "HackerTube, just outside window" },
+        { "name": "X: @simonw", "fetched": true, "method": "playwright-x", "freshest_date": "2026-11-04", "note": "Weight-Space Programming reproduction 8h — Tier-2 kept" },
+        { "name": "X: @addyosmani", "fetched": false, "method": "playwright-x", "blocked_reason": "not fetched this run; time budget — Tier-2 practitioner, cap already met by simonw" },
+        { "name": "X: @trq212", "fetched": false, "method": "playwright-x", "blocked_reason": "not fetched this run; posts rarely, low expected yield" },
+        { "name": "X: @swyx", "fetched": false, "method": "playwright-x", "blocked_reason": "not fetched this run; time budget" },
+        { "name": "X search: breakout AI releases", "fetched": false, "method": "playwright-x-search", "blocked_reason": "logged-out /search?f=live redirected to X login wall (2nd consecutive failure after 10-29)" }
+      ]
+    }
+  },
   "sources": {
     "_comment": "keyed by source name from sources.json. seen=runs where scanned, produced=runs where it contributed a kept item, failed=fetch errors, stale=returned data older than window, empty=scanned-but-nothing. status: active|degraded|disabled. The meta-agent flags degraded after a streak and may disable (never delete) with a reason.",
-    "AWS What's New (AI/ML)": {
-      "status": "active",
-      "note": "2026-10-29: scanned, no AI/ML item in window (footer: 'no AI/ML items in window'). The dated-RSS fix stays healthy; a quiet in-window day is normal for the all-categories feed once AI/ML keywords filter it.",
-      "seen": 6, "produced": 2, "failed": 0, "stale": 3, "empty": 3,
-      "last_contributed": "2026-10-28"
-    },
     "Google DeepMind Blog": {
       "status": "active",
       "note": "2026-10-29: blog quiet AGAIN; the day's top item (Gemini 4 Carbon, score 5, VERIFIED against @GoogleDeepMind + MarkTechPost/Geeky Gadgets/Digg) came via the @GoogleDeepMind X timeline with a 'From blog.google' link. Third straight major-launch-via-X pattern (Argon 10-14/15, Genie 4 10-28, Carbon 10-29). The blog listing consistently lags the handle. Not degraded (X path reliably covers it); recurring blog-lag confirmed.",
@@ -36,9 +70,9 @@
     },
     "Anthropic News": {
       "status": "active",
-      "note": "2026-10-29: contributed the drug-development partnerships item (score 3) via @AnthropicAI, and surfaced the GSA/OneGov expansion below threshold (score 2, correctly demoted). Healthy.",
-      "seen": 4, "produced": 3, "failed": 0, "stale": 0, "empty": 1,
-      "last_contributed": "2026-10-29"
+      "note": "2026-11-04: FlashProve (provable inference, score 4 — day's #1) surfaced via @AnthropicAI while anthropic.com/news + /research extracts were still cached to Oct 28. The now-routine X-before-blog pattern; the News listing itself was quiet but the vendor handle carried it. Healthy.",
+      "seen": 5, "produced": 4, "failed": 0, "stale": 0, "empty": 1,
+      "last_contributed": "2026-11-04"
     },
     "Anthropic Research": {
       "status": "active",
@@ -66,9 +100,15 @@
     },
     "X: @MistralAI": {
       "status": "active",
-      "note": "2026-10-29: FIRST tracked contribution — the Mistral Responses API public-preview launch (score 4, day's #3) arrived via @MistralAI while mistral.ai/news was not the delivery path. Confirms the vendor-X-timeline pattern extends to Mistral too. Healthy.",
-      "seen": 1, "produced": 1, "failed": 0, "stale": 0, "empty": 0,
-      "last_contributed": "2026-10-29"
+      "note": "2026-11-04: contributed Le Chonk / Mistral Large 4 open-weights drop + technical report (score 3, in-window) via @MistralAI while mistral.ai/news was not the delivery path — the model launch itself (Oct 29) was out of window, the handle carried the in-window open-weight release/demos. 2nd straight tracked contribution; the vendor-X-timeline pattern holds for Mistral. Healthy.",
+      "seen": 2, "produced": 2, "failed": 0, "stale": 0, "empty": 0,
+      "last_contributed": "2026-11-04"
+    },
+    "AWS What's New (AI/ML)": {
+      "status": "active",
+      "note": "2026-11-04: contributed one borderline item — Amazon Connect flows now support MCP tools (score 3, dated Nov 2 via per-item RSS postDateTime) — the only in-window AI/ML item worth noting; others low-signal (Quick sign-in, Textract). The dated-RSS fix keeps working; it retained a real item rather than over/under-filtering.",
+      "seen": 7, "produced": 3, "failed": 0, "stale": 3, "empty": 3,
+      "last_contributed": "2026-11-04"
     },
     "Hugging Face Daily Papers": {
       "status": "active",
@@ -83,33 +123,43 @@
       "last_contributed": null
     },
     "X search: breakout AI releases": {
-      "status": "active",
-      "note": "2026-10-29: FIRST observed FAILURE of the playwright-x-search path — logged-out /search?f=live redirected to the X login wall and returned no timeline. Handled EXACTLY per the source's own design note and PROMPT.md step 5: logged as a failed source, NOT treated as a quiet day; vendor+practitioner timelines were fetched directly and carried the day (5 items). One occurrence is below the degraded threshold (fail >=3x over ~7 runs). Not flagged degraded yet — WATCH: if the login wall blocks this path 2 more times, the breakout-search tier is effectively dead logged-out and needs a rethink (authed fetch, or retire in favor of the direct timelines that already cover Tier-1 vendors).",
-      "seen": 1, "produced": 0, "failed": 1, "stale": 0, "empty": 0,
+      "status": "degraded",
+      "note": "2026-11-04: FLAGGED DEGRADED (mirrored in sources.json status:degraded). The logged-out /search?f=live path has hit the X login wall on BOTH live runs that attempted it (2026-10-29, 2026-11-04) and was again unavailable during the 11-04 backfill (11-01 reconstruction) — 3 observed unavailabilities, 0 successful fetches, 0 contributions since added 10-29. Crosses the degraded bar (failed >=3x over the reviewed window). Correctly handled every time per PROMPT.md step 5: logged as a failed source, NEVER treated as a quiet day; the direct vendor+practitioner timelines carried each day (11-04: 6 items). Kept scanned so a recovery flips it back to active. NEXT DECISION (not this run's 2-change budget): retire the logged-out path or move it to an authed Playwright profile.",
+      "seen": 2, "produced": 0, "failed": 2, "stale": 0, "empty": 0,
       "last_contributed": null
+    },
+    "X: @simonw": {
+      "status": "active",
+      "note": "2026-11-04: FIRST tracked contribution — delivered the day's #2 item, Simon Willison's independent reproduction of 'Sparks of Weight-Space Programming' (score 4), while his blog's tavily extract lagged to Oct 31. The Tier-2 practitioner handle carried the in-window signal; cross-checked against his own write-up (primary paper underneath). The run also used @simonw to MEET the Tier-2 cap, correctly skipping @addyosmani/@trq212/@swyx for time budget. Healthy, earns its fetch.",
+      "seen": 1, "produced": 1, "failed": 0, "stale": 0, "empty": 0,
+      "last_contributed": "2026-11-04"
     }
   },
   "judgment": {
     "_comment": "calibration signals for the ranking/quiet-day logic",
-    "quiet_days_total": 15,
+    "quiet_days_total": 16,
     "suspect_quiet_days": [
       {
         "date": "2026-10-13",
-        "reason": "Quiet day (0 items) declared, but the run explicitly did NOT fire Playwright for any of the 10 X.com timelines. Dated vendor/research sources were outside the 24h window, but the Tier-1/Tier-2 social tier was unverified, so the quiet verdict is unconfirmed. Guard added to PROMPT.md step 5 as a result; has held on every subsequent reviewed run (10-14, 10-15, 10-28, 10-29 all scanned the full X tier)."
+        "reason": "Quiet day (0 items) declared, but the run explicitly did NOT fire Playwright for any of the 10 X.com timelines. Dated vendor/research sources were outside the 24h window, but the Tier-1/Tier-2 social tier was unverified, so the quiet verdict is unconfirmed. Guard added to PROMPT.md step 5 as a result; has held on every subsequent reviewed run (10-14, 10-15, 10-28, 10-29, 11-04 all scanned the full X tier)."
+      },
+      {
+        "date": "2026-11-01",
+        "reason": "Backfilled (not a live cron run) on 2026-11-04 and declared a quiet day (0 items). Inherently lower-confidence: it rests on the absence of a dated Nov-1 item in CURRENT (11-04) source data, and the logged-out X breakout search was itself login-walled during reconstruction. The report HONESTLY flags this ('no evidence of notable Nov 1 news, not a guaranteed-empty day'), which is the correct handling. This is NOT a pipeline miss — it is the exact backfill blind spot the RSI loop (improve.sh) independently flagged on 11-04 and queued a propose-only PROMPT.md fix for (bind the fetch_manifest rules to the backfill path). Watching: once that fix lands and a backfill run writes runs.<date>.fetch_manifest with backfill:true, this class of suspect quiet day becomes machine-checkable."
       }
     ],
     "notes": [
-      "A 'quiet day' declared without scanning the playwright-x timelines is SUSPECT, not confirmed quiet. PROMPT.md step 5 carries an explicit guard forbidding a quiet declaration until all tiers incl. playwright-x are fetched. Guard has held on every reviewed run since 10-13 (10-14, 10-15, 10-28, 10-29). Keep the guard.",
-      "VENDOR LAUNCHES SURFACE ON X BEFORE/INSTEAD OF THE BLOG — now confirmed across THREE vendors, not just DeepMind: Gemini 4 Carbon (10-29) and Genie 4 (10-28) via @GoogleDeepMind, the Sleep framework via @GoogleResearch (10-29), and the Mistral Responses API via @MistralAI (10-29) all arrived on the handle while the first-party blog/news page was quiet or lagging. The playwright-x vendor tier is the pipeline's single most productive source class. Keep prioritizing the handles as primary launch signals; treat the blog as corroboration, not the trigger.",
-      "VERIFY-BEFORE-TOPPING held up: 2026-10-29's #1 item (Gemini 4 Carbon, score 5) rested solely on a logged-out @GoogleDeepMind timeline screenshot. Meta-agent independently confirmed it against @GoogleDeepMind's own post (From blog.google link), MarkTechPost, Geeky Gadgets, There'sAnAIForThat and Digg — facts matched (AA Index v5.0 score 59 rank #1, SEC-bench Pro 88.2%, successor to Argon ~2 weeks prior). Calibration was correct; score 5 justified. Lesson stands: an X-only frontier-model claim should get a primary cross-check before it tops the report, and on 10-29 the pipeline's output was consistent with one.",
-      "Harness²-type gap (research launched via arXiv+GitHub only) — the 10-28 fix (@GoogleResearch added to playwright-x) is VALIDATED: on its very first scan (10-29) it delivered the Sleep-framework item. Still-open idea (recorded, not yet implemented; a new source TYPE beyond the 2-change budget): an arXiv cs.AI 'agent/harness' watch with a 72h lookback, since papers surface days after submission and remain the one uncovered path.",
-      "Edge-of-window discipline continues to hold: on 10-29 the run correctly EXCLUDED GPT-6.1 Terra (OpenAI, Oct 26-27) and Anthropic's S-1 (Oct 26) as just-outside-window, while KEEPING the Sleep framework on its Oct 28 @GoogleResearch announcement despite the Oct 27 blog dateline. Good handling of the announcement-date-vs-publish-date distinction — anchor to the in-window first-party signal."
+      "A 'quiet day' declared without scanning the playwright-x timelines is SUSPECT, not confirmed quiet. PROMPT.md step 5 carries an explicit guard forbidding a quiet declaration until all tiers incl. playwright-x are fetched. The guard has held on every LIVE reviewed run since 10-13 (10-14, 10-15, 10-28, 10-29, 11-04). Keep the guard. OPEN EDGE: the guard is not yet enforced on the BACKFILL path — 11-01 was reconstructed as quiet on 11-04 with the X breakout search unavailable; the RSI loop has queued the fix (manifest rules must bind backfilled days).",
+      "VENDOR LAUNCHES SURFACE ON X BEFORE/INSTEAD OF THE BLOG — confirmed across four vendors now. 11-04 added two fresh instances: Anthropic's FlashProve (day's #1) via @AnthropicAI while anthropic.com/news+/research extracts were cached to Oct 28, and Mistral's Le Chonk open-weights drop via @MistralAI while mistral.ai/news was not the path. Prior: Gemini 4 Carbon/Genie 4 via @GoogleDeepMind, Sleep framework via @GoogleResearch, Mistral Responses API via @MistralAI (all 10-28/10-29). The playwright-x vendor tier is the pipeline's single most productive source class — keep prioritizing the handles as primary launch signals; treat the blog as corroboration, not the trigger.",
+      "VERIFY-BEFORE-TOPPING held on 11-04: both top items rested on X but carried a primary cross-check — FlashProve's post links the anthropic.com write-up (the summary flags the full result lives there, not over-claiming from the tweet), and the Weight-Space-Programming #2 was cross-checked against Simon Willison's own write-up with the arXiv paper underneath. Scores (4/4) were appropriately capped, not inflated to 5, given neither had a second independent confirmation yet. Calibration discipline intact. Keep requiring a primary cross-check before an X-only frontier claim tops the report.",
+      "Harness²-type gap (research launched via arXiv+GitHub only) — the 10-28 fix (@GoogleResearch added to playwright-x) remains VALIDATED (delivered the Sleep-framework item on its first scan). Still-open idea (recorded, not yet implemented; a new source TYPE beyond the 2-change budget): an arXiv cs.AI 'agent/harness' watch with a 72h lookback, since papers surface days after submission and remain the one uncovered path.",
+      "Edge-of-window discipline held on 11-04: the run correctly EXCLUDED @karpathy's HackerTube (Nov 2) and the Claude message-threads article (Nov 2) as just-outside the ~24h window, excluded Mistral's quantum-chem demo (Nov 2) while KEEPING its Nov 3 open-weight/report post, and reported only the in-window open-weight drop for Le Chonk (model launch itself Oct 29, out of window). Clean announcement-date-vs-publish-date handling — anchor to the in-window first-party signal."
     ]
   },
   "reliability": {
     "_comment": "run-health history; one entry per report run appended by run.sh, graded by meta.sh. NOTE: no runs fired 10-16..10-18 or 10-20..10-27 (machine asleep/off; cron backfills only on wake). Absence of a run is not a failure — only graded days that actually fired appear here.",
-    "last_fired": "2026-10-29",
-    "last_success": "2026-10-29",
+    "last_fired": "2026-11-04",
+    "last_success": "2026-11-04",
     "consecutive_failures": 0,
     "history": [
       { "date": "2026-10-13", "fired": true, "produced": true, "completed": true, "outcome": "success" },
@@ -117,19 +167,25 @@
       { "date": "2026-10-15", "fired": true, "produced": true, "completed": true, "outcome": "success" },
       { "date": "2026-10-19", "fired": true, "produced": true, "completed": true, "outcome": "success", "note": "Manual backfill compiled 2026-10-21 (Harness² post-mortem), not a cron run; graded from the report file." },
       { "date": "2026-10-28", "fired": true, "produced": true, "completed": true, "outcome": "success", "note": "run.sh stdout log is sparse (only the started line + an unrecognized_model warning), but the report HTML is 13KB with 8 items from 34 sources and a complete footer — graded success from the report file." },
-      { "date": "2026-10-29", "fired": true, "produced": true, "completed": true, "outcome": "success", "note": "Clean run: log has started/Done./finished markers, report is 11.5KB with 5 items from 40 sources and a complete footer. One source (X live keyword search) hit the login wall and was correctly logged as failed, not a quiet day. No gap to backfill (prior report 10-28, today 10-29)." }
+      { "date": "2026-10-29", "fired": true, "produced": true, "completed": true, "outcome": "success", "note": "Clean run: log has started/Done./finished markers, report is 11.5KB with 5 items from 40 sources and a complete footer. One source (X live keyword search) hit the login wall and was correctly logged as failed, not a quiet day. No gap to backfill (prior report 10-28, today 10-29)." },
+      { "date": "2026-10-30", "fired": false, "produced": true, "completed": true, "outcome": "success", "note": "BACKFILL (no cron run fired; machine off over the 10-29→11-04 gap). Reconstructed 2026-11-04, 6.6KB, 2 items. Lower-confidence by construction (backfill from current source data)." },
+      { "date": "2026-10-31", "fired": false, "produced": true, "completed": true, "outcome": "success", "note": "BACKFILL reconstructed 2026-11-04, 6.9KB, 2 items." },
+      { "date": "2026-11-01", "fired": false, "produced": true, "completed": true, "outcome": "empty", "note": "BACKFILL reconstructed 2026-11-04, 4.1KB, 0 items — quiet day. Lower-confidence AND the X breakout search was login-walled during reconstruction; report honestly flags it as 'no evidence of Nov 1 news', not confirmed-empty. Recorded in judgment.suspect_quiet_days. Graded 'empty' (produced-but-0-items), not broken." },
+      { "date": "2026-11-02", "fired": false, "produced": true, "completed": true, "outcome": "success", "note": "BACKFILL reconstructed 2026-11-04, 6.7KB, 2 items." },
+      { "date": "2026-11-03", "fired": false, "produced": true, "completed": true, "outcome": "success", "note": "BACKFILL reconstructed 2026-11-04, 7.7KB, 3 items (some re-surface edge-of-window in the 11-04 live report)." },
+      { "date": "2026-11-04", "fired": true, "produced": true, "completed": true, "outcome": "success", "note": "LIVE run. Report is 15.4KB with 6 items from 40 sources, complete footer and a well-formed runs.2026-11-04.fetch_manifest (33 sources) in state.json — the 10-29 Axis-A defect is CLOSED for live runs. No separate logs/2026-11-04.log was written (main run-log file stops at 10-29); graded success from the report HTML + state run entry + clean meta/improve logs. The X breakout search hit the login wall (2nd consecutive live failure) and was correctly logged as failed, not a quiet day — source flagged degraded this pass." }
     ]
   },
   "meta": {
-    "last_scorecard": "2026-10-29",
-    "runs_reviewed": 6
+    "last_scorecard": "2026-11-04",
+    "runs_reviewed": 7
   },
   "rsi": {
     "_comment": "Self-improvement (Generator-Verifier-Updater) loop state, propose-only. Written by improve.sh. baseline = the 2026-10-29 measured axis scores. fitness_history keeps the last 30 cycles. plateau_counter increments on cycles with no real defect or 3 straight non-beating proposals; at >=3 the loop goes dormant.",
     "state": "active",
-    "last_cycle": "2026-10-29",
+    "last_cycle": "2026-11-04-axisC",
     "plateau_counter": 0,
-    "baseline": { "axis_a": 3, "axis_b": 3, "measured_on": "2026-10-29" },
+    "baseline": { "axis_a": 3, "axis_b": 3, "axis_c": 3, "measured_on": "2026-10-29", "axis_c_note": "Axis C (run reliability) added to the rubric on the 2026-11-04 re-run; baseline set to 3 per improve-prompt.md step 1." },
     "fitness_history": [
       {
         "date": "2026-10-29",
@@ -138,6 +194,23 @@
         "defect": "fetch_manifest (PROMPT.md:96) never written to state.json under runs.<date>; quiet-day gate unenforceable",
         "proposed": "queued",
         "note": "First RSI cycle; baseline established. Real Axis-A defect found: the spec-mandated machine-checkable fetch_manifest is absent, so the 10-13 suspect quiet day could recur undetected."
+      },
+      {
+        "date": "2026-11-04",
+        "axis_a": 3,
+        "axis_b": 3,
+        "defect": "Backfilled days write no fetch_manifest: run.sh:108-109 reconstructs missed dates but PROMPT.md:96-101 manifest rules never mention backfill. On 2026-11-04 five days (10-30..11-03) were backfilled; state.json->runs has only the 2026-11-04 key, so 5 of 7 holdout days have no machine-checkable coverage evidence. The 10-29 fix is reopened via the backfill path (11-01 renders a quiet day whose footer admits the X breakout search was login-walled during reconstruction).",
+        "proposed": "queued",
+        "note": "10-29 defect CLOSED for live runs: runs.2026-11-04.fetch_manifest present and well-formed (33 sources). New real Axis-A defect is the backfill blind spot. plateau_counter stays 0 (real defect found). Proposed: append one bullet to PROMPT.md manifest block requiring backfilled days to write runs.<date>.fetch_manifest with backfill:true/confidence:low and fetched:false+blocked_reason for any un-re-fetched playwright-x source. Self-verified: 5 holdout days flip FAIL->PASS on the quiet-day-verified sub-check, no Axis-B regression; spec-only until a backfill run proves it. Deferred Axis-B: techniques.html:66-75 scaffold/TODO + models.html thin citation density (unchanged since 10-29)."
+      },
+      {
+        "date": "2026-11-04-axisC",
+        "axis_a": 3,
+        "axis_b": 3,
+        "axis_c": 2,
+        "defect": "Scheduled pipeline not firing live: reliability.history last 7 = 2 fired:true / 5 fired:false (10-30..11-03 all backfilled, machine asleep/off). Root cause: ~/Library/LaunchAgents/com.user.daily-ai-report.plist uses StartInterval+RunAtLoad with NO wake; run.sh:65-67 explicitly relies on backfill-on-wake; pmset -g sched confirms no repeat wakeorpoweron + womp 0. Per Axis C, a 5-day fired:false run is a live FAIL even though content is fine.",
+        "proposed": "queued",
+        "note": "Re-run with new Axis C (baseline 3). Three-axis scores A3/B3/C2. Axis-C live failure outranks the still-PENDING A/B content defects per the gate. Proposed (infra, propose-only): human runs `sudo pmset repeat wakeorpoweron MTWRFSU 06:55:00` so launchd's StartInterval tick fires the report live each day instead of backfilling; optional plist StartCalendarInterval 06:57 hardening. Self-verify on reliability trend: sub-check 2/5 true flips toward mostly fired:true once a wake is scheduled; once-per-day guard (run.sh:69) + proxy guard (run.sh:56-60) prevent double/broken runs, so no A/B regression. Predicted C 2->4 (not 5: lid-closed/powered-off/proxy-down residual). UNPROVEN until the next scheduled fire actually succeeds without backfill. plateau_counter stays 0. A/B unchanged from prior cycle; backfill-manifest (cycle:2026-11-04) and techniques.html/models.html Axis-B items remain deferred."
       }
     ]
   }

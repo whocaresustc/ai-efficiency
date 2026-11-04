@@ -356,6 +356,8 @@
     },
     {
       "name": "X search: breakout AI releases",
+      "status": "degraded",
+      "status_note": "2026-11-04: DEGRADED. The logged-out /search?f=live path has now hit the X login wall on both live runs that attempted it (2026-10-29 and 2026-11-04), and was again unavailable during the 2026-11-04 backfill (11-01 reconstruction). Three observed unavailabilities, zero successful fetches since added — the login-walled breakout search yields nothing logged-out. Still SCANNED (keep the fetch so a recovery is detected), but handled as a known-failing source: a block is logged in 'failed sources', never treated as a quiet day. Decide next: retire logged-out, or move to an authed Playwright profile. Kept (never deleted) per safety rule 2.",
       "tier": 2,
       "type": "playwright-x-search",
       "search_query": "(\"new model\" OR \"we're releasing\" OR \"introducing\" OR \"now available\" OR benchmark OR SOTA) (AI OR LLM OR agent OR model) min_faves:800 -is:retweet lang:en",

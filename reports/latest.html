@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Daily AI Report — 2026-10-29</title>
+<title>Daily AI Report — 2026-11-04</title>
 <style>
   :root {
     --bg: #ffffff; --fg: #1a1a1a; --muted: #5c6370; --card: #f7f8fa;
     --border: #e3e6ea; --accent: #2563eb; --t1: #2563eb; --t2: #7c3aed;
     --t4: #059669; --score5: #dc2626; --score4: #ea580c; --score3: #0891b2;
-    --link: #1d4ed8;
+    --link: #1d4ed8; --warn: #b45309; --warnbg: #fef3c7;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #0e1116; --fg: #e6e8eb; --muted: #9aa4b2; --card: #161b22;
       --border: #272e38; --accent: #4f86f7; --t1: #4f86f7; --t2: #a780f0;
       --t4: #2dd4a7; --score5: #f87171; --score4: #fb923c; --score3: #38bdf8;
-      --link: #6ea8fe;
+      --link: #6ea8fe; --warn: #fbbf24; --warnbg: #2a2000;
     }
   }
   * { box-sizing: border-box; }
@@ -29,7 +29,10 @@
   header.page { border-bottom: 2px solid var(--border); padding-bottom: 18px; margin-bottom: 28px; }
   header.page h1 { margin: 0 0 6px; font-size: 1.7rem; letter-spacing: -0.02em; }
   .meta { color: var(--muted); font-size: 0.88rem; }
-  .backfill-note { display:none; }
+  .banner {
+    background: var(--warnbg); border: 1px solid var(--warn); color: var(--warn);
+    border-radius: 8px; padding: 10px 14px; margin: 16px 0 0; font-size: 0.85rem;
+  }
   h2.section { font-size: 1.15rem; margin: 34px 0 14px; padding-bottom: 6px; border-bottom: 1px solid var(--border); letter-spacing: -0.01em; }
   .item {
     background: var(--card); border: 1px solid var(--border); border-radius: 10px;
@@ -66,10 +69,17 @@
 <div class="wrap">
 
 <header class="page">
-  <h1>Daily AI Report — 2026-10-29</h1>
+  <h1>Daily AI Report — 2026-11-04</h1>
   <div class="meta">
-    Generated 2026-10-29 10:30 CST • 5 items from 40 sources • 24h lookback (2026-10-28 10:21 → 2026-10-29 10:21 CST)<br>
+    Generated 2026-11-03 19:30 CST • 6 items from 40 sources • 24h lookback (≈2026-11-03 01:30 → 2026-11-04 01:30 UTC)<br>
     Source: <code>ai-efficiency</code> repo, branch <code>main</code>
+  </div>
+  <div class="banner">
+    ⚠ <strong>Breakout-detection degraded.</strong> The Tier-2 X live keyword search
+    (<code>playwright-x-search</code>) hit the X login wall again (2nd consecutive run after 2026-10-29).
+    All Tier-1/Tier-2 vendor and practitioner timelines <em>were</em> fetched directly (see footer),
+    so this is not a quiet day — but the breakout-search path is effectively dead logged-out and is now
+    at the meta-agent's degraded threshold. See "Failed / degraded sources."
   </div>
 </header>
 
@@ -79,34 +89,34 @@
   <div class="item">
     <div class="badges">
       <span class="badge tier1">Tier 1 · Vendor</span>
-      <span class="src">Google DeepMind</span>
-      <span class="score s5">Score 5</span>
-      <span class="date-tag">Oct 28</span>
+      <span class="src">Anthropic</span>
+      <span class="score s4">Score 4</span>
+      <span class="date-tag">~5h ago (Nov 4)</span>
     </div>
-    <h3><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon">Gemini 4 Carbon: Google DeepMind's next frontier model</a></h3>
-    <p class="summary">Google DeepMind announced Gemini 4 Carbon, its strongest model to date, state-of-the-art in cybersecurity and long-horizon agentic coding and ranking #1 (score 59) on v5.0 of the Artificial Analysis Intelligence Index; it rolls out first to a vetted cohort of cyber defenders via the Fairwind Program. It matters because Carbon claims the current leaderboard top (leading SEC-bench Pro, ExploitGym, CWE-bench, and GraphWalks long-context at 96.2%) and signals the cyber-defense-first deployment pattern — early, gated access ahead of a wider API — now typical of frontier releases.</p>
+    <h3><a href="https://x.com/AnthropicAI/status/2117710942826123294">FlashProve: progress on provable inference for large language models</a></h3>
+    <p class="summary">Anthropic introduced FlashProve, a system built on established cryptographic techniques that lets developers verify whether a given response actually came from a given AI model — "substantially more" efficient than prior provable-inference approaches (per the post; the linked anthropic.com write-up carries the full result). It matters because verifiable inference is a foundational trust primitive for agentic and multi-vendor pipelines: being able to prove which model produced an output underpins auditing, routing integrity, and defense against model-substitution or spoofing in production systems. <em>Surfaced first on the @AnthropicAI timeline; the anthropic.com/news and /research listings fetched this run were still cached to Oct 28 and did not yet show it — the now-routine X-before-blog pattern.</em></p>
   </div>
 
   <div class="item">
     <div class="badges">
       <span class="badge tier2">Tier 2 · Research</span>
-      <span class="src">Google Research</span>
+      <span class="src">Simon Willison / arXiv</span>
       <span class="score s4">Score 4</span>
-      <span class="date-tag">Oct 28 (blog Oct 27)</span>
+      <span class="date-tag">~8h ago (Nov 4)</span>
     </div>
-    <h3><a href="https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning">The "Sleep" framework: continual learning without catastrophic forgetting</a></h3>
-    <p class="summary">Google Research (Behrouz, Mirrokni et al.) introduced a biologically inspired "sleep" phase that lets a deployed LLM periodically consolidate short-term context into long-term parameters and then train on self-generated "dream" data, keeping near-zero forgetting across sequential tasks (e.g. learning unseen languages like Manchu and Kalamang back-to-back) where ICL/SFT baselines collapse. It matters because it attacks the static-knowledge-cutoff problem head-on — an agent that can integrate new facts post-deployment without retraining-from-scratch is a direct lever on long-running autonomous systems; announced on the @GoogleResearch timeline Oct 28, the exact first-party path added after the Harness² source-gap miss.</p>
+    <h3><a href="https://simonwillison.net/2026/Nov/3/weight-space-programming/">"Sparks of Weight-Space Programming" — LLMs reading and writing neural-net weights</a></h3>
+    <p class="summary">A buzzy new paper (<em>Sparks of Weight-Space Programming</em>, Takehi, Teoh, Zhang &amp; Khattab) reports that a frontier model (GPT-6 Astra) can natively interpret neural-network weights handed to it as raw floating-point numbers in the prompt; Simon Willison independently reproduced a version of the effect locally with Qwen 3.8 27B after ~45 minutes. It matters because treating model weights as a first-class input the LLM can read and edit is a genuinely new capability surface — with implications for interpretability, model editing, and agent self-modification — and the fast independent replication raises its credibility past a single splashy claim. <em>Cross-checked against Simon's own write-up; the underlying paper is the primary source.</em></p>
   </div>
 
   <div class="item">
     <div class="badges">
       <span class="badge tier1">Tier 1 · Vendor</span>
-      <span class="src">Mistral AI</span>
-      <span class="score s4">Score 4</span>
-      <span class="date-tag">Oct 28 (~12h ago)</span>
+      <span class="src">OpenAI</span>
+      <span class="score s3">Score 3</span>
+      <span class="date-tag">Nov 3</span>
     </div>
-    <h3><a href="https://x.com/MistralAI/status/2115443720371814478">Mistral launches the Responses API (public preview) for building agents</a></h3>
-    <p class="summary">Mistral put its Responses API into public preview, returning the model's answer, its reasoning, and its tool calls as separate items so agent apps can handle each step more cleanly than with Chat Completions. It matters because it aligns Mistral's platform with the now-standard OpenAI-style Responses primitive that agent frameworks target, lowering the switching cost of running agentic workloads on Mistral models.</p>
+    <h3><a href="https://x.com/OpenAI/status/2117307611338997846">LifeVal: a benchmark for everyday personal-assistant tasks</a></h3>
+    <p class="summary">OpenAI released LifeVal, a new benchmark built from feedback from thousands of ChatGPT users on the everyday tasks they most want help with — from finding childcare to other real-life assistant work — rather than the usual code/math/reasoning suites. It matters because it pushes evaluation toward messy, user-defined "life admin" tasks where success is subjective and context-heavy, a dimension production assistant builders increasingly need signal on but existing benchmarks ignore.</p>
   </div>
 </section>
 
@@ -116,15 +126,26 @@
   <div class="item">
     <div class="badges">
       <span class="badge tier1">Tier 1 · Vendor</span>
-      <span class="src">Anthropic</span>
+      <span class="src">OpenAI</span>
       <span class="score s3">Score 3</span>
-      <span class="date-tag">Oct 28</span>
+      <span class="date-tag">~6h ago (Nov 4)</span>
     </div>
-    <h3><a href="https://x.com/AnthropicAI/status/2115178675050307942">Early progress on accelerating drug development with Claude</a></h3>
-    <p class="summary">Anthropic described deep research partnerships with six drug-development organizations, plus its own early drug-discovery efforts, detailing where Claude supports the stages of bringing a new medicine forward. It matters as a concrete applied-science data point on frontier-model use in regulated, high-stakes R&D — the kind of domain-specific agentic workflow that stresses reliability and tool-use over raw chat.</p>
+    <h3><a href="https://x.com/OpenAI/status/2117692475775258785">ChatGPT and Codex for physical-world engineering</a></h3>
+    <p class="summary">OpenAI shared progress on using ChatGPT and Codex across mechanical design, electrical engineering, and simulation — helping its own hardware teams iterate faster and testing workflows with industry collaborators. It matters as a signal of coding-agent reach expanding past software into CAD/EE/simulation toolchains, an early marker for where agentic engineering support is heading, though this is a progress roundup rather than a shipped product.</p>
   </div>
 
-  <p class="meta" style="margin-top:8px">Also seen, below threshold: Anthropic expands its GSA/OneGov agreement to bring Claude to all levels of U.S. government at 40% off (Oct 28) — commercial/policy, scored 2.</p>
+  <div class="item">
+    <div class="badges">
+      <span class="badge tier1">Tier 1 · Vendor</span>
+      <span class="src">Mistral AI</span>
+      <span class="score s3">Score 3</span>
+      <span class="date-tag">Nov 3 (~15h ago)</span>
+    </div>
+    <h3><a href="https://x.com/MistralAI/status/2117562068220195097">Le Chonk (Mistral Large 4) open-weights release + technical report</a></h3>
+    <p class="summary">Mistral published the open weights and a technical report for Le Chonk / Mistral Large 4 (a 1.05T-parameter, 1M-context open model announced Oct 29 that ranks #1 among open models on Cognition's FrontierCode), described by the team as markedly more efficient and compact than its preview three weeks earlier. It matters because an openly released frontier-scale coding/cyber model with a published build story is a meaningful data point for teams evaluating open-weight options; the model launch itself was Oct 29 (out of window) — the in-window news is the open-weight drop, the report, and a run of capability demos (an Orbital Trace satellite tracker, a quantum-chemistry SCF solver).</p>
+  </div>
+
+  <p class="meta" style="margin-top:8px">Also seen, below threshold: OpenAI's next internal security sprint with Cathedral Systems (Nov 3, scored 2); the Anthropic Residency applications opening (Nov 3, recruiting, scored 2); Scott Wu / Jack Cable (Cognition) sharing "A Practical Guide to Security in November 2026" (Nov 4, commentary, scored 2).</p>
 </section>
 
 <section id="devtools">
@@ -133,38 +154,43 @@
   <div class="item">
     <div class="badges">
       <span class="badge tier4">Tier 4 · Dev Tool</span>
-      <span class="src">Claude Code</span>
+      <span class="src">AWS Bedrock / AI&amp;ML</span>
       <span class="score s3">Score 3</span>
-      <span class="date-tag">~Oct 27–28 (undated CHANGELOG top entry)</span>
+      <span class="date-tag">Nov 2</span>
     </div>
-    <h3><a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">Claude Code 2.1.312</a></h3>
-    <p class="summary">The latest Claude Code release adds an <code>oidc.user_id_claim</code> gateway option and click-to-send for queued messages, and fixes a cluster of correctness issues — Write now refuses to overwrite a large CLAUDE.md/rules file it has only partially read, per-directory/<code>paths:</code> skills resolve after a Bash <code>cd</code> deeper into a repo, and effort/model indicators reflect the level actually in force. It matters as incremental hardening of an agentic coding harness many engineers run daily; nothing headline-grade, but the CLAUDE.md-overwrite and skill-resolution fixes remove real foot-guns. <em>Timing approximate: CHANGELOG entries are undated; npm <code>latest</code> and GitHub issue timestamps place 2.1.312 at roughly Oct 27–28.</em></p>
+    <h3><a href="https://aws.amazon.com/about-aws/whats-new/recent/">Amazon Connect flows now support Model Context Protocol (MCP) tools</a></h3>
+    <p class="summary">AWS's "What's New" feed carried one agent-relevant item inside the window: Amazon Connect contact flows can now call MCP tools, letting contact-center agent flows invoke MCP servers directly (alongside minor updates to Amazon Quick sign-in and an updated Textract text-detection model). It matters as continued first-party MCP adoption inside a major cloud's customer-facing product — the standard is spreading from dev tooling into packaged enterprise workflows — but it's incremental plumbing, not a headline. <em>Dated Nov 2 via the per-item RSS postDateTime; borderline but retained as the only in-window AI/ML item worth noting.</em></p>
   </div>
 </section>
 
 <footer class="page">
   <h3>Sources scanned (40)</h3>
-  <p>Tier 1 vendor blogs: Anthropic News / Claude Blog / Claude Resources / Release Notes / Engineering / Research / Institute / Frontier Red Team; OpenAI News / Research; Google DeepMind Blog / Google AI Blog / Google Research Blog; Meta AI / Meta Research; Microsoft AI; AWS What's New (AI/ML); Mistral; xAI. &nbsp; Tier 4 dev tools: OpenAI API &amp; Codex changelogs; Gemini API changelog; Claude Code CHANGELOG; Cursor; Aider; GitHub Copilot; Continue.dev; GitHub Trending. &nbsp; Tier 2: Hugging Face Daily Papers; Simon Willison.</p>
+  <p>Tier 1 vendor blogs: Anthropic News / Claude Blog / Claude Resources / Release Notes / Engineering / Research / Institute / Frontier Red Team; OpenAI News / Research; Google DeepMind Blog / Google AI Blog / Google Research Blog; Meta AI / Meta Research; Microsoft AI; AWS What's New (AI/ML); Mistral; xAI; Cognition. &nbsp; Tier 4 dev tools: OpenAI API &amp; Codex changelogs; Gemini API changelog; Claude Code CHANGELOG; Cursor; Aider; GitHub Copilot; Continue.dev; GitHub Trending. &nbsp; Tier 2: Hugging Face Daily Papers; Simon Willison.</p>
 
-  <h3>X / social timelines fetched (Playwright, logged-out)</h3>
+  <h3>X / social timelines fetched (Playwright, logged-out) — derived from the run fetch_manifest</h3>
   <ul>
-    <li><strong>@GoogleDeepMind</strong> — freshest: 9h ago (<em>Gemini 4 Carbon</em>) ✓ in window</li>
-    <li><strong>@GoogleResearch</strong> — freshest: Oct 28 (<em>Sleep framework</em>) ✓ in window</li>
-    <li><strong>@AnthropicAI</strong> — freshest: Oct 28 (drug development; GSA/OneGov) ✓ in window</li>
-    <li><strong>@MistralAI</strong> — freshest: ~12h ago (<em>Responses API</em>) ✓ in window</li>
-    <li><strong>@OpenAI</strong> — freshest: Oct 27 (pinned, GPT-6.1 Terra) — outside window</li>
+    <li><strong>@AnthropicAI</strong> — freshest: ~5h ago (<em>FlashProve</em>) ✓ in window</li>
+    <li><strong>@OpenAI</strong> — freshest: ~6h ago (physical-world eng; LifeVal Nov 3) ✓ in window</li>
+    <li><strong>@MistralAI</strong> — freshest: ~7h ago (Le Chonk open-weights &amp; demos) ✓ in window</li>
+    <li><strong>@simonw</strong> — freshest: ~8h ago (<em>Weight-Space Programming</em> reproduction) ✓ in window</li>
+    <li><strong>@ScottWu46</strong> (Cognition) — freshest: ~2h ago (security-guide QT, below threshold) ✓ in window</li>
+    <li><strong>@karpathy</strong> — freshest: Nov 2 (HackerTube) — just outside window</li>
+    <li><strong>@GoogleDeepMind</strong> — freshest: Oct 31 (PlanAssist) — outside window</li>
+    <li><strong>@GoogleResearch</strong> — freshest: Oct 31 (ambient-intelligence series) — outside window</li>
+    <li><strong>@sama</strong> — freshest: Oct 27 — outside window</li>
     <li><strong>@xai</strong> (→ @SpaceXSI) — freshest: Oct 23 — outside window</li>
   </ul>
+  <p>Not fetched this run (time budget; logged <code>fetched:false</code> in the manifest): @addyosmani, @trq212, @swyx (all Tier-2 practitioners — the Tier-2 cap was already met by @simonw), and the OpenAI Codex changelog (Tier-4, no in-window signal expected).</p>
 
   <h3>Quiet sources (no in-window items)</h3>
-  <p>Anthropic (News/Engineering/Research/Institute/Red Team all ≤ Oct 27), OpenAI (News/Research/changelogs, newest Oct 26), Google AI Blog, Meta AI / Meta Research (newest July 2026), Microsoft AI, AWS What's New (no AI/ML items in window), Cursor (undated changelog, no new dated entry), Aider, GitHub Copilot, Continue.dev, GitHub Trending, Hugging Face Daily Papers, Simon Willison (blog + @simonw), @sama, @karpathy, @trq212, @swyx.</p>
+  <p>Anthropic (News/Engineering/Research/Institute/Red Team listings all ≤ Oct 28 — note FlashProve surfaced via @AnthropicAI, not yet on the cached blog), Claude Blog / Resources (freshest Nov 2, outside window), OpenAI News/Research listings (≤ Oct 26), Google DeepMind Blog, Google AI Blog, Google Research Blog (≤ Oct 27), Meta AI / Meta Research, Microsoft AI, xAI, Cognition blog (≤ Oct 16), Cursor (undated Agent SDK top entry, not new in-window), Aider, GitHub Copilot, Continue.dev, GitHub Trending, Hugging Face Daily Papers (Nov arXiv IDs present but none cleared the Tier-2 score ≥ 4 bar), Simon Willison's blog (≤ Oct 31; @simonw carried the in-window item), @GoogleDeepMind, @GoogleResearch, @sama, @karpathy.</p>
 
   <h3 class="fail">Failed / degraded sources</h3>
   <ul>
-    <li class="fail"><strong>X live keyword search</strong> (breakout detection, <code>playwright-x-search</code>) — logged-out <code>/search?f=live</code> redirected to the X login wall and returned no timeline. Logged per PROMPT.md step 5; an empty/blocked search is <em>not</em> treated as a quiet day. Vendor + practitioner timelines were fetched directly above.</li>
+    <li class="fail"><strong>X live keyword search</strong> (breakout detection, <code>playwright-x-search</code>) — logged-out <code>/search?f=live</code> redirected to the X login wall and returned no timeline. This is the <strong>2nd consecutive failure</strong> (also failed 2026-10-29), crossing into the meta-agent's "watch" band. Logged per PROMPT.md step 5; a blocked search is <em>not</em> treated as a quiet day — vendor + practitioner timelines were fetched directly above and carried the day. If it blocks once more, the logged-out breakout-search tier should be retired or moved to an authed fetch.</li>
   </ul>
 
-  <p style="margin-top:16px">Edge-of-window calls: GPT-6.1 Terra (OpenAI, Oct 26–27) and Anthropic's S-1 (Oct 26) excluded as just-outside the 24h window. The Google Research "Sleep" blog post is dated Oct 27 but its first-party @GoogleResearch announcement landed Oct 28 (in window), so it is retained. Report window ends 2026-10-29 10:21 CST.</p>
+  <p style="margin-top:16px">Edge-of-window calls: @karpathy's HackerTube (Nov 2) and the Claude "message threads" article (Nov 2) excluded as just-outside the ~24h window; Mistral's quantum-chemistry demo (Nov 2) excluded for the same reason while the Nov 3 open-weights/report post is retained. Mistral Large 4 / Le Chonk itself launched Oct 29 (out of window) — only the in-window open-weight release + report is reported. Report window ends ≈2026-11-04 01:30 UTC (2026-11-03 19:30 CST).</p>
 </footer>
 
 </div>
