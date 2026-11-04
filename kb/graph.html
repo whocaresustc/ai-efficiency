@@ -124,6 +124,12 @@ const N = [
   {id:'starmer', t:'Josh Starmer', k:'person', d:'StatQuest — beginner ML.', u:'people.html'},
   {id:'addy', t:'Addy Osmani', k:'person', d:'Google Chrome eng leader; prolific on AI-assisted dev — subagent fold-vs-split, agent self-verification, Claude Code review at scale.', u:'people.html'},
   {id:'walden', t:'Walden Yan', k:'person', d:'Cognition — author of the "Don’t Build Multi-Agents" / context-engineering principles.', u:null},
+  // --- "be ambitious with AI" movement (added 2026-11-04) ---
+  {id:'awang', t:'Alexandr Wang', k:'person', d:'Scale AI founder; now leads Meta Superintelligence. "Vision and ambition" is the new scarce resource, not intelligence or agency.', u:null},
+  {id:'jensen', t:'Jensen Huang', k:'person', d:'Founder/CEO, NVIDIA. "Productivity should be thought of as raising ambition" — reframes AI from cost-cutting to doing dramatically more.', u:null},
+  {id:'levie', t:'Aaron Levie', k:'person', d:'Co-founder/CEO, Box. Litmus test: "if you could have done it before AI, you\'re not pushing hard enough."', u:null},
+  {id:'beck', t:'Kent Beck', k:'person', d:'Creator of XP/TDD, Agile Manifesto signatory. AI lets him attempt "ridiculously ambitious projects" beyond his own skill ceiling.', u:null},
+  {id:'khe', t:'Khe Hy', k:'person', d:'Writer (RadReads), productivity commentator. The "reluctant convert" — hated the ambition push, then reframed it for normal people.', u:null},
   // works
   {id:'amb_r', t:'How to be more ambitious (tutorial)', k:'work', d:'Rieseberg — Speed/Altitude/Depth/Range framework for getting more out of models.', u:'reading.html'},
   {id:'amb_w', t:'It’s time to be ambitious (talk)', k:'work', d:'Scott Wu, Runtime 2026. "Why now": models have real world-models; agents as virtual employees; 91% of Cognition’s Devin sessions start without a human.', u:null},
@@ -141,6 +147,12 @@ const N = [
   {id:'loopeng', t:'Loop Engineering', k:'work', d:'Addy Osmani. Design the system that prompts the agent; recursive goal + a SEPARATE model grades completion (/loop, /goal in Claude Code & Codex). Independently describes this repo’s own RSI loop.', u:'reading.html'},
   {id:'looppract', t:'Practical Loop Engineering', k:'work', d:'Addy Osmani (Aug 2026). The how-to companion: /schedule + /goal + skills + workflows + auto mode, with deterministic stop criteria.', u:'reading.html'},
   {id:'foldsub', t:'When to fold subagents into your main loop', k:'work', d:'Diane Sarkis / Anthropic (Oct 2026). Progressive disclosure (skills + tool search) often beats subagents on quality/cost/latency; keep subagents for verification/parallel/permissioning. Ships a migration kit.', u:'reading.html'},
+  // --- "be ambitious with AI" movement works (added 2026-11-04) ---
+  {id:'amb_wang', t:'Once-in-a-Civilization Opportunity (talk)', k:'work', d:'Alexandr Wang. The scarce resource shifts from intelligence/agency to vision+ambition; the bottleneck is diffusion, not model progress. Startups that embrace agents ambitiously out-compete incumbents.', u:'reading.html'},
+  {id:'amb_jensen', t:'Productivity = raising ambition', k:'work', d:'Jensen Huang (ServiceNow Knowledge 2026). "Productivity should be thought of as raising ambition, not cost reduction." Also at YC: "increase your ambition by about 100×." Executive/macro altitude.', u:'reading.html'},
+  {id:'amb_levie', t:'The AI ambition litmus test', k:'work', d:'Aaron Levie (Box). "If you could have done what you\'re doing before AI, you\'re likely not pushing it enough." Retry failed ambitious projects ~6 months later as models catch up.', u:'reading.html'},
+  {id:'amb_beck', t:'Software Engineering in the Age of AI (talk)', k:'work', d:'Kent Beck, Prodacity 2026. AI closes the gap between vision and skill ceiling — "ridiculously ambitious projects" now viable — paired with hard-won caveats.', u:'reading.html'},
+  {id:'amb_khe', t:'Are you being ambitious enough?', k:'work', d:'Khe Hy (RadReads). Reluctant-convert take: reframes ambition as the "goal beyond the goal"; explicitly extends Rieseberg\'s four-type framework. Ships an ambition-upgrade skill.', u:'reading.html'},
   // themes
   {id:'subagent', t:'THE SUBAGENT QUESTION', k:'theme', d:'Multi-agent vs single-threaded: when do subagents earn their keep? An active debate.', u:'agents.html'},
   {id:'security', t:'Agent security', k:'theme', d:'Prompt injection, the lethal trifecta, permissions.', u:'agents.html'},
@@ -190,6 +202,19 @@ const E = [
   {s:'autonomy', t:'rsi'}, {s:'rsi', t:'techniques'},
   {s:'loopeng', t:'autonomy', shared:true, label:'writer≠grader / verification-as-bottleneck'},
   {s:'amb_r', t:'amb_w', shared:true, label:'same thesis, independent, same week (Oct 9 & 13)'},
+  // --- "be ambitious with AI" movement edges (added 2026-11-04) ---
+  // authorship
+  {s:'awang', t:'amb_wang'}, {s:'jensen', t:'amb_jensen'}, {s:'levie', t:'amb_levie'}, {s:'beck', t:'amb_beck'}, {s:'khe', t:'amb_khe'},
+  // each work -> the AMBITION theme (the hub)
+  {s:'amb_wang', t:'ambition'}, {s:'amb_jensen', t:'ambition'}, {s:'amb_levie', t:'ambition'}, {s:'amb_beck', t:'ambition'}, {s:'amb_khe', t:'ambition'},
+  // cross-cutting theme ties
+  {s:'amb_wang', t:'models'}, {s:'amb_wang', t:'agents'}, {s:'amb_beck', t:'tools'}, {s:'amb_levie', t:'agents'},
+  // shared-thesis links: the movement converges (two of these PREDATE Rieseberg)
+  {s:'amb_jensen', t:'amb_w', shared:true, label:'executive altitude of the same thesis (Huang May, predates Rieseberg)'},
+  {s:'amb_levie', t:'amb_wang', shared:true, label:'founder/enterprise altitude: ambition as the real bottleneck'},
+  {s:'amb_khe', t:'amb_r', shared:true, label:'explicitly extends Rieseberg’s four-type framework'},
+  {s:'amb_beck', t:'amb_r', shared:true, label:'practitioner/craft altitude of the same push'},
+  {s:'parallel', t:'ambition', shared:true, label:'Willison made "be more ambitious" his 2026 resolution (Sept, predates Rieseberg)'},
 ];
 
 function getCSS(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim()||'#888';}
