@@ -19,6 +19,11 @@
   .en{color:var(--muted);font-style:normal}
   .tags{margin-top:22px;color:var(--rn);font-size:.95rem;font-weight:600;line-height:2}
   .note{font-size:.82rem;color:var(--muted);margin-top:24px;border-top:1px dashed var(--border);padding-top:14px}
+  .src-block{margin-top:22px;padding:14px 16px;background:var(--bg);border:1px solid var(--border);border-radius:12px}
+  .src-title{font-weight:700;font-size:.9rem;margin-bottom:8px}
+  .src-block ol{margin:0;padding-left:20px;font-size:.82rem;color:var(--muted);line-height:1.7}
+  .src-block li{margin-bottom:5px}
+  .src-note{font-size:.78rem;color:var(--muted);margin:10px 0 0}
   .copybar{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 0}
   .divider{text-align:center;color:var(--muted);margin:16px 0;letter-spacing:4px}
 </style>
@@ -32,43 +37,61 @@
 
     <div class="body">
       <p>最近刷AI圈，有个特别明显的感觉👇</p>
-      <p>从 <b>Jensen Huang（英伟达）</b>、<b>Alexandr Wang（Scale AI → Meta 超级智能）</b>，到 <b>Scott Wu（Cognition / Devin）</b>、<b>Aaron Levie（Box）</b>，再到写代码的大神 <b>Simon Willison</b>、<b>Kent Beck</b>——</p>
-      <p>这些平时八竿子打不着的人，<b>最近几个月居然都在讲同一件事：</b></p>
+      <p>从 <b>Jensen Huang 黄仁勋（NVIDIA）</b>、<b>Alexandr Wang 汪滔（Scale AI → Meta 超级智能实验室）</b>，到 <b>Scott Wu（Cognition / Devin）</b>、<b>Aaron Levie（Box CEO）</b>，再到写代码的大神 <b>Simon Willison</b>、<b>Kent Beck</b>（TDD、极限编程之父）——</p>
+      <p>这些平时八竿子打不着、分布在芯片/大厂/创业/独立开发者各个圈子的人，<b>最近半年居然都在反复讲同一件事：</b></p>
       <p>👉 <b>「用AI别想太小了，要更有野心（be more ambitious）。」</b></p>
+      <p>而且我扒了一下时间线发现——这<b>不是谁带的节奏</b>：黄仁勋5月就在讲、Simon 9月把它写成年度主题、Rieseberg 10月才出那篇爆款框架。<b>是一整个行业不约而同撞到了同一个点上。</b></p>
 
       <div class="divider">· · ·</div>
 
       <p>一开始我也有点反感😅 ——「又在贩卖焦虑？」</p>
-      <p>但看多了之后我发现，他们说的其实是<b>同一个洞察</b>：</p>
+      <p>但看多了之后我发现，他们说的其实是<b>同一个底层洞察</b>：</p>
       <p>🔑 <span class="en">The bottleneck is no longer the model.</span><br>瓶颈已经不是AI模型强不强了，<b>而是你自己的想象力和野心</b>。</p>
-      <p>Jensen 的原话特别戳：<br>「<span class="en">Productivity should be thought of as raising ambition</span>」——生产力不是用来<b>裁人省钱</b>的，是用来<b>做以前根本不敢想的事</b>的。</p>
-      <p>Alexandr Wang 说得更直接：未来稀缺的不是智能、不是算力，<b>是 vision 和 ambition</b>（愿景和野心）🔥</p>
+      <p>Alexandr Wang 说得最狠：就算模型<b>从今天起一点都不再进步</b>，光是把现在这个水平「扩散」到全世界，就够折腾几十年了。所以未来稀缺的不是智能、不是算力，<b>是 vision 和 ambition（愿景和野心）</b>——AI 让你实现野心的难度直接降了 <b>10倍甚至100倍</b>🔥</p>
+      <p>黄仁勋的角度是给老板听的：<br>「<span class="en">You might think of productivity as cost reduction, but productivity should be thought of as raising ambition.</span>」<br>——生产力不是用来<b>裁人省钱</b>的，是用来<b>把目标抬高</b>的。他在 YC 还补了一句：「不管你现在野心多大，<b>都还不够，再 ×100</b>。」</p>
 
       <div class="divider">· · ·</div>
 
-      <p>那「更有野心」到底怎么落地？我觉得 <b>Felix Rieseberg（Anthropic）</b> 那套框架最实用，分四个方向：</p>
-      <p>① <b>Speed 速度</b>：同样的事做得更快（入门款）<br>② <b>Altitude 高度</b>：别让AI「改这个bug」，让它「让整个App保持零崩溃」——<b>给目标，不给任务</b><br>③ <b>Depth 深度</b>：逼它用行业顶尖专家的方法做，而且<b>别让它自己给自己打分</b><br>④ <b>Range 广度</b>：一个任务拉上多个领域的「专家」一起干</p>
+      <p>那「更有野心」到底怎么落地？我觉得 <b>Felix Rieseberg（Anthropic，带过 Claude.ai / Claude Code 桌面端）</b> 那套框架最实用，把「野心」拆成了四个可操作的方向：</p>
+      <p>① <b>Speed 速度</b>：同样的事做得更快（入门款，谁都会）<br>② <b>Altitude 高度</b>：别让AI「改这一个bug」，让它「<b>让整个App保持零崩溃</b>」——<b>给目标，不给任务</b>。（他真实的例子：以前让 Claude 一个个修崩溃，后来直接说「你负责让应用别崩」）<br>③ <b>Depth 深度</b>：逼它用<b>行业顶尖专家的工具和方法</b>做——该上数据库和统计模型就别用 markdown 表格糊弄；关键一条👉<b>别让模型自己给自己打分</b>，要有独立的「裁判」<br>④ <b>Range 广度</b>：一个任务<b>拉上多个领域的「专家」</b>一起上（像凑一支抢劫片里的「各显神通」团队）</p>
+      <p>还有人把它往前推了一步：Addy Osmani 和 Scott Wu 都在讲 <b>loop engineering（循环工程）</b>——<b>你别再亲自给AI发指令了，而是设计一个「系统」去驱动AI自己跑</b>：定好「什么算完成」，让它循环到达标为止（Claude Code / Codex 里的 <span class="en">/goal</span>）。</p>
 
       <div class="divider">· · ·</div>
 
-      <p>Box 的 CEO 还给了个超简单的<b>自测标准</b>👇</p>
-      <p>💬「<span class="en">If you could have done it before AI, you're not pushing hard enough.</span>」<br>如果这件事你<b>没有AI也能做</b>，那说明你还不够大胆。</p>
-      <p>还有个细节我很喜欢：一个野心项目<b>失败了也别删</b>，<b>过半年再试一次</b>——因为模型一直在变强，上次做不到的，这次可能就成了。</p>
+      <p>Box 的 CEO Aaron Levie 还给了个超简单的<b>自测标准</b>👇</p>
+      <p>💬「<span class="en">If you could have done what you're doing before AI, you're likely not pushing it enough.</span>」<br>如果这件事你<b>没有AI也能做出来</b>，那说明你还不够大胆——AI时代的产出应该<b>在质上超过</b>以前，而不只是更快。</p>
+      <p>还有个细节我特别喜欢：一个野心项目<b>这次失败了也别删掉</b>，<b>过半年再试一次</b>——因为模型一直在变强，<b>上次做不到的，下个版本可能就成了</b>。</p>
 
       <div class="divider">· · ·</div>
 
-      <p>最真实的一条来自 Simon Willison，他把「be more ambitious」定成了今年的<b>新年目标</b>，但也老实说：</p>
-      <p>「我的活儿反而<b>变更难了</b>——因为简单的都被AI干掉了，剩给我的全是硬骨头。」😂</p>
-      <p>所以这事儿不是鸡汤。它的意思是：<b>把你的下限交给AI，把你的上限拉高</b>。</p>
+      <p>当然，也有<b>泼冷水</b>的，而且很诚实👇</p>
+      <p>Simon Willison 把「be more ambitious」定成了自己今年的<b>新年目标</b>（他说以前年年都是「少接项目、专注」，今年反着来），理由很硬核：<br>「<span class="en">The only way to find the limits of this technology is to keep pushing them until they don't work.</span>」——<b>不把它用到崩，你永远不知道它的边界在哪。</b></p>
+      <p>但他也老实承认：我的活儿<b>反而变更难、更累了</b>😂——因为简单的全被AI干掉了，<b>剩给我的全是硬骨头</b>。Kent Beck 也是又兴奋又清醒：AI让他能试「以前技术不够、根本不敢碰的项目」，但一样会撞墙、AI一样会偷懒走捷径。</p>
+      <p>所以这事儿<b>不是鸡汤</b>。它真正的意思是：<br>👉 <b>把你的「下限」交给AI，把你的「上限」使劲往上拉。</b></p>
 
-      <p>共勉～你最近有没有「用AI干了件以前想都不敢想的事」？评论区聊聊👇</p>
+      <p>共勉～你最近有没有「<b>用AI干成了一件以前想都不敢想的事</b>」？或者踩了什么坑？评论区聊聊👇</p>
 
-      <p class="tags">#AI #人工智能 #AIagent #ClaudeCode #效率工具 #AI工作流 #程序员 #搞钱思维 #认知升级 #AI改变生活</p>
+      <p class="tags">#AI #人工智能 #AIagent #ClaudeCode #效率工具 #AI工作流 #程序员 #独立开发 #搞钱思维 #认知升级 #AI改变生活 #职场</p>
+
+      <div class="src-block">
+        <div class="src-title">📎 文中观点出处（Sources）</div>
+        <ol>
+          <li>Jensen Huang — "Productivity should be thought of as raising ambition," ServiceNow Knowledge 2026 · <span class="en">aimagazine.com/news/nvidia-ceo-jensen-huang-tells-leaders-to-expand-ai-ambitions</span></li>
+          <li>Alexandr Wang — "This is a Once-in-a-Civilization Opportunity" (talk) · <span class="en">youtube.com/watch?v=sJ4VJWycX9M</span></li>
+          <li>Scott Wu (Cognition) — "It's time to be ambitious," Runtime 2026 · <span class="en">youtube.com/watch?v=B2Iou-8mu9k</span></li>
+          <li>Felix Rieseberg (Anthropic) — "How to be more ambitious: A tutorial for humans with models" · <span class="en">felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models</span></li>
+          <li>Aaron Levie (Box) — AI ambition litmus test · <span class="en">x.com/levie/status/2116652002830963114</span></li>
+          <li>Simon Willison — "2026 in LLMs (so far)" · <span class="en">simonwillison.net/2026/Sep/27/2026-in-llms-so-far</span></li>
+          <li>Kent Beck — "Software Engineering in the Age of AI," Prodacity 2026 · <span class="en">youtube.com/watch?v=F8fBgDCf2Y4</span></li>
+          <li>Addy Osmani — "Loop Engineering" / "Agentic Autonomy Levels" · <span class="en">addyosmani.com/blog/agentic-autonomy-levels</span></li>
+        </ol>
+        <p class="src-note">（小红书正文不放链接，评论区/「作者回复」里贴即可；以上为核对用。所有引用均已逐条核实原文。）</p>
+      </div>
     </div>
   </div>
 
   <div class="note">
-    <strong>Draft notes (not part of the post):</strong> People &amp; claims are sourced from the KB (<code>kb/reading.html</code> → "Be more ambitious" section) and verified URLs. Suggested cover image: a simple graphic of the 6 names converging on one phrase "BE MORE AMBITIOUS," or the four-axis (Speed/Altitude/Depth/Range) card. Keep the post itself image-first on RedNote; this text goes in the caption. Generated from the <code>ai-efficiency</code> repo, branch <code>main</code>.
+    <strong>Draft notes (not part of the post):</strong> People &amp; quotes sourced from the KB (<code>kb/reading.html</code> → "Be more ambitious" section) with every URL independently verified. The timeline point (Huang May · Willison Sept · Rieseberg Oct → a field-wide movement, not one person's meme) is the post's distinctive hook. <strong>RedNote tip:</strong> links aren't clickable in the body — put the sources list in a pinned comment or image, keep the caption clean. Suggested cover: the 6 names converging on "BE MORE AMBITIOUS," or the Speed/Altitude/Depth/Range four-axis card. Generated from the <code>ai-efficiency</code> repo, branch <code>main</code>.
   </div>
 </div>
 </body>

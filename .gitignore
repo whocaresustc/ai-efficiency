@@ -6,3 +6,6 @@
 # Pipeline runtime debris (not source)
 scripts/daily-ai-report/logs/
 scripts/daily-ai-report/*.bak-*
+
+# Downloaded third-party binaries (xiaohongshu-mcp) — not source
+tools/xhs-mcp/

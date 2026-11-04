@@ -1,0 +1,41 @@
+# RedNote post-ready cut — "be more ambitious with AI"
+# Fits xiaohongshu-mcp limits: title ≤20 chars, body ≤1000 chars.
+# This is the version to PUBLISH; the full enriched version lives in docs/rednote-be-ambitious.html (KB record).
+
+[TITLE]  (18 chars incl. emoji — within ≤20)
+为什么AI大佬突然都在说「要更野心」💡
+
+[BODY]  (~720 chars — within ≤1000)
+最近刷AI圈发现一个现象👇
+
+黄仁勋(NVIDIA)、Alexandr Wang(Meta超级智能)、Scott Wu(Cognition/Devin)、Box的CEO、还有写代码的Simon Willison、Kent Beck——这些八竿子打不着的人，最近半年都在讲同一句话：
+
+👉 用AI别想太小了，要更有野心(be more ambitious)。
+
+而且不是谁带节奏：黄仁勋5月就在讲、Simon 9月定成年度目标、框架10月才火。是一整个行业撞到了同一个点🔥
+
+核心洞察：瓶颈已经不是模型强不强，而是你的想象力。Alexandr Wang说——就算模型从今天起不再进步，光把现在的能力铺开就够折腾几十年。稀缺的是vision和ambition。
+
+怎么落地？最实用的四个方向👇
+① 速度：同样的事做更快(入门)
+② 高度：给目标不给任务——别让AI"改这个bug"，让它"让整个App零崩溃"
+③ 深度：逼它用顶尖专家的方法，而且别让它自己给自己打分
+④ 广度：一个任务拉多个领域的"专家"一起上
+
+Box CEO的自测标准最狠：如果这事你没有AI也能做出来，说明你还不够大胆。
+
+但也有人泼冷水：Simon说他的活儿反而更累了——简单的全被AI干掉，剩下全是硬骨头😂
+
+一句话：把下限交给AI，把上限使劲往上拉。
+
+你最近用AI干成过什么以前不敢想的事？评论区聊👇
+
+[TAGS]
+#AI #人工智能 #AIagent #效率工具 #AI工作流 #程序员 #独立开发 #认知升级 #AI改变生活 #搞钱思维
+
+[COVER IMAGE SPEC]
+Option A: 6 names (黄仁勋/Alexandr Wang/Scott Wu/Levie/Simon Willison/Kent Beck) as arrows converging on one big phrase "BE MORE AMBITIOUS / 要更有野心".
+Option B: the four-axis card — Speed速度 / Altitude高度 / Depth深度 / Range广度 — clean 2×2 grid.
+
+[SOURCES — put in a pinned comment, NOT the body (RedNote strips links)]
+Rieseberg (Anthropic) · Scott Wu (Cognition, Runtime 2026) · Alexandr Wang talk · Jensen Huang @ServiceNow Knowledge 2026 · Aaron Levie (Box) · Simon Willison "2026 in LLMs" · Kent Beck @Prodacity 2026. Full writeup + verified links: docs/rednote-be-ambitious.html
