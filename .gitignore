@@ -9,3 +9,7 @@ scripts/daily-ai-report/*.bak-*
 
 # Downloaded third-party binaries (xiaohongshu-mcp) — not source
 tools/xhs-mcp/
+
+# RedNote session cookies — SECRET, never commit
+cookies.json
+**/cookies.json
